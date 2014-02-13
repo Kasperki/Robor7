@@ -1,0 +1,61 @@
+XH
+H 1 areas 9 global symbols
+M motorcontrol.c
+S _PWM8_OIKEA_Start Ref0000
+S _PWM8_OIKEA_WritePulseWidth Ref0000
+S _PWM8_VASEN_Start Ref0000
+S _PWM8_VASEN_WritePulseWidth Ref0000
+A text size 3E flags 0
+dbfile ./motorcontrol.c
+dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
+dbfunc e InitPWM 0 fV
+dbline FFFFFFFF 0
+dbline 6 0
+dbline 7 0
+dbline 8 4
+dbline FFFFFFFE 8
+dbline 0 8
+dbfunc e MoveForward 9 fV
+dbsym l pulse FFFFFFFB I
+dbline FFFFFFFF 9
+dbline D B
+dbline F B
+dbline 10 12
+dbline FFFFFFFE 19
+dbline 0 1A
+dbfunc e Stop 1B fV
+dbline FFFFFFFF 1B
+dbline 15 1B
+dbline 16 1B
+dbline 17 21
+dbline FFFFFFFE 27
+dbline 0 27
+dbfunc e TurnLeft 28 fV
+dbsym l pulse FFFFFFFB I
+dbline FFFFFFFF 28
+dbline 1C 2A
+dbline 1E 2A
+dbline FFFFFFFE 31
+dbline 0 32
+dbfunc e TurnRight 33 fV
+dbsym l pulse FFFFFFFB I
+dbline FFFFFFFF 33
+dbline 23 35
+dbline 25 35
+dbline FFFFFFFE 3C
+dbline 0 3D
+S _Stop Def001B
+S _TurnRight Def0033
+S _TurnLeft Def0028
+S _MoveForward Def0009
+S _InitPWM Def0000
+T 00 00 10 7C 00 00 7C 00 00 20 7F 10 4F 52 FC 10
+R 00 00 00 00 02 04 00 02 02 07 00 00
+T 00 0E 7C 00 00 20 52 FC 10 7C 00 00 20 20 7F 10
+R 00 00 00 00 02 03 00 03 02 0A 00 01
+T 00 1C 50 00 7C 00 00 50 00 7C 00 00 20 7F 10 4F
+R 00 00 00 00 02 05 00 01 02 0A 00 03
+T 00 2A 52 FC 10 7C 00 00 20 20 7F 10 4F 52 FC 10
+R 00 00 00 00 02 06 00 03
+T 00 38 7C 00 00 20 20 7F
+R 00 00 00 00 02 03 00 01

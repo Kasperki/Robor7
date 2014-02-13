@@ -1,0 +1,135 @@
+                        .module motorcontrol.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./motorcontrol.c
+ 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0000                   .dbfunc e InitPWM _InitPWM fV
+ 0000           _InitPWM::
+ 0000                   .dbline -1
+ 0000                   .dbline 6
+ 0000           ; #include <m8c.h>        // part specific constants and macros
+ 0000           ; #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
+ 0000           ; 
+ 0000           ; //
+ 0000           ; void InitPWM()
+ 0000           ; {
+ 0000                   .dbline 7
+ 0000           ;       PWM8_VASEN_Start();
+ 0000 10                push X
+ 0001 7C0000            xcall _PWM8_VASEN_Start
+ 0004                   .dbline 8
+ 0004           ;       PWM8_OIKEA_Start();
+ 0004 7C0000            xcall _PWM8_OIKEA_Start
+ 0007 20                pop X
+ 0008                   .dbline -2
+ 0008           L1:
+ 0008                   .dbline 0 ; func end
+ 0008 7F                ret
+ 0009                   .dbend
+ 0009                   .dbfunc e MoveForward _MoveForward fV
+ 0009           ;          pulse -> X-5
+ 0009           _MoveForward::
+ 0009                   .dbline -1
+ 0009 10                push X
+ 000A 4F                mov X,SP
+ 000B                   .dbline 13
+ 000B           ; }
+ 000B           ; 
+ 000B           ; //
+ 000B           ; void MoveForward(int pulse)
+ 000B           ; {             
+ 000B                   .dbline 15
+ 000B           ;       //TODO 
+ 000B           ;       PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+ 000B 52FC              mov A,[X-4]
+ 000D 10                push X
+ 000E 7C0000            xcall _PWM8_VASEN_WritePulseWidth
+ 0011 20                pop X
+ 0012                   .dbline 16
+ 0012           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+ 0012 52FC              mov A,[X-4]
+ 0014 10                push X
+ 0015 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
+ 0018 20                pop X
+ 0019                   .dbline -2
+ 0019           L2:
+ 0019 20                pop X
+ 001A                   .dbline 0 ; func end
+ 001A 7F                ret
+ 001B                   .dbsym l pulse -5 I
+ 001B                   .dbend
+ 001B                   .dbfunc e Stop _Stop fV
+ 001B           _Stop::
+ 001B                   .dbline -1
+ 001B                   .dbline 21
+ 001B           ; }
+ 001B           ; 
+ 001B           ; //
+ 001B           ; void Stop()
+ 001B           ; {
+ 001B                   .dbline 22
+ 001B           ;       PWM8_OIKEA_WritePulseWidth(0);
+ 001B 10                push X
+ 001C 5000              mov A,0
+ 001E 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
+ 0021                   .dbline 23
+ 0021           ;       PWM8_VASEN_WritePulseWidth(0);
+ 0021 5000              mov A,0
+ 0023 7C0000            xcall _PWM8_VASEN_WritePulseWidth
+ 0026 20                pop X
+ 0027                   .dbline -2
+ 0027           L3:
+ 0027                   .dbline 0 ; func end
+ 0027 7F                ret
+ 0028                   .dbend
+ 0028                   .dbfunc e TurnLeft _TurnLeft fV
+ 0028           ;          pulse -> X-5
+ 0028           _TurnLeft::
+ 0028                   .dbline -1
+ 0028 10                push X
+ 0029 4F                mov X,SP
+ 002A                   .dbline 28
+ 002A           ; }
+ 002A           ; 
+ 002A           ; //
+ 002A           ; void TurnLeft(int pulse)
+ 002A           ; {
+ 002A                   .dbline 30
+ 002A           ;       //
+ 002A           ;       PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+ 002A 52FC              mov A,[X-4]
+ 002C 10                push X
+ 002D 7C0000            xcall _PWM8_VASEN_WritePulseWidth
+ 0030 20                pop X
+ 0031                   .dbline -2
+ 0031           L4:
+ 0031 20                pop X
+ 0032                   .dbline 0 ; func end
+ 0032 7F                ret
+ 0033                   .dbsym l pulse -5 I
+ 0033                   .dbend
+ 0033                   .dbfunc e TurnRight _TurnRight fV
+ 0033           ;          pulse -> X-5
+ 0033           _TurnRight::
+ 0033                   .dbline -1
+ 0033 10                push X
+ 0034 4F                mov X,SP
+ 0035                   .dbline 35
+ 0035           ; }
+ 0035           ; 
+ 0035           ; //
+ 0035           ; void TurnRight(int pulse)
+ 0035           ; {
+ 0035                   .dbline 37
+ 0035           ;       //
+ 0035           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+ 0035 52FC              mov A,[X-4]
+ 0037 10                push X
+ 0038 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
+ 003B 20                pop X
+ 003C                   .dbline -2
+ 003C           L5:
+ 003C 20                pop X
+ 003D                   .dbline 0 ; func end
+ 003D 7F                ret
+ 003E                   .dbsym l pulse -5 I
+ 003E                   .dbend

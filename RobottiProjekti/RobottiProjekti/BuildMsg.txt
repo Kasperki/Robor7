@@ -1,0 +1,42 @@
+Starting MAKE...
+creating project.mk 
+
+lib/lcd.asm
+
+lib/psocconfig.asm
+
+lib/psocconfigtbl.asm
+
+lib/pwm8_oikea.asm
+
+lib/pwm8_oikeaint.asm
+
+lib/pwm8_vasen.asm
+
+lib/pwm8_vasenint.asm
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(3):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+
+If there is no parameter, use <function name>(void);
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(29):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+
+takes or returns values other than int
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(6):[warning] [MISRA 2712]old-style function definition for `InitPWM'
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(21):[warning] [MISRA 2712]old-style function definition for `Stop'
+
+./boot.asm
+
+Linking..
+
+  ROM 12% full. 1909 out of 16384 bytes used (does not include absolute areas).
+
+  RAM 4% full. 9 bytes used (does not include stack usage).
+
+Built with ICCM8C STD V7.05.00
+
+ 
+RobottiProjekti - 0 error(s) 4 warning(s) 10:53:23
+
