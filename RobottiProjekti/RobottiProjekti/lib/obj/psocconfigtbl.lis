@@ -664,7 +664,7 @@
  001E B200              db              b2h, 00h                ; Row_0_LogicInputAMux register (RDI0IS)
  0020 B333              db              b3h, 33h                ; Row_0_LogicSelect_0 register (RDI0LT0)
  0022 B433              db              b4h, 33h                ; Row_0_LogicSelect_1 register (RDI0LT1)
- 0024 B511              db              b5h, 11h                ; Row_0_OutputDrive_0 register (RDI0SRO0)
+ 0024 B533              db              b5h, 33h                ; Row_0_OutputDrive_0 register (RDI0SRO0)
  0026 B600              db              b6h, 00h                ; Row_0_OutputDrive_1 register (RDI0SRO1)
  0028 B855              db              b8h, 55h                ; Row_1_InputMux register (RDI1RI)
  002A B900              db              b9h, 00h                ; Row_1_InputSync register (RDI1SYN)
@@ -711,11 +711,11 @@
  0000 70EF          and   F, ~FLAG_XIO_MASK
  0002 620000            mov     reg[00h], 00h           ; Port_0_Data register (PRT0DR)
  0005 7110          or    F, FLAG_XIO_MASK
- 0007 620003            mov     reg[00h], 03h           ; Port_0_DriveMode_0 register (PRT0DM0)
- 000A 6201FC            mov     reg[01h], fch           ; Port_0_DriveMode_1 register (PRT0DM1)
+ 0007 620033            mov     reg[00h], 33h           ; Port_0_DriveMode_0 register (PRT0DM0)
+ 000A 6201CC            mov     reg[01h], cch           ; Port_0_DriveMode_1 register (PRT0DM1)
  000D 70EF          and   F, ~FLAG_XIO_MASK
- 000F 6203FC            mov     reg[03h], fch           ; Port_0_DriveMode_2 register (PRT0DM2)
- 0012 620203            mov     reg[02h], 03h           ; Port_0_GlobalSelect register (PRT0GS)
+ 000F 6203CC            mov     reg[03h], cch           ; Port_0_DriveMode_2 register (PRT0DM2)
+ 0012 620233            mov     reg[02h], 33h           ; Port_0_GlobalSelect register (PRT0GS)
  0015 7110          or    F, FLAG_XIO_MASK
  0017 620200            mov     reg[02h], 00h           ; Port_0_IntCtrl_0 register (PRT0IC0)
  001A 620300            mov     reg[03h], 00h           ; Port_0_IntCtrl_1 register (PRT0IC1)

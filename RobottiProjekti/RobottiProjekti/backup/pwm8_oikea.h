@@ -63,7 +63,7 @@ extern BYTE bPWM8_OIKEA_ReadPulseWidth(void);         // Deprecated
 // Constants for PWM8_OIKEA user defined values
 //--------------------------------------------------
 
-#define PWM8_OIKEA_PERIOD                      ( 0x00 )
+#define PWM8_OIKEA_PERIOD                      ( 0xc7 )
 #define PWM8_OIKEA_PULSE_WIDTH                 ( 0x00 )
 
 

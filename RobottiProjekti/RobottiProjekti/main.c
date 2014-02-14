@@ -1,6 +1,7 @@
 //----------------------------------------------------------------------------
-// C main line
-// Robor7
+// Robotti Projekti
+// Robor7 @ 2014
+// Kasper Kiiskinen, Henri Sinokki, Eero Holopainen, Mikko Litta, Kari Lampinen
 //----------------------------------------------------------------------------
 
 #include <m8c.h>        // part specific constants and macros
@@ -8,53 +9,63 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//Omat lolol
+//Omat header filet
 #include "MotorControl.h"
+//#include "UltraControl.h"
+//#include "GyroControl.h"
+//....
 
-
+//Main Method
 void main(void)
 {
-	int pulseForward = 25;
-	char buffer[20];
+	//Määrittelyt
+	int pulseForward = 0;
+	char buffer[10];
 	volatile int i = 0;
 	int a = 0;
 	
-	// M8C_EnableGInt ; // Uncomment this line to enable Global Interrupts
-	// Insert your main routine code here.
+	//Init**************************
 	
-	//Init
+	// M8C_EnableGInt ; // Uncomment this line to enable Global Interrupts
+	
+	//Start LCD
 	LCD_Start();
 	
-	//PWMSTARTS
+	//Start Motor PWMs
 	InitPWM();
 	
-	//MainLoop
+	
+	//MainLoop**********
+	//***********************
 	while(1)
 	{
+		//TEST CODE AJA MOOTTOREITA ETEEN/TAAKSE
 		i++;
-		
 		if (i > 1000)
 		{
 			i = 0;
-			if(pulseForward <= 190)
+			pulseForward++;
+			
+			if(pulseForward > 198) 
 			{
-				pulseForward++;
+				pulseForward = 0;
 				
+				if(a == 0)
+					a = 1;
+				else 
+					a = 0;
 			}
-			else 
-				a = 1;
 			
-			if (a == 0)
+			//Ajaa moottoreita
+			if(a == 1)
+				MoveBackward(pulseForward);
+			else 
 				MoveForward(pulseForward);
-			else 
-				PWM8_VASEN_WritePulseWidth(0);
 			
-			//if(pulseForward > 198) 
-				//pulseForward = 20;
-		
+			
+			//WRITE TO LCD
 			itoa(buffer,pulseForward,10);
-			
-			LCD_Position(0,0);
+			LCD_Position(0,2);
 			LCD_PrString(buffer);
 		}
 	}

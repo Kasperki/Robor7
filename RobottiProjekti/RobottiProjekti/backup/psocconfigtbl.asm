@@ -24,7 +24,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
 	db		27h, 00h		;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
-	db		25h, 00h		;PWM8_OIKEA_PERIOD_REG(DBB01DR1)
+	db		25h, c7h		;PWM8_OIKEA_PERIOD_REG(DBB01DR1)
 	db		26h, 00h		;PWM8_OIKEA_COMPARE_REG(DBB01DR2)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
@@ -44,7 +44,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		b2h, 00h		; Row_0_LogicInputAMux register (RDI0IS)
 	db		b3h, 33h		; Row_0_LogicSelect_0 register (RDI0LT0)
 	db		b4h, 33h		; Row_0_LogicSelect_1 register (RDI0LT1)
-	db		b5h, 11h		; Row_0_OutputDrive_0 register (RDI0SRO0)
+	db		b5h, 33h		; Row_0_OutputDrive_0 register (RDI0SRO0)
 	db		b6h, 00h		; Row_0_OutputDrive_1 register (RDI0SRO1)
 	db		b8h, 55h		; Row_1_InputMux register (RDI1RI)
 	db		b9h, 00h		; Row_1_InputSync register (RDI1SYN)
@@ -59,8 +59,8 @@ LoadConfigTBL_robottiprojekti_Bank1:
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
 	db		24h, 21h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
-	db		25h, 01h		;PWM8_OIKEA_INPUT_REG(DBB01IN)
-	db		26h, 05h		;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
+	db		25h, 11h		;PWM8_OIKEA_INPUT_REG(DBB01IN)
+	db		26h, 45h		;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
 	db		20h, 21h		;PWM8_VASEN_FUNC_REG(DBB00FN)
@@ -91,11 +91,11 @@ LoadConfigTBL_robottiprojekti_Ordered:
 	M8C_SetBank0
 	mov	reg[00h], 00h		; Port_0_Data register (PRT0DR)
 	M8C_SetBank1
-	mov	reg[00h], 03h		; Port_0_DriveMode_0 register (PRT0DM0)
-	mov	reg[01h], fch		; Port_0_DriveMode_1 register (PRT0DM1)
+	mov	reg[00h], 33h		; Port_0_DriveMode_0 register (PRT0DM0)
+	mov	reg[01h], cch		; Port_0_DriveMode_1 register (PRT0DM1)
 	M8C_SetBank0
-	mov	reg[03h], fch		; Port_0_DriveMode_2 register (PRT0DM2)
-	mov	reg[02h], 03h		; Port_0_GlobalSelect register (PRT0GS)
+	mov	reg[03h], cch		; Port_0_DriveMode_2 register (PRT0DM2)
+	mov	reg[02h], 33h		; Port_0_GlobalSelect register (PRT0GS)
 	M8C_SetBank1
 	mov	reg[02h], 00h		; Port_0_IntCtrl_0 register (PRT0IC0)
 	mov	reg[03h], 00h		; Port_0_IntCtrl_1 register (PRT0IC1)

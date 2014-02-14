@@ -26,7 +26,7 @@ PWM8_OIKEA_INT_MASK:                       equ 0x02
 ; Constants for PWM8_OIKEA user defined values
 ;--------------------------------------------------
 
-PWM8_OIKEA_PERIOD:                         equ 0x00
+PWM8_OIKEA_PERIOD:                         equ 0xc7
 PWM8_OIKEA_PULSE_WIDTH:                    equ 0x00
 
 

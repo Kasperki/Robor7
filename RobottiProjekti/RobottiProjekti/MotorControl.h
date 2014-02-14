@@ -5,6 +5,8 @@ void InitPWM();
 //TYODO
 void MoveForward(int pusle);
 
+void MoveBackward(int pulse);
+
 //TODO
 void TurnLeft(int pulse);
 

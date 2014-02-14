@@ -1,33 +1,33 @@
 # DO NOT DELETE
 ./obj/boot.o : \
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8ssc.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\lib\GLOBAL~1.INC\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\lib\GLOBAL~1.INC\
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8ssc.inc
 ./obj/main.o :  ./lib/LCD.h ./lib/PSoCAPI.h ./lib/PSOCGP~1.H\
    ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\MOTORC~1.H
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MOTORC~1.H\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h
 ./obj/motorcontrol.o :  ./lib/LCD.h ./lib/PSoCAPI.h ./lib/PSOCGP~1.H\
    ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h
 ./lib/obj/lcd.o :  ./lib/LCD.inc\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/psocconfig.o :  ./lib/GLOBAL~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/psocconfigtbl.o : \
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/pwm8_oikea.o :  ./lib/PWM8_O~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/pwm8_oikeaint.o :  ./lib/PWM8_O~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/pwm8_vasen.o :  ./lib/PWM8_V~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/pwm8_vasenint.o :  ./lib/PWM8_V~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
