@@ -31,6 +31,11 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		23h, 00h		;PWM8_VASEN_CONTROL_REG(DBB00CR0)
 	db		21h, c7h		;PWM8_VASEN_PERIOD_REG(DBB00DR1)
 	db		22h, 00h		;PWM8_VASEN_COMPARE_REG(DBB00DR2)
+;  Instance name Timer8, User Module Timer8
+;       Instance name Timer8, Block Name TIMER8(DCB02)
+	db		2bh, 04h		;Timer8_CONTROL_REG(DCB02CR0)
+	db		29h, 63h		;Timer8_PERIOD_REG(DCB02DR1)
+	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
 ;  Global Register values Bank 0
 	db		60h, 28h		; AnalogColumnInputSelect register (AMX_IN)
 	db		66h, 00h		; AnalogComparatorControl1 register (CMP_CR1)
@@ -66,6 +71,11 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		20h, 21h		;PWM8_VASEN_FUNC_REG(DBB00FN)
 	db		21h, 11h		;PWM8_VASEN_INPUT_REG(DBB00IN)
 	db		22h, 44h		;PWM8_VASEN_OUTPUT_REG(DBB00OU)
+;  Instance name Timer8, User Module Timer8
+;       Instance name Timer8, Block Name TIMER8(DCB02)
+	db		28h, 20h		;Timer8_FUNC_REG(DCB02FN)
+	db		29h, 01h		;Timer8_INPUT_REG(DCB02IN)
+	db		2ah, 40h		;Timer8_OUTPUT_REG(DCB02OU)
 ;  Global Register values Bank 1
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)
@@ -79,9 +89,9 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		d3h, 00h		; GlobalDigitalInterconnect_Drive_Even_Output register (GDI_E_OU)
 	db		d0h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Input register (GDI_O_IN)
 	db		d2h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
-	db		e1h, 92h		; OscillatorControl_1 register (OSC_CR1)
+	db		e1h, b9h		; OscillatorControl_1 register (OSC_CR1)
 	db		e2h, 00h		; OscillatorControl_2 register (OSC_CR2)
-	db		dfh, 31h		; OscillatorControl_3 register (OSC_CR3)
+	db		dfh, 13h		; OscillatorControl_3 register (OSC_CR3)
 	db		deh, 02h		; OscillatorControl_4 register (OSC_CR4)
 	db		ddh, 00h		; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
 	db		ffh

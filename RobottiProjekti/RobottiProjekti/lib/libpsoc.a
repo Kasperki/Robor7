@@ -1,5 +1,158 @@
 .start
 XH
+H 3 areas 2 global symbols
+M timer8int.asm
+S _TimerInterrupt Ref0000
+A text size 0 flags 0
+dbfile lib/timer8int.asm
+dbfunc 0 ? 0 I
+dbfile Timer8.inc
+dbfunc 0 ? 0 I
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+dbfile ./lib/Timer8.inc
+dbfunc 0 ? 0 I
+dbfile lib/timer8int.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/timer8int.asm
+dbfunc 0 ? 0 I
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+A InterruptRAM size 0 flags 20
+A UserModules size 4 flags 0
+dbfile lib/timer8int.asm
+dbfunc 0 ? 0 I
+dbline 53 0
+dbline 5B 3
+S _Timer8_ISR Def0000
+T 00 00 7D 00 00 7E
+R 00 00 00 02 02 03 00 00
+.end
+.start
+XH
+H 3 areas 2E global symbols
+M timer8.asm
+A text size 0 flags 0
+dbfile lib/timer8.asm
+dbfunc 0 ? 0 I
+dbfile Timer8.inc
+dbfunc 0 ? 0 I
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+dbfile ./lib/Timer8.inc
+dbfunc 0 ? 0 I
+dbfile lib/timer8.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/timer8.asm
+dbfunc 0 ? 0 I
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+A robottiprojekti_RAM size 0 flags 20
+A UserModules size 45 flags 0
+dbfile lib/timer8.asm
+dbfunc 0 ? 0 I
+dbline 2 0
+dbline 66 3
+dbline 2 4
+dbline 82 7
+dbline 2 8
+dbline 9E B
+dbline 2 C
+dbline BA F
+dbline D5 10
+dbline D7 12
+dbline F3 13
+dbline F5 15
+dbline 110 16
+dbline 112 18
+dbline 145 19
+dbline 146 1A
+dbline 147 1C
+dbline 148 1E
+dbline 149 1F
+dbline 14A 21
+dbline 14B 22
+dbline 14D 24
+dbline 14E 26
+dbline 14F 28
+dbline 150 2A
+dbline 151 2D
+dbline 152 2F
+dbline 154 31
+dbline 2 33
+dbline 2 35
+dbline 157 38
+dbline 158 39
+dbline 159 3B
+dbline 15A 3C
+dbline 15B 3E
+dbline 15D 3F
+dbline 186 40
+dbline 188 42
+dbline 18A 44
+S _Timer8_Start Def0008
+S Timer8_WritePeriod Def0010
+S Timer8_EnableInt Def0000
+S _bTimer8_CaptureCounter Def0040
+S $sb$Timer8_WritePeriod Def0010
+S $se$Timer8_WritePeriod Def0013
+S $sb$Timer8_EnableInt Def0000
+S $se$Timer8_EnableInt Def0004
+S bTimer8_ReadCompareValue Def0016
+S Timer8_bReadCompareValue Def0016
+S Timer8_Stop Def000C
+S bTimer8_ReadCounter Def0019
+S $sb$Timer8_bReadCompareValue Def0016
+S $se$Timer8_bReadCompareValue Def0019
+S $sb$Timer8_Stop Def000C
+S $se$Timer8_Stop Def0010
+S _Timer8_WritePeriod Def0010
+S Timer8_WriteCompareValue Def0013
+S _Timer8_EnableInt Def0000
+S bTimer8_ReadTimer Def0040
+S Timer8_bReadTimer Def0040
+S Timer8_DisableInt Def0004
+S $sb$Timer8_WriteCompareValue Def0013
+S $se$Timer8_WriteCompareValue Def0016
+S $sb$Timer8_bReadTimer Def0040
+S $sb$Timer8_DisableInt Def0004
+S $se$Timer8_bReadTimer Def0045
+S $se$Timer8_DisableInt Def0008
+S _bTimer8_ReadCompareValue Def0016
+S _Timer8_bReadCompareValue Def0016
+S _Timer8_Stop Def000C
+S bTimer8_ReadTimerSaveCV Def0019
+S Timer8_bReadTimerSaveCV Def0019
+S Timer8_Start Def0008
+S bTimer8_CaptureCounter Def0040
+S _bTimer8_ReadCounter Def0019
+S $sb$Timer8_bReadTimerSaveCV Def0019
+S $se$Timer8_bReadTimerSaveCV Def0040
+S $sb$Timer8_Start Def0008
+S $se$Timer8_Start Def000C
+S _Timer8_WriteCompareValue Def0013
+S _bTimer8_ReadTimer Def0040
+S _Timer8_bReadTimer Def0040
+S _Timer8_DisableInt Def0004
+S _bTimer8_ReadTimerSaveCV Def0019
+S _Timer8_bReadTimerSaveCV Def0019
+T 00 00 43 E1 04 7F 41 E1 FB 7F 43 2B 01 7F 41 2B
+R 00 00 00 02
+T 00 0E FE 7F 60 29 7F 60 2A 7F 5D 2A 7F 4F 38 02
+R 00 00 00 02
+T 00 1C 5D 2B 08 5D 2A 08 5D 28 5D 2A 54 01 50 00
+R 00 00 00 02
+T 00 2A 49 F7 01 A0 03 50 01 54 00 70 FE 41 2B FE
+R 00 00 00 02
+T 00 38 18 60 2A 18 60 2B 18 7E 5D 28 5D 2A 7F
+R 00 00 00 02
+.end
+.start
+XH
 H 3 areas 1 global symbols
 M pwm8_vasenint.asm
 A text size 0 flags 0
@@ -283,103 +436,105 @@ dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
-A lit size 66 flags 0
+A lit size 72 flags 0
 S LoadConfigTBL_robottiprojekti_Bank0 Def0000
-S LoadConfigTBL_robottiprojekti_Bank1 Def0037
+S LoadConfigTBL_robottiprojekti_Bank1 Def003D
 A psoc_config size C5 flags 0
 dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbline 2 0
-dbline 5C 2
+dbline 66 2
 dbline 2 5
-dbline 5E 7
-dbline 5F A
+dbline 68 7
+dbline 69 A
 dbline 2 D
-dbline 61 F
-dbline 62 12
+dbline 6B F
+dbline 6C 12
 dbline 2 15
-dbline 64 17
-dbline 65 1A
+dbline 6E 17
+dbline 6F 1A
 dbline 2 1D
-dbline 67 1F
-dbline 68 22
+dbline 71 1F
+dbline 72 22
 dbline 2 25
-dbline 6A 27
-dbline 6B 2A
+dbline 74 27
+dbline 75 2A
 dbline 2 2D
-dbline 6D 2F
-dbline 6E 32
+dbline 77 2F
+dbline 78 32
 dbline 2 35
-dbline 70 37
-dbline 71 3A
+dbline 7A 37
+dbline 7B 3A
 dbline 2 3D
-dbline 73 3F
-dbline 74 42
+dbline 7D 3F
+dbline 7E 42
 dbline 2 45
-dbline 76 47
-dbline 77 4A
+dbline 80 47
+dbline 81 4A
 dbline 2 4D
-dbline 79 4F
-dbline 7A 52
+dbline 83 4F
+dbline 84 52
 dbline 2 55
-dbline 7C 57
-dbline 7D 5A
+dbline 86 57
+dbline 87 5A
 dbline 2 5D
-dbline 7F 5F
-dbline 80 62
+dbline 89 5F
+dbline 8A 62
 dbline 2 65
-dbline 82 67
-dbline 83 6A
+dbline 8C 67
+dbline 8D 6A
 dbline 2 6D
-dbline 85 6F
-dbline 86 72
+dbline 8F 6F
+dbline 90 72
 dbline 2 75
-dbline 88 77
-dbline 89 7A
+dbline 92 77
+dbline 93 7A
 dbline 2 7D
-dbline 8B 7F
-dbline 8C 82
+dbline 95 7F
+dbline 96 82
 dbline 2 85
-dbline 8E 87
-dbline 8F 8A
+dbline 98 87
+dbline 99 8A
 dbline 2 8D
-dbline 91 8F
-dbline 92 92
+dbline 9B 8F
+dbline 9C 92
 dbline 2 95
-dbline 94 97
-dbline 95 9A
+dbline 9E 97
+dbline 9F 9A
 dbline 2 9D
-dbline 97 9F
-dbline 98 A2
+dbline A1 9F
+dbline A2 A2
 dbline 2 A5
-dbline 9A A7
-dbline 9B AA
+dbline A4 A7
+dbline A5 AA
 dbline 2 AD
-dbline 9D AF
-dbline 9E B2
+dbline A7 AF
+dbline A8 B2
 dbline 2 B5
-dbline A0 B7
-dbline A1 BA
+dbline AA B7
+dbline AB BA
 dbline 2 BD
-dbline A3 BF
+dbline AD BF
 dbline 2 C2
-dbline A5 C4
+dbline AF C4
 S LoadConfigTBL_robottiprojekti_Ordered Def0000
-T 00 00 27 00 25 C7 26 00 23 00 21 C7 22 00 60 28
+T 00 00 27 00 25 C7 26 00 23 00 21 C7 22 00 2B 04
 R 00 00 00 01
-T 00 0E 66 00 63 05 65 00 E6 00 E7 00 D6 00 B0 00
+T 00 0E 29 63 2A 00 60 28 66 00 63 05 65 00 E6 00
 R 00 00 00 01
-T 00 1C B1 00 B2 00 B3 33 B4 33 B5 33 B6 00 B8 55
+T 00 1C E7 00 D6 00 B0 00 B1 00 B2 00 B3 33 B4 33
 R 00 00 00 01
-T 00 2A B9 00 BA 10 BB 33 BC 33 BD 00 BE 00 FF 24
+T 00 2A B5 33 B6 00 B8 55 B9 00 BA 10 BB 33 BC 33
 R 00 00 00 01
-T 00 38 21 25 11 26 45 20 21 21 11 22 44 61 00 69
+T 00 38 BD 00 BE 00 FF 24 21 25 11 26 45 20 21 21
 R 00 00 00 01
-T 00 46 00 60 00 62 00 67 33 68 33 63 00 66 00 D1
+T 00 46 11 22 44 28 20 29 01 2A 40 61 00 69 00 60
 R 00 00 00 01
-T 00 54 00 D3 00 D0 00 D2 00 E1 92 E2 00 DF 31 DE
+T 00 54 00 62 00 67 33 68 33 63 00 66 00 D1 00 D3
 R 00 00 00 01
-T 00 62 02 DD 00 FF
+T 00 62 00 D0 00 D2 00 E1 B9 E2 00 DF 13 DE 02 DD
+R 00 00 00 01
+T 00 70 00 FF
 R 00 00 00 01
 T 00 00 70 EF 62 00 00 71 10 62 00 33 62 01 CC 70
 R 00 00 00 02

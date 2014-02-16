@@ -1,5 +1,5 @@
 XH
-H B areas 10 global symbols
+H B areas 11 global symbols
 M boot.asm
 S _main Ref0000
 S __r0 Ref0000
@@ -8,6 +8,7 @@ S __bss_end Ref0000
 S __ramareas_end Ref0000
 S _PWM8_OIKEA_ISR Ref0000
 S _PWM8_VASEN_ISR Ref0000
+S _Timer8_ISR Ref0000
 S __data_end Ref0000
 A TOP size D7 flags C
 dbfile ./boot.asm
@@ -24,7 +25,8 @@ dbline 95 20
 dbline 96 23
 dbline 99 24
 dbline 9A 27
-dbline 9E 28
+dbline 9D 28
+dbline 9E 2B
 dbline A2 2C
 dbline A6 30
 dbline AA 34
@@ -134,8 +136,8 @@ T 00 20 7D 00 00 7E
 R 00 00 00 00 02 03 00 06
 T 00 24 7D 00 00 7E
 R 00 00 00 00 02 03 00 05
-T 00 28 7E
-R 00 00 00 00
+T 00 28 7D 00 00 7E
+R 00 00 00 00 02 03 00 07
 T 00 2C 7E
 R 00 00 00 00
 T 00 30 7E
@@ -165,7 +167,7 @@ R 00 00 00 00 03 02 00 01 41 07 00 02 01 0A 00 02
 T 00 AD 00 00 00 00 3C 00 00
 R 00 00 00 00 03 02 00 01 01 04 00 07 03 07 00 01
 T 00 B1 00 00 A0 0B 08 28 3F 00 00 18 75 09 00 8F
-R 00 00 00 00 03 02 00 07 03 09 00 01
+R 00 00 00 00 03 02 00 08 03 09 00 01
 T 00 BD F2 71 10 70 EF 62 E0 00 71 10 62 E0 00 70
 R 00 00 00 00
 T 00 CB EF 62 E2 00 7C 00 00 8F FF 50 10 7F

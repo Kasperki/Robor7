@@ -5,11 +5,11 @@
    D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8ssc.inc
 ./obj/main.o :  ./lib/LCD.h ./lib/PSoCAPI.h ./lib/PSOCGP~1.H\
-   ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H\
+   ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H ./lib/Timer8.h\
    C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MOTORC~1.H\
    D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h
 ./obj/motorcontrol.o :  ./lib/LCD.h ./lib/PSoCAPI.h ./lib/PSOCGP~1.H\
-   ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H\
+   ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H ./lib/Timer8.h\
    D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h
 ./lib/obj/lcd.o :  ./lib/LCD.inc\
    C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
@@ -29,5 +29,11 @@
    C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
    D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 ./lib/obj/pwm8_vasenint.o :  ./lib/PWM8_V~1.INC\
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+./lib/obj/timer8.o :  ./lib/Timer8.inc\
+   C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
+   D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+./lib/obj/timer8int.o :  ./lib/Timer8.inc\
    C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\memory.inc\
    D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc

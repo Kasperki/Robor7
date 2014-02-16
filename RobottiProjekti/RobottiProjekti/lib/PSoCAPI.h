@@ -21,5 +21,6 @@
 #include "LCD.h"
 #include "PWM8_OIKEA.h"
 #include "PWM8_VASEN.h"
+#include "Timer8.h"
 
 #endif
