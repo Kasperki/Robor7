@@ -31,22 +31,26 @@ If there is no parameter, use <function name>(void);
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(93):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(64):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(17):[warning] [MISRA 2712]old-style function definition for `InitPWM'
+takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(57):[warning] [MISRA 2712]old-style function definition for `Stop'
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(87):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(18):[warning] [MISRA 2712]old-style function definition for `InitPWM'
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(54):[warning] [MISRA 2712]old-style function definition for `Stop'
 
 ./boot.asm
 
 Linking..
 
-  ROM 15% full. 2426 out of 16384 bytes used (does not include absolute areas).
+  ROM 29% full. 4590 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 5% full. 11 bytes used (does not include stack usage).
+  RAM 7% full. 16 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 6 warning(s) 13:21:11
+RobottiProjekti - 0 error(s) 7 warning(s) 13:14:48
 

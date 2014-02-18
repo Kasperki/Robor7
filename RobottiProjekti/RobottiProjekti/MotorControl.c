@@ -11,6 +11,7 @@ const int LEFTBACK = 0x10; //Port0_4 VasenPuoli Taaksepäin
 
 const int RIGHTFOW = 0x02; //Port0_1 OikeaPuoli Eteenpäin
 const int RIGHTBACK = 0x20; //Port0_5 OikeaPuoli Taaksepäin
+const float OIKEUSKERROIN = 0.8f; //Kerroin vasemalle puolelle jotta robotti kulkisi suoraan
 
 //Käynnistää PWM Moduulit
 void InitPWM()
@@ -27,16 +28,12 @@ void InitPWM()
 //Kulkee eteenpäin arvolla..
 void MoveForward(int pulse)
 {			
-	//TODO
-	//Katso kulkeeko suoraan.
-	//Lisää korjaus kerroin toisenpuolen moottoreihin... 
-	//Byte newPulse = (BYTE)(pulse * korjaus);
 	PRT0GS |= LEFTFOW;
 	PRT0GS |= RIGHTFOW;
 	PRT0GS &= ~LEFTBACK;
 	PRT0GS &= ~RIGHTBACK;
 	
-	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 
@@ -48,7 +45,7 @@ void MoveBackward(int pulse)
 	PRT0GS |= LEFTBACK;
 	PRT0GS |= RIGHTBACK;
 	
-	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 
@@ -62,23 +59,23 @@ void Stop()
 //Kääntyy vasemmalle
 void TurnLeft(int pulse)
 {
-	PRT0GS |= LEFTFOW;
 	PRT0GS &= ~LEFTBACK;
-	
-	//TODO 
-	//Testaa ajaa toista rengasta toiseen suuntaan?
-	
-	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+	PRT0GS |= LEFTFOW;
+	PRT0GS &= ~RIGHTFOW;
+	PRT0GS |= RIGHTBACK;
+		
+	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
+	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 
 //Kääntyy oikealle
 void TurnRight(int pulse)
 {
+	PRT0GS |= LEFTBACK;
+	PRT0GS &= ~LEFTFOW;
 	PRT0GS |= RIGHTFOW;
 	PRT0GS &= ~RIGHTBACK;
 	
-	//TODO 
-	//Testaa ajaa toista rengasta toiseen suuntaan?
-	
+	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }

@@ -13,7 +13,7 @@
 #include "MotorControl.h"
 //#include "UltraControl.h"
 //#include "GyroControl.h"
-//....
+//.... 4m täydellä vauhdilla 3.9s
 
 int timeT = 0;
 
@@ -51,19 +51,18 @@ void main(void)
 		if (i > 1000)
 		{
 			i = 0;
-			
-			pulseForward++;
-			if(pulseForward > 198) 
+		
+			if(pulseForward < 198) 
 			{
-				pulseForward = 0;
+				pulseForward++;
 			}
-			
+						
 			//Ajaa moottoreita
-			if(a == 1)
-				MoveBackward(pulseForward);
-			else 
-				MoveForward(pulseForward);
-			
+			if(a == 0)
+				MoveForward(199);
+			else if (a == 1)
+				Stop();
+
 			
 			//WRITE TO LCD
 			itoa(buffer,pulseForward,10);
@@ -73,13 +72,9 @@ void main(void)
 		
 		
 		//1s välein vaihda suuntaa. (10ms * 100 = 1s)
-		if (timeT == 100)
+		if (timeT == 1000) //1000 = 10s
 		{
-			if(a == 0)
-				a = 1;
-			else 
-				a = 0;
-			
+			a++;
 			timeT = 0;
 		}
 	}
