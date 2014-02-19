@@ -54,6 +54,10 @@ void Stop()
 {
 	PWM8_OIKEA_WritePulseWidth(0);
 	PWM8_VASEN_WritePulseWidth(0);
+	PRT0GS &= ~LEFTBACK;
+	PRT0GS &= ~RIGHTBACK;
+	PRT0GS &= ~LEFTFOW;
+	PRT0GS &= ~RIGHTFOW;
 }
 
 //Kääntyy vasemmalle
@@ -77,5 +81,17 @@ void TurnRight(int pulse)
 	PRT0GS &= ~RIGHTBACK;
 	
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
+	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+}
+
+//TEST RIGHTTURN
+void TestTurnRight(int pulse)
+{
+	PRT0GS &= ~LEFTBACK;
+	PRT0GS &= ~LEFTFOW;
+	PRT0GS |= RIGHTFOW;
+	PRT0GS &= ~RIGHTBACK;
+	
+	//PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }

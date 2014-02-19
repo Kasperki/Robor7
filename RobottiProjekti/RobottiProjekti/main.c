@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------------
 // Robotti Projekti
 // Robor7 @ 2014
-// Kasper Kiiskinen, Henri Sinokki, Eero Holopainen, Mikko Litta, Kari Lampinen
+// Kasper Kiiskinen, Henri Sinokki, Eero Holopainen, Mikko Liira, Kari Lampi
 //----------------------------------------------------------------------------
 
 #include <m8c.h>        // part specific constants and macros
@@ -13,18 +13,19 @@
 #include "MotorControl.h"
 //#include "UltraControl.h"
 //#include "GyroControl.h"
-//.... 4m täydellä vauhdilla 3.9s
 
-int timeT = 0;
+int timeT = 0; //kello
+int timeForward = 150; //.... 4m täydellä vauhdilla 3.9s
+int turnTime = 75; 	   //.... 90 asteen käännökseen meneväaika
+int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
 
 //Main Method
 void main(void)
 {
 	//Määrittelyt
-	int pulseForward = 0;
 	char buffer[5];
 	volatile int i = 0;
-	int a = 0;
+	int turn = 0;
 	
 	//Init**************************
 	
@@ -46,36 +47,69 @@ void main(void)
 	//***********************
 	while(1)
 	{
-		//TEST CODE AJA MOOTTOREITA ETEEN/TAAKSE
-		i++;
-		if (i > 1000)
+	
+		//Spiraali
+		if(i < 3)
+		{
+			if(turn == 0)
+				MoveForward(199);
+			else 
+			{
+				if(timeT <= turnTime) //if(gyroKulma < 90)
+				{
+					TurnLeft(199);
+				}
+				else
+				{ 
+					turn = 0;
+					timeT = 0;
+				}
+			}
+		}
+		else if(i < 5) 
 		{
 			i = 0;
-		
-			if(pulseForward < 198) 
-			{
-				pulseForward++;
-			}
-						
-			//Ajaa moottoreita
-			if(a == 0)
-				MoveForward(199);
-			else if (a == 1)
-				Stop();
-
-			
-			//WRITE TO LCD
-			itoa(buffer,pulseForward,10);
-			LCD_Position(0,2);
-			LCD_PrString(buffer);
+			timeForward -= timeRobotWidth;
 		}
 		
-		
-		//1s välein vaihda suuntaa. (10ms * 100 = 1s)
-		if (timeT == 1000) //1000 = 10s
+		//Kokokierros on menty
+		if(timeForward <= 0)
 		{
-			a++;
+			i = 10;
+			timeForward = 0;
+			Stop();
+		}
+		//End Spiraali
+		
+		
+		//Scan
+		/*
+			if(i == 10)
+			{
+				Skannaa keiloja.
+				If(output => 0) 
+					MoveForward(199);
+				else
+					TurnLeft(199);
+		
+				Jos ei löydy i = 20;
+			}
+		*/
+		
+		if (timeT >= timeForward && turn == 0)
+		{
+			i++;
+			turn = 1;
 			timeT = 0;
+			
+			//WRITE TO LCD
+			itoa(buffer,timeForward,10);
+			LCD_Position(0,5);
+			LCD_PrString(buffer);
+			
+			itoa(buffer,i,10);
+			LCD_Position(0,0);
+			LCD_PrString(buffer);
 		}
 	}
 

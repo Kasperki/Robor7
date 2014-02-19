@@ -27,15 +27,15 @@ If there is no parameter, use <function name>(void);
 
 If there is no parameter, use <function name>(void);
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(42):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(43):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(64):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(80):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(87):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(115):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
 
 !W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(18):[warning] [MISRA 2712]old-style function definition for `InitPWM'
 
@@ -45,12 +45,12 @@ takes or returns values other than int
 
 Linking..
 
-  ROM 29% full. 4590 out of 16384 bytes used (does not include absolute areas).
+  ROM 30% full. 4911 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 7% full. 16 bytes used (does not include stack usage).
+  RAM 9% full. 22 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 7 warning(s) 13:14:48
+RobottiProjekti - 0 error(s) 7 warning(s) 17:00:56
 

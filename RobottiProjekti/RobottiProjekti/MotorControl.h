@@ -15,3 +15,6 @@ void TurnRight(int pulse);
 
 //TODO
 void Stop();
+
+//TEST
+void TestTurnRight(int pulse);
