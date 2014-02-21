@@ -19,11 +19,11 @@ lib/timer8.asm
 
 lib/timer8int.asm
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(3):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(7):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(17):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(21):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
@@ -35,7 +35,7 @@ takes or returns values other than int
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(115):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(121):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
 
 !W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(18):[warning] [MISRA 2712]old-style function definition for `InitPWM'
 
@@ -52,5 +52,5 @@ Linking..
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 7 warning(s) 17:00:56
+RobottiProjekti - 0 error(s) 7 warning(s) 17:46:51
 

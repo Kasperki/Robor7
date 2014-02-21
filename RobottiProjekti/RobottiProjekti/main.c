@@ -52,12 +52,12 @@ void main(void)
 		if(i < 3)
 		{
 			if(turn == 0)
-				MoveForward(199);
+				MoveForward(FULL_SPEED);
 			else 
 			{
 				if(timeT <= turnTime) //if(gyroKulma < 90)
 				{
-					TurnLeft(199);
+					TurnLeft(FULL_SPEED);
 				}
 				else
 				{ 
@@ -87,10 +87,14 @@ void main(void)
 			if(i == 10)
 			{
 				Skannaa keiloja.
-				If(output => 0) 
-					MoveForward(199);
-				else
-					TurnLeft(199);
+				while(kulma >= 360)
+				{
+					WaitForScan?
+					If(output => 0) 
+						MoveForward(199);
+					else
+						TurnLeft(199); kulma += 10;
+				}
 		
 				Jos ei löydy i = 20;
 			}

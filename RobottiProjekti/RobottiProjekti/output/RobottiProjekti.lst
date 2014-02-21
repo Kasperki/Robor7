@@ -3738,7 +3738,7 @@ __UserModules_end|_main|__text_start|_main:
     06B8: B0 13    JNZ   0x06CC
     06BA: 3D 03 00 CMP   [X+3],0x0
     06BD: B0 0E    JNZ   0x06CC
-(0055) 				MoveForward(199);
+(0055) 				MoveForward(FULL_SPEED);
     06BF: 50 00    MOV   A,0x0
     06C1: 08       PUSH  A
     06C2: 50 C7    MOV   A,0xC7
@@ -3759,7 +3759,7 @@ __UserModules_end|_main|__text_start|_main:
     06DA: 1A 0A    SBB   A,[__rX]
     06DC: C0 0E    JC    0x06EB
 (0059) 				{
-(0060) 					TurnLeft(199);
+(0060) 					TurnLeft(FULL_SPEED);
     06DE: 50 00    MOV   A,0x0
     06E0: 08       PUSH  A
     06E1: 50 C7    MOV   A,0xC7
@@ -3820,16 +3820,22 @@ __UserModules_end|_main|__text_start|_main:
 (0081) 		}
 (0082) 		//End Spiraali
 (0083) 		
-(0084) 		//Scan
-(0085) 		/*
-(0086) 			if(i == 10)
-(0087) 			{
-(0088) 				Skannaa keiloja, ajapäin.
-(0089) 				Jos ei löydy i = 20;
-(0090) 			}
-(0091) 		*/
-(0092) 		
-(0093) 		if (timeT >= timeForward && turn == 0)
+(0084) 		
+(0085) 		//Scan
+(0086) 		/*
+(0087) 			if(i == 10)
+(0088) 			{
+(0089) 				Skannaa keiloja.
+(0090) 				If(output => 0) 
+(0091) 					MoveForward(199);
+(0092) 				else
+(0093) 					TurnLeft(199);
+(0094) 		
+(0095) 				Jos ei löydy i = 20;
+(0096) 			}
+(0097) 		*/
+(0098) 		
+(0099) 		if (timeT >= timeForward && turn == 0)
     0732: 51 01    MOV   A,[timeT+1]
     0734: 12 03    SUB   A,[timeForward+1]
     0736: 51 02    MOV   A,[timeForward]
@@ -3843,19 +3849,19 @@ __UserModules_end|_main|__text_start|_main:
     0747: B0 83    JNZ   0x07CB
     0749: 3D 03 00 CMP   [X+3],0x0
     074C: B0 7E    JNZ   0x07CB
-(0094) 		{
-(0095) 			i++;
+(0100) 		{
+(0101) 			i++;
     074E: 77 01    INC   [X+1]
     0750: 0F 00 00 ADC   [X+0],0x0
-(0096) 			turn = 1;
+(0102) 			turn = 1;
     0753: 56 03 01 MOV   [X+3],0x1
     0756: 56 02 00 MOV   [X+2],0x0
-(0097) 			timeT = 0;
+(0103) 			timeT = 0;
     0759: 55 01 00 MOV   [timeT+1],0x0
     075C: 55 00 00 MOV   [timeT],0x0
-(0098) 			
-(0099) 			//WRITE TO LCD
-(0100) 			itoa(buffer,timeForward,10);
+(0104) 			
+(0105) 			//WRITE TO LCD
+(0106) 			itoa(buffer,timeForward,10);
     075F: 50 00    MOV   A,0x0
     0761: 08       PUSH  A
     0762: 50 0A    MOV   A,0xA
@@ -3872,13 +3878,13 @@ __UserModules_end|_main|__text_start|_main:
     0775: 08       PUSH  A
     0776: 7C 13 02 LCALL _itoa
     0779: 38 FA    ADD   SP,0xFA
-(0101) 			LCD_Position(0,5);
+(0107) 			LCD_Position(0,5);
     077B: 10       PUSH  X
     077C: 57 05    MOV   X,0x5
     077E: 50 00    MOV   A,0x0
     0780: 7C 05 42 LCALL _LCD_Position
     0783: 20       POP   X
-(0102) 			LCD_PrString(buffer);
+(0108) 			LCD_PrString(buffer);
     0784: 5A 11    MOV   [__r1],X
     0786: 06 11 04 ADD   [__r1],0x4
     0789: 10       PUSH  X
@@ -3889,8 +3895,8 @@ __UserModules_end|_main|__text_start|_main:
     0790: 18       POP   A
     0791: 7C 04 0D LCALL _LCD_PrString
     0794: 20       POP   X
-(0103) 			
-(0104) 			itoa(buffer,i,10);
+(0109) 			
+(0110) 			itoa(buffer,i,10);
     0795: 50 00    MOV   A,0x0
     0797: 08       PUSH  A
     0798: 50 0A    MOV   A,0xA
@@ -3907,13 +3913,13 @@ __UserModules_end|_main|__text_start|_main:
     07AB: 08       PUSH  A
     07AC: 7C 13 02 LCALL _itoa
     07AF: 38 FA    ADD   SP,0xFA
-(0105) 			LCD_Position(0,0);
+(0111) 			LCD_Position(0,0);
     07B1: 10       PUSH  X
     07B2: 50 00    MOV   A,0x0
     07B4: 57 00    MOV   X,0x0
     07B6: 7C 05 42 LCALL _LCD_Position
     07B9: 20       POP   X
-(0106) 			LCD_PrString(buffer);
+(0112) 			LCD_PrString(buffer);
     07BA: 5A 11    MOV   [__r1],X
     07BC: 06 11 04 ADD   [__r1],0x4
     07BF: 10       PUSH  X
@@ -3924,25 +3930,25 @@ __UserModules_end|_main|__text_start|_main:
     07C6: 18       POP   A
     07C7: 7C 04 0D LCALL _LCD_PrString
     07CA: 20       POP   X
-(0107) 		}
-(0108) 	}
+(0113) 		}
+(0114) 	}
     07CB: 8E DD    JMP   0x06A9
     07CD: 38 F7    ADD   SP,0xF7
     07CF: 20       POP   X
     07D0: 8F FF    JMP   0x07D0
-(0109) 
-(0110) }
-(0111) 
-(0112) //Kutsutaan joka 0.01s = 10ms välein.
-(0113) #pragma interrupt_handler TimerInterrupt
-(0114) void TimerInterrupt()
-(0115) {
+(0115) 
+(0116) }
+(0117) 
+(0118) //Kutsutaan joka 0.01s = 10ms välein.
+(0119) #pragma interrupt_handler TimerInterrupt
+(0120) void TimerInterrupt()
+(0121) {
 _TimerInterrupt:
     07D2: 08       PUSH  A
-(0116)   timeT++;
+(0122)   timeT++;
     07D3: 76 01    INC   [timeT+1]
-(0117) }
-(0118) 
+(0123) }
+(0124) 
 FILE: C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
 (0001) #include <m8c.h>        // part specific constants and macros
 (0002) #include "PSoCAPI.h"    // PSoC API definitions for all User Modules

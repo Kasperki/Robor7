@@ -1,4 +1,8 @@
 
+#define FULL_SPEED 199
+#define HALF_SPEED 125
+#define SLOW_SPEED 75
+
 //TYPE
 void InitPWM();
 

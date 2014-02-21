@@ -136,7 +136,7 @@
  0036 B00E              jnz L7
  0038           X2:
  0038                   .dbline 55
- 0038           ;                               MoveForward(199);
+ 0038           ;                               MoveForward(FULL_SPEED);
  0038 5000              mov A,0
  003A 08                push A
  003B 50C7              mov A,-57
@@ -162,7 +162,7 @@
  0057           X3:
  0057                   .dbline 60
  0057           ;                               {
- 0057           ;                                       TurnLeft(199);
+ 0057           ;                                       TurnLeft(FULL_SPEED);
  0057                   .dbline 60
  0057 5000              mov A,0
  0059 08                push A
@@ -247,14 +247,20 @@
  00AB                   .dbline 81
  00AB           ;               }
  00AB           L13:
- 00AB                   .dbline 93
+ 00AB                   .dbline 99
  00AB           ;               //End Spiraali
+ 00AB           ;               
  00AB           ;               
  00AB           ;               //Scan
  00AB           ;               /*
  00AB           ;                       if(i == 10)
  00AB           ;                       {
- 00AB           ;                               Skannaa keiloja, ajapäin.
+ 00AB           ;                               Skannaa keiloja.
+ 00AB           ;                               If(output => 0) 
+ 00AB           ;                                       MoveForward(199);
+ 00AB           ;                               else
+ 00AB           ;                                       TurnLeft(199);
+ 00AB           ;               
  00AB           ;                               Jos ei löydy i = 20;
  00AB           ;                       }
  00AB           ;               */
@@ -275,21 +281,21 @@
  00C2 3D0300            cmp [X+3],0
  00C5 B07E              jnz L15
  00C7           X7:
- 00C7                   .dbline 95
+ 00C7                   .dbline 101
  00C7           ;               {
  00C7           ;                       i++;
- 00C7                   .dbline 95
+ 00C7                   .dbline 101
  00C7 7701              inc [X+1]
  00C9 0F0000            adc [X+0],0
- 00CC                   .dbline 96
+ 00CC                   .dbline 102
  00CC           ;                       turn = 1;
  00CC 560301            mov [X+3],1
  00CF 560200            mov [X+2],0
- 00D2                   .dbline 97
+ 00D2                   .dbline 103
  00D2           ;                       timeT = 0;
  00D2 550100            mov [_timeT+1],0
  00D5 550000            mov [_timeT],0
- 00D8                   .dbline 100
+ 00D8                   .dbline 106
  00D8           ;                       
  00D8           ;                       //WRITE TO LCD
  00D8           ;                       itoa(buffer,timeForward,10);
@@ -309,14 +315,14 @@
  00EE 08                push A
  00EF 7C0000            xcall _itoa
  00F2 38FA              add SP,-6
- 00F4                   .dbline 101
+ 00F4                   .dbline 107
  00F4           ;                       LCD_Position(0,5);
  00F4 10                push X
  00F5 5705              mov X,5
  00F7 5000              mov A,0
  00F9 7C0000            xcall _LCD_Position
  00FC 20                pop X
- 00FD                   .dbline 102
+ 00FD                   .dbline 108
  00FD           ;                       LCD_PrString(buffer);
  00FD 5A00              mov [__r1],X
  00FF 060004            add [__r1],4
@@ -328,7 +334,7 @@
  0109 18                pop A
  010A 7C0000            xcall _LCD_PrString
  010D 20                pop X
- 010E                   .dbline 104
+ 010E                   .dbline 110
  010E           ;                       
  010E           ;                       itoa(buffer,i,10);
  010E 5000              mov A,0
@@ -347,14 +353,14 @@
  0124 08                push A
  0125 7C0000            xcall _itoa
  0128 38FA              add SP,-6
- 012A                   .dbline 105
+ 012A                   .dbline 111
  012A           ;                       LCD_Position(0,0);
  012A 10                push X
  012B 5000              mov A,0
  012D 5700              mov X,0
  012F 7C0000            xcall _LCD_Position
  0132 20                pop X
- 0133                   .dbline 106
+ 0133                   .dbline 112
  0133           ;                       LCD_PrString(buffer);
  0133 5A00              mov [__r1],X
  0135 060004            add [__r1],4
@@ -366,10 +372,10 @@
  013F 18                pop A
  0140 7C0000            xcall _LCD_PrString
  0143 20                pop X
- 0144                   .dbline 107
+ 0144                   .dbline 113
  0144           ;               }
  0144           L15:
- 0144                   .dbline 108
+ 0144                   .dbline 114
  0144           ;       }
  0144           L3:
  0144                   .dbline 48
@@ -389,7 +395,7 @@
  014B           _TimerInterrupt::
  014B                   .dbline -1
  014B 08                push A
- 014C                   .dbline 115
+ 014C                   .dbline 121
  014C           ; 
  014C           ; }
  014C           ; 
@@ -397,7 +403,7 @@
  014C           ; #pragma interrupt_handler TimerInterrupt
  014C           ; void TimerInterrupt()
  014C           ; {
- 014C                   .dbline 116
+ 014C                   .dbline 122
  014C           ;   timeT++;
  014C 7601              inc [_timeT+1]
  014E 0E0000            adc [_timeT],0
