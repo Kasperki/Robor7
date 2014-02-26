@@ -640,91 +640,125 @@
                 export LoadConfigTBL_robottiprojekti_Ordered
                 AREA lit(rom, rel)
  0000           LoadConfigTBL_robottiprojekti_Bank0:
- 0000           ;  Instance name LCD, User Module LCD
- 0000           ;  Instance name PWM8_OIKEA, User Module PWM8
- 0000           ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
- 0000 2700              db              27h, 00h                ;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
- 0002 25C7              db              25h, c7h                ;PWM8_OIKEA_PERIOD_REG(DBB01DR1)
- 0004 2600              db              26h, 00h                ;PWM8_OIKEA_COMPARE_REG(DBB01DR2)
- 0006           ;  Instance name PWM8_VASEN, User Module PWM8
- 0006           ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
- 0006 2300              db              23h, 00h                ;PWM8_VASEN_CONTROL_REG(DBB00CR0)
- 0008 21C7              db              21h, c7h                ;PWM8_VASEN_PERIOD_REG(DBB00DR1)
- 000A 2200              db              22h, 00h                ;PWM8_VASEN_COMPARE_REG(DBB00DR2)
- 000C           ;  Instance name Timer8, User Module Timer8
- 000C           ;       Instance name Timer8, Block Name TIMER8(DCB02)
- 000C 2B04              db              2bh, 04h                ;Timer8_CONTROL_REG(DCB02CR0)
- 000E 2963              db              29h, 63h                ;Timer8_PERIOD_REG(DCB02DR1)
- 0010 2A00              db              2ah, 00h                ;Timer8_COMPARE_REG(DCB02DR2)
- 0012           ;  Global Register values Bank 0
- 0012 6028              db              60h, 28h                ; AnalogColumnInputSelect register (AMX_IN)
- 0014 6600              db              66h, 00h                ; AnalogComparatorControl1 register (CMP_CR1)
- 0016 6305              db              63h, 05h                ; AnalogReferenceControl register (ARF_CR)
- 0018 6500              db              65h, 00h                ; AnalogSyncControl register (ASY_CR)
- 001A E600              db              e6h, 00h                ; DecimatorControl_0 register (DEC_CR0)
- 001C E700              db              e7h, 00h                ; DecimatorControl_1 register (DEC_CR1)
- 001E D600              db              d6h, 00h                ; I2CConfig register (I2CCFG)
- 0020 B000              db              b0h, 00h                ; Row_0_InputMux register (RDI0RI)
- 0022 B100              db              b1h, 00h                ; Row_0_InputSync register (RDI0SYN)
- 0024 B200              db              b2h, 00h                ; Row_0_LogicInputAMux register (RDI0IS)
- 0026 B333              db              b3h, 33h                ; Row_0_LogicSelect_0 register (RDI0LT0)
- 0028 B433              db              b4h, 33h                ; Row_0_LogicSelect_1 register (RDI0LT1)
- 002A B533              db              b5h, 33h                ; Row_0_OutputDrive_0 register (RDI0SRO0)
- 002C B600              db              b6h, 00h                ; Row_0_OutputDrive_1 register (RDI0SRO1)
- 002E B855              db              b8h, 55h                ; Row_1_InputMux register (RDI1RI)
- 0030 B900              db              b9h, 00h                ; Row_1_InputSync register (RDI1SYN)
- 0032 BA10              db              bah, 10h                ; Row_1_LogicInputAMux register (RDI1IS)
- 0034 BB33              db              bbh, 33h                ; Row_1_LogicSelect_0 register (RDI1LT0)
- 0036 BC33              db              bch, 33h                ; Row_1_LogicSelect_1 register (RDI1LT1)
- 0038 BD00              db              bdh, 00h                ; Row_1_OutputDrive_0 register (RDI1SRO0)
- 003A BE00              db              beh, 00h                ; Row_1_OutputDrive_1 register (RDI1SRO1)
- 003C FF                db              ffh
- 003D           LoadConfigTBL_robottiprojekti_Bank1:
- 003D           ;  Instance name LCD, User Module LCD
- 003D           ;  Instance name PWM8_OIKEA, User Module PWM8
- 003D           ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
- 003D 2421              db              24h, 21h                ;PWM8_OIKEA_FUNC_REG(DBB01FN)
- 003F 2511              db              25h, 11h                ;PWM8_OIKEA_INPUT_REG(DBB01IN)
- 0041 2645              db              26h, 45h                ;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
- 0043           ;  Instance name PWM8_VASEN, User Module PWM8
- 0043           ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
- 0043 2021              db              20h, 21h                ;PWM8_VASEN_FUNC_REG(DBB00FN)
- 0045 2111              db              21h, 11h                ;PWM8_VASEN_INPUT_REG(DBB00IN)
- 0047 2244              db              22h, 44h                ;PWM8_VASEN_OUTPUT_REG(DBB00OU)
- 0049           ;  Instance name Timer8, User Module Timer8
- 0049           ;       Instance name Timer8, Block Name TIMER8(DCB02)
- 0049 2820              db              28h, 20h                ;Timer8_FUNC_REG(DCB02FN)
- 004B 2901              db              29h, 01h                ;Timer8_INPUT_REG(DCB02IN)
- 004D 2A40              db              2ah, 40h                ;Timer8_OUTPUT_REG(DCB02OU)
- 004F           ;  Global Register values Bank 1
- 004F 6100              db              61h, 00h                ; AnalogClockSelect1 register (CLK_CR1)
- 0051 6900              db              69h, 00h                ; AnalogClockSelect2 register (CLK_CR2)
- 0053 6000              db              60h, 00h                ; AnalogColumnClockSelect register (CLK_CR0)
- 0055 6200              db              62h, 00h                ; AnalogIOControl_0 register (ABF_CR0)
- 0057 6733              db              67h, 33h                ; AnalogLUTControl0 register (ALT_CR0)
- 0059 6833              db              68h, 33h                ; AnalogLUTControl1 register (ALT_CR1)
- 005B 6300              db              63h, 00h                ; AnalogModulatorControl_0 register (AMD_CR0)
- 005D 6600              db              66h, 00h                ; AnalogModulatorControl_1 register (AMD_CR1)
- 005F D100              db              d1h, 00h                ; GlobalDigitalInterconnect_Drive_Even_Input register (GDI_E_IN)
- 0061 D300              db              d3h, 00h                ; GlobalDigitalInterconnect_Drive_Even_Output register (GDI_E_OU)
- 0063 D000              db              d0h, 00h                ; GlobalDigitalInterconnect_Drive_Odd_Input register (GDI_O_IN)
- 0065 D200              db              d2h, 00h                ; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
- 0067 E1B9              db              e1h, b9h                ; OscillatorControl_1 register (OSC_CR1)
- 0069 E200              db              e2h, 00h                ; OscillatorControl_2 register (OSC_CR2)
- 006B DF13              db              dfh, 13h                ; OscillatorControl_3 register (OSC_CR3)
- 006D DE02              db              deh, 02h                ; OscillatorControl_4 register (OSC_CR4)
- 006F DD00              db              ddh, 00h                ; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
- 0071 FF                db              ffh
+ 0000           ;  Instance name ADCINC_1, User Module ADCINC
+ 0000           ;       Instance name ADCINC_1, Block Name ADC(ASC10)
+ 0000 8090              db              80h, 90h                ;ADCINC_1_AtoDcr0(ASC10CR0)
+ 0002 8100              db              81h, 00h                ;ADCINC_1_AtoDcr1(ASC10CR1)
+ 0004 8260              db              82h, 60h                ;ADCINC_1_AtoDcr2(ASC10CR2)
+ 0006 83F0              db              83h, f0h                ;ADCINC_1_AtoDcr3(ASC10CR3)
+ 0008           ;       Instance name ADCINC_1, Block Name PWM(DCB03)
+ 0008 2F00              db              2fh, 00h                ;ADCINC_1_PWMcr0(DCB03CR0)
+ 000A 2D00              db              2dh, 00h                ;ADCINC_1_PWMdr1(DCB03DR1)
+ 000C 2E01              db              2eh, 01h                ;ADCINC_1_PWMdr2(DCB03DR2)
+ 000E           ;  Instance name LCD, User Module LCD
+ 000E           ;  Instance name PGA, User Module PGA
+ 000E           ;       Instance name PGA, Block Name GAIN(ACB00)
+ 000E 71FD              db              71h, fdh                ;PGA_GAIN_CR0(ACB00CR0)
+ 0010 7221              db              72h, 21h                ;PGA_GAIN_CR1(ACB00CR1)
+ 0012 7320              db              73h, 20h                ;PGA_GAIN_CR2(ACB00CR2)
+ 0014 7000              db              70h, 00h                ;PGA_GAIN_CR3(ACB00CR3)
+ 0016           ;  Instance name PWM8_OIKEA, User Module PWM8
+ 0016           ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
+ 0016 2700              db              27h, 00h                ;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
+ 0018 25C7              db              25h, c7h                ;PWM8_OIKEA_PERIOD_REG(DBB01DR1)
+ 001A 2600              db              26h, 00h                ;PWM8_OIKEA_COMPARE_REG(DBB01DR2)
+ 001C           ;  Instance name PWM8_VASEN, User Module PWM8
+ 001C           ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
+ 001C 2300              db              23h, 00h                ;PWM8_VASEN_CONTROL_REG(DBB00CR0)
+ 001E 21C7              db              21h, c7h                ;PWM8_VASEN_PERIOD_REG(DBB00DR1)
+ 0020 2200              db              22h, 00h                ;PWM8_VASEN_COMPARE_REG(DBB00DR2)
+ 0022           ;  Instance name Timer8, User Module Timer8
+ 0022           ;       Instance name Timer8, Block Name TIMER8(DCB02)
+ 0022 2B04              db              2bh, 04h                ;Timer8_CONTROL_REG(DCB02CR0)
+ 0024 2963              db              29h, 63h                ;Timer8_PERIOD_REG(DCB02DR1)
+ 0026 2A00              db              2ah, 00h                ;Timer8_COMPARE_REG(DCB02DR2)
+ 0028           ;  Instance name TimerUA, User Module Timer8
+ 0028           ;       Instance name TimerUA, Block Name TIMER8(DBB10)
+ 0028 3304              db              33h, 04h                ;TimerUA_CONTROL_REG(DBB10CR0)
+ 002A 3113              db              31h, 13h                ;TimerUA_PERIOD_REG(DBB10DR1)
+ 002C 3200              db              32h, 00h                ;TimerUA_COMPARE_REG(DBB10DR2)
+ 002E           ;  Global Register values Bank 0
+ 002E 602B              db              60h, 2bh                ; AnalogColumnInputSelect register (AMX_IN)
+ 0030 6600              db              66h, 00h                ; AnalogComparatorControl1 register (CMP_CR1)
+ 0032 6315              db              63h, 15h                ; AnalogReferenceControl register (ARF_CR)
+ 0034 6500              db              65h, 00h                ; AnalogSyncControl register (ASY_CR)
+ 0036 E600              db              e6h, 00h                ; DecimatorControl_0 register (DEC_CR0)
+ 0038 E703              db              e7h, 03h                ; DecimatorControl_1 register (DEC_CR1)
+ 003A D600              db              d6h, 00h                ; I2CConfig register (I2CCFG)
+ 003C B000              db              b0h, 00h                ; Row_0_InputMux register (RDI0RI)
+ 003E B100              db              b1h, 00h                ; Row_0_InputSync register (RDI0SYN)
+ 0040 B200              db              b2h, 00h                ; Row_0_LogicInputAMux register (RDI0IS)
+ 0042 B333              db              b3h, 33h                ; Row_0_LogicSelect_0 register (RDI0LT0)
+ 0044 B433              db              b4h, 33h                ; Row_0_LogicSelect_1 register (RDI0LT1)
+ 0046 B533              db              b5h, 33h                ; Row_0_OutputDrive_0 register (RDI0SRO0)
+ 0048 B600              db              b6h, 00h                ; Row_0_OutputDrive_1 register (RDI0SRO1)
+ 004A B855              db              b8h, 55h                ; Row_1_InputMux register (RDI1RI)
+ 004C B900              db              b9h, 00h                ; Row_1_InputSync register (RDI1SYN)
+ 004E BA10              db              bah, 10h                ; Row_1_LogicInputAMux register (RDI1IS)
+ 0050 BB33              db              bbh, 33h                ; Row_1_LogicSelect_0 register (RDI1LT0)
+ 0052 BC33              db              bch, 33h                ; Row_1_LogicSelect_1 register (RDI1LT1)
+ 0054 BD00              db              bdh, 00h                ; Row_1_OutputDrive_0 register (RDI1SRO0)
+ 0056 BE00              db              beh, 00h                ; Row_1_OutputDrive_1 register (RDI1SRO1)
+ 0058 FF                db              ffh
+ 0059           LoadConfigTBL_robottiprojekti_Bank1:
+ 0059           ;  Instance name ADCINC_1, User Module ADCINC
+ 0059           ;       Instance name ADCINC_1, Block Name ADC(ASC10)
+ 0059           ;       Instance name ADCINC_1, Block Name PWM(DCB03)
+ 0059 2C31              db              2ch, 31h                ;ADCINC_1_PWMfn(DCB03FN)
+ 005B 2D15              db              2dh, 15h                ;ADCINC_1_PWMsl(DCB03IN)
+ 005D 2E40              db              2eh, 40h                ;ADCINC_1_PWMos(DCB03OU)
+ 005F           ;  Instance name LCD, User Module LCD
+ 005F           ;  Instance name PGA, User Module PGA
+ 005F           ;       Instance name PGA, Block Name GAIN(ACB00)
+ 005F           ;  Instance name PWM8_OIKEA, User Module PWM8
+ 005F           ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
+ 005F 2421              db              24h, 21h                ;PWM8_OIKEA_FUNC_REG(DBB01FN)
+ 0061 2511              db              25h, 11h                ;PWM8_OIKEA_INPUT_REG(DBB01IN)
+ 0063 2645              db              26h, 45h                ;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
+ 0065           ;  Instance name PWM8_VASEN, User Module PWM8
+ 0065           ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
+ 0065 2021              db              20h, 21h                ;PWM8_VASEN_FUNC_REG(DBB00FN)
+ 0067 2111              db              21h, 11h                ;PWM8_VASEN_INPUT_REG(DBB00IN)
+ 0069 2244              db              22h, 44h                ;PWM8_VASEN_OUTPUT_REG(DBB00OU)
+ 006B           ;  Instance name Timer8, User Module Timer8
+ 006B           ;       Instance name Timer8, Block Name TIMER8(DCB02)
+ 006B 2820              db              28h, 20h                ;Timer8_FUNC_REG(DCB02FN)
+ 006D 2901              db              29h, 01h                ;Timer8_INPUT_REG(DCB02IN)
+ 006F 2A40              db              2ah, 40h                ;Timer8_OUTPUT_REG(DCB02OU)
+ 0071           ;  Instance name TimerUA, User Module Timer8
+ 0071           ;       Instance name TimerUA, Block Name TIMER8(DBB10)
+ 0071 3020              db              30h, 20h                ;TimerUA_FUNC_REG(DBB10FN)
+ 0073 3105              db              31h, 05h                ;TimerUA_INPUT_REG(DBB10IN)
+ 0075 3240              db              32h, 40h                ;TimerUA_OUTPUT_REG(DBB10OU)
+ 0077           ;  Global Register values Bank 1
+ 0077 6100              db              61h, 00h                ; AnalogClockSelect1 register (CLK_CR1)
+ 0079 6900              db              69h, 00h                ; AnalogClockSelect2 register (CLK_CR2)
+ 007B 6000              db              60h, 00h                ; AnalogColumnClockSelect register (CLK_CR0)
+ 007D 6200              db              62h, 00h                ; AnalogIOControl_0 register (ABF_CR0)
+ 007F 6733              db              67h, 33h                ; AnalogLUTControl0 register (ALT_CR0)
+ 0081 6833              db              68h, 33h                ; AnalogLUTControl1 register (ALT_CR1)
+ 0083 6300              db              63h, 00h                ; AnalogModulatorControl_0 register (AMD_CR0)
+ 0085 6600              db              66h, 00h                ; AnalogModulatorControl_1 register (AMD_CR1)
+ 0087 D100              db              d1h, 00h                ; GlobalDigitalInterconnect_Drive_Even_Input register (GDI_E_IN)
+ 0089 D300              db              d3h, 00h                ; GlobalDigitalInterconnect_Drive_Even_Output register (GDI_E_OU)
+ 008B D000              db              d0h, 00h                ; GlobalDigitalInterconnect_Drive_Odd_Input register (GDI_O_IN)
+ 008D D200              db              d2h, 00h                ; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
+ 008F E1B9              db              e1h, b9h                ; OscillatorControl_1 register (OSC_CR1)
+ 0091 E200              db              e2h, 00h                ; OscillatorControl_2 register (OSC_CR2)
+ 0093 DF13              db              dfh, 13h                ; OscillatorControl_3 register (OSC_CR3)
+ 0095 DE02              db              deh, 02h                ; OscillatorControl_4 register (OSC_CR4)
+ 0097 DD00              db              ddh, 00h                ; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
+ 0099 FF                db              ffh
                 AREA psoc_config(rom, rel)
  0000           LoadConfigTBL_robottiprojekti_Ordered:
  0000           ;  Ordered Global Register values
  0000 70EF          and   F, ~FLAG_XIO_MASK
  0002 620000            mov     reg[00h], 00h           ; Port_0_Data register (PRT0DR)
  0005 7110          or    F, FLAG_XIO_MASK
- 0007 620033            mov     reg[00h], 33h           ; Port_0_DriveMode_0 register (PRT0DM0)
- 000A 6201CC            mov     reg[01h], cch           ; Port_0_DriveMode_1 register (PRT0DM1)
+ 0007 620073            mov     reg[00h], 73h           ; Port_0_DriveMode_0 register (PRT0DM0)
+ 000A 62018C            mov     reg[01h], 8ch           ; Port_0_DriveMode_1 register (PRT0DM1)
  000D 70EF          and   F, ~FLAG_XIO_MASK
- 000F 6203CC            mov     reg[03h], cch           ; Port_0_DriveMode_2 register (PRT0DM2)
+ 000F 62038C            mov     reg[03h], 8ch           ; Port_0_DriveMode_2 register (PRT0DM2)
  0012 620233            mov     reg[02h], 33h           ; Port_0_GlobalSelect register (PRT0GS)
  0015 7110          or    F, FLAG_XIO_MASK
  0017 620200            mov     reg[02h], 00h           ; Port_0_IntCtrl_0 register (PRT0IC0)

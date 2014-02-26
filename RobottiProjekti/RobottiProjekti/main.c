@@ -14,10 +14,11 @@
 //#include "UltraControl.h"
 //#include "GyroControl.h"
 
-int timeT = 0; //kello
+int timeT = 0, timeT2 = 0; //kello
 int timeForward = 150; //.... 4m täydellä vauhdilla 3.9s
 int turnTime = 75; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
+int trig = 0;
 
 //Main Method
 void main(void)
@@ -26,6 +27,8 @@ void main(void)
 	char buffer[5];
 	volatile int i = 0;
 	int turn = 0;
+	int ultraData = 0;
+	int ammu = 1;
 	
 	//Init**************************
 	
@@ -42,12 +45,34 @@ void main(void)
 	//Start Motor PWMs
 	InitPWM();
 	
+	PGA_SetGain(PGA_G8_00);
+	PGA_Start(PGA_MEDPOWER);
+	
+	ADCINC_1_Start(ADCINC_1_HIGHPOWER);
+	ADCINC_1_GetSamples(0);
+	
+	
 	
 	//MainLoop**********
 	//***********************
 	while(1)
 	{
-	
+		//NEW STUFF
+		if (trig == 1)
+		{
+			UATrig_Data_ADDR |= UATrig_MASK;
+		}
+		else 	
+			UATrig_Data_ADDR &= 0x00;
+		
+		
+		if(ADCINC_1_fIsDataAvailable() != 0)
+			ultraData = ADCINC_1_iGetData();
+		
+		ultraData = ADCINC_1_iClearFlagGetData();
+		//END
+
+		
 		//Spiraali
 		if(i < 3)
 		{
@@ -100,6 +125,7 @@ void main(void)
 			}
 		*/
 		
+		/*
 		if (timeT >= timeForward && turn == 0)
 		{
 			i++;
@@ -114,7 +140,22 @@ void main(void)
 			itoa(buffer,i,10);
 			LCD_Position(0,0);
 			LCD_PrString(buffer);
+		}*/
+	
+		if(timeT > 100)
+		{
+			itoa(buffer,ultraData,10);
+			LCD_Position(0,0);
+			LCD_PrString(buffer);
+			
+			itoa(buffer,timeT,10);
+			LCD_Position(1,5);
+			LCD_PrString(buffer);
+			
+			timeT = 0;
 		}
+		
+		
 	}
 
 }
@@ -124,5 +165,21 @@ void main(void)
 void TimerInterrupt()
 {
   timeT++;
+  timeT2++;
 }
 
+//NEW STUFF
+#pragma iterrupt_handler TimerUAInterrupt
+void TimerUAInterrupt()
+{
+	if(timeT2 > 6)
+	{
+		timeT2 = 0;
+		trig = 1;
+	}
+	
+	if (trig == 1)
+	{
+		trig = 0;
+	}
+}

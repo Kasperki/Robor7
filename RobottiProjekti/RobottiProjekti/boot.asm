@@ -158,11 +158,11 @@ ENDIF
     reti
 
     org   2Ch                      ;PSoC Block DCB03 Interrupt Vector
-    // call	void_handler
+    ljmp	_ADCINC_1_ADConversion_ISR
     reti
 
     org   30h                      ;PSoC Block DBB10 Interrupt Vector
-    // call	void_handler
+    ljmp	_TimerUA_ISR
     reti
 
     org   34h                      ;PSoC Block DBB11 Interrupt Vector

@@ -20,7 +20,23 @@ export LoadConfigTBL_robottiprojekti_Bank0
 export LoadConfigTBL_robottiprojekti_Ordered
 AREA lit(rom, rel)
 LoadConfigTBL_robottiprojekti_Bank0:
+;  Instance name ADCINC_1, User Module ADCINC
+;       Instance name ADCINC_1, Block Name ADC(ASC10)
+	db		80h, 90h		;ADCINC_1_AtoDcr0(ASC10CR0)
+	db		81h, 00h		;ADCINC_1_AtoDcr1(ASC10CR1)
+	db		82h, 60h		;ADCINC_1_AtoDcr2(ASC10CR2)
+	db		83h, f0h		;ADCINC_1_AtoDcr3(ASC10CR3)
+;       Instance name ADCINC_1, Block Name PWM(DCB03)
+	db		2fh, 00h		;ADCINC_1_PWMcr0(DCB03CR0)
+	db		2dh, 00h		;ADCINC_1_PWMdr1(DCB03DR1)
+	db		2eh, 01h		;ADCINC_1_PWMdr2(DCB03DR2)
 ;  Instance name LCD, User Module LCD
+;  Instance name PGA, User Module PGA
+;       Instance name PGA, Block Name GAIN(ACB00)
+	db		71h, fdh		;PGA_GAIN_CR0(ACB00CR0)
+	db		72h, 21h		;PGA_GAIN_CR1(ACB00CR1)
+	db		73h, 20h		;PGA_GAIN_CR2(ACB00CR2)
+	db		70h, 00h		;PGA_GAIN_CR3(ACB00CR3)
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
 	db		27h, 00h		;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
@@ -36,13 +52,18 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		2bh, 04h		;Timer8_CONTROL_REG(DCB02CR0)
 	db		29h, 63h		;Timer8_PERIOD_REG(DCB02DR1)
 	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
+;  Instance name TimerUA, User Module Timer8
+;       Instance name TimerUA, Block Name TIMER8(DBB10)
+	db		33h, 04h		;TimerUA_CONTROL_REG(DBB10CR0)
+	db		31h, 13h		;TimerUA_PERIOD_REG(DBB10DR1)
+	db		32h, 00h		;TimerUA_COMPARE_REG(DBB10DR2)
 ;  Global Register values Bank 0
-	db		60h, 28h		; AnalogColumnInputSelect register (AMX_IN)
+	db		60h, 2bh		; AnalogColumnInputSelect register (AMX_IN)
 	db		66h, 00h		; AnalogComparatorControl1 register (CMP_CR1)
-	db		63h, 05h		; AnalogReferenceControl register (ARF_CR)
+	db		63h, 15h		; AnalogReferenceControl register (ARF_CR)
 	db		65h, 00h		; AnalogSyncControl register (ASY_CR)
 	db		e6h, 00h		; DecimatorControl_0 register (DEC_CR0)
-	db		e7h, 00h		; DecimatorControl_1 register (DEC_CR1)
+	db		e7h, 03h		; DecimatorControl_1 register (DEC_CR1)
 	db		d6h, 00h		; I2CConfig register (I2CCFG)
 	db		b0h, 00h		; Row_0_InputMux register (RDI0RI)
 	db		b1h, 00h		; Row_0_InputSync register (RDI0SYN)
@@ -60,7 +81,15 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		beh, 00h		; Row_1_OutputDrive_1 register (RDI1SRO1)
 	db		ffh
 LoadConfigTBL_robottiprojekti_Bank1:
+;  Instance name ADCINC_1, User Module ADCINC
+;       Instance name ADCINC_1, Block Name ADC(ASC10)
+;       Instance name ADCINC_1, Block Name PWM(DCB03)
+	db		2ch, 31h		;ADCINC_1_PWMfn(DCB03FN)
+	db		2dh, 15h		;ADCINC_1_PWMsl(DCB03IN)
+	db		2eh, 40h		;ADCINC_1_PWMos(DCB03OU)
 ;  Instance name LCD, User Module LCD
+;  Instance name PGA, User Module PGA
+;       Instance name PGA, Block Name GAIN(ACB00)
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
 	db		24h, 21h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
@@ -76,6 +105,11 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		28h, 20h		;Timer8_FUNC_REG(DCB02FN)
 	db		29h, 01h		;Timer8_INPUT_REG(DCB02IN)
 	db		2ah, 40h		;Timer8_OUTPUT_REG(DCB02OU)
+;  Instance name TimerUA, User Module Timer8
+;       Instance name TimerUA, Block Name TIMER8(DBB10)
+	db		30h, 20h		;TimerUA_FUNC_REG(DBB10FN)
+	db		31h, 05h		;TimerUA_INPUT_REG(DBB10IN)
+	db		32h, 40h		;TimerUA_OUTPUT_REG(DBB10OU)
 ;  Global Register values Bank 1
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)
@@ -101,10 +135,10 @@ LoadConfigTBL_robottiprojekti_Ordered:
 	M8C_SetBank0
 	mov	reg[00h], 00h		; Port_0_Data register (PRT0DR)
 	M8C_SetBank1
-	mov	reg[00h], 33h		; Port_0_DriveMode_0 register (PRT0DM0)
-	mov	reg[01h], cch		; Port_0_DriveMode_1 register (PRT0DM1)
+	mov	reg[00h], 73h		; Port_0_DriveMode_0 register (PRT0DM0)
+	mov	reg[01h], 8ch		; Port_0_DriveMode_1 register (PRT0DM1)
 	M8C_SetBank0
-	mov	reg[03h], cch		; Port_0_DriveMode_2 register (PRT0DM2)
+	mov	reg[03h], 8ch		; Port_0_DriveMode_2 register (PRT0DM2)
 	mov	reg[02h], 33h		; Port_0_GlobalSelect register (PRT0GS)
 	M8C_SetBank1
 	mov	reg[02h], 00h		; Port_0_IntCtrl_0 register (PRT0IC0)

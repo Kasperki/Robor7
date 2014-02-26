@@ -1,7 +1,8 @@
 XH
-H B areas 11 global symbols
+H B areas 13 global symbols
 M boot.asm
 S _main Ref0000
+S _TimerUA_ISR Ref0000
 S __r0 Ref0000
 S LoadConfigInit Ref0000
 S __bss_end Ref0000
@@ -9,6 +10,7 @@ S __ramareas_end Ref0000
 S _PWM8_OIKEA_ISR Ref0000
 S _PWM8_VASEN_ISR Ref0000
 S _Timer8_ISR Ref0000
+S _ADCINC_1_ADConversion_ISR Ref0000
 S __data_end Ref0000
 A TOP size D7 flags C
 dbfile ./boot.asm
@@ -27,8 +29,10 @@ dbline 99 24
 dbline 9A 27
 dbline 9D 28
 dbline 9E 2B
-dbline A2 2C
-dbline A6 30
+dbline A1 2C
+dbline A2 2F
+dbline A5 30
+dbline A6 33
 dbline AA 34
 dbline AE 38
 dbline B2 3C
@@ -105,11 +109,11 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile ./boot.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8ssc.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8ssc.inc
 dbfunc 0 ? 0 I
 dbfile ./boot.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./boot.asm
 dbfunc 0 ? 0 I
@@ -133,15 +137,15 @@ R 00 00 00 00
 T 00 1C 7E
 R 00 00 00 00
 T 00 20 7D 00 00 7E
-R 00 00 00 00 02 03 00 06
-T 00 24 7D 00 00 7E
-R 00 00 00 00 02 03 00 05
-T 00 28 7D 00 00 7E
 R 00 00 00 00 02 03 00 07
-T 00 2C 7E
-R 00 00 00 00
-T 00 30 7E
-R 00 00 00 00
+T 00 24 7D 00 00 7E
+R 00 00 00 00 02 03 00 06
+T 00 28 7D 00 00 7E
+R 00 00 00 00 02 03 00 08
+T 00 2C 7D 00 00 7E
+R 00 00 00 00 02 03 00 09
+T 00 30 7D 00 00 7E
+R 00 00 00 00 02 03 00 01
 T 00 34 7E
 R 00 00 00 00
 T 00 38 7E
@@ -155,19 +159,19 @@ R 00 00 00 00
 T 00 68 71 10 62 E3 87 70 EF 62 E3 38 41 FE FB 50
 R 00 00 00 00
 T 00 76 00 00 4E 62 E3 38 55 F8 00 55 F9 00 71 10
-R 00 00 00 00 03 02 00 04
+R 00 00 00 00 03 02 00 05
 T 00 83 62 E0 02 70 EF 62 E3 38 62 71 05 62 75 05
 R 00 00 00 00
 T 00 91 62 79 05 62 7D 05 7C 00 00 50 00 55 00 00
-R 00 00 00 00 02 09 00 02 03 0E 00 01
+R 00 00 00 00 02 09 00 03 03 0E 00 02
 T 00 9E 00 00 3C 00 00 00 00 A0 05 3F
-R 00 00 00 00 01 02 00 0A 03 05 00 01 03 07 00 03
+R 00 00 00 00 01 02 00 0A 03 05 00 02 03 07 00 04
 T 00 A5 00 00 8F F8 50 00 00 57 00 00 55
-R 00 00 00 00 03 02 00 01 41 07 00 02 01 0A 00 02
+R 00 00 00 00 03 02 00 02 41 07 00 02 01 0A 00 02
 T 00 AD 00 00 00 00 3C 00 00
-R 00 00 00 00 03 02 00 01 01 04 00 07 03 07 00 01
+R 00 00 00 00 03 02 00 02 01 04 00 07 03 07 00 02
 T 00 B1 00 00 A0 0B 08 28 3F 00 00 18 75 09 00 8F
-R 00 00 00 00 03 02 00 08 03 09 00 01
+R 00 00 00 00 03 02 00 0A 03 09 00 02
 T 00 BD F2 71 10 70 EF 62 E0 00 71 10 62 E0 00 70
 R 00 00 00 00
 T 00 CB EF 62 E2 00 7C 00 00 8F FF 50 10 7F
