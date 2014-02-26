@@ -9,48 +9,40 @@
  0000 0000              .word 0
                         .area data(ram, con, rel)
  0002                   .dbfile ./main.c
- 0002                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0002                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0002                   .dbsym e timeT _timeT I
  0002           _timeT2::
  0002                   .blkb 2
                         .area idata(rom,lit)
  0002 0000              .word 0
                         .area data(ram, con, rel)
- 0004                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0004                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0004                   .dbsym e timeT2 _timeT2 I
  0004           _timeForward::
  0004                   .blkb 2
                         .area idata(rom,lit)
  0004 0096              .word 150
                         .area data(ram, con, rel)
- 0006                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0006                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0006                   .dbsym e timeForward _timeForward I
  0006           _turnTime::
  0006                   .blkb 2
                         .area idata(rom,lit)
  0006 004B              .word 75
                         .area data(ram, con, rel)
- 0008                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0008                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0008                   .dbsym e turnTime _turnTime I
  0008           _timeRobotWidth::
  0008                   .blkb 2
                         .area idata(rom,lit)
  0008 000F              .word 15
                         .area data(ram, con, rel)
- 000A                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000A                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000A                   .dbsym e timeRobotWidth _timeRobotWidth I
- 000A           _trig::
- 000A                   .blkb 2
-                        .area idata(rom,lit)
- 000A 0000              .word 0
-                        .area data(ram, con, rel)
- 000C                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 000C                   .dbsym e trig _trig I
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000                   .dbfunc e main _main fV
- 0000           ;           ammu -> X+11
- 0000           ;           turn -> X+9
+ 0000           ;           turn -> X+14
  0000           ;         buffer -> X+4
  0000           ;      ultraData -> X+2
  0000           ;              i -> X+0
@@ -58,8 +50,8 @@
  0000                   .dbline -1
  0000 10                push X
  0001 4F                mov X,SP
- 0002 380D              add SP,13
- 0004                   .dbline 25
+ 0002 3810              add SP,16
+ 0004                   .dbline 24
  0004           ; //----------------------------------------------------------------------------
  0004           ; // Robotti Projekti
  0004           ; // Robor7 @ 2014
@@ -73,510 +65,393 @@
  0004           ; 
  0004           ; //Omat header filet
  0004           ; #include "MotorControl.h"
- 0004           ; //#include "UltraControl.h"
+ 0004           ; #include "UltraControl.h"
  0004           ; //#include "GyroControl.h"
  0004           ; 
  0004           ; int timeT = 0, timeT2 = 0; //kello
  0004           ; int timeForward = 150; //.... 4m täydellä vauhdilla 3.9s
  0004           ; int turnTime = 75;       //.... 90 asteen käännökseen meneväaika
  0004           ; int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
- 0004           ; int trig = 0;
  0004           ; 
  0004           ; //Main Method
  0004           ; void main(void)
  0004           ; {
- 0004                   .dbline 28
+ 0004                   .dbline 27
  0004           ;       //Määrittelyt
- 0004           ;       char buffer[5];
+ 0004           ;       char buffer[10];
  0004           ;       volatile int i = 0;
  0004 560100            mov [X+1],0
  0007 560000            mov [X+0],0
- 000A                   .dbline 29
+ 000A                   .dbline 28
  000A           ;       int turn = 0;
- 000A 560A00            mov [X+10],0
- 000D 560900            mov [X+9],0
- 0010                   .dbline 30
- 0010           ;       int ultraData = 0;
+ 000A 560F00            mov [X+15],0
+ 000D 560E00            mov [X+14],0
+ 0010                   .dbline 29
+ 0010           ;       int ultraData = 0; //Data from ultrasonic sensor
  0010 560300            mov [X+3],0
  0013 560200            mov [X+2],0
- 0016                   .dbline 31
- 0016           ;       int ammu = 1;
- 0016 560C01            mov [X+12],1
- 0019 560B00            mov [X+11],0
- 001C                   .dbline 36
+ 0016                   .dbline 34
+ 0016           ;       
+ 0016           ;       //Init**************************
+ 0016           ;       
+ 0016           ;       //Enables Global Interrupts
+ 0016           ;       M8C_EnableGInt; 
+ 0016 7101                      or  F, 01h
+ 0018           
+ 0018                   .dbline 37
+ 0018           ;               
+ 0018           ;       //Start LCD
+ 0018           ;       LCD_Start();
+ 0018 10                push X
+ 0019 7C0000            xcall _LCD_Start
+ 001C                   .dbline 40
  001C           ;       
- 001C           ;       //Init**************************
- 001C           ;       
- 001C           ;       //Enables Global Interrupts
- 001C           ;       M8C_EnableGInt; 
- 001C 7101                      or  F, 01h
- 001E           
- 001E                   .dbline 39
- 001E           ;       
- 001E           ;       //Start LCD
- 001E           ;       LCD_Start();
- 001E 10                push X
- 001F 7C0000            xcall _LCD_Start
- 0022                   .dbline 42
- 0022           ;       
- 0022           ;       //InitializeTimer
- 0022           ;       Timer8_Start();
- 0022 7C0000            xcall _Timer8_Start
- 0025                   .dbline 43
- 0025           ;       Timer8_EnableInt();
- 0025 7C0000            xcall _Timer8_EnableInt
- 0028 20                pop X
- 0029                   .dbline 46
- 0029           ;       
- 0029           ;       //Start Motor PWMs
- 0029           ;       InitPWM();
- 0029 7C0000            xcall _InitPWM
- 002C                   .dbline 48
- 002C           ;       
- 002C           ;       PGA_SetGain(PGA_G8_00);
- 002C 10                push X
- 002D 5018              mov A,24
- 002F 7C0000            xcall _PGA_SetGain
- 0032                   .dbline 49
- 0032           ;       PGA_Start(PGA_MEDPOWER);
- 0032 5002              mov A,2
- 0034 7C0000            xcall _PGA_Start
- 0037                   .dbline 51
- 0037           ;       
- 0037           ;       ADCINC_1_Start(ADCINC_1_HIGHPOWER);
- 0037 5003              mov A,3
- 0039 7C0000            xcall _ADCINC_1_Start
- 003C                   .dbline 52
- 003C           ;       ADCINC_1_GetSamples(0);
- 003C 5000              mov A,0
- 003E 7C0000            xcall _ADCINC_1_GetSamples
- 0041 20                pop X
- 0042 8141              xjmp L3
- 0044           L2:
- 0044                   .dbline 59
- 0044           ;       
- 0044           ;       
- 0044           ;       
- 0044           ;       //MainLoop**********
- 0044           ;       //***********************
- 0044           ;       while(1)
- 0044           ;       {
- 0044                   .dbline 60
- 0044           ;               if (trig == 1)
- 0044 3C0A00            cmp [_trig],0
- 0047 B00B              jnz L5
- 0049 3C0B01            cmp [_trig+1],1
- 004C B006              jnz L5
- 004E           X1:
- 004E                   .dbline 62
- 004E           ;               {
- 004E           ;                       UATrig_Data_ADDR |= UATrig_MASK;
- 004E                   .dbline 62
- 004E 430040            or REG[0],64
- 0051                   .dbline 63
- 0051           ;               }
- 0051 8004              xjmp L6
- 0053           L5:
- 0053                   .dbline 65
- 0053           ;               else    
- 0053           ;                       UATrig_Data_ADDR &= 0x00;
- 0053 620000            mov REG[0],0
- 0056           L6:
- 0056                   .dbline 68
- 0056           ;               
- 0056           ;               
- 0056           ;               if(ADCINC_1_fIsDataAvailable() != 0)
- 0056 10                push X
- 0057 7C0000            xcall _ADCINC_1_fIsDataAvailable
- 005A 20                pop X
- 005B 3900              cmp A,0
- 005D A00E              jz L7
- 005F                   .dbline 69
- 005F           ;                       ultraData = ADCINC_1_iGetData();
- 005F 10                push X
- 0060 7C0000            xcall _ADCINC_1_iGetData
- 0063 5A00              mov [__r0],X
- 0065 20                pop X
- 0066 5403              mov [X+3],A
- 0068 5100              mov A,[__r0]
- 006A 5402              mov [X+2],A
- 006C           L7:
- 006C                   .dbline 71
- 006C           ;               
- 006C           ;               ultraData = ADCINC_1_iClearFlagGetData();
- 006C 10                push X
- 006D 7C0000            xcall _ADCINC_1_iClearFlagGetData
- 0070 5A00              mov [__r0],X
- 0072 20                pop X
- 0073 5403              mov [X+3],A
- 0075 5100              mov A,[__r0]
- 0077 5402              mov [X+2],A
- 0079                   .dbline 76
- 0079           ;               
- 0079           ;               //ultraData = ADCINC_1_iClearFlagGetData();
- 0079           ;               
- 0079           ;               //Spiraali
- 0079           ;               if(i < 3)
- 0079 5201              mov A,[X+1]
- 007B 1103              sub A,3
- 007D 5200              mov A,[X+0]
- 007F 3180              xor A,-128
- 0081 1980              sbb A,(0 ^ 0x80)
- 0083 D045              jnc L9
- 0085           X2:
- 0085                   .dbline 78
- 0085           ;               {
- 0085           ;                       if(turn == 0)
- 0085                   .dbline 78
- 0085 3D0900            cmp [X+9],0
- 0088 B013              jnz L11
- 008A 3D0A00            cmp [X+10],0
- 008D B00E              jnz L11
- 008F           X3:
- 008F                   .dbline 79
- 008F           ;                               MoveForward(FULL_SPEED);
- 008F 5000              mov A,0
- 0091 08                push A
- 0092 50C7              mov A,-57
- 0094 08                push A
- 0095 7C0000            xcall _MoveForward
- 0098 38FE              add SP,-2
- 009A 8048              xjmp L10
- 009C           L11:
- 009C                   .dbline 81
- 009C           ;                       else 
- 009C           ;                       {
- 009C                   .dbline 82
- 009C           ;                               if(timeT <= turnTime) //if(gyroKulma < 90)
- 009C 5107              mov A,[_turnTime+1]
- 009E 1201              sub A,[_timeT+1]
- 00A0 5100              mov A,[_timeT]
- 00A2 3180              xor A,-128
- 00A4 5300              mov [__rX],A
- 00A6 5106              mov A,[_turnTime]
- 00A8 3180              xor A,-128
- 00AA 1A00              sbb A,[__rX]
- 00AC C00E              jc L13
- 00AE           X4:
- 00AE                   .dbline 84
- 00AE           ;                               {
- 00AE           ;                                       TurnLeft(FULL_SPEED);
- 00AE                   .dbline 84
- 00AE 5000              mov A,0
- 00B0 08                push A
- 00B1 50C7              mov A,-57
- 00B3 08                push A
- 00B4 7C0000            xcall _TurnLeft
- 00B7 38FE              add SP,-2
- 00B9                   .dbline 85
- 00B9           ;                               }
- 00B9 8029              xjmp L10
- 00BB           L13:
- 00BB                   .dbline 87
- 00BB           ;                               else
- 00BB           ;                               { 
- 00BB                   .dbline 88
- 00BB           ;                                       turn = 0;
- 00BB 560A00            mov [X+10],0
- 00BE 560900            mov [X+9],0
- 00C1                   .dbline 89
- 00C1           ;                                       timeT = 0;
- 00C1 550100            mov [_timeT+1],0
- 00C4 550000            mov [_timeT],0
- 00C7                   .dbline 90
- 00C7           ;                               }
- 00C7                   .dbline 91
- 00C7           ;                       }
- 00C7                   .dbline 92
- 00C7           ;               }
- 00C7 801B              xjmp L10
- 00C9           L9:
- 00C9                   .dbline 93
- 00C9           ;               else if(i < 5) 
- 00C9 5201              mov A,[X+1]
- 00CB 1105              sub A,5
- 00CD 5200              mov A,[X+0]
- 00CF 3180              xor A,-128
- 00D1 1980              sbb A,(0 ^ 0x80)
- 00D3 D00F              jnc L15
- 00D5           X5:
- 00D5                   .dbline 95
- 00D5           ;               {
- 00D5           ;                       i = 0;
- 00D5                   .dbline 95
- 00D5 560100            mov [X+1],0
- 00D8 560000            mov [X+0],0
- 00DB                   .dbline 96
- 00DB           ;                       timeForward -= timeRobotWidth;
- 00DB 5109              mov A,[_timeRobotWidth+1]
- 00DD 1405              sub [_timeForward+1],A
- 00DF 5108              mov A,[_timeRobotWidth]
- 00E1 1C04              sbb [_timeForward],A
- 00E3                   .dbline 97
- 00E3           ;               }
- 00E3           L15:
- 00E3           L10:
- 00E3                   .dbline 100
- 00E3           ;               
- 00E3           ;               //Kokokierros on menty
- 00E3           ;               if(timeForward <= 0)
- 00E3 5000              mov A,0
- 00E5 1205              sub A,[_timeForward+1]
- 00E7 5104              mov A,[_timeForward]
- 00E9 3180              xor A,-128
- 00EB 5300              mov [__rX],A
- 00ED 5080              mov A,(0 ^ 0x80)
- 00EF 1A00              sbb A,[__rX]
- 00F1 C010              jc L17
- 00F3           X6:
- 00F3                   .dbline 102
- 00F3           ;               {
- 00F3           ;                       i = 10;
- 00F3                   .dbline 102
- 00F3 56010A            mov [X+1],10
- 00F6 560000            mov [X+0],0
- 00F9                   .dbline 103
- 00F9           ;                       timeForward = 0;
- 00F9 550500            mov [_timeForward+1],0
- 00FC 550400            mov [_timeForward],0
- 00FF                   .dbline 104
- 00FF           ;                       Stop();
- 00FF 7C0000            xcall _Stop
- 0102                   .dbline 105
- 0102           ;               }
- 0102           L17:
- 0102                   .dbline 144
- 0102           ;               //End Spiraali
- 0102           ;               
- 0102           ;               
- 0102           ;               //Scan
- 0102           ;               /*
- 0102           ;                       if(i == 10)
- 0102           ;                       {
- 0102           ;                               Skannaa keiloja.
- 0102           ;                               while(kulma >= 360)
- 0102           ;                               {
- 0102           ;                                       WaitForScan?
- 0102           ;                                       If(output => 0) 
- 0102           ;                                               MoveForward(199);
- 0102           ;                                       else
- 0102           ;                                               TurnLeft(199); kulma += 10;
- 0102           ;                               }
- 0102           ;               
- 0102           ;                               Jos ei löydy i = 20;
- 0102           ;                       }
- 0102           ;               */
- 0102           ;               
- 0102           ;               /*
- 0102           ;               if (timeT >= timeForward && turn == 0)
- 0102           ;               {
- 0102           ;                       i++;
- 0102           ;                       turn = 1;
- 0102           ;                       timeT = 0;
- 0102           ;                       
- 0102           ;                       //WRITE TO LCD
- 0102           ;                       itoa(buffer,timeForward,10);
- 0102           ;                       LCD_Position(0,5);
- 0102           ;                       LCD_PrString(buffer);
- 0102           ;                       
- 0102           ;                       itoa(buffer,i,10);
- 0102           ;                       LCD_Position(0,0);
- 0102           ;                       LCD_PrString(buffer);
- 0102           ;               }*/
- 0102           ;       
- 0102           ;               if(timeT > 100)
- 0102 5064              mov A,100
- 0104 1201              sub A,[_timeT+1]
- 0106 5100              mov A,[_timeT]
- 0108 3180              xor A,-128
- 010A 5300              mov [__rX],A
- 010C 5080              mov A,(0 ^ 0x80)
- 010E 1A00              sbb A,[__rX]
- 0110 D073              jnc L19
- 0112           X7:
- 0112                   .dbline 146
- 0112           ;               {
- 0112           ;                       itoa(buffer,ultraData,10);
- 0112                   .dbline 146
- 0112 5000              mov A,0
- 0114 08                push A
- 0115 500A              mov A,10
- 0117 08                push A
- 0118 5202              mov A,[X+2]
- 011A 08                push A
- 011B 5203              mov A,[X+3]
- 011D 08                push A
+ 001C           ;       //InitializeTimer
+ 001C           ;       Timer8_Start();
+ 001C 7C0000            xcall _Timer8_Start
+ 001F                   .dbline 41
+ 001F           ;       Timer8_EnableInt();
+ 001F 7C0000            xcall _Timer8_EnableInt
+ 0022 20                pop X
+ 0023                   .dbline 44
+ 0023           ;               
+ 0023           ;       //Start Motor PWMs
+ 0023           ;       InitPWM();
+ 0023 7C0000            xcall _InitPWM
+ 0026                   .dbline 47
+ 0026           ;       
+ 0026           ;       //Init PGA and ADCIN for Ultrasonic
+ 0026           ;       InitUA();
+ 0026 7C0000            xcall _InitUA
+ 0029 810B              xjmp L3
+ 002B           L2:
+ 002B                   .dbline 53
+ 002B           ;       
+ 002B           ;       
+ 002B           ;       //MainLoop**********
+ 002B           ;       //***********************
+ 002B           ;       while(1)
+ 002B           ;       {
+ 002B                   .dbline 55
+ 002B           ;               //NEW STUFF
+ 002B           ;               if (timeT2 <= 1)
+ 002B 5001              mov A,1
+ 002D 1203              sub A,[_timeT2+1]
+ 002F 5102              mov A,[_timeT2]
+ 0031 3180              xor A,-128
+ 0033 5300              mov [__rX],A
+ 0035 5080              mov A,(0 ^ 0x80)
+ 0037 1A00              sbb A,[__rX]
+ 0039 C006              jc L5
+ 003B           X1:
+ 003B                   .dbline 57
+ 003B           ;               {
+ 003B           ;                       UATrig_Data_ADDR |= UATrig_MASK;
+ 003B                   .dbline 57
+ 003B 430040            or REG[0],64
+ 003E                   .dbline 58
+ 003E           ;               }
+ 003E 8004              xjmp L6
+ 0040           L5:
+ 0040                   .dbline 60
+ 0040           ;               else    
+ 0040           ;                       UATrig_Data_ADDR &= 0x00;
+ 0040 620000            mov REG[0],0
+ 0043           L6:
+ 0043                   .dbline 63
+ 0043           ;               
+ 0043           ;               //60ms again
+ 0043           ;               if (timeT2 >= 6)
+ 0043 5103              mov A,[_timeT2+1]
+ 0045 1106              sub A,6
+ 0047 5102              mov A,[_timeT2]
+ 0049 3180              xor A,-128
+ 004B 1980              sbb A,(0 ^ 0x80)
+ 004D C007              jc L7
+ 004F           X2:
+ 004F                   .dbline 64
+ 004F           ;                       timeT2 = 0;
+ 004F 550300            mov [_timeT2+1],0
+ 0052 550200            mov [_timeT2],0
+ 0055           L7:
+ 0055                   .dbline 67
+ 0055           ;               
+ 0055           ;               //Gets the data
+ 0055           ;               ultraData = getDataUA();
+ 0055 7C0000            xcall _getDataUA
+ 0058 5100              mov A,[__r1]
+ 005A 5403              mov [X+3],A
+ 005C 5100              mov A,[__r0]
+ 005E 5402              mov [X+2],A
+ 0060                   .dbline 74
+ 0060           ;               
+ 0060           ;               //END
+ 0060           ;                       
+ 0060           ;               
+ 0060           ;               
+ 0060           ;               //Spiraali
+ 0060           ;               if(i < 3)
+ 0060 5201              mov A,[X+1]
+ 0062 1103              sub A,3
+ 0064 5200              mov A,[X+0]
+ 0066 3180              xor A,-128
+ 0068 1980              sbb A,(0 ^ 0x80)
+ 006A D045              jnc L9
+ 006C           X3:
+ 006C                   .dbline 76
+ 006C           ;               {
+ 006C           ;                       if(turn == 0)
+ 006C                   .dbline 76
+ 006C 3D0E00            cmp [X+14],0
+ 006F B013              jnz L11
+ 0071 3D0F00            cmp [X+15],0
+ 0074 B00E              jnz L11
+ 0076           X4:
+ 0076                   .dbline 77
+ 0076           ;                               MoveForward(FULL_SPEED);
+ 0076 5000              mov A,0
+ 0078 08                push A
+ 0079 50C7              mov A,-57
+ 007B 08                push A
+ 007C 7C0000            xcall _MoveForward
+ 007F 38FE              add SP,-2
+ 0081 8048              xjmp L10
+ 0083           L11:
+ 0083                   .dbline 79
+ 0083           ;                       else 
+ 0083           ;                       {
+ 0083                   .dbline 80
+ 0083           ;                               if(timeT <= turnTime) //if(gyroKulma < 90)
+ 0083 5107              mov A,[_turnTime+1]
+ 0085 1201              sub A,[_timeT+1]
+ 0087 5100              mov A,[_timeT]
+ 0089 3180              xor A,-128
+ 008B 5300              mov [__rX],A
+ 008D 5106              mov A,[_turnTime]
+ 008F 3180              xor A,-128
+ 0091 1A00              sbb A,[__rX]
+ 0093 C00E              jc L13
+ 0095           X5:
+ 0095                   .dbline 82
+ 0095           ;                               {
+ 0095           ;                                       TurnLeft(FULL_SPEED);
+ 0095                   .dbline 82
+ 0095 5000              mov A,0
+ 0097 08                push A
+ 0098 50C7              mov A,-57
+ 009A 08                push A
+ 009B 7C0000            xcall _TurnLeft
+ 009E 38FE              add SP,-2
+ 00A0                   .dbline 83
+ 00A0           ;                               }
+ 00A0 8029              xjmp L10
+ 00A2           L13:
+ 00A2                   .dbline 85
+ 00A2           ;                               else
+ 00A2           ;                               { 
+ 00A2                   .dbline 86
+ 00A2           ;                                       turn = 0;
+ 00A2 560F00            mov [X+15],0
+ 00A5 560E00            mov [X+14],0
+ 00A8                   .dbline 87
+ 00A8           ;                                       timeT = 0;
+ 00A8 550100            mov [_timeT+1],0
+ 00AB 550000            mov [_timeT],0
+ 00AE                   .dbline 88
+ 00AE           ;                               }
+ 00AE                   .dbline 89
+ 00AE           ;                       }
+ 00AE                   .dbline 90
+ 00AE           ;               }
+ 00AE 801B              xjmp L10
+ 00B0           L9:
+ 00B0                   .dbline 91
+ 00B0           ;               else if(i < 5) 
+ 00B0 5201              mov A,[X+1]
+ 00B2 1105              sub A,5
+ 00B4 5200              mov A,[X+0]
+ 00B6 3180              xor A,-128
+ 00B8 1980              sbb A,(0 ^ 0x80)
+ 00BA D00F              jnc L15
+ 00BC           X6:
+ 00BC                   .dbline 93
+ 00BC           ;               {
+ 00BC           ;                       i = 0;
+ 00BC                   .dbline 93
+ 00BC 560100            mov [X+1],0
+ 00BF 560000            mov [X+0],0
+ 00C2                   .dbline 94
+ 00C2           ;                       timeForward -= timeRobotWidth;
+ 00C2 5109              mov A,[_timeRobotWidth+1]
+ 00C4 1405              sub [_timeForward+1],A
+ 00C6 5108              mov A,[_timeRobotWidth]
+ 00C8 1C04              sbb [_timeForward],A
+ 00CA                   .dbline 95
+ 00CA           ;               }
+ 00CA           L15:
+ 00CA           L10:
+ 00CA                   .dbline 98
+ 00CA           ;               
+ 00CA           ;               //Kokokierros on menty
+ 00CA           ;               if(timeForward <= 0)
+ 00CA 5000              mov A,0
+ 00CC 1205              sub A,[_timeForward+1]
+ 00CE 5104              mov A,[_timeForward]
+ 00D0 3180              xor A,-128
+ 00D2 5300              mov [__rX],A
+ 00D4 5080              mov A,(0 ^ 0x80)
+ 00D6 1A00              sbb A,[__rX]
+ 00D8 C010              jc L17
+ 00DA           X7:
+ 00DA                   .dbline 100
+ 00DA           ;               {
+ 00DA           ;                       i = 10;
+ 00DA                   .dbline 100
+ 00DA 56010A            mov [X+1],10
+ 00DD 560000            mov [X+0],0
+ 00E0                   .dbline 101
+ 00E0           ;                       timeForward = 0;
+ 00E0 550500            mov [_timeForward+1],0
+ 00E3 550400            mov [_timeForward],0
+ 00E6                   .dbline 102
+ 00E6           ;                       Stop();
+ 00E6 7C0000            xcall _Stop
+ 00E9                   .dbline 103
+ 00E9           ;               }
+ 00E9           L17:
+ 00E9                   .dbline 142
+ 00E9           ;               //End Spiraali
+ 00E9           ;               
+ 00E9           ;               
+ 00E9           ;               //Scan
+ 00E9           ;               /*
+ 00E9           ;                       if(i == 10)
+ 00E9           ;                       {
+ 00E9           ;                               Skannaa keiloja.
+ 00E9           ;                               while(kulma >= 360)
+ 00E9           ;                               {
+ 00E9           ;                                       WaitForScan?
+ 00E9           ;                                       If(output => 0) 
+ 00E9           ;                                               MoveForward(199);
+ 00E9           ;                                       else
+ 00E9           ;                                               TurnLeft(199); kulma += 10;
+ 00E9           ;                               }
+ 00E9           ;               
+ 00E9           ;                               Jos ei löydy i = 20;
+ 00E9           ;                       }
+ 00E9           ;               */
+ 00E9           ;               
+ 00E9           ;               /*
+ 00E9           ;               if (timeT >= timeForward && turn == 0)
+ 00E9           ;               {
+ 00E9           ;                       i++;
+ 00E9           ;                       turn = 1;
+ 00E9           ;                       timeT = 0;
+ 00E9           ;                       
+ 00E9           ;                       //WRITE TO LCD
+ 00E9           ;                       itoa(buffer,timeForward,10);
+ 00E9           ;                       LCD_Position(0,5);
+ 00E9           ;                       LCD_PrString(buffer);
+ 00E9           ;                       
+ 00E9           ;                       itoa(buffer,i,10);
+ 00E9           ;                       LCD_Position(0,0);
+ 00E9           ;                       LCD_PrString(buffer);
+ 00E9           ;               }*/
+ 00E9           ;       
+ 00E9           ;               if(timeT > 50)
+ 00E9 5032              mov A,50
+ 00EB 1201              sub A,[_timeT+1]
+ 00ED 5100              mov A,[_timeT]
+ 00EF 3180              xor A,-128
+ 00F1 5300              mov [__rX],A
+ 00F3 5080              mov A,(0 ^ 0x80)
+ 00F5 1A00              sbb A,[__rX]
+ 00F7 D03D              jnc L19
+ 00F9           X8:
+ 00F9                   .dbline 144
+ 00F9           ;               {
+ 00F9           ;                       itoa(buffer,ultraData,10);
+ 00F9                   .dbline 144
+ 00F9 5000              mov A,0
+ 00FB 08                push A
+ 00FC 500A              mov A,10
+ 00FE 08                push A
+ 00FF 5202              mov A,[X+2]
+ 0101 08                push A
+ 0102 5203              mov A,[X+3]
+ 0104 08                push A
+ 0105 5A00              mov [__r1],X
+ 0107 060004            add [__r1],4
+ 010A 5100              mov A,[__r0]
+ 010C 08                push A
+ 010D 5100              mov A,[__r1]
+ 010F 08                push A
+ 0110 7C0000            xcall _itoa
+ 0113 38FA              add SP,-6
+ 0115                   .dbline 145
+ 0115           ;                       LCD_Position(0,0);
+ 0115 10                push X
+ 0116 5000              mov A,0
+ 0118 5700              mov X,0
+ 011A 7C0000            xcall _LCD_Position
+ 011D 20                pop X
+ 011E                   .dbline 146
+ 011E           ;                       LCD_PrString(buffer);
  011E 5A00              mov [__r1],X
  0120 060004            add [__r1],4
- 0123 5100              mov A,[__r0]
- 0125 08                push A
- 0126 5100              mov A,[__r1]
- 0128 08                push A
- 0129 7C0000            xcall _itoa
- 012C 38FA              add SP,-6
- 012E                   .dbline 147
- 012E           ;                       LCD_Position(0,0);
- 012E 10                push X
- 012F 5000              mov A,0
- 0131 5700              mov X,0
- 0133 7C0000            xcall _LCD_Position
- 0136 20                pop X
- 0137                   .dbline 148
- 0137           ;                       LCD_PrString(buffer);
- 0137 5A00              mov [__r1],X
- 0139 060004            add [__r1],4
- 013C 10                push X
- 013D 5100              mov A,[__r0]
- 013F 08                push A
- 0140 5100              mov A,[__r1]
- 0142 5C                mov X,A
- 0143 18                pop A
- 0144 7C0000            xcall _LCD_PrString
- 0147 20                pop X
- 0148                   .dbline 150
- 0148           ;                       
- 0148           ;                       itoa(buffer,timeT,10);
- 0148 5000              mov A,0
- 014A 08                push A
- 014B 500A              mov A,10
- 014D 08                push A
- 014E 5100              mov A,[_timeT]
- 0150 08                push A
- 0151 5101              mov A,[_timeT+1]
- 0153 08                push A
- 0154 5A00              mov [__r1],X
- 0156 060004            add [__r1],4
- 0159 5100              mov A,[__r0]
- 015B 08                push A
- 015C 5100              mov A,[__r1]
- 015E 08                push A
- 015F 7C0000            xcall _itoa
- 0162 38FA              add SP,-6
- 0164                   .dbline 151
- 0164           ;                       LCD_Position(1,5);
- 0164 10                push X
- 0165 5705              mov X,5
- 0167 5001              mov A,1
- 0169 7C0000            xcall _LCD_Position
- 016C 20                pop X
- 016D                   .dbline 152
- 016D           ;                       LCD_PrString(buffer);
- 016D 5A00              mov [__r1],X
- 016F 060004            add [__r1],4
- 0172 10                push X
- 0173 5100              mov A,[__r0]
- 0175 08                push A
- 0176 5100              mov A,[__r1]
- 0178 5C                mov X,A
- 0179 18                pop A
- 017A 7C0000            xcall _LCD_PrString
- 017D 20                pop X
- 017E                   .dbline 154
- 017E           ;                       
- 017E           ;                       timeT = 0;
- 017E 550100            mov [_timeT+1],0
- 0181 550000            mov [_timeT],0
- 0184                   .dbline 155
- 0184           ;               }
- 0184           L19:
- 0184                   .dbline 158
- 0184           ;               
- 0184           ;               
- 0184           ;       }
- 0184           L3:
- 0184                   .dbline 58
- 0184 8EBF              xjmp L2
- 0186           X0:
- 0186                   .dbline -2
- 0186           L1:
- 0186 38F3              add SP,-13
- 0188 20                pop X
- 0189                   .dbline 0 ; func end
- 0189 8FFF              jmp .
- 018B                   .dbsym l ammu 11 I
- 018B                   .dbsym l turn 9 I
- 018B                   .dbsym l buffer 4 A[5:5]c
- 018B                   .dbsym l ultraData 2 I
- 018B                   .dbsym l i 0 I
- 018B                   .dbend
- 018B                   .dbfunc e TimerInterrupt _TimerInterrupt fV
- 018B           _TimerInterrupt::
- 018B                   .dbline -1
- 018B 08                push A
- 018C                   .dbline 165
- 018C           ; 
- 018C           ; }
- 018C           ; 
- 018C           ; //Kutsutaan joka 0.01s = 10ms välein.
- 018C           ; #pragma interrupt_handler TimerInterrupt
- 018C           ; void TimerInterrupt()
- 018C           ; {
- 018C                   .dbline 166
- 018C           ;   timeT++;
- 018C 7601              inc [_timeT+1]
- 018E 0E0000            adc [_timeT],0
- 0191                   .dbline 167
- 0191           ;   timeT2++;
- 0191 7603              inc [_timeT2+1]
- 0193 0E0200            adc [_timeT2],0
- 0196                   .dbline -2
- 0196           L21:
- 0196 18                pop A
- 0197                   .dbline 0 ; func end
- 0197 7E                reti
- 0198                   .dbend
- 0198                   .dbfunc e TimerUAInterrupt _TimerUAInterrupt fV
- 0198           _TimerUAInterrupt::
- 0198                   .dbline -1
- 0198                   .dbline 172
- 0198           ; }
- 0198           ; 
- 0198           ; #pragma iterrupt_handler TimerUAInterrupt
- 0198           ; void TimerUAInterrupt()
- 0198           ; {
- 0198                   .dbline 173
- 0198           ;       if(timeT2 > 6)
- 0198 5006              mov A,6
- 019A 1203              sub A,[_timeT2+1]
- 019C 5102              mov A,[_timeT2]
- 019E 3180              xor A,-128
- 01A0 5300              mov [__rX],A
- 01A2 5080              mov A,(0 ^ 0x80)
- 01A4 1A00              sbb A,[__rX]
- 01A6 D00D              jnc L23
- 01A8           X8:
- 01A8                   .dbline 175
- 01A8           ;       {
- 01A8           ;               timeT2 = 0;
- 01A8                   .dbline 175
- 01A8 550300            mov [_timeT2+1],0
- 01AB 550200            mov [_timeT2],0
- 01AE                   .dbline 176
- 01AE           ;               trig = 1;
- 01AE 550B01            mov [_trig+1],1
- 01B1 550A00            mov [_trig],0
- 01B4                   .dbline 177
- 01B4           ;       }
- 01B4           L23:
- 01B4                   .dbline 179
- 01B4           ;       
- 01B4           ;       if (trig == 1)
- 01B4 3C0A00            cmp [_trig],0
- 01B7 B00C              jnz L25
- 01B9 3C0B01            cmp [_trig+1],1
- 01BC B007              jnz L25
- 01BE           X9:
- 01BE                   .dbline 181
- 01BE           ;       {
- 01BE           ;               trig = 0;
- 01BE                   .dbline 181
- 01BE 550B00            mov [_trig+1],0
- 01C1 550A00            mov [_trig],0
- 01C4                   .dbline 182
- 01C4           ;       }
- 01C4           L25:
- 01C4                   .dbline -2
- 01C4           L22:
- 01C4                   .dbline 0 ; func end
- 01C4 7F                ret
- 01C5                   .dbend
+ 0123 10                push X
+ 0124 5100              mov A,[__r0]
+ 0126 08                push A
+ 0127 5100              mov A,[__r1]
+ 0129 5C                mov X,A
+ 012A 18                pop A
+ 012B 7C0000            xcall _LCD_PrString
+ 012E 20                pop X
+ 012F                   .dbline 148
+ 012F           ;                                               
+ 012F           ;                       timeT = 0;
+ 012F 550100            mov [_timeT+1],0
+ 0132 550000            mov [_timeT],0
+ 0135                   .dbline 149
+ 0135           ;               }               
+ 0135           L19:
+ 0135                   .dbline 150
+ 0135           ;       }
+ 0135           L3:
+ 0135                   .dbline 52
+ 0135 8EF5              xjmp L2
+ 0137           X0:
+ 0137                   .dbline -2
+ 0137           L1:
+ 0137 38F0              add SP,-16
+ 0139 20                pop X
+ 013A                   .dbline 0 ; func end
+ 013A 8FFF              jmp .
+ 013C                   .dbsym l turn 14 I
+ 013C                   .dbsym l buffer 4 A[10:10]c
+ 013C                   .dbsym l ultraData 2 I
+ 013C                   .dbsym l i 0 I
+ 013C                   .dbend
+ 013C                   .dbfunc e TimerInterrupt _TimerInterrupt fV
+ 013C           _TimerInterrupt::
+ 013C                   .dbline -1
+ 013C                   .dbline 156
+ 013C           ; 
+ 013C           ; }
+ 013C           ; 
+ 013C           ; //Kutsutaan joka 0.01s = 10ms välein.
+ 013C           ; void TimerInterrupt()
+ 013C           ; {
+ 013C                   .dbline 157
+ 013C           ;   timeT++;
+ 013C 7601              inc [_timeT+1]
+ 013E 0E0000            adc [_timeT],0
+ 0141                   .dbline 158
+ 0141           ;   timeT2++;
+ 0141 7603              inc [_timeT2+1]
+ 0143 0E0200            adc [_timeT2],0
+ 0146                   .dbline -2
+ 0146           L21:
+ 0146                   .dbline 0 ; func end
+ 0146 7F                ret
+ 0147                   .dbend

@@ -1,0 +1,51 @@
+XH
+H 1 areas B global symbols
+M ultracontrol.c
+S _PGA_SetGain Ref0000
+S _ADCINC_GetSamples Ref0000
+S __r0 Ref0000
+S __r1 Ref0000
+S _ADCINC_Start Ref0000
+S _ADCINC_fIsDataAvailable Ref0000
+S _PGA_Start Ref0000
+S _ADCINC_iClearFlagGetData Ref0000
+A text size 36 flags 0
+dbfile ./ultracontrol.c
+dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfunc e InitUA 0 fV
+dbline FFFFFFFF 0
+dbline C 0
+dbline D 0
+dbline E 6
+dbline 10 B
+dbline 11 10
+dbline FFFFFFFE 16
+dbline 0 16
+dbfunc e getDataUA 17 fI
+dbline FFFFFFFF 17
+dbline 17 17
+dbline 18 17
+dbline 1A 20
+dbline 1A 20
+dbline 1D 2B
+dbline FFFFFFFE 31
+dbline 0 31
+dbfunc e ControlTrigger 32 fV
+dbsym l freq FFFFFFFB I
+dbline FFFFFFFF 32
+dbline 21 34
+dbline FFFFFFFE 34
+dbline 0 35
+S _ControlTrigger Def0032
+S _InitUA Def0000
+S _getDataUA Def0017
+T 00 00 10 50 F8 7C 00 00 50 02 7C 00 00 50 03 7C
+R 00 00 00 00 02 06 00 00 02 0B 00 06
+T 00 0E 00 00 50 00 7C 00 00 20 7F 10 7C 00 00 20
+R 00 00 00 00 02 02 00 04 02 07 00 01 02 0D 00 05
+T 00 1C 39 00 A0 0C 10 7C 00 00 5A 00 00 53 00 00
+R 00 00 00 00 02 08 00 07 03 0B 00 02 03 0E 00 03
+T 00 28 20 80 07 55 00 00 00 55 00 00 00 7F 10 4F
+R 00 00 00 00 03 06 00 03 03 0A 00 02
+T 00 34 20 7F
+R 00 00 00 00

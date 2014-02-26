@@ -1,0 +1,101 @@
+                        .module ultracontrol.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./ultracontrol.c
+ 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0000                   .dbfunc e InitUA _InitUA fV
+ 0000           _InitUA::
+ 0000                   .dbline -1
+ 0000                   .dbline 12
+ 0000           ; #include <m8c.h>        // part specific constants and macros
+ 0000           ; #include "PSoCAPI.h"
+ 0000           ; 
+ 0000           ; //----------------------------------------------------
+ 0000           ;   //PORT0_6 TRIGGER
+ 0000           ;   //PORT0_7 ECHO
+ 0000           ; //
+ 0000           ; 
+ 0000           ; 
+ 0000           ; //Init PGA AND ADC
+ 0000           ; void InitUA()
+ 0000           ; {
+ 0000                   .dbline 13
+ 0000           ;       PGA_SetGain(PGA_G1_00);
+ 0000 10                push X
+ 0001 50F8              mov A,-8
+ 0003 7C0000            xcall _PGA_SetGain
+ 0006                   .dbline 14
+ 0006           ;       PGA_Start(PGA_MEDPOWER);
+ 0006 5002              mov A,2
+ 0008 7C0000            xcall _PGA_Start
+ 000B                   .dbline 16
+ 000B           ;       
+ 000B           ;       ADCINC_Start(ADCINC_HIGHPOWER);
+ 000B 5003              mov A,3
+ 000D 7C0000            xcall _ADCINC_Start
+ 0010                   .dbline 17
+ 0010           ;       ADCINC_GetSamples(0);
+ 0010 5000              mov A,0
+ 0012 7C0000            xcall _ADCINC_GetSamples
+ 0015 20                pop X
+ 0016                   .dbline -2
+ 0016           L1:
+ 0016                   .dbline 0 ; func end
+ 0016 7F                ret
+ 0017                   .dbend
+ 0017                   .dbfunc e getDataUA _getDataUA fI
+ 0017           _getDataUA::
+ 0017                   .dbline -1
+ 0017                   .dbline 23
+ 0017           ; }
+ 0017           ; 
+ 0017           ; 
+ 0017           ; //Return data from ADC
+ 0017           ; int getDataUA()
+ 0017           ; {
+ 0017                   .dbline 24
+ 0017           ;       if(ADCINC_fIsDataAvailable() != 0)
+ 0017 10                push X
+ 0018 7C0000            xcall _ADCINC_fIsDataAvailable
+ 001B 20                pop X
+ 001C 3900              cmp A,0
+ 001E A00C              jz L3
+ 0020                   .dbline 26
+ 0020           ;       {
+ 0020           ;               return ADCINC_iClearFlagGetData();
+ 0020                   .dbline 26
+ 0020 10                push X
+ 0021 7C0000            xcall _ADCINC_iClearFlagGetData
+ 0024 5A00              mov [__r0],X
+ 0026 5300              mov [__r1],A
+ 0028 20                pop X
+ 0029 8007              xjmp L2
+ 002B           L3:
+ 002B                   .dbline 29
+ 002B           ;       }
+ 002B           ;       else 
+ 002B           ;               return 0;
+ 002B 550000            mov [__r1],0
+ 002E 550000            mov [__r0],0
+ 0031                   .dbline -2
+ 0031           L2:
+ 0031                   .dbline 0 ; func end
+ 0031 7F                ret
+ 0032                   .dbend
+ 0032                   .dbfunc e ControlTrigger _ControlTrigger fV
+ 0032           ;           freq -> X-5
+ 0032           _ControlTrigger::
+ 0032                   .dbline -1
+ 0032 10                push X
+ 0033 4F                mov X,SP
+ 0034                   .dbline 33
+ 0034           ; }
+ 0034           ; 
+ 0034           ; void ControlTrigger(int freq)
+ 0034           ; {
+ 0034                   .dbline -2
+ 0034           L5:
+ 0034 20                pop X
+ 0035                   .dbline 0 ; func end
+ 0035 7F                ret
+ 0036                   .dbsym l freq -5 I
+ 0036                   .dbend

@@ -1,9 +1,9 @@
 Starting MAKE...
 creating project.mk 
 
-lib/adcinc_1.asm
+lib/adcinc.asm
 
-lib/adcinc_1int.asm
+lib/adcincint.asm
 
 lib/lcd.asm
 
@@ -25,48 +25,60 @@ lib/timer8.asm
 
 lib/timer8int.asm
 
-lib/timerua.asm
-
-lib/timeruaint.asm
-
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(7):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(12):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(21):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(17):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(46):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\UltraControl.h(5):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+
+If there is no parameter, use <function name>(void);
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\UltraControl.h(6):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+
+If there is no parameter, use <function name>(void);
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(44):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(65):[warning] expression with no effect elided
-
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(104):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(47):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(165):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(60):[warning] expression with no effect elided
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(170):[warning] unknown #pragma iterrupt_handler
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(67):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(172):[warning] [MISRA 2712]old-style function definition for `TimerUAInterrupt'
+takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(18):[warning] [MISRA 2712]old-style function definition for `InitPWM'
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(102):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(54):[warning] [MISRA 2712]old-style function definition for `Stop'
+takes or returns values other than int
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(156):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(18):[warning] [MISRA 2712]old-style function definition for `InitPWM'
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(54):[warning] [MISRA 2712]old-style function definition for `Stop'
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(12):[warning] [MISRA 2712]old-style function definition for `InitUA'
+
+!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(23):[warning] [MISRA 2712]old-style function definition for `getDataUA'
 
 ./boot.asm
 
 Linking..
 
-  ROM 33% full. 5349 out of 16384 bytes used (does not include absolute areas).
+  ROM 33% full. 5351 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 14% full. 34 bytes used (does not include stack usage).
+  RAM 15% full. 36 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 10 warning(s) 14:43:30
+RobottiProjekti - 0 error(s) 14 warning(s) 20:33:31
 

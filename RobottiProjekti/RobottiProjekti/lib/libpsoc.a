@@ -1,167 +1,29 @@
 .start
 XH
-H 3 areas 2 global symbols
-M timeruaint.asm
-S _TimerUAInterrupt Ref0000
-A text size 0 flags 0
-dbfile lib/timeruaint.asm
-dbfunc 0 ? 0 I
-dbfile TimerUA.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/TimerUA.inc
-dbfunc 0 ? 0 I
-dbfile lib/timeruaint.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/timeruaint.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A InterruptRAM size 0 flags 20
-A UserModules size 4 flags 0
-dbfile lib/timeruaint.asm
-dbfunc 0 ? 0 I
-dbline 53 0
-dbline 5B 3
-S _TimerUA_ISR Def0000
-T 00 00 7D 00 00 7E
-R 00 00 00 02 02 03 00 00
-.end
-.start
-XH
-H 3 areas 2E global symbols
-M timerua.asm
-A text size 0 flags 0
-dbfile lib/timerua.asm
-dbfunc 0 ? 0 I
-dbfile TimerUA.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/TimerUA.inc
-dbfunc 0 ? 0 I
-dbfile lib/timerua.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/timerua.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A robottiprojekti_RAM size 0 flags 20
-A UserModules size 45 flags 0
-dbfile lib/timerua.asm
-dbfunc 0 ? 0 I
-dbline 2 0
-dbline 66 3
-dbline 2 4
-dbline 82 7
-dbline 2 8
-dbline 9E B
-dbline 2 C
-dbline BA F
-dbline D5 10
-dbline D7 12
-dbline F3 13
-dbline F5 15
-dbline 110 16
-dbline 112 18
-dbline 145 19
-dbline 146 1A
-dbline 147 1C
-dbline 148 1E
-dbline 149 1F
-dbline 14A 21
-dbline 14B 22
-dbline 14D 24
-dbline 14E 26
-dbline 14F 28
-dbline 150 2A
-dbline 151 2D
-dbline 152 2F
-dbline 154 31
-dbline 2 33
-dbline 2 35
-dbline 157 38
-dbline 158 39
-dbline 159 3B
-dbline 15A 3C
-dbline 15B 3E
-dbline 15D 3F
-dbline 186 40
-dbline 188 42
-dbline 18A 44
-S TimerUA_Start Def0008
-S bTimerUA_CaptureCounter Def0040
-S _bTimerUA_ReadCounter Def0019
-S $sb$TimerUA_bReadTimerSaveCV Def0019
-S $se$TimerUA_bReadTimerSaveCV Def0040
-S $sb$TimerUA_Start Def0008
-S $se$TimerUA_Start Def000C
-S _TimerUA_WriteCompareValue Def0013
-S _bTimerUA_ReadTimer Def0040
-S _TimerUA_bReadTimer Def0040
-S _TimerUA_DisableInt Def0004
-S _bTimerUA_ReadTimerSaveCV Def0019
-S _TimerUA_bReadTimerSaveCV Def0019
-S _TimerUA_Start Def0008
-S TimerUA_WritePeriod Def0010
-S TimerUA_EnableInt Def0000
-S _bTimerUA_CaptureCounter Def0040
-S $sb$TimerUA_WritePeriod Def0010
-S $se$TimerUA_WritePeriod Def0013
-S $sb$TimerUA_EnableInt Def0000
-S $se$TimerUA_EnableInt Def0004
-S bTimerUA_ReadCompareValue Def0016
-S TimerUA_bReadCompareValue Def0016
-S TimerUA_Stop Def000C
-S bTimerUA_ReadCounter Def0019
-S $sb$TimerUA_bReadCompareValue Def0016
-S $se$TimerUA_bReadCompareValue Def0019
-S $sb$TimerUA_Stop Def000C
-S $se$TimerUA_Stop Def0010
-S _TimerUA_WritePeriod Def0010
-S TimerUA_WriteCompareValue Def0013
-S _TimerUA_EnableInt Def0000
-S bTimerUA_ReadTimer Def0040
-S TimerUA_bReadTimer Def0040
-S TimerUA_DisableInt Def0004
-S $sb$TimerUA_WriteCompareValue Def0013
-S $se$TimerUA_WriteCompareValue Def0016
-S $sb$TimerUA_bReadTimer Def0040
-S $sb$TimerUA_DisableInt Def0004
-S $se$TimerUA_bReadTimer Def0045
-S $se$TimerUA_DisableInt Def0008
-S _bTimerUA_ReadCompareValue Def0016
-S _TimerUA_bReadCompareValue Def0016
-S _TimerUA_Stop Def000C
-S bTimerUA_ReadTimerSaveCV Def0019
-S TimerUA_bReadTimerSaveCV Def0019
-T 00 00 43 E1 10 7F 41 E1 EF 7F 43 33 01 7F 41 33
-R 00 00 00 02
-T 00 0E FE 7F 60 31 7F 60 32 7F 5D 32 7F 4F 38 02
-R 00 00 00 02
-T 00 1C 5D 33 08 5D 32 08 5D 30 5D 32 54 01 50 00
-R 00 00 00 02
-T 00 2A 49 F7 01 A0 03 50 01 54 00 70 FE 41 33 FE
-R 00 00 00 02
-T 00 38 18 60 32 18 60 33 18 7E 5D 30 5D 32 7F
-R 00 00 00 02
-.end
-.start
-XH
-H 3 areas 2 global symbols
+H 3 areas 11 global symbols
 M timer8int.asm
 S _TimerInterrupt Ref0000
+S __r0 Ref0000
+S __r1 Ref0000
+S __r2 Ref0000
+S __r3 Ref0000
+S __r4 Ref0000
+S __r5 Ref0000
+S __r6 Ref0000
+S __r7 Ref0000
+S __r8 Ref0000
+S __r9 Ref0000
+S __rX Ref0000
+S __rY Ref0000
+S __rZ Ref0000
+S __r10 Ref0000
+S __r11 Ref0000
 A text size 0 flags 0
 dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
 dbfile Timer8.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/Timer8.inc
 dbfunc 0 ? 0 I
@@ -171,17 +33,99 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
-A UserModules size 4 flags 0
+A UserModules size 60 flags 0
 dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
-dbline 53 0
-dbline 5B 3
+dbline 3 0
+dbline 9 1
+dbline A 3
+dbline B 4
+dbline C 6
+dbline D 7
+dbline E 9
+dbline F A
+dbline 10 C
+dbline 11 D
+dbline 12 F
+dbline 13 10
+dbline 14 12
+dbline 15 13
+dbline 16 15
+dbline 17 16
+dbline 18 18
+dbline 19 19
+dbline 1A 1B
+dbline 1B 1C
+dbline 1C 1E
+dbline 1D 1F
+dbline 1E 21
+dbline 1F 22
+dbline 20 24
+dbline 21 25
+dbline 22 27
+dbline 23 28
+dbline 24 2A
+dbline 25 2B
+dbline 26 2D
+dbline 51 2E
+dbline 7 31
+dbline 8 32
+dbline 9 34
+dbline A 35
+dbline B 37
+dbline C 38
+dbline D 3A
+dbline E 3B
+dbline F 3D
+dbline 10 3E
+dbline 11 40
+dbline 12 41
+dbline 13 43
+dbline 14 44
+dbline 15 46
+dbline 16 47
+dbline 17 49
+dbline 18 4A
+dbline 19 4C
+dbline 1A 4D
+dbline 1B 4F
+dbline 1C 50
+dbline 1D 52
+dbline 1E 53
+dbline 1F 55
+dbline 20 56
+dbline 21 58
+dbline 22 59
+dbline 23 5B
+dbline 24 5C
+dbline 29 5E
+dbline 5B 5F
 S _Timer8_ISR Def0000
-T 00 00 7D 00 00 7E
-R 00 00 00 02 02 03 00 00
+T 00 00 08 51 00 00 08 51 00 00 08 51 00 00 08 51
+R 00 00 00 02 03 04 00 01 03 08 00 02 03 0C 00 03
+T 00 0B 00 00 08 51 00 00 08 51 00 00 08 51
+R 00 00 00 02 03 02 00 04 03 06 00 05 03 0A 00 06
+T 00 14 00 00 08 51 00 00 08 51 00 00 08 51
+R 00 00 00 02 03 02 00 07 03 06 00 08 03 0A 00 09
+T 00 1D 00 00 08 51 00 00 08 51 00 00 08 51
+R 00 00 00 02 03 02 00 0A 03 06 00 0E 03 0A 00 0F
+T 00 26 00 00 08 51 00 00 08 51 00 00 08 7C
+R 00 00 00 02 03 02 00 0B 03 06 00 0C 03 0A 00 0D
+T 00 2F 00 00 18 53 00 00 18 53 00 00 18 53
+R 00 00 00 02 02 02 00 00 03 06 00 0D 03 0A 00 0C
+T 00 39 00 00 18 53 00 00 18 53 00 00 18 53
+R 00 00 00 02 03 02 00 0B 03 06 00 0F 03 0A 00 0E
+T 00 42 00 00 18 53 00 00 18 53 00 00 18 53
+R 00 00 00 02 03 02 00 0A 03 06 00 09 03 0A 00 08
+T 00 4B 00 00 18 53 00 00 18 53 00 00 18 53
+R 00 00 00 02 03 02 00 07 03 06 00 06 03 0A 00 05
+T 00 54 00 00 18 53 00 00 18 53 00 00 18 53
+R 00 00 00 02 03 02 00 04 03 06 00 03 03 0A 00 02
+T 00 5D 00 00 18 7E
+R 00 00 00 02 03 02 00 01
 .end
 .start
 XH
@@ -192,7 +136,7 @@ dbfile lib/timer8.asm
 dbfunc 0 ? 0 I
 dbfile Timer8.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/Timer8.inc
 dbfunc 0 ? 0 I
@@ -202,7 +146,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/timer8.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
 A UserModules size 45 flags 0
@@ -317,13 +261,13 @@ dbfile lib/pwm8_vasenint.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_VASEN.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_VASEN.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_vasenint.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
 A UserModules size 1 flags 0
@@ -347,13 +291,13 @@ dbfile lib/pwm8_vasen.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_VASEN.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_VASEN.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_vasen.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
 A UserModules size 42 flags 0
@@ -455,13 +399,13 @@ dbfile lib/pwm8_oikeaint.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_oikeaint.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
 A UserModules size 1 flags 0
@@ -485,13 +429,13 @@ dbfile lib/pwm8_oikea.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_oikea.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
 A UserModules size 42 flags 0
@@ -587,111 +531,111 @@ M psocconfigtbl.asm
 A text size 0 flags 0
 dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
-A lit size 9A flags 0
+A lit size 8E flags 0
 S LoadConfigTBL_robottiprojekti_Bank0 Def0000
-S LoadConfigTBL_robottiprojekti_Bank1 Def0059
+S LoadConfigTBL_robottiprojekti_Bank1 Def0053
 A psoc_config size C5 flags 0
 dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbline 2 0
-dbline 88 2
+dbline 7E 2
 dbline 2 5
-dbline 8A 7
-dbline 8B A
+dbline 80 7
+dbline 81 A
 dbline 2 D
-dbline 8D F
-dbline 8E 12
+dbline 83 F
+dbline 84 12
 dbline 2 15
-dbline 90 17
-dbline 91 1A
+dbline 86 17
+dbline 87 1A
 dbline 2 1D
-dbline 93 1F
-dbline 94 22
+dbline 89 1F
+dbline 8A 22
 dbline 2 25
-dbline 96 27
-dbline 97 2A
+dbline 8C 27
+dbline 8D 2A
 dbline 2 2D
-dbline 99 2F
-dbline 9A 32
+dbline 8F 2F
+dbline 90 32
 dbline 2 35
-dbline 9C 37
-dbline 9D 3A
+dbline 92 37
+dbline 93 3A
 dbline 2 3D
-dbline 9F 3F
-dbline A0 42
+dbline 95 3F
+dbline 96 42
 dbline 2 45
-dbline A2 47
-dbline A3 4A
+dbline 98 47
+dbline 99 4A
 dbline 2 4D
-dbline A5 4F
-dbline A6 52
+dbline 9B 4F
+dbline 9C 52
 dbline 2 55
-dbline A8 57
-dbline A9 5A
+dbline 9E 57
+dbline 9F 5A
 dbline 2 5D
-dbline AB 5F
-dbline AC 62
+dbline A1 5F
+dbline A2 62
 dbline 2 65
-dbline AE 67
-dbline AF 6A
+dbline A4 67
+dbline A5 6A
 dbline 2 6D
-dbline B1 6F
-dbline B2 72
+dbline A7 6F
+dbline A8 72
 dbline 2 75
-dbline B4 77
-dbline B5 7A
+dbline AA 77
+dbline AB 7A
 dbline 2 7D
-dbline B7 7F
-dbline B8 82
+dbline AD 7F
+dbline AE 82
 dbline 2 85
-dbline BA 87
-dbline BB 8A
+dbline B0 87
+dbline B1 8A
 dbline 2 8D
-dbline BD 8F
-dbline BE 92
+dbline B3 8F
+dbline B4 92
 dbline 2 95
-dbline C0 97
-dbline C1 9A
+dbline B6 97
+dbline B7 9A
 dbline 2 9D
-dbline C3 9F
-dbline C4 A2
+dbline B9 9F
+dbline BA A2
 dbline 2 A5
-dbline C6 A7
-dbline C7 AA
+dbline BC A7
+dbline BD AA
 dbline 2 AD
-dbline C9 AF
-dbline CA B2
+dbline BF AF
+dbline C0 B2
 dbline 2 B5
-dbline CC B7
-dbline CD BA
+dbline C2 B7
+dbline C3 BA
 dbline 2 BD
-dbline CF BF
+dbline C5 BF
 dbline 2 C2
-dbline D1 C4
+dbline C7 C4
 S LoadConfigTBL_robottiprojekti_Ordered Def0000
 T 00 00 80 90 81 00 82 60 83 F0 2F 00 2D 00 2E 01
 R 00 00 00 01
 T 00 0E 71 FD 72 21 73 20 70 00 27 00 25 C7 26 00
 R 00 00 00 01
-T 00 1C 23 00 21 C7 22 00 2B 04 29 63 2A 00 33 04
+T 00 1C 23 00 21 C7 22 00 2B 04 29 63 2A 00 60 2B
 R 00 00 00 01
-T 00 2A 31 13 32 00 60 2B 66 00 63 15 65 00 E6 00
+T 00 2A 66 00 63 15 65 00 E6 00 E7 03 D6 00 B0 00
 R 00 00 00 01
-T 00 38 E7 03 D6 00 B0 00 B1 00 B2 00 B3 33 B4 33
+T 00 38 B1 00 B2 00 B3 33 B4 33 B5 33 B6 00 B8 55
 R 00 00 00 01
-T 00 46 B5 33 B6 00 B8 55 B9 00 BA 10 BB 33 BC 33
+T 00 46 B9 00 BA 10 BB 33 BC 33 BD 00 BE 00 FF 2C
 R 00 00 00 01
-T 00 54 BD 00 BE 00 FF 2C 31 2D 15 2E 40 24 21 25
+T 00 54 31 2D 15 2E 40 24 21 25 11 26 45 20 21 21
 R 00 00 00 01
-T 00 62 11 26 45 20 21 21 11 22 44 28 20 29 01 2A
+T 00 62 11 22 44 28 20 29 01 2A 40 61 00 69 00 60
 R 00 00 00 01
-T 00 70 40 30 20 31 05 32 40 61 00 69 00 60 00 62
+T 00 70 00 62 00 67 33 68 33 63 00 66 00 D1 00 D3
 R 00 00 00 01
-T 00 7E 00 67 33 68 33 63 00 66 00 D1 00 D3 00 D0
+T 00 7E 00 D0 00 D2 00 E1 B9 E2 00 DF 13 DE 02 DD
 R 00 00 00 01
-T 00 8C 00 D2 00 E1 B9 E2 00 DF 13 DE 02 DD 00 FF
+T 00 8C 00 FF
 R 00 00 00 01
 T 00 00 70 EF 62 00 00 71 10 62 00 73 62 01 8C 70
 R 00 00 00 02
@@ -742,7 +686,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/psocconfig.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A psoc_config size 67 flags 0
 dbfile lib/psocconfig.asm
@@ -849,7 +793,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/pga.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile lib/pga.asm
 dbfunc 0 ? 0 I
@@ -922,7 +866,7 @@ dbfile lib/lcd.asm
 dbfunc 0 ? 0 I
 dbfile LCD.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/LCD.inc
 dbfunc 0 ? 0 I
@@ -932,7 +876,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/lcd.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A UserModules size 2B6 flags 0
 dbfile lib/lcd.asm
@@ -1490,41 +1434,41 @@ R 00 00 00 01
 .start
 XH
 H 3 areas B global symbols
-M adcinc_1int.asm
+M adcincint.asm
 A text size 0 flags 0
-dbfile lib/adcinc_1int.asm
+dbfile lib/adcincint.asm
 dbfunc 0 ? 0 I
-dbfile ADCINC_1.inc
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile ADCINC_1.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/ADCINC_1.inc
-dbfunc 0 ? 0 I
-dbfile lib/adcinc_1int.asm
+dbfile ADCINC.inc
 dbfunc 0 ? 0 I
 dbfile memory.inc
 dbfunc 0 ? 0 I
-dbfile lib/adcinc_1int.asm
+dbfile ADCINC.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+dbfile ./lib/ADCINC.inc
+dbfunc 0 ? 0 I
+dbfile lib/adcincint.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/adcincint.asm
+dbfunc 0 ? 0 I
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 8 flags 20
-S _ADCINC_1_bState Def0005
-S _ADCINC_1_bNumSamples Def0007
-S ADCINC_1_iResult Def0000
-S ADCINC_1_fStatus Def0004
-S ADCINC_1_fMode Def0006
-S _ADCINC_1_iResult Def0000
-S _ADCINC_1_fStatus Def0004
-S _ADCINC_1_fMode Def0006
-S ADCINC_1_bState Def0005
-S ADCINC_1_bNumSamples Def0007
+S _ADCINC_iResult Def0000
+S _ADCINC_fStatus Def0004
+S _ADCINC_fMode Def0006
+S ADCINC_bState Def0005
+S ADCINC_bNumSamples Def0007
+S _ADCINC_bState Def0005
+S _ADCINC_bNumSamples Def0007
+S ADCINC_iResult Def0000
+S ADCINC_fStatus Def0004
+S ADCINC_fMode Def0006
 A UserModules size 69 flags 0
-dbfile lib/adcinc_1int.asm
+dbfile lib/adcincint.asm
 dbfunc 0 ? 0 I
 dbline 5D 0
 dbline 5F 2
@@ -1575,7 +1519,7 @@ dbline 4 61
 dbline BA 64
 dbline 3 65
 dbline BE 68
-S _ADCINC_1_ADConversion_ISR Def0000
+S _ADCINC_ADConversion_ISR Def0000
 T 00 00 7A 00 05 C0 02 7E 3C 00 06 00 B0 12 08 5D
 R 00 00 00 02 01 03 00 01 01 09 00 01
 T 00 0C E5 53 00 03 5D E4 53 00 02 18 55 00 06 01
@@ -1600,36 +1544,36 @@ R 00 00 00 02
 .start
 XH
 H 3 areas 3D global symbols
-M adcinc_1.asm
-S ADCINC_1_iResult Ref0000
-S ADCINC_1_fStatus Ref0000
-S ADCINC_1_fMode Ref0000
-S ADCINC_1_bState Ref0000
-S ADCINC_1_bNumSamples Ref0000
+M adcinc.asm
+S ADCINC_bState Ref0000
+S ADCINC_bNumSamples Ref0000
+S ADCINC_iResult Ref0000
+S ADCINC_fStatus Ref0000
+S ADCINC_fMode Ref0000
 A text size 0 flags 0
-dbfile lib/adcinc_1.asm
+dbfile lib/adcinc.asm
 dbfunc 0 ? 0 I
-dbfile ADCINC_1.inc
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile ADCINC_1.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/ADCINC_1.inc
-dbfunc 0 ? 0 I
-dbfile lib/adcinc_1.asm
+dbfile ADCINC.inc
 dbfunc 0 ? 0 I
 dbfile memory.inc
 dbfunc 0 ? 0 I
-dbfile lib/adcinc_1.asm
+dbfile ADCINC.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+dbfile ./lib/ADCINC.inc
+dbfunc 0 ? 0 I
+dbfile lib/adcinc.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/adcinc.asm
+dbfunc 0 ? 0 I
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A bss size 0 flags 20
 A UserModules size 77 flags 0
-dbfile lib/adcinc_1.asm
+dbfile lib/adcinc.asm
 dbfunc 0 ? 0 I
 dbline 60 0
 dbline 61 3
@@ -1687,62 +1631,62 @@ dbline 4 70
 dbline 172 73
 dbline 2 74
 dbline 18B 76
-S _ADCINC_1_wGetData Def0066
-S ADCINC_1_wClearFlagGetData Def0053
-S _ADCINC_1_WritePulseWidth Def0074
-S $sb$ADCINC_1_cClearFlagGetData Def0060
-S _ADCINC_1_fIsDataAvailable Def0050
-S $se$ADCINC_1_cClearFlagGetData Def0066
-S $sb$ADCINC_1_iClearFlagGetData Def0053
-S $se$ADCINC_1_iClearFlagGetData Def0060
-S $sb$ADCINC_1_StopADC Def0046
-S $se$ADCINC_1_StopADC Def0050
-S _ADCINC_1_SetPower Def0012
-S ADCINC_1_Stop Def0020
-S _ADCINC_1_bClearFlagGetData Def0060
-S _ADCINC_1_cClearFlagGetData Def0060
-S $sb$ADCINC_1_Stop Def0020
-S _ADCINC_1_iClearFlagGetData Def0053
-S $se$ADCINC_1_Stop Def002A
-S ADCINC_1_fClearFlag Def006E
-S _ADCINC_1_StopADC Def0046
-S _ADCINC_1_wClearFlagGetData Def0053
-S $sb$ADCINC_1_fClearFlag Def006E
-S $se$ADCINC_1_fClearFlag Def0074
-S ADCINC_1_GetSamples Def002A
-S ADCINC_1_bGetData Def006B
-S ADCINC_1_cGetData Def006B
-S ADCINC_1_iGetData Def0066
-S _ADCINC_1_Stop Def0020
-S ADCINC_1_Start Def0000
-S ADCINC_1_wGetData Def0066
-S $sb$ADCINC_1_GetSamples Def002A
-S ADCINC_1_WritePulseWidth Def0074
-S $se$ADCINC_1_GetSamples Def0046
-S $sb$ADCINC_1_bGetData Def006B
-S $se$ADCINC_1_bGetData Def006E
-S ADCINC_1_fIsDataAvailable Def0050
-S $sb$ADCINC_1_iGetData Def0066
-S $se$ADCINC_1_iGetData Def006B
-S _ADCINC_1_fClearFlag Def006E
-S $sb$ADCINC_1_Start Def0000
-S $se$ADCINC_1_Start Def0012
-S $sb$ADCINC_1_WritePulseWidth Def0074
-S $se$ADCINC_1_WritePulseWidth Def0077
-S ADCINC_1_SetPower Def0012
-S $sb$ADCINC_1_fIsDataAvailable Def0050
-S $se$ADCINC_1_fIsDataAvailable Def0053
-S _ADCINC_1_GetSamples Def002A
-S $sb$ADCINC_1_SetPower Def0012
-S $se$ADCINC_1_SetPower Def0020
-S _ADCINC_1_bGetData Def006B
-S _ADCINC_1_cGetData Def006B
-S ADCINC_1_bClearFlagGetData Def0060
-S ADCINC_1_cClearFlagGetData Def0060
-S _ADCINC_1_iGetData Def0066
-S ADCINC_1_iClearFlagGetData Def0053
-S _ADCINC_1_Start Def0000
-S ADCINC_1_StopADC Def0046
+S ADCINC_iGetData Def0066
+S _ADCINC_Stop Def0020
+S ADCINC_Start Def0000
+S ADCINC_wGetData Def0066
+S $sb$ADCINC_GetSamples Def002A
+S ADCINC_WritePulseWidth Def0074
+S $se$ADCINC_GetSamples Def0046
+S $sb$ADCINC_bGetData Def006B
+S $se$ADCINC_bGetData Def006E
+S ADCINC_fIsDataAvailable Def0050
+S $sb$ADCINC_iGetData Def0066
+S $se$ADCINC_iGetData Def006B
+S _ADCINC_fClearFlag Def006E
+S $sb$ADCINC_Start Def0000
+S $se$ADCINC_Start Def0012
+S $sb$ADCINC_WritePulseWidth Def0074
+S $se$ADCINC_WritePulseWidth Def0077
+S ADCINC_SetPower Def0012
+S $sb$ADCINC_fIsDataAvailable Def0050
+S $se$ADCINC_fIsDataAvailable Def0053
+S _ADCINC_GetSamples Def002A
+S $sb$ADCINC_SetPower Def0012
+S $se$ADCINC_SetPower Def0020
+S _ADCINC_bGetData Def006B
+S _ADCINC_cGetData Def006B
+S ADCINC_bClearFlagGetData Def0060
+S ADCINC_cClearFlagGetData Def0060
+S _ADCINC_iGetData Def0066
+S ADCINC_iClearFlagGetData Def0053
+S _ADCINC_Start Def0000
+S ADCINC_StopADC Def0046
+S _ADCINC_wGetData Def0066
+S ADCINC_wClearFlagGetData Def0053
+S _ADCINC_WritePulseWidth Def0074
+S $sb$ADCINC_cClearFlagGetData Def0060
+S _ADCINC_fIsDataAvailable Def0050
+S $se$ADCINC_cClearFlagGetData Def0066
+S $sb$ADCINC_iClearFlagGetData Def0053
+S $se$ADCINC_iClearFlagGetData Def0060
+S $sb$ADCINC_StopADC Def0046
+S $se$ADCINC_StopADC Def0050
+S _ADCINC_SetPower Def0012
+S ADCINC_Stop Def0020
+S _ADCINC_bClearFlagGetData Def0060
+S _ADCINC_cClearFlagGetData Def0060
+S $sb$ADCINC_Stop Def0020
+S _ADCINC_iClearFlagGetData Def0053
+S $se$ADCINC_Stop Def002A
+S ADCINC_fClearFlag Def006E
+S _ADCINC_StopADC Def0046
+S _ADCINC_wClearFlagGetData Def0053
+S $sb$ADCINC_fClearFlag Def006E
+S $se$ADCINC_fClearFlag Def0074
+S ADCINC_GetSamples Def002A
+S ADCINC_bGetData Def006B
+S ADCINC_cGetData Def006B
 T 00 00 43 E7 C0 90 0D 43 82 20 43 83 10 62 2D FF
 R 00 00 00 02
 T 00 0E 43 2F 01 7F 4F 21 03 08 5D 83 21 FC 2B 00
@@ -1750,17 +1694,17 @@ R 00 00 00 02
 T 00 1C 60 83 18 7F 41 E1 F7 41 83 FC 41 2F FE 7F
 R 00 00 00 02
 T 00 2A 41 83 EF 41 82 DF 55 00 00 00 55 00 00 00
-R 00 00 00 02 03 09 00 02 03 0D 00 03
+R 00 00 00 02 03 09 00 04 03 0D 00 00
 T 00 36 53 00 00 5D 2E B0 04 62 2E 01 62 DB F7 43
-R 00 00 00 02 03 03 00 04
+R 00 00 00 02 03 03 00 01
 T 00 43 E1 08 7F 41 E1 F7 43 82 20 43 83 10 7F 51
 R 00 00 00 02
 T 00 51 00 00 7F 55 00 00 00 58 00 00 51
-R 00 00 00 02 03 02 00 01 03 06 00 01 03 0A 00 00
+R 00 00 00 02 03 02 00 03 03 06 00 03 03 0A 00 02
 T 00 59 00 01 3C 00 00 00 BF F5 7F 55 00 00 00 51
-R 00 00 00 02 03 02 00 00 03 05 00 01 03 0C 00 01
+R 00 00 00 02 03 02 00 02 03 05 00 03 03 0C 00 03
 T 00 64 00 01 7F 58 00 00 51 00 01 7F 51
-R 00 00 00 02 03 02 00 00 03 06 00 00 03 09 00 00
+R 00 00 00 02 03 02 00 02 03 06 00 02 03 09 00 02
 T 00 6C 00 01 7F 51 00 00 55 00 00 00 7F 60 2E 7F
-R 00 00 00 02 03 02 00 00 03 06 00 01 03 09 00 01
+R 00 00 00 02 03 02 00 02 03 06 00 03 03 09 00 03
 .end

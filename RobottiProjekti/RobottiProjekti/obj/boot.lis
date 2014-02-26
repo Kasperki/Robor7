@@ -1274,13 +1274,13 @@
  002B 7E            reti
  002C           
                     org   2Ch                      ;PSoC Block DCB03 Interrupt Vector
- 002C 7D0000        ljmp        _ADCINC_1_ADConversion_ISR
+ 002C 7D0000        ljmp        _ADCINC_ADConversion_ISR
  002F 7E            reti
  0030           
                     org   30h                      ;PSoC Block DBB10 Interrupt Vector
- 0030 7D0000        ljmp        _TimerUA_ISR
- 0033 7E            reti
- 0034           
+                    // call     void_handler
+ 0030 7E            reti
+ 0031           
                     org   34h                      ;PSoC Block DBB11 Interrupt Vector
                     // call     void_handler
  0034 7E            reti

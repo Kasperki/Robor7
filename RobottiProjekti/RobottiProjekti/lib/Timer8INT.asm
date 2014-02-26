@@ -77,10 +77,10 @@ _Timer8_ISR:
    ; and un-comment the lines between these banners
    ;---------------------------------------------------
    
-   ;PRESERVE_CPU_CONTEXT
-   ;lcall _My_C_Function
-   ;RESTORE_CPU_CONTEXT
-   ljmp _TimerInterrupt
+   PRESERVE_CPU_CONTEXT
+   lcall _TimerInterrupt
+   RESTORE_CPU_CONTEXT
+   ;ljmp _TimerInterrupt
    
    ;---------------------------------------------------
    ; Insert a lcall to a C function above this banner

@@ -18,12 +18,11 @@
 #define __PSOCAPI_H
 
 #include "PSoCGPIOINT.h"
-#include "ADCINC_1.h"
+#include "ADCINC.h"
 #include "LCD.h"
 #include "PGA.h"
 #include "PWM8_OIKEA.h"
 #include "PWM8_VASEN.h"
 #include "Timer8.h"
-#include "TimerUA.h"
 
 #endif

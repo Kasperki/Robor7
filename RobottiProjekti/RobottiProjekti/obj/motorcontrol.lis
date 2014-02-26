@@ -4,7 +4,7 @@
                         .area lit(rom, con, rel, lit)
  0000           _LEFTFOW::
  0000 0001              .word 1
- 0002                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0002                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
  0002                   .dbsym e LEFTFOW _LEFTFOW kI
  0002           _LEFTBACK::
  0002 0010              .word 16
@@ -19,7 +19,7 @@
  0008 3F4CCCCD          .word 0x3f4c,0xcccd
  000C                   .dbsym e OIKEUSKERROIN _OIKEUSKERROIN kD
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
  0000                   .dbfunc e InitPWM _InitPWM fV
  0000           _InitPWM::
  0000                   .dbline -1

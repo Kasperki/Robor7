@@ -78,7 +78,7 @@ _TimerUA_ISR:
    ;---------------------------------------------------
    
    ;PRESERVE_CPU_CONTEXT
-   ;lcall _My_C_Function
+   ;lcall _TimerUAInterrupt
    ;RESTORE_CPU_CONTEXT
    ljmp _TimerUAInterrupt
    
