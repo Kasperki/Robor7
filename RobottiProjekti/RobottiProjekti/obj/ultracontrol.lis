@@ -1,7 +1,7 @@
                         .module ultracontrol.c
                         .area text(rom, con, rel)
  0000                   .dbfile ./ultracontrol.c
- 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0000                   .dbfunc e InitUA _InitUA fV
  0000           _InitUA::
  0000                   .dbline -1
@@ -61,10 +61,10 @@
  001E A00C              jz L3
  0020                   .dbline 26
  0020           ;       {
- 0020           ;               return ADCINC_iClearFlagGetData();
+ 0020           ;               return ADCINC_iGetData();
  0020                   .dbline 26
  0020 10                push X
- 0021 7C0000            xcall _ADCINC_iClearFlagGetData
+ 0021 7C0000            xcall _ADCINC_iGetData
  0024 5A00              mov [__r0],X
  0026 5300              mov [__r1],A
  0028 20                pop X

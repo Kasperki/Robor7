@@ -61,8 +61,10 @@ void main(void)
 		
 		//60ms again
 		if (timeT2 >= 6)
+		{
 			timeT2 = 0;
-		
+		}
+			
 		//Gets the data
 		ultraData = getDataUA();
 		
@@ -139,9 +141,11 @@ void main(void)
 			LCD_PrString(buffer);
 		}*/
 	
-		if(timeT > 50)
+		if(timeT >= 6)
 		{
 			itoa(buffer,ultraData,10);
+			LCD_Position(0,0);
+			LCD_PrCString("      ");
 			LCD_Position(0,0);
 			LCD_PrString(buffer);
 						

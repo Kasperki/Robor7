@@ -23,7 +23,7 @@ int getDataUA()
 {
 	if(ADCINC_fIsDataAvailable() != 0)
 	{
-		return ADCINC_iClearFlagGetData();
+		return ADCINC_iGetData();
 	}
 	else 
 		return 0;
