@@ -14,8 +14,11 @@
 #include "UltraControl.h"
 //#include "GyroControl.h"
 
-int timeT = 0, timeT2 = 0; //kello
-int timeForward = 150; //.... 4m täydellä vauhdilla 3.9s
+//Kellot
+int timeT = 0,timeT2 = 0;
+int timeLCD = 0,timeUltra = 0; 
+
+int timeForward = 50; //.... 4m täydellä vauhdilla 3.9s
 int turnTime = 75; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
 
@@ -27,6 +30,7 @@ void main(void)
 	volatile int i = 0;
 	int turn = 0;
 	int ultraData = 0; //Data from ultrasonic sensor
+	int kulma = 0;
 	
 	//Init**************************
 	
@@ -46,110 +50,126 @@ void main(void)
 	//Init PGA and ADCIN for Ultrasonic
 	InitUA();
 	
+	//Testink
+	//TestLoop();
 	
 	//MainLoop**********
 	//***********************
 	while(1)
 	{
-		//NEW STUFF
-		if (timeT2 <= 1)
-		{
-			UATrig_Data_ADDR |= UATrig_MASK;
-		}
-		else 	
-			UATrig_Data_ADDR &= 0x00;
-		
-		//60ms again
-		if (timeT2 >= 6)
-		{
-			timeT2 = 0;
-		}
+		//Controlls the ultraSonic trigger
+		ControlTrigger(&timeUltra);	
 			
 		//Gets the data
 		ultraData = getDataUA();
 		
-		//END
-			
-		
-		
 		//Spiraali
-		if(i < 3)
+		if(i < 10)
 		{
-			if(turn == 0)
-				MoveForward(FULL_SPEED);
-			else 
+			if(i < 3)
 			{
-				if(timeT <= turnTime) //if(gyroKulma < 90)
+				if(turn == 0)
+					MoveForward(FULL_SPEED);
+				else 
 				{
-					TurnLeft(FULL_SPEED);
-				}
-				else
-				{ 
-					turn = 0;
-					timeT = 0;
+					if(timeT <= turnTime) //if(gyroKulma < 90)
+					{
+						TurnLeft(FULL_SPEED);
+					}
+					else
+					{ 
+						turn = 0;
+						timeT = 0;
+					}
 				}
 			}
-		}
-		else if(i < 5) 
-		{
-			i = 0;
-			timeForward -= timeRobotWidth;
-		}
-		
-		//Kokokierros on menty
-		if(timeForward <= 0)
-		{
-			i = 10;
-			timeForward = 0;
-			Stop();
+			else if(i < 5) 
+			{
+				i = 0;
+				timeForward -= timeRobotWidth;
+			}
+			
+			//Kokokierros on menty
+			if(timeForward <= 0)
+			{
+				i = 10;
+				timeT = 0; 
+				timeT2 = 0;
+				turn = 0;
+				timeForward = 0;
+				Stop();
+			}
+			else if (timeT >= timeForward && turn == 0)
+			{
+				i++;
+				turn = 1;
+				timeT = 0;
+			}
 		}
 		//End Spiraali
 		
 		
 		//Scan
-		/*
-			if(i == 10)
-			{
-				Skannaa keiloja.
-				while(kulma >= 360)
-				{
-					WaitForScan?
-					If(output => 0) 
-						MoveForward(199);
-					else
-						TurnLeft(199); kulma += 10;
-				}
-		
-				Jos ei löydy i = 20;
-			}
-		*/
-		
-		/*
-		if (timeT >= timeForward && turn == 0)
+		if(i == 10)
 		{
-			i++;
-			turn = 1;
-			timeT = 0;
-			
-			//WRITE TO LCD
-			itoa(buffer,timeForward,10);
-			LCD_Position(0,5);
-			LCD_PrString(buffer);
-			
-			itoa(buffer,i,10);
-			LCD_Position(0,0);
-			LCD_PrString(buffer);
-		}*/
-	
-		if(timeT >= 6)
+			if(kulma < 360)
+			{
+				if(ultraData < 200)
+				{	
+					if(ultraData > 0)
+						MoveForward(SLOW_SPEED); 
+				}
+				else if (timeT2 >= 50) //WAIT 500ms
+				{
+					if (turn == 0)
+					{	
+						timeT = 0;
+						turn = 1;
+					}
+						
+					if(timeT <= 20)
+						TurnRight(HALF_SPEED);
+					else
+					{
+						kulma+=5;
+						timeT2 = 0;
+						turn = 0;
+					}
+				}
+				else 
+					Stop();
+			}
+			else 
+				i = 20;
+		}
+		
+		if(i == 20)
+			Stop();
+		
+		
+		//WRITE TO LCD
+		if(timeLCD >= 6)
 		{
 			itoa(buffer,ultraData,10);
 			LCD_Position(0,0);
 			LCD_PrCString("      ");
 			LCD_Position(0,0);
 			LCD_PrString(buffer);
-						
-			timeT = 0;
+					
+			//
+			LCD_Position(0,5);
+			LCD_PrCString("      ");
+			itoa(buffer,timeForward,10);
+			LCD_Position(0,5);
+			LCD_PrString(buffer);
+			
+			LCD_Position(1,0);
+			LCD_PrCString("      ");
+			itoa(buffer,kulma,10);
+			LCD_Position(1,0);
+			LCD_PrString(buffer);
+			
+			timeLCD = 0;
 		}		
 	}
 
@@ -160,5 +180,35 @@ void TimerInterrupt()
 {
   timeT++;
   timeT2++;
+
+  timeLCD++; //Controlls LCD draw cycle
+  timeUltra++; //Controlls Ultrasonic sensor trigger time
+}
+
+//For Testing
+void TestLoop()
+{
+	while(1)
+	{
+		//Test 4m
+		if(timeT <= 390)
+		{
+			MoveForward(FULL_SPEED);
+		}
+		
+		//Test 90 degree Turn
+		/*	
+			if(timeT <= 100)
+				TurnRight(FULL_SPEED);
+			else if(timeT <= 400)
+				timeT = 0;
+		*/
+		
+		//TestTurning
+		/*
+		if()
+			//TestTurnRight();
+		*/
+	}
 }
 

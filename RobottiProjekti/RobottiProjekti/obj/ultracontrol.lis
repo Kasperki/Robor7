@@ -1,38 +1,51 @@
                         .module ultracontrol.c
                         .area text(rom, con, rel)
  0000                   .dbfile ./ultracontrol.c
- 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+                        .area data(ram, con, rel)
+ 0000                   .dbfile ./ultracontrol.c
+ 0000           _distanceToCm::
+ 0000                   .blkb 4
+                        .area idata(rom,lit)
+ 0000 3D072B02          .word 0x3d07,0x2b02
+                        .area data(ram, con, rel)
+ 0004                   .dbfile ./ultracontrol.c
+ 0004                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0004                   .dbsym e distanceToCm _distanceToCm D
+                        .area text(rom, con, rel)
+ 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0000                   .dbfunc e InitUA _InitUA fV
  0000           _InitUA::
  0000                   .dbline -1
- 0000                   .dbline 12
+ 0000                   .dbline 14
  0000           ; #include <m8c.h>        // part specific constants and macros
  0000           ; #include "PSoCAPI.h"
+ 0000           ; #include<stdio.h>
+ 0000           ; #include<stdlib.h>
  0000           ; 
  0000           ; //----------------------------------------------------
  0000           ;   //PORT0_6 TRIGGER
  0000           ;   //PORT0_7 ECHO
  0000           ; //
- 0000           ; 
+ 0000           ; float distanceToCm = 0.033f;
  0000           ; 
  0000           ; //Init PGA AND ADC
  0000           ; void InitUA()
  0000           ; {
- 0000                   .dbline 13
+ 0000                   .dbline 15
  0000           ;       PGA_SetGain(PGA_G1_00);
  0000 10                push X
  0001 50F8              mov A,-8
  0003 7C0000            xcall _PGA_SetGain
- 0006                   .dbline 14
+ 0006                   .dbline 16
  0006           ;       PGA_Start(PGA_MEDPOWER);
  0006 5002              mov A,2
  0008 7C0000            xcall _PGA_Start
- 000B                   .dbline 16
+ 000B                   .dbline 18
  000B           ;       
  000B           ;       ADCINC_Start(ADCINC_HIGHPOWER);
  000B 5003              mov A,3
  000D 7C0000            xcall _ADCINC_Start
- 0010                   .dbline 17
+ 0010                   .dbline 19
  0010           ;       ADCINC_GetSamples(0);
  0010 5000              mov A,0
  0012 7C0000            xcall _ADCINC_GetSamples
@@ -45,57 +58,182 @@
  0017                   .dbfunc e getDataUA _getDataUA fI
  0017           _getDataUA::
  0017                   .dbline -1
- 0017                   .dbline 23
+ 0017                   .dbline 25
  0017           ; }
  0017           ; 
  0017           ; 
- 0017           ; //Return data from ADC
+ 0017           ; //Return distance from Ultrasonic sensor in centimeters 
  0017           ; int getDataUA()
  0017           ; {
- 0017                   .dbline 24
+ 0017                   .dbline 26
  0017           ;       if(ADCINC_fIsDataAvailable() != 0)
  0017 10                push X
  0018 7C0000            xcall _ADCINC_fIsDataAvailable
  001B 20                pop X
  001C 3900              cmp A,0
- 001E A00C              jz L3
- 0020                   .dbline 26
- 0020           ;       {
- 0020           ;               return ADCINC_iGetData();
- 0020                   .dbline 26
+ 001E A079              jz L3
+ 0020                   .dbline 28
+ 0020           ;       {               
+ 0020           ;               return (int)(ADCINC_iGetData() * distanceToCm);
+ 0020                   .dbline 28
  0020 10                push X
  0021 7C0000            xcall _ADCINC_iGetData
  0024 5A00              mov [__r0],X
- 0026 5300              mov [__r1],A
- 0028 20                pop X
- 0029 8007              xjmp L2
- 002B           L3:
- 002B                   .dbline 29
- 002B           ;       }
- 002B           ;       else 
- 002B           ;               return 0;
- 002B 550000            mov [__r1],0
- 002E 550000            mov [__r0],0
- 0031                   .dbline -2
- 0031           L2:
- 0031                   .dbline 0 ; func end
- 0031 7F                ret
- 0032                   .dbend
- 0032                   .dbfunc e ControlTrigger _ControlTrigger fV
- 0032           ;           freq -> X-5
- 0032           _ControlTrigger::
- 0032                   .dbline -1
- 0032 10                push X
- 0033 4F                mov X,SP
- 0034                   .dbline 33
- 0034           ; }
- 0034           ; 
- 0034           ; void ControlTrigger(int freq)
- 0034           ; {
- 0034                   .dbline -2
- 0034           L5:
- 0034 20                pop X
- 0035                   .dbline 0 ; func end
- 0035 7F                ret
- 0036                   .dbsym l freq -5 I
- 0036                   .dbend
+ 0026 20                pop X
+ 0027 5300              mov [__r3],A
+ 0029 5F0000            mov [__r2],[__r0]
+ 002C 470080            tst [__r2],-128
+ 002F A009              jz X0
+ 0031 5500FF            mov [__r1],-1
+ 0034 5500FF            mov [__r0],-1
+ 0037 8007              jmp X1
+ 0039           X0:
+ 0039 550000            mov [__r1],0
+ 003C 550000            mov [__r0],0
+ 003F           X1:
+ 003F 5100              mov A,[__r0]
+ 0041 08                push A
+ 0042 5100              mov A,[__r1]
+ 0044 08                push A
+ 0045 5100              mov A,[__r2]
+ 0047 08                push A
+ 0048 5100              mov A,[__r3]
+ 004A 08                push A
+ 004B 7C0000            xcall __long2fp
+ 004E 18                pop A
+ 004F 5300              mov [__r3],A
+ 0051 18                pop A
+ 0052 5300              mov [__r2],A
+ 0054 18                pop A
+ 0055 5300              mov [__r1],A
+ 0057 18                pop A
+ 0058 5300              mov [__r0],A
+ 005A 5100              mov A,[_distanceToCm]
+ 005C 08                push A
+ 005D 5101              mov A,[_distanceToCm+1]
+ 005F 08                push A
+ 0060 5102              mov A,[_distanceToCm+2]
+ 0062 08                push A
+ 0063 5103              mov A,[_distanceToCm+3]
+ 0065 08                push A
+ 0066 5100              mov A,[__r0]
+ 0068 08                push A
+ 0069 5100              mov A,[__r1]
+ 006B 08                push A
+ 006C 5100              mov A,[__r2]
+ 006E 08                push A
+ 006F 5100              mov A,[__r3]
+ 0071 08                push A
+ 0072 7C0000            xcall __fpmul
+ 0075 18                pop A
+ 0076 5300              mov [__r3],A
+ 0078 18                pop A
+ 0079 5300              mov [__r2],A
+ 007B 18                pop A
+ 007C 5300              mov [__r1],A
+ 007E 18                pop A
+ 007F 38FC              add SP,-4
+ 0081 08                push A
+ 0082 5100              mov A,[__r1]
+ 0084 08                push A
+ 0085 5100              mov A,[__r2]
+ 0087 08                push A
+ 0088 5100              mov A,[__r3]
+ 008A 08                push A
+ 008B 7C0000            xcall __fp2long
+ 008E 18                pop A
+ 008F 5300              mov [__r1],A
+ 0091 18                pop A
+ 0092 5300              mov [__r0],A
+ 0094 38FE              add SP,-2
+ 0096 8007              xjmp L2
+ 0098           L3:
+ 0098                   .dbline 31
+ 0098           ;       }
+ 0098           ;       else 
+ 0098           ;               return 0;
+ 0098 550000            mov [__r1],0
+ 009B 550000            mov [__r0],0
+ 009E                   .dbline -2
+ 009E           L2:
+ 009E                   .dbline 0 ; func end
+ 009E 7F                ret
+ 009F                   .dbend
+ 009F                   .dbfunc e ControlTrigger _ControlTrigger fV
+ 009F           ;           time -> X-5
+ 009F           _ControlTrigger::
+ 009F                   .dbline -1
+ 009F 10                push X
+ 00A0 4F                mov X,SP
+ 00A1                   .dbline 36
+ 00A1           ; }
+ 00A1           ; 
+ 00A1           ; //Sends Trigger pulse
+ 00A1           ; void ControlTrigger(int *time)
+ 00A1           ; {
+ 00A1                   .dbline 38
+ 00A1           ;       //Send Trigger Pulse every 10ms 
+ 00A1           ;       if (*time <= 1)
+ 00A1 52FC              mov A,[X-4]
+ 00A3 5300              mov [__r1],A
+ 00A5 3E00              mvi A,[__r1]
+ 00A7 5300              mov [__r0],A
+ 00A9 3E00              mvi A,[__r1]
+ 00AB 5300              mov [__r1],A
+ 00AD 5001              mov A,1
+ 00AF 1200              sub A,[__r1]
+ 00B1 5100              mov A,[__r0]
+ 00B3 3180              xor A,-128
+ 00B5 5300              mov [__rX],A
+ 00B7 5080              mov A,(0 ^ 0x80)
+ 00B9 1A00              sbb A,[__rX]
+ 00BB C006              jc L6
+ 00BD           X2:
+ 00BD                   .dbline 40
+ 00BD           ;       {
+ 00BD           ;               UATrig_Data_ADDR |= UATrig_MASK;
+ 00BD                   .dbline 40
+ 00BD 430040            or REG[0],64
+ 00C0                   .dbline 41
+ 00C0           ;       }
+ 00C0 8004              xjmp L7
+ 00C2           L6:
+ 00C2                   .dbline 43
+ 00C2           ;       else    
+ 00C2           ;               UATrig_Data_ADDR &= 0x00;
+ 00C2 620000            mov REG[0],0
+ 00C5           L7:
+ 00C5                   .dbline 46
+ 00C5           ;       
+ 00C5           ;       //Wait 60ms and send pulse again
+ 00C5           ;       if (*time >= 6)
+ 00C5 52FC              mov A,[X-4]
+ 00C7 5300              mov [__r1],A
+ 00C9 3E00              mvi A,[__r1]
+ 00CB 5300              mov [__r0],A
+ 00CD 3E00              mvi A,[__r1]
+ 00CF 1106              sub A,6
+ 00D1 5100              mov A,[__r0]
+ 00D3 3180              xor A,-128
+ 00D5 1980              sbb A,(0 ^ 0x80)
+ 00D7 C00B              jc L8
+ 00D9           X3:
+ 00D9                   .dbline 48
+ 00D9           ;       {
+ 00D9           ;               *time = 0;
+ 00D9                   .dbline 48
+ 00D9 52FC              mov A,[X-4]
+ 00DB 5300              mov [__r1],A
+ 00DD 5000              mov A,0
+ 00DF 3F00              mvi [__r1],A
+ 00E1 3F00              mvi [__r1],A
+ 00E3                   .dbline 49
+ 00E3           ;       }
+ 00E3           L8:
+ 00E3                   .dbline -2
+ 00E3           L5:
+ 00E3 20                pop X
+ 00E4                   .dbline 0 ; func end
+ 00E4 7F                ret
+ 00E5                   .dbsym l time -5 pI
+ 00E5                   .dbend

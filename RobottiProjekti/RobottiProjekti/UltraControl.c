@@ -1,11 +1,13 @@
 #include <m8c.h>        // part specific constants and macros
 #include "PSoCAPI.h"
+#include<stdio.h>
+#include<stdlib.h>
 
 //----------------------------------------------------
   //PORT0_6 TRIGGER
   //PORT0_7 ECHO
 //
-
+float distanceToCm = 0.033f;
 
 //Init PGA AND ADC
 void InitUA()
@@ -18,18 +20,33 @@ void InitUA()
 }
 
 
-//Return data from ADC
+//Return distance from Ultrasonic sensor in centimeters 
 int getDataUA()
 {
 	if(ADCINC_fIsDataAvailable() != 0)
-	{
-		return ADCINC_iGetData();
+	{		
+		return (int)(ADCINC_iGetData() * distanceToCm);
 	}
 	else 
 		return 0;
 }
 
-void ControlTrigger(int freq)
+//Sends Trigger pulse
+void ControlTrigger(int *time)
 {
-
+	//Send Trigger Pulse every 10ms 
+	if (*time <= 1)
+	{
+		UATrig_Data_ADDR |= UATrig_MASK;
+	}
+	else 	
+		UATrig_Data_ADDR &= 0x00;
+	
+	//Wait 60ms and send pulse again
+	if (*time >= 6)
+	{
+		*time = 0;
+	}
 }
+
+//Control PWM to move sensor

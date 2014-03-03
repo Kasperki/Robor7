@@ -22,7 +22,7 @@ dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
 dbfile Timer8.inc
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/Timer8.inc
 dbfunc 0 ? 0 I
@@ -32,7 +32,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
 A UserModules size 60 flags 0
