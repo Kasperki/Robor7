@@ -25,13 +25,13 @@ void InitPWM()
 //Kulkee eteenpäin arvolla..
 void MoveForward(int pulse)
 {				
-	LEFTC_Data_ADDR |= LEFTC_MASK;
-	LEFTD_Data_ADDR &= 0x00;
+	LEFTC_Data_ADDR |= 0b00000101;
+	/*LEFTD_Data_ADDR &= 0x00;
 	RIGHTC_Data_ADDR |= RIGHTC_MASK;
-	RIGHTD_Data_ADDR &= 0x00;
+	RIGHTD_Data_ADDR &= 0x00;*/
 	
-	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
-	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+	PWM8_VASEN_WritePulseWidth((int)(pulse * OIKEUSKERROIN));
+	PWM8_OIKEA_WritePulseWidth(pulse);
 }
 
 //Kulkee taaksepäin arvolla
@@ -81,6 +81,7 @@ void TurnRight(int pulse)
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
+
 
 //TEST LEFTTURN
 void TestTurnLeft(int pulse)

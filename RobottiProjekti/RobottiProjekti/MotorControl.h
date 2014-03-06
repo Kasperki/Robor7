@@ -2,7 +2,7 @@
 //Defines
 
 #define FULL_SPEED 199
-#define HALF_SPEED 125
+#define HALF_SPEED 100
 #define SLOW_SPEED 50
 
 

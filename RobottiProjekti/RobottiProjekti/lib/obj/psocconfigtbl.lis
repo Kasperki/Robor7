@@ -670,7 +670,7 @@
  0022           ;  Instance name Timer8, User Module Timer8
  0022           ;       Instance name Timer8, Block Name TIMER8(DCB02)
  0022 2B04              db              2bh, 04h                ;Timer8_CONTROL_REG(DCB02CR0)
- 0024 2963              db              29h, 63h                ;Timer8_PERIOD_REG(DCB02DR1)
+ 0024 29C7              db              29h, c7h                ;Timer8_PERIOD_REG(DCB02DR1)
  0026 2A00              db              2ah, 00h                ;Timer8_COMPARE_REG(DCB02DR2)
  0028           ;  Global Register values Bank 0
  0028 602B              db              60h, 2bh                ; AnalogColumnInputSelect register (AMX_IN)
@@ -707,13 +707,13 @@
  0059           ;       Instance name PGA, Block Name GAIN(ACB00)
  0059           ;  Instance name PWM8_OIKEA, User Module PWM8
  0059           ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
- 0059 2421              db              24h, 21h                ;PWM8_OIKEA_FUNC_REG(DBB01FN)
- 005B 2511              db              25h, 11h                ;PWM8_OIKEA_INPUT_REG(DBB01IN)
+ 0059 2429              db              24h, 29h                ;PWM8_OIKEA_FUNC_REG(DBB01FN)
+ 005B 2516              db              25h, 16h                ;PWM8_OIKEA_INPUT_REG(DBB01IN)
  005D 2645              db              26h, 45h                ;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
  005F           ;  Instance name PWM8_VASEN, User Module PWM8
  005F           ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
- 005F 2021              db              20h, 21h                ;PWM8_VASEN_FUNC_REG(DBB00FN)
- 0061 2111              db              21h, 11h                ;PWM8_VASEN_INPUT_REG(DBB00IN)
+ 005F 2029              db              20h, 29h                ;PWM8_VASEN_FUNC_REG(DBB00FN)
+ 0061 2116              db              21h, 16h                ;PWM8_VASEN_INPUT_REG(DBB00IN)
  0063 2244              db              22h, 44h                ;PWM8_VASEN_OUTPUT_REG(DBB00OU)
  0065           ;  Instance name Timer8, User Module Timer8
  0065           ;       Instance name Timer8, Block Name TIMER8(DCB02)
@@ -735,7 +735,7 @@
  0081 D200              db              d2h, 00h                ; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
  0083 E1B9              db              e1h, b9h                ; OscillatorControl_1 register (OSC_CR1)
  0085 E200              db              e2h, 00h                ; OscillatorControl_2 register (OSC_CR2)
- 0087 DF13              db              dfh, 13h                ; OscillatorControl_3 register (OSC_CR3)
+ 0087 DF09              db              dfh, 09h                ; OscillatorControl_3 register (OSC_CR3)
  0089 DE02              db              deh, 02h                ; OscillatorControl_4 register (OSC_CR4)
  008B DD00              db              ddh, 00h                ; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
  008D FF                db              ffh

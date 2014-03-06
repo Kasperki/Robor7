@@ -51,10 +51,11 @@ void main(void)
 	InitUA();
 	
 	//Testink
-	//TestLoop();
+	TestLoop();
 	
 	//MainLoop**********
 	//***********************
+	/*
 	while(1)
 	{
 		//Controlls the ultraSonic trigger
@@ -172,7 +173,7 @@ void main(void)
 			timeLCD = 0;
 		}		
 	}
-
+	*/
 }
 
 //Kutsutaan joka 0.01s = 10ms välein.
@@ -191,24 +192,18 @@ void TestLoop()
 	while(1)
 	{
 		//Test 4m
-		if(timeT <= 390)
-		{
-			MoveForward(FULL_SPEED);
-		}
+
+		MoveForward(HALF_SPEED);
+		
 		
 		//Test 90 degree Turn
 		/*	
-			if(timeT <= 100)
+			if(timeT <= 100) //1.0s
 				TurnRight(FULL_SPEED);
 			else if(timeT <= 400)
 				timeT = 0;
 		*/
 		
-		//TestTurning
-		/*
-		if()
-			//TestTurnRight();
-		*/
 	}
 }
 

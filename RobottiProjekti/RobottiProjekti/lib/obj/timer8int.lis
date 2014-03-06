@@ -1514,7 +1514,7 @@
  0000           ; Constants for Timer8 user defined values
  0000           ;--------------------------------------------------
  0000           
- 0063           Timer8_PERIOD:                             equ 0x63
+ 00C7           Timer8_PERIOD:                             equ 0xc7
  0000           Timer8_COMPARE_VALUE:                      equ 0x00
  0000           
  0000           

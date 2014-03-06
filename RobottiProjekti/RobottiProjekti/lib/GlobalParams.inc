@@ -65,9 +65,9 @@ CLOCK_DIV_VC2_JUST:		equ	9h	;VC2 clock divider justified
 CLOCK_INPUT_VC3:		equ	2h	;VC3 clock source
 CLOCK_INPUT_VC3_MASK:	equ	3h	;VC3 clock source mask
 CLOCK_INPUT_VC3_JUST:	equ	2h	;VC3 clock source justified
-CLOCK_DIV_VC3:			equ	13h	;VC3 clock divider
+CLOCK_DIV_VC3:			equ	9h	;VC3 clock divider
 CLOCK_DIV_VC3_MASK:		equ	ffh	;VC3 clock divider mask
-CLOCK_DIV_VC3_JUST:		equ	13h	;VC3 clock divider justified
+CLOCK_DIV_VC3_JUST:		equ	9h	;VC3 clock divider justified
 ANALOG_BUFFER_PWR:		equ	0h	;Analog buffer power level
 ANALOG_BUFFER_PWR_MASK:	equ	1h	;Analog buffer power level mask
 ANALOG_BUFFER_PWR_JUST:	equ	0h	;Analog buffer power level justified

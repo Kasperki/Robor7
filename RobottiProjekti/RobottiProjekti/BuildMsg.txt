@@ -49,25 +49,19 @@ takes or returns values other than int
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(64):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(100):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(140):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(181):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
 
-takes or returns values other than int
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(191):[warning] [MISRA 2712]old-style function definition for `TestLoop'
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(147):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(180):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
-
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(190):[warning] [MISRA 2712]old-style function definition for `TestLoop'
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(191):[warning] declaration of `TestLoop' does not match previous declaration at Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54)
 
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(15):[warning] [MISRA 2712]old-style function definition for `InitPWM'
 
@@ -78,10 +72,6 @@ takes or returns values other than int
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(21):[warning] expression with no effect elided
 
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(22):[warning] expression with no effect elided
-
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(29):[warning] expression with no effect elided
-
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(31):[warning] expression with no effect elided
 
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(40):[warning] expression with no effect elided
 
@@ -105,11 +95,11 @@ takes or returns values other than int
 
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(78):[warning] expression with no effect elided
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(88):[warning] expression with no effect elided
-
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(89):[warning] expression with no effect elided
 
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(90):[warning] expression with no effect elided
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(91):[warning] expression with no effect elided
 
 !W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(14):[warning] [MISRA 2712]old-style function definition for `InitUA'
 
@@ -121,12 +111,12 @@ takes or returns values other than int
 
 Linking..
 
-  ROM 34% full. 5436 out of 16384 bytes used (does not include absolute areas).
+  ROM 26% full. 4212 out of 16384 bytes used (does not include absolute areas).
 
   RAM 18% full. 44 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 36 warning(s) 14:42:30
+RobottiProjekti - 0 error(s) 33 warning(s) 18:05:11
 

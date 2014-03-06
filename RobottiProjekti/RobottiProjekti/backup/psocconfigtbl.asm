@@ -50,7 +50,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 ;  Instance name Timer8, User Module Timer8
 ;       Instance name Timer8, Block Name TIMER8(DCB02)
 	db		2bh, 04h		;Timer8_CONTROL_REG(DCB02CR0)
-	db		29h, 63h		;Timer8_PERIOD_REG(DCB02DR1)
+	db		29h, c7h		;Timer8_PERIOD_REG(DCB02DR1)
 	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
 ;  Global Register values Bank 0
 	db		60h, 2bh		; AnalogColumnInputSelect register (AMX_IN)
@@ -87,13 +87,13 @@ LoadConfigTBL_robottiprojekti_Bank1:
 ;       Instance name PGA, Block Name GAIN(ACB00)
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
-	db		24h, 21h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
-	db		25h, 11h		;PWM8_OIKEA_INPUT_REG(DBB01IN)
+	db		24h, 29h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
+	db		25h, 16h		;PWM8_OIKEA_INPUT_REG(DBB01IN)
 	db		26h, 45h		;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
-	db		20h, 21h		;PWM8_VASEN_FUNC_REG(DBB00FN)
-	db		21h, 11h		;PWM8_VASEN_INPUT_REG(DBB00IN)
+	db		20h, 29h		;PWM8_VASEN_FUNC_REG(DBB00FN)
+	db		21h, 16h		;PWM8_VASEN_INPUT_REG(DBB00IN)
 	db		22h, 44h		;PWM8_VASEN_OUTPUT_REG(DBB00OU)
 ;  Instance name Timer8, User Module Timer8
 ;       Instance name Timer8, Block Name TIMER8(DCB02)
@@ -115,7 +115,7 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		d2h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
 	db		e1h, b9h		; OscillatorControl_1 register (OSC_CR1)
 	db		e2h, 00h		; OscillatorControl_2 register (OSC_CR2)
-	db		dfh, 13h		; OscillatorControl_3 register (OSC_CR3)
+	db		dfh, 09h		; OscillatorControl_3 register (OSC_CR3)
 	db		deh, 02h		; OscillatorControl_4 register (OSC_CR4)
 	db		ddh, 00h		; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
 	db		ffh
