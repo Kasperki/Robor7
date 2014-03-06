@@ -685,7 +685,7 @@
  003A B200              db              b2h, 00h                ; Row_0_LogicInputAMux register (RDI0IS)
  003C B333              db              b3h, 33h                ; Row_0_LogicSelect_0 register (RDI0LT0)
  003E B433              db              b4h, 33h                ; Row_0_LogicSelect_1 register (RDI0LT1)
- 0040 B533              db              b5h, 33h                ; Row_0_OutputDrive_0 register (RDI0SRO0)
+ 0040 B511              db              b5h, 11h                ; Row_0_OutputDrive_0 register (RDI0SRO0)
  0042 B600              db              b6h, 00h                ; Row_0_OutputDrive_1 register (RDI0SRO1)
  0044 B855              db              b8h, 55h                ; Row_1_InputMux register (RDI1RI)
  0046 B900              db              b9h, 00h                ; Row_1_InputSync register (RDI1SYN)
@@ -757,10 +757,10 @@
  001F 620100            mov     reg[01h], 00h           ; Port_0_IntEn register (PRT0IE)
  0022 620400            mov     reg[04h], 00h           ; Port_1_Data register (PRT1DR)
  0025 7110          or    F, FLAG_XIO_MASK
- 0027 620400            mov     reg[04h], 00h           ; Port_1_DriveMode_0 register (PRT1DM0)
- 002A 6205FF            mov     reg[05h], ffh           ; Port_1_DriveMode_1 register (PRT1DM1)
+ 0027 62040F            mov     reg[04h], 0fh           ; Port_1_DriveMode_0 register (PRT1DM0)
+ 002A 6205F0            mov     reg[05h], f0h           ; Port_1_DriveMode_1 register (PRT1DM1)
  002D 70EF          and   F, ~FLAG_XIO_MASK
- 002F 6207FF            mov     reg[07h], ffh           ; Port_1_DriveMode_2 register (PRT1DM2)
+ 002F 6207F0            mov     reg[07h], f0h           ; Port_1_DriveMode_2 register (PRT1DM2)
  0032 620600            mov     reg[06h], 00h           ; Port_1_GlobalSelect register (PRT1GS)
  0035 7110          or    F, FLAG_XIO_MASK
  0037 620600            mov     reg[06h], 00h           ; Port_1_IntCtrl_0 register (PRT1IC0)

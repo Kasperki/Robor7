@@ -23,7 +23,7 @@ dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
 dbfile Timer8.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/Timer8.inc
 dbfunc 0 ? 0 I
@@ -33,7 +33,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/timer8int.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
 A UserModules size 60 flags 0
@@ -136,7 +136,7 @@ dbfile lib/timer8.asm
 dbfunc 0 ? 0 I
 dbfile Timer8.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/Timer8.inc
 dbfunc 0 ? 0 I
@@ -146,7 +146,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/timer8.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
 A UserModules size 45 flags 0
@@ -261,13 +261,13 @@ dbfile lib/pwm8_vasenint.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_VASEN.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_VASEN.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_vasenint.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
 A UserModules size 1 flags 0
@@ -291,13 +291,13 @@ dbfile lib/pwm8_vasen.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_VASEN.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_VASEN.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_vasen.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
 A UserModules size 42 flags 0
@@ -399,13 +399,13 @@ dbfile lib/pwm8_oikeaint.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_oikeaint.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 0 flags 20
 A UserModules size 1 flags 0
@@ -429,13 +429,13 @@ dbfile lib/pwm8_oikea.asm
 dbfunc 0 ? 0 I
 dbfile PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/PWM8_OIKEA.inc
 dbfunc 0 ? 0 I
 dbfile lib/pwm8_oikea.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
 A UserModules size 42 flags 0
@@ -531,7 +531,7 @@ M psocconfigtbl.asm
 A text size 0 flags 0
 dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A lit size 8E flags 0
 S LoadConfigTBL_robottiprojekti_Bank0 Def0000
@@ -623,7 +623,7 @@ T 00 1C 23 00 21 C7 22 00 2B 04 29 63 2A 00 60 2B
 R 00 00 00 01
 T 00 2A 66 00 63 15 65 00 E6 00 E7 03 D6 00 B0 00
 R 00 00 00 01
-T 00 38 B1 00 B2 00 B3 33 B4 33 B5 33 B6 00 B8 55
+T 00 38 B1 00 B2 00 B3 33 B4 33 B5 11 B6 00 B8 55
 R 00 00 00 01
 T 00 46 B9 00 BA 10 BB 33 BC 33 BD 00 BE 00 FF 2C
 R 00 00 00 01
@@ -641,9 +641,9 @@ T 00 00 70 EF 62 00 00 71 10 62 00 73 62 01 8C 70
 R 00 00 00 02
 T 00 0E EF 62 03 8C 62 02 33 71 10 62 02 00 62 03
 R 00 00 00 02
-T 00 1C 00 70 EF 62 01 00 62 04 00 71 10 62 04 00
+T 00 1C 00 70 EF 62 01 00 62 04 00 71 10 62 04 0F
 R 00 00 00 02
-T 00 2A 62 05 FF 70 EF 62 07 FF 62 06 00 71 10 62
+T 00 2A 62 05 F0 70 EF 62 07 F0 62 06 00 71 10 62
 R 00 00 00 02
 T 00 38 06 00 62 07 00 70 EF 62 05 00 62 08 00 71
 R 00 00 00 02
@@ -686,7 +686,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/psocconfig.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A psoc_config size 67 flags 0
 dbfile lib/psocconfig.asm
@@ -793,7 +793,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/pga.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile lib/pga.asm
 dbfunc 0 ? 0 I
@@ -866,7 +866,7 @@ dbfile lib/lcd.asm
 dbfunc 0 ? 0 I
 dbfile LCD.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/LCD.inc
 dbfunc 0 ? 0 I
@@ -876,7 +876,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/lcd.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A UserModules size 2B6 flags 0
 dbfile lib/lcd.asm
@@ -1444,7 +1444,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile ADCINC.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/ADCINC.inc
 dbfunc 0 ? 0 I
@@ -1454,7 +1454,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/adcincint.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A InterruptRAM size 8 flags 20
 S _ADCINC_iResult Def0000
@@ -1559,7 +1559,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile ADCINC.inc
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 dbfile ./lib/ADCINC.inc
 dbfunc 0 ? 0 I
@@ -1569,7 +1569,7 @@ dbfile memory.inc
 dbfunc 0 ? 0 I
 dbfile lib/adcinc.asm
 dbfunc 0 ? 0 I
-dbfile D:/Programs/Cypres/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A bss size 0 flags 20
 A UserModules size 77 flags 0

@@ -20,6 +20,46 @@ UAEcho_IntCtrl_0_ADDR:	equ	102h
 UAEcho_IntCtrl_1_ADDR:	equ	103h
 UAEcho_IntEn_ADDR:	equ	1h
 UAEcho_MASK:	equ	80h
+; LEFTC address and mask equates
+LEFTC_Data_ADDR:	equ	4h
+LEFTC_DriveMode_0_ADDR:	equ	104h
+LEFTC_DriveMode_1_ADDR:	equ	105h
+LEFTC_DriveMode_2_ADDR:	equ	7h
+LEFTC_GlobalSelect_ADDR:	equ	6h
+LEFTC_IntCtrl_0_ADDR:	equ	106h
+LEFTC_IntCtrl_1_ADDR:	equ	107h
+LEFTC_IntEn_ADDR:	equ	5h
+LEFTC_MASK:	equ	1h
+; LEFTD address and mask equates
+LEFTD_Data_ADDR:	equ	4h
+LEFTD_DriveMode_0_ADDR:	equ	104h
+LEFTD_DriveMode_1_ADDR:	equ	105h
+LEFTD_DriveMode_2_ADDR:	equ	7h
+LEFTD_GlobalSelect_ADDR:	equ	6h
+LEFTD_IntCtrl_0_ADDR:	equ	106h
+LEFTD_IntCtrl_1_ADDR:	equ	107h
+LEFTD_IntEn_ADDR:	equ	5h
+LEFTD_MASK:	equ	2h
+; RIGHTC address and mask equates
+RIGHTC_Data_ADDR:	equ	4h
+RIGHTC_DriveMode_0_ADDR:	equ	104h
+RIGHTC_DriveMode_1_ADDR:	equ	105h
+RIGHTC_DriveMode_2_ADDR:	equ	7h
+RIGHTC_GlobalSelect_ADDR:	equ	6h
+RIGHTC_IntCtrl_0_ADDR:	equ	106h
+RIGHTC_IntCtrl_1_ADDR:	equ	107h
+RIGHTC_IntEn_ADDR:	equ	5h
+RIGHTC_MASK:	equ	4h
+; RIGHTD address and mask equates
+RIGHTD_Data_ADDR:	equ	4h
+RIGHTD_DriveMode_0_ADDR:	equ	104h
+RIGHTD_DriveMode_1_ADDR:	equ	105h
+RIGHTD_DriveMode_2_ADDR:	equ	7h
+RIGHTD_GlobalSelect_ADDR:	equ	6h
+RIGHTD_IntCtrl_0_ADDR:	equ	106h
+RIGHTD_IntCtrl_1_ADDR:	equ	107h
+RIGHTD_IntEn_ADDR:	equ	5h
+RIGHTD_MASK:	equ	8h
 ; LCDD4 address and mask equates
 LCDD4_Data_ADDR:	equ	8h
 LCDD4_DriveMode_0_ADDR:	equ	108h

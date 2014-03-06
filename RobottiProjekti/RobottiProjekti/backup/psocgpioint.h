@@ -38,6 +38,78 @@ BYTE			UAEcho_IntCtrl_1_ADDR;
 #pragma	ioport	UAEcho_IntEn_ADDR:	0x1
 BYTE			UAEcho_IntEn_ADDR;
 #define UAEcho_MASK 0x80
+// LEFTC address and mask defines
+#pragma	ioport	LEFTC_Data_ADDR:	0x4
+BYTE			LEFTC_Data_ADDR;
+#pragma	ioport	LEFTC_DriveMode_0_ADDR:	0x104
+BYTE			LEFTC_DriveMode_0_ADDR;
+#pragma	ioport	LEFTC_DriveMode_1_ADDR:	0x105
+BYTE			LEFTC_DriveMode_1_ADDR;
+#pragma	ioport	LEFTC_DriveMode_2_ADDR:	0x7
+BYTE			LEFTC_DriveMode_2_ADDR;
+#pragma	ioport	LEFTC_GlobalSelect_ADDR:	0x6
+BYTE			LEFTC_GlobalSelect_ADDR;
+#pragma	ioport	LEFTC_IntCtrl_0_ADDR:	0x106
+BYTE			LEFTC_IntCtrl_0_ADDR;
+#pragma	ioport	LEFTC_IntCtrl_1_ADDR:	0x107
+BYTE			LEFTC_IntCtrl_1_ADDR;
+#pragma	ioport	LEFTC_IntEn_ADDR:	0x5
+BYTE			LEFTC_IntEn_ADDR;
+#define LEFTC_MASK 0x1
+// LEFTD address and mask defines
+#pragma	ioport	LEFTD_Data_ADDR:	0x4
+BYTE			LEFTD_Data_ADDR;
+#pragma	ioport	LEFTD_DriveMode_0_ADDR:	0x104
+BYTE			LEFTD_DriveMode_0_ADDR;
+#pragma	ioport	LEFTD_DriveMode_1_ADDR:	0x105
+BYTE			LEFTD_DriveMode_1_ADDR;
+#pragma	ioport	LEFTD_DriveMode_2_ADDR:	0x7
+BYTE			LEFTD_DriveMode_2_ADDR;
+#pragma	ioport	LEFTD_GlobalSelect_ADDR:	0x6
+BYTE			LEFTD_GlobalSelect_ADDR;
+#pragma	ioport	LEFTD_IntCtrl_0_ADDR:	0x106
+BYTE			LEFTD_IntCtrl_0_ADDR;
+#pragma	ioport	LEFTD_IntCtrl_1_ADDR:	0x107
+BYTE			LEFTD_IntCtrl_1_ADDR;
+#pragma	ioport	LEFTD_IntEn_ADDR:	0x5
+BYTE			LEFTD_IntEn_ADDR;
+#define LEFTD_MASK 0x2
+// RIGHTC address and mask defines
+#pragma	ioport	RIGHTC_Data_ADDR:	0x4
+BYTE			RIGHTC_Data_ADDR;
+#pragma	ioport	RIGHTC_DriveMode_0_ADDR:	0x104
+BYTE			RIGHTC_DriveMode_0_ADDR;
+#pragma	ioport	RIGHTC_DriveMode_1_ADDR:	0x105
+BYTE			RIGHTC_DriveMode_1_ADDR;
+#pragma	ioport	RIGHTC_DriveMode_2_ADDR:	0x7
+BYTE			RIGHTC_DriveMode_2_ADDR;
+#pragma	ioport	RIGHTC_GlobalSelect_ADDR:	0x6
+BYTE			RIGHTC_GlobalSelect_ADDR;
+#pragma	ioport	RIGHTC_IntCtrl_0_ADDR:	0x106
+BYTE			RIGHTC_IntCtrl_0_ADDR;
+#pragma	ioport	RIGHTC_IntCtrl_1_ADDR:	0x107
+BYTE			RIGHTC_IntCtrl_1_ADDR;
+#pragma	ioport	RIGHTC_IntEn_ADDR:	0x5
+BYTE			RIGHTC_IntEn_ADDR;
+#define RIGHTC_MASK 0x4
+// RIGHTD address and mask defines
+#pragma	ioport	RIGHTD_Data_ADDR:	0x4
+BYTE			RIGHTD_Data_ADDR;
+#pragma	ioport	RIGHTD_DriveMode_0_ADDR:	0x104
+BYTE			RIGHTD_DriveMode_0_ADDR;
+#pragma	ioport	RIGHTD_DriveMode_1_ADDR:	0x105
+BYTE			RIGHTD_DriveMode_1_ADDR;
+#pragma	ioport	RIGHTD_DriveMode_2_ADDR:	0x7
+BYTE			RIGHTD_DriveMode_2_ADDR;
+#pragma	ioport	RIGHTD_GlobalSelect_ADDR:	0x6
+BYTE			RIGHTD_GlobalSelect_ADDR;
+#pragma	ioport	RIGHTD_IntCtrl_0_ADDR:	0x106
+BYTE			RIGHTD_IntCtrl_0_ADDR;
+#pragma	ioport	RIGHTD_IntCtrl_1_ADDR:	0x107
+BYTE			RIGHTD_IntCtrl_1_ADDR;
+#pragma	ioport	RIGHTD_IntEn_ADDR:	0x5
+BYTE			RIGHTD_IntEn_ADDR;
+#define RIGHTD_MASK 0x8
 // LCDD4 address and mask defines
 #pragma	ioport	LCDD4_Data_ADDR:	0x8
 BYTE			LCDD4_Data_ADDR;

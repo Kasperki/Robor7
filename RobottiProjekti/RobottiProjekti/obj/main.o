@@ -21,7 +21,7 @@ S _LCD_Position Ref0000
 S _InitPWM Ref0000
 A text size 2EA flags 0
 dbfile ./main.c
-dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
 dbfunc e main 0 fV
 dbsym l kulma 10 I
 dbsym l turn E I
@@ -160,7 +160,7 @@ S _TimerInterrupt Def02B5
 S _TestLoop Def02CA
 A data size E flags 20
 dbfile ./main.c
-dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
 dbsym e timeT 0 I
 dbsym e timeT2 2 I
 dbsym e timeLCD 4 I

@@ -9,52 +9,52 @@
  0000 0000              .word 0
                         .area data(ram, con, rel)
  0002                   .dbfile ./main.c
- 0002                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0002                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0002                   .dbsym e timeT _timeT I
  0002           _timeT2::
  0002                   .blkb 2
                         .area idata(rom,lit)
  0002 0000              .word 0
                         .area data(ram, con, rel)
- 0004                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0004                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0004                   .dbsym e timeT2 _timeT2 I
  0004           _timeLCD::
  0004                   .blkb 2
                         .area idata(rom,lit)
  0004 0000              .word 0
                         .area data(ram, con, rel)
- 0006                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0006                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0006                   .dbsym e timeLCD _timeLCD I
  0006           _timeUltra::
  0006                   .blkb 2
                         .area idata(rom,lit)
  0006 0000              .word 0
                         .area data(ram, con, rel)
- 0008                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0008                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0008                   .dbsym e timeUltra _timeUltra I
  0008           _timeForward::
  0008                   .blkb 2
                         .area idata(rom,lit)
  0008 0032              .word 50
                         .area data(ram, con, rel)
- 000A                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000A                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000A                   .dbsym e timeForward _timeForward I
  000A           _turnTime::
  000A                   .blkb 2
                         .area idata(rom,lit)
  000A 004B              .word 75
                         .area data(ram, con, rel)
- 000C                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000C                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000C                   .dbsym e turnTime _turnTime I
  000C           _timeRobotWidth::
  000C                   .blkb 2
                         .area idata(rom,lit)
  000C 000F              .word 15
                         .area data(ram, con, rel)
- 000E                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000E                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000E                   .dbsym e timeRobotWidth _timeRobotWidth I
                         .area text(rom, con, rel)
- 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000                   .dbfunc e main _main fV
  0000           ;          kulma -> X+16
  0000           ;           turn -> X+14

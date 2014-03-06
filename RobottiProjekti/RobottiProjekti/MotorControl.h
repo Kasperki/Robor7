@@ -15,4 +15,4 @@ void MoveBackward(int pulse);
 void TurnLeft(int pulse);
 void TurnRight(int pulse);
 void Stop();
-void TestTurnRight(int pulse);
+void TestTurnLeft(int pulse);

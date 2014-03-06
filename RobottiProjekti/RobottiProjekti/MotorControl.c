@@ -1,16 +1,13 @@
 #include <m8c.h>        // part specific constants and macros
 #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
 
-//Esim!
-//PRT0GS |= 0x01; Connects PORT_0_0 to GlobalOutEven 
-//PRT0GS &= ~0x01; Disconnects PORT0_0 from GlobalOutEven
-
 //Porttien osoitteet
-const int LEFTFOW = 0x01; //Port0_0 VasenPuoli Eteenpäin
-const int LEFTBACK = 0x10; //Port0_4 VasenPuoli Taaksepäin
+//Port1_0 LEFTC      C = 1, D = 0 FORWARD
+//Port1_1 LEFTD		 C = 0, D = 1 BACKWARD 
 
-const int RIGHTFOW = 0x02; //Port0_1 OikeaPuoli Eteenpäin
-const int RIGHTBACK = 0x20; //Port0_5 OikeaPuoli Taaksepäin
+//Port1_2 RIGHTC
+//Port1_3 RIGHTD
+
 const float OIKEUSKERROIN = 0.8f; //Kerroin vasemalle puolelle jotta robotti kulkisi suoraan
 
 //Käynnistää PWM Moduulit
@@ -19,19 +16,19 @@ void InitPWM()
 	PWM8_VASEN_Start();
 	PWM8_OIKEA_Start();
 	
-	PRT0GS &= ~LEFTBACK;
-	PRT0GS &= ~RIGHTBACK;
-	PRT0GS &= ~LEFTFOW;
-	PRT0GS &= ~RIGHTFOW;
+	LEFTC_Data_ADDR &= 0x00;
+	LEFTD_Data_ADDR &= 0x00;
+	RIGHTC_Data_ADDR &= 0x00;
+	RIGHTD_Data_ADDR &= 0x00;
 }
 
 //Kulkee eteenpäin arvolla..
 void MoveForward(int pulse)
-{			
-	PRT0GS |= LEFTFOW;
-	PRT0GS |= RIGHTFOW;
-	PRT0GS &= ~LEFTBACK;
-	PRT0GS &= ~RIGHTBACK;
+{				
+	LEFTC_Data_ADDR |= LEFTC_MASK;
+	LEFTD_Data_ADDR &= 0x00;
+	RIGHTC_Data_ADDR |= RIGHTC_MASK;
+	RIGHTD_Data_ADDR &= 0x00;
 	
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
@@ -40,10 +37,10 @@ void MoveForward(int pulse)
 //Kulkee taaksepäin arvolla
 void MoveBackward(int pulse)
 {
-	PRT0GS &= ~LEFTFOW;
-	PRT0GS &= ~RIGHTFOW;
-	PRT0GS |= LEFTBACK;
-	PRT0GS |= RIGHTBACK;
+	LEFTC_Data_ADDR &= 0x00;
+	LEFTD_Data_ADDR |= LEFTD_MASK;
+	RIGHTC_Data_ADDR &= 0x00;
+	RIGHTD_Data_ADDR |= RIGHTD_MASK;
 	
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
@@ -54,19 +51,20 @@ void Stop()
 {
 	PWM8_OIKEA_WritePulseWidth(0);
 	PWM8_VASEN_WritePulseWidth(0);
-	PRT0GS &= ~LEFTBACK;
-	PRT0GS &= ~RIGHTBACK;
-	PRT0GS &= ~LEFTFOW;
-	PRT0GS &= ~RIGHTFOW;
+	
+	LEFTC_Data_ADDR &= 0x00;
+	LEFTD_Data_ADDR &= 0x00;
+	RIGHTC_Data_ADDR &= 0x00;
+	RIGHTD_Data_ADDR &= 0x00;
 }
 
 //Kääntyy vasemmalle
 void TurnLeft(int pulse)
 {
-	PRT0GS &= ~LEFTBACK;
-	PRT0GS |= LEFTFOW;
-	PRT0GS &= ~RIGHTFOW;
-	PRT0GS |= RIGHTBACK;
+	LEFTC_Data_ADDR &= 0x00;
+	LEFTD_Data_ADDR |= LEFTD_MASK;
+	RIGHTC_Data_ADDR |= RIGHTC_MASK;
+	RIGHTD_Data_ADDR &= 0x00;
 		
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
@@ -74,24 +72,24 @@ void TurnLeft(int pulse)
 
 //Kääntyy oikealle
 void TurnRight(int pulse)
-{
-	PRT0GS |= LEFTBACK;
-	PRT0GS &= ~LEFTFOW;
-	PRT0GS |= RIGHTFOW;
-	PRT0GS &= ~RIGHTBACK;
+{		
+	LEFTC_Data_ADDR |= LEFTC_MASK;
+	LEFTD_Data_ADDR &= 0x00;
+	RIGHTC_Data_ADDR &= 0x00;
+	RIGHTD_Data_ADDR |= RIGHTD_MASK;
 	
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 
-//TEST RIGHTTURN
-void TestTurnRight(int pulse)
+//TEST LEFTTURN
+void TestTurnLeft(int pulse)
 {
-	PRT0GS &= ~LEFTBACK;
-	PRT0GS &= ~LEFTFOW;
-	PRT0GS |= RIGHTFOW;
-	PRT0GS &= ~RIGHTBACK;
+	LEFTC_Data_ADDR &= 0x00;
+	LEFTD_Data_ADDR &= 0x00;
+	RIGHTC_Data_ADDR &= 0x00;
+	RIGHTD_Data_ADDR |= RIGHTD_MASK;
 	
-	//PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
+	PWM8_VASEN_WritePulseWidth(0);
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
