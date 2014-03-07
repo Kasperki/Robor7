@@ -55,7 +55,6 @@ void main(void)
 	
 	//MainLoop**********
 	//***********************
-	/*
 	while(1)
 	{
 		//Controlls the ultraSonic trigger
@@ -173,7 +172,6 @@ void main(void)
 			timeLCD = 0;
 		}		
 	}
-	*/
 }
 
 //Kutsutaan joka 0.01s = 10ms välein.
@@ -192,7 +190,6 @@ void TestLoop()
 	while(1)
 	{
 		//Test 4m
-
 		MoveForward(HALF_SPEED);
 		
 		

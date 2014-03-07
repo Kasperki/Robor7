@@ -9,10 +9,10 @@
  0000 3D072B02          .word 0x3d07,0x2b02
                         .area data(ram, con, rel)
  0004                   .dbfile ./ultracontrol.c
- 0004                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0004                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0004                   .dbsym e distanceToCm _distanceToCm D
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0000                   .dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0000                   .dbfunc e InitUA _InitUA fV
  0000           _InitUA::
  0000                   .dbline -1
@@ -200,8 +200,8 @@
  00C2           L6:
  00C2                   .dbline 43
  00C2           ;       else    
- 00C2           ;               UATrig_Data_ADDR &= 0x00;
- 00C2 620000            mov REG[0],0
+ 00C2           ;               UATrig_Data_ADDR &= ~UATrig_MASK;
+ 00C2 4100BF            and REG[0],-65
  00C5           L7:
  00C5                   .dbline 46
  00C5           ;       

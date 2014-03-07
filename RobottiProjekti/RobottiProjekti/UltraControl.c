@@ -40,7 +40,7 @@ void ControlTrigger(int *time)
 		UATrig_Data_ADDR |= UATrig_MASK;
 	}
 	else 	
-		UATrig_Data_ADDR &= 0x00;
+		UATrig_Data_ADDR &= ~UATrig_MASK;
 	
 	//Wait 60ms and send pulse again
 	if (*time >= 6)

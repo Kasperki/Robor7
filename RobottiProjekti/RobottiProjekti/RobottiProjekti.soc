@@ -10,13 +10,14 @@
 			<SOURCE_FILE_LIST>
 				<SOURCE_FILE NAME="main.c" TYPE="UserSourceModule" LANGUAGE="C"/>
 				<SOURCE_FILE NAME="flashsecurity.txt" TYPE="TextFile" LANGUAGE="" OVERLAY_NAME=""/>
-				<SOURCE_FILE NAME="psocapi.h" TYPE="LibraryIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="375182456" LIBTIME="1"/>
-				<SOURCE_FILE NAME="psocapi.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="375182456" LIBTIME="3"/>
+				<SOURCE_FILE NAME="psocapi.h" TYPE="LibraryIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="164271664" LIBTIME="1"/>
+				<SOURCE_FILE NAME="psocapi.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="164271664" LIBTIME="3"/>
 				<SOURCE_FILE NAME="memory.inc" TYPE="UserIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="motorcontrol.c" TYPE="UserSourceModule" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="motorcontrol.h" TYPE="UserIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="ultracontrol.c" TYPE="UserSourceModule" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="ultracontrol.h" TYPE="UserIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
+				<SOURCE_FILE NAME="psocgpioint.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="140173072" LIBTIME="162332764"/>
 				
 				
 				
@@ -129,445 +130,34 @@
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<SOURCE_FILE NAME="adcinc.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="adcinc.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="adcinc.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="adcincint.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="lcd.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="lcd.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="lcd.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pga.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pga.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pga.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_oikeaint.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_oikea.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_oikea.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_oikea.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_vasenint.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_vasen.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_vasen.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="pwm8_vasen.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="timer8int.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="timer8.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="timer8.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="timer8.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="77138818" LIBTIME="2011358092"/>
-				<SOURCE_FILE NAME="psocconfigtbl.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="144630048" LIBTIME="161671099"/>
-				<SOURCE_FILE NAME="psocgpioint.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="144630048" LIBTIME="161671483"/>
-				<SOURCE_FILE NAME="psocgpioint.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="144630048" LIBTIME="161671483"/>
-				<SOURCE_FILE NAME="psocconfig.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="144630048" LIBTIME="161671958"/>
+				<SOURCE_FILE NAME="adcinc.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="adcinc.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="adcinc.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="adcincint.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="lcd.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="lcd.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="lcd.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pga.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pga.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pga.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_oikeaint.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_oikea.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_oikea.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_oikea.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_vasenint.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_vasen.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_vasen.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="pwm8_vasen.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="timer8int.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="timer8.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="timer8.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="timer8.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4768793" LIBTIME="2001396620"/>
+				<SOURCE_FILE NAME="psocconfigtbl.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="140173072" LIBTIME="162332652"/>
+				<SOURCE_FILE NAME="psocgpioint.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="140173072" LIBTIME="162332764"/>
+				<SOURCE_FILE NAME="psocconfig.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="140173072" LIBTIME="162332871"/>
 				<SOURCE_FILE NAME="boot.asm" TYPE="UserSourceModule" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
-				<SOURCE_FILE NAME="globalparams.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="144630048" LIBTIME="161671382"/>
-				<SOURCE_FILE NAME="globalparams.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="144630048" LIBTIME="161671382"/>
+				<SOURCE_FILE NAME="globalparams.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="140173072" LIBTIME="162332871"/>
+				<SOURCE_FILE NAME="globalparams.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="140173072" LIBTIME="162332871"/>
 			</SOURCE_FILE_LIST>
 			<LIB_FILE_LIST>
 				<LIB_FILE NAME="libPSoC.a" TYPE="UserLibrary">
@@ -575,7 +165,8 @@
 			</LIB_FILE_LIST>
 		</FILE_LIST>
 		<BUILD_SETTINGS>
-			<BUILD COMPILER="IMAGECRAFT" INCLUDE_PATH="C:\PROGRA~2\Cypress\PSOCDE~1\5.4\Common\CY110F~1\tools\include\CY8C27~1"/>
+			
+			<BUILD COMPILER="IMAGECRAFT" INCLUDE_PATH="D:\Programs\Cypres\PSOCDE~1\5.4\Common\CY110F~1\tools\include\CY8C27~1"/>
 		</BUILD_SETTINGS>
 		<MISC>
 			<WINDOWPOSITIONS>
@@ -589,6 +180,15 @@
 		</MISC>
 	</APPLICATION>
 	<PROJECT_SETTINGS>
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		<SECTION SECTION_NAME="Linker Settings" VENDOR="HI-TECH" LIB_PATH="" LIBS="" OPTIONS=""/>
 		<SECTION SECTION_NAME="Linker Settings" VENDOR="IMAGECRAFT" LIB_PATH="" LIBS="" RELOC_ADDR_START="336" ENABLE_ALIGN_SHIFT="0" ENABLE_24MHZ_WARNING="0" ALLOW_24MHZSHIFTOPTS="0"/>
 		<SECTION SECTION_NAME="Linker Settings" VENDOR="ImageCraftPro" LIB_PATH="" LIBS="" RELOC_ADDR_START="336" ENABLE_ALIGN_SHIFT="0" ENABLE_24MHZ_WARNING="0" ALLOW_24MHZSHIFTOPTS="0"/>
