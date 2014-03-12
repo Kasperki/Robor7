@@ -1,6 +1,6 @@
 Project:      output/RobottiProjekti
 Build Number: 0
-Date:         Wed Mar 12 13:41:24 2014
+Date:         Wed Mar 12 18:26:29 2014
 Compiler:     ICCM8C
 Version:      7.05.00
 
@@ -197,7 +197,7 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                            text   0828   0E7E =   3710. bytes (rel,con,rom,code)
+                            text   0828   0E2E =   3630. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
@@ -210,13 +210,13 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
        0C7D  _MoveBackward
        0D9E  _Stop
        0DAE  _TurnLeft
-       0ECF  _TurnRight
-       0FF0  _TestTurnLeft
-       1008  _InitUA
-       101F  _getDataUA
-       10A7  _ControlTrigger
-       1529  _itoa
-       16A6  __text_end
+       0EA7  _TurnRight
+       0FA0  _TestTurnLeft
+       0FB8  _InitUA
+       0FCF  _getDataUA
+       1057  _ControlTrigger
+       14D9  _itoa
+       1656  __text_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------

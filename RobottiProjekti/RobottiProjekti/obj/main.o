@@ -21,7 +21,7 @@ S _LCD_Position Ref0000
 S _InitPWM Ref0000
 A text size 32B flags 0
 dbfile ./main.c
-dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
 dbfunc e main 0 fV
 dbsym l kulma 10 I
 dbsym l turn E I
@@ -40,130 +40,130 @@ dbline 2C 22
 dbline 2D 25
 dbline 30 29
 dbline 33 2C
-dbline 37 2F
-dbline 3B 37
+dbline 38 2F
 dbline 3D 37
-dbline 40 42
-dbline 43 4D
-dbline 45 59
-dbline 45 59
-dbline 47 65
-dbline 47 65
-dbline 48 6F
-dbline 49 7C
-dbline 4B 86
-dbline 4B 86
-dbline 4C 89
-dbline 4E 95
-dbline 4E 95
-dbline 4F 9B
-dbline 50 A1
-dbline 51 A1
-dbline 53 A3
-dbline 54 A3
-dbline 56 B5
-dbline 56 B5
-dbline 57 C0
-dbline 59 C2
-dbline 5A C2
-dbline 5B C8
-dbline 5C CE
-dbline 5D CE
+dbline 3F 37
+dbline 42 42
+dbline 45 4D
+dbline 47 59
+dbline 47 59
+dbline 49 65
+dbline 49 65
+dbline 4A 6F
+dbline 4B 7C
+dbline 4D 86
+dbline 4D 86
+dbline 4E 89
+dbline 50 95
+dbline 50 95
+dbline 51 9B
+dbline 52 A1
+dbline 53 A1
+dbline 55 A3
+dbline 56 A3
+dbline 58 B5
+dbline 58 B5
+dbline 59 C0
+dbline 5B C2
+dbline 5C C2
+dbline 5D C8
 dbline 5E CE
-dbline 5F D0
-dbline 61 DC
-dbline 61 DC
-dbline 62 E2
-dbline 63 EA
-dbline 66 EA
-dbline 68 FA
-dbline 68 FA
-dbline 69 100
-dbline 6A 106
-dbline 6B 10C
-dbline 6C 112
-dbline 6D 118
-dbline 6E 11B
-dbline 6F 11D
-dbline 71 139
-dbline 71 139
-dbline 72 13E
-dbline 73 144
-dbline 74 14A
-dbline 75 14A
-dbline 7A 14A
-dbline 7C 154
-dbline 7C 154
-dbline 7E 160
-dbline 7E 160
-dbline 80 16C
-dbline 80 16C
-dbline 81 17C
-dbline 82 187
-dbline 83 189
-dbline 85 195
-dbline 85 195
-dbline 87 19F
-dbline 87 19F
-dbline 88 1A5
-dbline 89 1AB
+dbline 5F CE
+dbline 60 CE
+dbline 61 D0
+dbline 63 DC
+dbline 63 DC
+dbline 64 E2
+dbline 65 EA
+dbline 68 EA
+dbline 6A FA
+dbline 6A FA
+dbline 6B 100
+dbline 6C 106
+dbline 6D 10C
+dbline 6E 112
+dbline 6F 118
+dbline 70 11B
+dbline 71 11D
+dbline 73 139
+dbline 73 139
+dbline 74 13E
+dbline 75 144
+dbline 76 14A
+dbline 77 14A
+dbline 7C 14A
+dbline 7E 154
+dbline 7E 154
+dbline 80 160
+dbline 80 160
+dbline 82 16C
+dbline 82 16C
+dbline 83 17C
+dbline 84 187
+dbline 85 189
+dbline 87 195
+dbline 87 195
+dbline 89 19F
+dbline 89 19F
+dbline 8A 1A5
 dbline 8B 1AB
-dbline 8C 1BB
-dbline 8E 1C8
-dbline 8F 1C8
-dbline 90 1CE
-dbline 91 1D4
-dbline 92 1DA
-dbline 93 1DA
-dbline 95 1DC
-dbline 96 1DF
-dbline 98 1E1
-dbline 99 1E7
+dbline 8D 1AB
+dbline 8E 1BB
+dbline 90 1C8
+dbline 91 1C8
+dbline 92 1CE
+dbline 93 1D4
+dbline 94 1DA
+dbline 95 1DA
+dbline 97 1DC
+dbline 98 1DF
+dbline 9A 1E1
 dbline 9B 1E7
-dbline 9C 1F1
-dbline A0 1F4
-dbline A2 200
-dbline A2 200
-dbline A3 21C
-dbline A4 224
-dbline A5 22E
-dbline A6 236
-dbline A9 246
-dbline AA 24D
-dbline AB 258
-dbline AC 274
-dbline AD 27D
-dbline AF 28D
-dbline B0 294
-dbline B1 29F
-dbline B2 2BB
-dbline B3 2C4
-dbline B5 2D5
-dbline B6 2DB
-dbline B7 2DB
-dbline 3A 2DB
+dbline 9D 1E7
+dbline 9E 1F1
+dbline A2 1F4
+dbline A4 200
+dbline A4 200
+dbline A5 21C
+dbline A6 224
+dbline A7 22E
+dbline A8 236
+dbline AB 246
+dbline AC 24D
+dbline AD 258
+dbline AE 274
+dbline AF 27D
+dbline B1 28D
+dbline B2 294
+dbline B3 29F
+dbline B4 2BB
+dbline B5 2C4
+dbline B7 2D5
+dbline B8 2DB
+dbline B9 2DB
+dbline 3C 2DB
 dbline FFFFFFFE 2DD
 dbline 0 2E0
 dbfunc e TimerInterrupt 2E2 fV
 dbline FFFFFFFF 2E2
-dbline BC 2E2
-dbline BD 2E2
-dbline BE 2E7
-dbline C0 2EC
-dbline C1 2F1
+dbline BE 2E2
+dbline BF 2E2
+dbline C0 2E7
+dbline C2 2EC
+dbline C3 2F1
 dbline FFFFFFFE 2F6
 dbline 0 2F6
 dbfunc e TestLoop 2F7 fV
 dbline FFFFFFFF 2F7
-dbline C6 2F7
-dbline C8 2F9
+dbline C8 2F7
 dbline CA 2F9
-dbline CB 301
-dbline D8 30C
-dbline D9 318
-dbline DB 325
-dbline E5 328
-dbline C7 328
+dbline CC 2F9
+dbline CD 301
+dbline DA 30C
+dbline DB 318
+dbline DD 325
+dbline E7 328
+dbline C9 328
 dbline FFFFFFFE 32A
 dbline 0 32A
 S _main Def0000
@@ -171,7 +171,7 @@ S _TimerInterrupt Def02E2
 S _TestLoop Def02F7
 A data size E flags 20
 dbfile ./main.c
-dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
 dbsym e timeT 0 I
 dbsym e timeT2 2 I
 dbsym e timeLCD 4 I
@@ -260,7 +260,7 @@ T 01 46 00 55 00 00 00 3D 00 00 B0 99 3D 01 64 B0
 R 00 00 00 00 01 04 00 01
 T 01 53 94 52 11 11 68 52 10 31 80 19 81 D0 82 52
 R 00 00 00 00
-T 01 61 0D 11 C8 52 0C 31 80 19 80 D0 1E 50 00 13
+T 01 61 0D 11 2C 52 0C 31 80 19 81 D0 1E 50 00 13
 R 00 00 00 00
 T 01 6F 0D 52 0C 31 80 53 00 00 50 80 1A 00 00 D0
 R 00 00 00 00 03 08 00 09 03 0D 00 09
@@ -270,7 +270,7 @@ T 01 89 51 00 03 11 32 51 00 02 31 80 19 80 C0 48
 R 00 00 00 00 01 03 00 01 01 08 00 01
 T 01 95 3D 0E 00 B0 12 3D 0F 00 B0 0D 55 00 01 00
 R 00 00 00 00 01 0D 00 01
-T 01 A2 55 00 00 00 56 0F 01 56 0E 00 50 14 12
+T 01 A2 55 00 00 00 56 0F 01 56 0E 00 50 0A 12
 R 00 00 00 00 01 03 00 01
 T 01 AE 00 01 51 00 00 31 80 53 00 00 50 80 1A
 R 00 00 00 00 01 02 00 01 01 05 00 01 03 0A 00 09

@@ -53,6 +53,8 @@ void main(void)
 	//Testink
 	//TestLoop();
 	
+	i = 100;
+	
 	//MainLoop**********
 	//***********************
 	while(1)
@@ -121,9 +123,9 @@ void main(void)
 		//Scan
 		if(i == 100)
 		{
-			if(kulma < 360)
+			if(kulma < 30000)
 			{
-				if(ultraData < 200)
+				if(ultraData < 300)
 				{	
 					if(ultraData > 0)
 						MoveForward(HALF_SPEED); 
@@ -137,7 +139,7 @@ void main(void)
 					}
 						
 					if(timeT <= 20)
-						TurnRight(HALF_SPEED);
+						TurnRight(SLOW_SPEED);
 					else
 					{
 						kulma+=5;
