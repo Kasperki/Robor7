@@ -79,7 +79,7 @@ void TurnRight(int pulse)
 void TestTurnLeft(int pulse)
 {
 	LEFTC_Data_ADDR &= NOLLAA;
-	LEFTC_Data_ADDR |= 0b00000100;
+	LEFTC_Data_ADDR |= 0b00000001;
 	
 	PWM8_VASEN_WritePulseWidth(0);
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);

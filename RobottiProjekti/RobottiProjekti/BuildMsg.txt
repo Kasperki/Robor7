@@ -45,21 +45,35 @@ If there is no parameter, use <function name>(void);
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(51):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(64):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(179):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(75):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(189):[warning] [MISRA 2712]old-style function definition for `TestLoop'
+takes or returns values other than int
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(189):[warning] declaration of `TestLoop' does not match previous declaration at Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54)
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(109):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
-!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(209):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+takes or returns values other than int
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(149):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+
+takes or returns values other than int
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(156):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+
+takes or returns values other than int
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(188):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(198):[warning] [MISRA 2712]old-style function definition for `TestLoop'
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(219):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
@@ -75,12 +89,12 @@ takes or returns values other than int
 
 Linking..
 
-  ROM 27% full. 4332 out of 16384 bytes used (does not include absolute areas).
+  ROM 34% full. 5462 out of 16384 bytes used (does not include absolute areas).
 
   RAM 18% full. 44 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 15 warning(s) 12:50:08
+RobottiProjekti - 0 error(s) 18 warning(s) 13:41:25
 

@@ -910,8 +910,8 @@
  049F 4104F0            and REG[0x4],-16
  04A2                   .dbline 81
  04A2                   .dbline 82
- 04A2           ;       LEFTC_Data_ADDR |= 0b00000100;
- 04A2 430404            or REG[0x4],4
+ 04A2           ;       LEFTC_Data_ADDR |= 0b00000001;
+ 04A2 430401            or REG[0x4],1
  04A5                   .dbline 84
  04A5           ;       
  04A5           ;       PWM8_VASEN_WritePulseWidth(0);
