@@ -17,7 +17,7 @@ S _PGA_Start Ref0000
 S __fpmul Ref0000
 A text size E5 flags 0
 dbfile ./ultracontrol.c
-dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
 dbfunc e InitUA 0 fV
 dbline FFFFFFFF 0
 dbline E 0
@@ -56,7 +56,7 @@ S _InitUA Def0000
 S _getDataUA Def0017
 A data size 4 flags 20
 dbfile ./ultracontrol.c
-dbfile C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfile Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
 dbsym e distanceToCm 0 D
 S _distanceToCm Def0000
 A idata size 4 flags 1

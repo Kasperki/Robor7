@@ -25,78 +25,62 @@ lib/timer8.asm
 
 lib/timer8int.asm
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(12):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(12):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(17):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\MotorControl.h(17):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\UltraControl.h(5):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\UltraControl.h(5):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\UltraControl.h(7):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\UltraControl.h(7):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
 
 If there is no parameter, use <function name>(void);
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(48):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(48):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(51):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(179):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(189):[warning] [MISRA 2712]old-style function definition for `TestLoop'
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(189):[warning] declaration of `TestLoop' does not match previous declaration at Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(54)
+
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\main.c(209):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(64):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(20):[warning] [MISRA 2712]old-style function definition for `InitPWM'
 
-takes or returns values other than int
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(50):[warning] [MISRA 2712]old-style function definition for `Stop'
 
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(100):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(14):[warning] [MISRA 2712]old-style function definition for `InitUA'
 
-takes or returns values other than int
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(140):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(147):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(179):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(189):[warning] [MISRA 2712]old-style function definition for `TestLoop'
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(189):[warning] declaration of `TestLoop' does not match previous declaration at C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\main.c(54)
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(21):[warning] [MISRA 2712]old-style function definition for `InitPWM'
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c(51):[warning] [MISRA 2712]old-style function definition for `Stop'
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(14):[warning] [MISRA 2712]old-style function definition for `InitUA'
-
-!W C:\Users\Kaxxo\DOCUME~1\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(25):[warning] [MISRA 2712]old-style function definition for `getDataUA'
+!W Z:\Robo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c(25):[warning] [MISRA 2712]old-style function definition for `getDataUA'
 
 ./boot.asm
 
 Linking..
 
-  ROM 33% full. 5378 out of 16384 bytes used (does not include absolute areas).
+  ROM 27% full. 4332 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 18% full. 45 bytes used (does not include stack usage).
+  RAM 18% full. 44 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 19 warning(s) 13:16:58
+RobottiProjekti - 0 error(s) 15 warning(s) 12:50:08
 

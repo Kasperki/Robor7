@@ -19,7 +19,7 @@ int timeT = 0,timeT2 = 0;
 int timeLCD = 0,timeUltra = 0; 
 
 int timeForward = 50; //.... 4m täydellä vauhdilla 3.9s
-int turnTime = 75; 	   //.... 90 asteen käännökseen meneväaika
+int turnTime = 60; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
 
 //Main Method
@@ -48,20 +48,20 @@ void main(void)
 	InitPWM();
 	
 	//Init PGA and ADCIN for Ultrasonic
-	InitUA();
+	//InitUA();
 	
 	//Testink
 	TestLoop();
 	
 	//MainLoop**********
 	//***********************
-	while(1)
+	/*while(1)
 	{
 		//Controlls the ultraSonic trigger
-		ControlTrigger(&timeUltra);	
+		//ControlTrigger(&timeUltra);	
 			
 		//Gets the data
-		ultraData = getDataUA();
+		//ultraData = getDataUA();
 		
 		//Spiraali
 		if(i < 10)
@@ -69,12 +69,12 @@ void main(void)
 			if(i < 3)
 			{
 				if(turn == 0)
-					MoveForward(FULL_SPEED);
+					MoveForward(HALF_SPEED);
 				else 
 				{
 					if(timeT <= turnTime) //if(gyroKulma < 90)
 					{
-						TurnLeft(FULL_SPEED);
+						TurnLeft(HALF_SPEED);
 					}
 					else
 					{ 
@@ -110,7 +110,7 @@ void main(void)
 		
 		
 		//Scan
-		if(i == 10)
+		if(i == 100)
 		{
 			if(kulma < 360)
 			{
@@ -171,7 +171,7 @@ void main(void)
 			
 			timeLCD = 0;
 		}		
-	}
+	}*/
 }
 
 //Kutsutaan joka 0.01s = 10ms välein.
@@ -189,10 +189,25 @@ void TestLoop()
 {
 	while(1)
 	{
+		
+		LCD_Position(1,0);
+		LCD_PrCString("PIRI TOIMII");
+		
 		//Test 4m
-		MoveForward(HALF_SPEED);
+		/*
+		if (timeT < 250)
+			TurnLeft(FULL_SPEED);
+		else if (timeT < 500)
+			TurnRight(HALF_SPEED);
+		else 
+			Stop();
+		*/
 		
-		
+		if (timeT < 400)
+			MoveForward(FULL_SPEED);
+		else
+			Stop();
+			
 		//Test 90 degree Turn
 		/*	
 			if(timeT <= 100) //1.0s
