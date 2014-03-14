@@ -49,41 +49,41 @@ takes or returns values other than int
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(66):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(59):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(77):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(59):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(111):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(69):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(123):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(80):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(123):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(114):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(153):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(155):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(160):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(162):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(192):[warning] declaration of `Delay' does not match previous declaration at Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(123)
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(194):[warning] declaration of `Delay' does not match previous declaration at Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(59)
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(199):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(205):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(209):[warning] [MISRA 2712]old-style function definition for `TestLoop'
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(215):[warning] [MISRA 2712]old-style function definition for `TestLoop'
 
-!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(230):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+!W Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(236):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
 
 takes or returns values other than int
 
@@ -99,12 +99,12 @@ takes or returns values other than int
 
 Linking..
 
-  ROM 34% full. 5439 out of 16384 bytes used (does not include absolute areas).
+  ROM 34% full. 5461 out of 16384 bytes used (does not include absolute areas).
 
   RAM 18% full. 44 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 21 warning(s) 08:25:15
+RobottiProjekti - 0 error(s) 21 warning(s) 08:36:05
 

@@ -55,6 +55,9 @@ void main(void)
 	
 	i = 100;
 	
+	MoveForward(FULL_SPEED);
+	Delay(200);
+	
 	//MainLoop**********
 	//***********************
 	while(1)
@@ -119,8 +122,7 @@ void main(void)
 		}
 		//End Spiraali
 		
-		MoveForward(FULL_SPEED);
-		Delay(200);
+	
 		
 		//Scan
 		if(i == 100)
@@ -191,7 +193,11 @@ void main(void)
 void Delay(int dealy)
 {
 	int timme = timeT + dealy;
-	while (timeT < timme);
+	while (timeT < timme)
+	{
+		if (timeT >= timme)
+			break;
+	}
 }
 
 //Kutsutaan joka 0.01s = 10ms välein.
