@@ -119,6 +119,8 @@ void main(void)
 		}
 		//End Spiraali
 		
+		MoveForward(FULL_SPEED);
+		Delay(200);
 		
 		//Scan
 		if(i == 100)
@@ -183,6 +185,13 @@ void main(void)
 			timeLCD = 0;
 		}		
 	}
+}
+
+//Delay function
+void Delay(int dealy)
+{
+	int timme = timeT + dealy;
+	while (timeT < timme);
 }
 
 //Kutsutaan joka 0.01s = 10ms välein.

@@ -9,10 +9,10 @@
  0000 3D072B02          .word 0x3d07,0x2b02
                         .area data(ram, con, rel)
  0004                   .dbfile ./ultracontrol.c
- 0004                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0004                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0004                   .dbsym e distanceToCm _distanceToCm D
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0000                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0000                   .dbfunc e InitUA _InitUA fV
  0000           _InitUA::
  0000                   .dbline -1
