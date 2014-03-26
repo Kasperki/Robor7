@@ -66,9 +66,9 @@
  0002           CLOCK_INPUT_VC3:		equ	2h	;VC3 clock source
  0003           CLOCK_INPUT_VC3_MASK:	equ	3h	;VC3 clock source mask
  0002           CLOCK_INPUT_VC3_JUST:	equ	2h	;VC3 clock source justified
- 0009           CLOCK_DIV_VC3:			equ	9h	;VC3 clock divider
+ 0013           CLOCK_DIV_VC3:			equ	13h	;VC3 clock divider
  00FF           CLOCK_DIV_VC3_MASK:		equ	ffh	;VC3 clock divider mask
- 0009           CLOCK_DIV_VC3_JUST:		equ	9h	;VC3 clock divider justified
+ 0013           CLOCK_DIV_VC3_JUST:		equ	13h	;VC3 clock divider justified
  0000           ANALOG_BUFFER_PWR:		equ	0h	;Analog buffer power level
  0001           ANALOG_BUFFER_PWR_MASK:	equ	1h	;Analog buffer power level mask
  0000           ANALOG_BUFFER_PWR_JUST:	equ	0h	;Analog buffer power level justified
@@ -94,10 +94,10 @@
  0000           ; register initial values
  0000           ;
  0000           ANALOG_IO_CONTROL:		equ 0h	;Analog IO Control register (ABF_CR)
- 0003           PORT_0_GLOBAL_SELECT:	equ 3h	;Port 0 global select register (PRT0GS)
- 0043           PORT_0_DRIVE_0:			equ 43h	;Port 0 drive mode 0 register (PRT0DM0)
- 00BC           PORT_0_DRIVE_1:			equ bch	;Port 0 drive mode 1 register (PRT0DM1)
- 00BC           PORT_0_DRIVE_2:			equ bch	;Port 0 drive mode 2 register (PRT0DM2)
+ 0013           PORT_0_GLOBAL_SELECT:	equ 13h	;Port 0 global select register (PRT0GS)
+ 0053           PORT_0_DRIVE_0:			equ 53h	;Port 0 drive mode 0 register (PRT0DM0)
+ 00AC           PORT_0_DRIVE_1:			equ ach	;Port 0 drive mode 1 register (PRT0DM1)
+ 00AC           PORT_0_DRIVE_2:			equ ach	;Port 0 drive mode 2 register (PRT0DM2)
  0000           PORT_0_INTENABLE:		equ 0h	;Port 0 interrupt enable register (PRT0IE)
  0000           PORT_0_INTCTRL_0:		equ 0h	;Port 0 interrupt control 0 register (PRT0IC0)
  0000           PORT_0_INTCTRL_1:		equ 0h	;Port 0 interrupt control 1 register (PRT0IC1)
@@ -1278,9 +1278,9 @@
  002F 7E            reti
  0030           
                     org   30h                      ;PSoC Block DBB10 Interrupt Vector
-                    // call     void_handler
- 0030 7E            reti
- 0031           
+ 0030 7D0000        ljmp        _PWM8_SERVO_ISR
+ 0033 7E            reti
+ 0034           
                     org   34h                      ;PSoC Block DBB11 Interrupt Vector
                     // call     void_handler
  0034 7E            reti

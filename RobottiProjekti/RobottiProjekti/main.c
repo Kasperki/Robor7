@@ -15,7 +15,7 @@
 //#include "GyroControl.h"
 
 //Kellot
-int timeT = 0,timeT2 = 0;
+volatile int timeT = 0,timeT2 = 0;
 int timeLCD = 0,timeUltra = 0; 
 
 int timeForward = 50; //.... 4m täydellä vauhdilla 3.7s
@@ -50,14 +50,11 @@ void main(void)
 	//Init PGA and ADCIN for Ultrasonic
 	InitUA();
 	
-	//Testink
-	//TestLoop();
-	
-	i = 100;
-	
-	MoveForward(FULL_SPEED);
 	Delay(200);
 	
+	//Testink
+	//TestLoop();
+
 	//MainLoop**********
 	//***********************
 	while(1)
@@ -68,124 +65,7 @@ void main(void)
 		//Gets the data
 		ultraData = getDataUA();
 		
-		//Spiraali
-		if(i < 10)
-		{
-			if(i < 3)
-			{
-				if(turn == 0)
-					MoveForward(HALF_SPEED);
-				else if(turn == 1)
-				{
-					Stop();
-					if(timeT >= 100)
-					{
-						turn = 2; 
-						timeT = 0;
-					}
-				}
-				else 
-				{
-					if(timeT <= turnTime) //if(gyroKulma < 90)
-					{
-						TurnLeft(HALF_SPEED);
-					}
-					else
-					{ 
-						turn = 0;
-						timeT = 0;
-					}
-				}
-			}
-			else if(i < 5) 
-			{
-				i = 0;
-				timeForward -= timeRobotWidth;
-			}
-			
-			//Kokokierros on menty
-			if(timeForward <= 0)
-			{
-				i = 10;
-				timeT = 0; 
-				timeT2 = 0;
-				turn = 0;
-				timeForward = 0;
-				Stop();
-			}
-			else if (timeT >= timeForward && turn == 0)
-			{
-				i++;
-				turn = 1;
-				timeT = 0;
-			}
-		}
-		//End Spiraali
-		
 	
-		
-		//Scan
-		if(i == 100)
-		{
-			if(kulma < 30000)
-			{
-				if(ultraData < 300)
-				{	
-					if(ultraData > 0)
-						MoveForward(HALF_SPEED); 
-				}
-				else if (timeT2 >= 50) //WAIT 500ms
-				{
-					if (turn == 0)
-					{	
-						timeT = 0;
-						turn = 1;
-					}
-						
-					if(timeT <= 20)
-						TurnRight(SLOW_SPEED);
-					else
-					{
-						kulma+=5;
-						timeT2 = 0;
-						turn = 0;
-					}
-				}
-				else 
-					Stop();
-			}
-			else 
-				i = 20;
-		}
-		
-		if(i == 20)
-			Stop();
-		
-		
-		//WRITE TO LCD
-		if(timeLCD >= 6)
-		{
-			itoa(buffer,ultraData,10);
-			LCD_Position(0,0);
-			LCD_PrCString("      ");
-			LCD_Position(0,0);
-			LCD_PrString(buffer);
-					
-			//
-			LCD_Position(0,5);
-			LCD_PrCString("      ");
-			itoa(buffer,timeForward,10);
-			LCD_Position(0,5);
-			LCD_PrString(buffer);
-			
-			LCD_Position(1,0);
-			LCD_PrCString("      ");
-			itoa(buffer,kulma,10);
-			LCD_Position(1,0);
-			LCD_PrString(buffer);
-			
-			timeLCD = 0;
-		}		
 	}
 }
 
@@ -194,10 +74,9 @@ void Delay(int dealy)
 {
 	int timme = timeT + dealy;
 	while (timeT < timme)
-	{
-		if (timeT >= timme)
-			break;
-	}
+	{}
+	
+	timeT = 0;
 }
 
 //Kutsutaan joka 0.01s = 10ms välein.
@@ -230,8 +109,12 @@ void TestLoop()
 		*/
 	
 		//About 90
-		if (timeT < 60)
-			TurnLeft(HALF_SPEED);
+		if (timeT < 200)
+			ControlServo(8);
+		else if(timeT < 400)
+			ControlServo(15);
+		else if(timeT < 600)
+			ControlServo(25);
 		else
 			Stop();
 			

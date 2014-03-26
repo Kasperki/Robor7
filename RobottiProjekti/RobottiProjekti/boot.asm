@@ -162,7 +162,7 @@ ENDIF
     reti
 
     org   30h                      ;PSoC Block DBB10 Interrupt Vector
-    // call	void_handler
+    ljmp	_PWM8_SERVO_ISR
     reti
 
     org   34h                      ;PSoC Block DBB11 Interrupt Vector

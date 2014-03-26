@@ -22,6 +22,7 @@
 #include "LCD.h"
 #include "PGA.h"
 #include "PWM8_OIKEA.h"
+#include "PWM8_SERVO.h"
 #include "PWM8_VASEN.h"
 #include "Timer8.h"
 

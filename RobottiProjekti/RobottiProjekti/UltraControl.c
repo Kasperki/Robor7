@@ -7,6 +7,9 @@
   //PORT0_6 TRIGGER
   //PORT0_7 ECHO
 //
+
+//PORT0_4 SERVO PWM
+
 float distanceToCm = 0.033f;
 
 //Init PGA AND ADC
@@ -17,6 +20,9 @@ void InitUA()
 	
 	ADCINC_Start(ADCINC_HIGHPOWER);
 	ADCINC_GetSamples(0);
+	
+	PWM8_SERVO_Start();
+	PWM8_SERVO_WritePulseWidth(15);
 }
 
 
@@ -50,3 +56,7 @@ void ControlTrigger(int *time)
 }
 
 //Control PWM to move sensor
+void ControlServo(int pulse)
+{
+	PWM8_SERVO_WritePulseWidth((BYTE)pulse);	
+}
