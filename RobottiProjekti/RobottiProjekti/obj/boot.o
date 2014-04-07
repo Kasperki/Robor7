@@ -2,7 +2,7 @@ XH
 H B areas 13 global symbols
 M boot.asm
 S _main Ref0000
-S _ADCINC_ADConversion_ISR Ref0000
+S PSoC_GPIO_ISR Ref0000
 S __r0 Ref0000
 S LoadConfigInit Ref0000
 S __bss_end Ref0000
@@ -22,15 +22,15 @@ dbline 82 C
 dbline 86 10
 dbline 8A 14
 dbline 8E 18
-dbline 92 1C
+dbline 91 1C
+dbline 92 1F
 dbline 95 20
 dbline 96 23
 dbline 99 24
 dbline 9A 27
 dbline 9D 28
 dbline 9E 2B
-dbline A1 2C
-dbline A2 2F
+dbline A2 2C
 dbline A5 30
 dbline A6 33
 dbline AA 34
@@ -134,16 +134,16 @@ T 00 14 7E
 R 00 00 00 00
 T 00 18 7E
 R 00 00 00 00
-T 00 1C 7E
-R 00 00 00 00
+T 00 1C 7D 00 00 7E
+R 00 00 00 00 02 03 00 01
 T 00 20 7D 00 00 7E
 R 00 00 00 00 02 03 00 07
 T 00 24 7D 00 00 7E
 R 00 00 00 00 02 03 00 06
 T 00 28 7D 00 00 7E
 R 00 00 00 00 02 03 00 09
-T 00 2C 7D 00 00 7E
-R 00 00 00 00 02 03 00 01
+T 00 2C 7E
+R 00 00 00 00
 T 00 30 7D 00 00 7E
 R 00 00 00 00 02 03 00 08
 T 00 34 7E

@@ -7,7 +7,7 @@
 
 //-----------
 //Prototypes
-void InitUA();
+void InitUAServo();
 int getDataUA();
 void ControlTrigger(int *);
 int ControlServo(int pulse);

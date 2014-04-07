@@ -14,9 +14,8 @@
 ; =============================================================================
  
 include "PSoCGPIOINT.inc"
-include "ADCINC.inc"
 include "LCD.inc"
-include "PGA.inc"
+include "LED.inc"
 include "PWM8_OIKEA.inc"
 include "PWM8_SERVO.inc"
 include "PWM8_VASEN.inc"

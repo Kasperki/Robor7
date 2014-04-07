@@ -18,9 +18,8 @@
 #define __PSOCAPI_H
 
 #include "PSoCGPIOINT.h"
-#include "ADCINC.h"
 #include "LCD.h"
-#include "PGA.h"
+#include "LED.h"
 #include "PWM8_OIKEA.h"
 #include "PWM8_SERVO.h"
 #include "PWM8_VASEN.h"

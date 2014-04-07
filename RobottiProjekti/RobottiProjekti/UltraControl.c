@@ -13,34 +13,34 @@
 float distanceToCm = 0.033f;
 
 //Init PGA AND ADC
-void InitUA()
+void InitUAServo(void)
 {
-	PGA_SetGain(PGA_G1_00);
-	PGA_Start(PGA_MEDPOWER);
-	
-	ADCINC_Start(ADCINC_HIGHPOWER);
-	ADCINC_GetSamples(0);
-	
 	PWM8_SERVO_Start();
 	PWM8_SERVO_WritePulseWidth(15);
 }
 
 
 //Return distance from Ultrasonic sensor in centimeters 
-int getDataUA()
+int getDataUA(void)
 {
-	if(ADCINC_fIsDataAvailable() != 0)
+	/*if(ADCINC_fIsDataAvailable() != 0)
 	{		
 		return (int)(ADCINC_iGetData() * distanceToCm);
 	}
 	else 
-		return 0;
+		return 0;*/
 }
 
 //Sends Trigger pulse
 void ControlTrigger(int *time)
 {
-	//Send Trigger Pulse every 10ms 
+	//Wait 60ms and send pulse again
+	if (*time >= 80)
+	{
+		*time = 0;
+	}
+	
+	//Send Trigger Pulse every 1ms 
 	if (*time <= 1)
 	{
 		UATrig_Data_ADDR |= UATrig_MASK;
@@ -48,11 +48,6 @@ void ControlTrigger(int *time)
 	else 	
 		UATrig_Data_ADDR &= ~UATrig_MASK;
 	
-	//Wait 60ms and send pulse again
-	if (*time >= 6)
-	{
-		*time = 0;
-	}
 }
 
 //Control PWM to move sensor

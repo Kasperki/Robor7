@@ -20,23 +20,8 @@ export LoadConfigTBL_robottiprojekti_Bank0
 export LoadConfigTBL_robottiprojekti_Ordered
 AREA lit(rom, rel)
 LoadConfigTBL_robottiprojekti_Bank0:
-;  Instance name ADCINC, User Module ADCINC
-;       Instance name ADCINC, Block Name ADC(ASC10)
-	db		80h, 90h		;ADCINC_AtoDcr0(ASC10CR0)
-	db		81h, 00h		;ADCINC_AtoDcr1(ASC10CR1)
-	db		82h, 60h		;ADCINC_AtoDcr2(ASC10CR2)
-	db		83h, f0h		;ADCINC_AtoDcr3(ASC10CR3)
-;       Instance name ADCINC, Block Name PWM(DCB03)
-	db		2fh, 00h		;ADCINC_PWMcr0(DCB03CR0)
-	db		2dh, 00h		;ADCINC_PWMdr1(DCB03DR1)
-	db		2eh, 01h		;ADCINC_PWMdr2(DCB03DR2)
 ;  Instance name LCD, User Module LCD
-;  Instance name PGA, User Module PGA
-;       Instance name PGA, Block Name GAIN(ACB00)
-	db		71h, fdh		;PGA_GAIN_CR0(ACB00CR0)
-	db		72h, 21h		;PGA_GAIN_CR1(ACB00CR1)
-	db		73h, 20h		;PGA_GAIN_CR2(ACB00CR2)
-	db		70h, 00h		;PGA_GAIN_CR3(ACB00CR3)
+;  Instance name LED, User Module LED
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
 	db		27h, 00h		;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
@@ -55,7 +40,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 ;  Instance name Timer8, User Module Timer8
 ;       Instance name Timer8, Block Name TIMER8(DCB02)
 	db		2bh, 04h		;Timer8_CONTROL_REG(DCB02CR0)
-	db		29h, 63h		;Timer8_PERIOD_REG(DCB02DR1)
+	db		29h, 09h		;Timer8_PERIOD_REG(DCB02DR1)
 	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
 ;  Global Register values Bank 0
 	db		60h, 2bh		; AnalogColumnInputSelect register (AMX_IN)
@@ -63,7 +48,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		63h, 15h		; AnalogReferenceControl register (ARF_CR)
 	db		65h, 00h		; AnalogSyncControl register (ASY_CR)
 	db		e6h, 00h		; DecimatorControl_0 register (DEC_CR0)
-	db		e7h, 03h		; DecimatorControl_1 register (DEC_CR1)
+	db		e7h, 00h		; DecimatorControl_1 register (DEC_CR1)
 	db		d6h, 00h		; I2CConfig register (I2CCFG)
 	db		b0h, 00h		; Row_0_InputMux register (RDI0RI)
 	db		b1h, 00h		; Row_0_InputSync register (RDI0SYN)
@@ -81,15 +66,8 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		beh, 00h		; Row_1_OutputDrive_1 register (RDI1SRO1)
 	db		ffh
 LoadConfigTBL_robottiprojekti_Bank1:
-;  Instance name ADCINC, User Module ADCINC
-;       Instance name ADCINC, Block Name ADC(ASC10)
-;       Instance name ADCINC, Block Name PWM(DCB03)
-	db		2ch, 31h		;ADCINC_PWMfn(DCB03FN)
-	db		2dh, 15h		;ADCINC_PWMsl(DCB03IN)
-	db		2eh, 40h		;ADCINC_PWMos(DCB03OU)
 ;  Instance name LCD, User Module LCD
-;  Instance name PGA, User Module PGA
-;       Instance name PGA, Block Name GAIN(ACB00)
+;  Instance name LED, User Module LED
 ;  Instance name PWM8_OIKEA, User Module PWM8
 ;       Instance name PWM8_OIKEA, Block Name PWM8(DBB01)
 	db		24h, 29h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
@@ -133,24 +111,24 @@ AREA psoc_config(rom, rel)
 LoadConfigTBL_robottiprojekti_Ordered:
 ;  Ordered Global Register values
 	M8C_SetBank0
-	mov	reg[00h], 00h		; Port_0_Data register (PRT0DR)
+	mov	reg[00h], 80h		; Port_0_Data register (PRT0DR)
 	M8C_SetBank1
-	mov	reg[00h], 53h		; Port_0_DriveMode_0 register (PRT0DM0)
+	mov	reg[00h], d3h		; Port_0_DriveMode_0 register (PRT0DM0)
 	mov	reg[01h], ach		; Port_0_DriveMode_1 register (PRT0DM1)
 	M8C_SetBank0
-	mov	reg[03h], ach		; Port_0_DriveMode_2 register (PRT0DM2)
+	mov	reg[03h], 2ch		; Port_0_DriveMode_2 register (PRT0DM2)
 	mov	reg[02h], 13h		; Port_0_GlobalSelect register (PRT0GS)
 	M8C_SetBank1
-	mov	reg[02h], 00h		; Port_0_IntCtrl_0 register (PRT0IC0)
-	mov	reg[03h], 00h		; Port_0_IntCtrl_1 register (PRT0IC1)
+	mov	reg[02h], 08h		; Port_0_IntCtrl_0 register (PRT0IC0)
+	mov	reg[03h], 80h		; Port_0_IntCtrl_1 register (PRT0IC1)
 	M8C_SetBank0
-	mov	reg[01h], 00h		; Port_0_IntEn register (PRT0IE)
+	mov	reg[01h], 88h		; Port_0_IntEn register (PRT0IE)
 	mov	reg[04h], 00h		; Port_1_Data register (PRT1DR)
 	M8C_SetBank1
-	mov	reg[04h], 0fh		; Port_1_DriveMode_0 register (PRT1DM0)
-	mov	reg[05h], f0h		; Port_1_DriveMode_1 register (PRT1DM1)
+	mov	reg[04h], 8fh		; Port_1_DriveMode_0 register (PRT1DM0)
+	mov	reg[05h], 70h		; Port_1_DriveMode_1 register (PRT1DM1)
 	M8C_SetBank0
-	mov	reg[07h], f0h		; Port_1_DriveMode_2 register (PRT1DM2)
+	mov	reg[07h], 70h		; Port_1_DriveMode_2 register (PRT1DM2)
 	mov	reg[06h], 00h		; Port_1_GlobalSelect register (PRT1GS)
 	M8C_SetBank1
 	mov	reg[06h], 00h		; Port_1_IntCtrl_0 register (PRT1IC0)

@@ -6,117 +6,113 @@ dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
-A lit size 9A flags 0
+A lit size 7E flags 0
 S LoadConfigTBL_robottiprojekti_Bank0 Def0000
-S LoadConfigTBL_robottiprojekti_Bank1 Def0059
+S LoadConfigTBL_robottiprojekti_Bank1 Def0043
 A psoc_config size C5 flags 0
 dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbline 2 0
-dbline 88 2
+dbline 72 2
 dbline 2 5
-dbline 8A 7
-dbline 8B A
+dbline 74 7
+dbline 75 A
 dbline 2 D
-dbline 8D F
-dbline 8E 12
+dbline 77 F
+dbline 78 12
 dbline 2 15
-dbline 90 17
-dbline 91 1A
+dbline 7A 17
+dbline 7B 1A
 dbline 2 1D
-dbline 93 1F
-dbline 94 22
+dbline 7D 1F
+dbline 7E 22
 dbline 2 25
-dbline 96 27
-dbline 97 2A
+dbline 80 27
+dbline 81 2A
 dbline 2 2D
-dbline 99 2F
-dbline 9A 32
+dbline 83 2F
+dbline 84 32
 dbline 2 35
-dbline 9C 37
-dbline 9D 3A
+dbline 86 37
+dbline 87 3A
 dbline 2 3D
-dbline 9F 3F
-dbline A0 42
+dbline 89 3F
+dbline 8A 42
 dbline 2 45
-dbline A2 47
-dbline A3 4A
+dbline 8C 47
+dbline 8D 4A
 dbline 2 4D
-dbline A5 4F
-dbline A6 52
+dbline 8F 4F
+dbline 90 52
 dbline 2 55
-dbline A8 57
-dbline A9 5A
+dbline 92 57
+dbline 93 5A
 dbline 2 5D
-dbline AB 5F
-dbline AC 62
+dbline 95 5F
+dbline 96 62
 dbline 2 65
-dbline AE 67
-dbline AF 6A
+dbline 98 67
+dbline 99 6A
 dbline 2 6D
-dbline B1 6F
-dbline B2 72
+dbline 9B 6F
+dbline 9C 72
 dbline 2 75
-dbline B4 77
-dbline B5 7A
+dbline 9E 77
+dbline 9F 7A
 dbline 2 7D
-dbline B7 7F
-dbline B8 82
+dbline A1 7F
+dbline A2 82
 dbline 2 85
-dbline BA 87
-dbline BB 8A
+dbline A4 87
+dbline A5 8A
 dbline 2 8D
-dbline BD 8F
-dbline BE 92
+dbline A7 8F
+dbline A8 92
 dbline 2 95
-dbline C0 97
-dbline C1 9A
+dbline AA 97
+dbline AB 9A
 dbline 2 9D
-dbline C3 9F
-dbline C4 A2
+dbline AD 9F
+dbline AE A2
 dbline 2 A5
-dbline C6 A7
-dbline C7 AA
+dbline B0 A7
+dbline B1 AA
 dbline 2 AD
-dbline C9 AF
-dbline CA B2
+dbline B3 AF
+dbline B4 B2
 dbline 2 B5
-dbline CC B7
-dbline CD BA
+dbline B6 B7
+dbline B7 BA
 dbline 2 BD
-dbline CF BF
+dbline B9 BF
 dbline 2 C2
-dbline D1 C4
+dbline BB C4
 S LoadConfigTBL_robottiprojekti_Ordered Def0000
-T 00 00 80 90 81 00 82 60 83 F0 2F 00 2D 00 2E 01
+T 00 00 27 00 25 C7 26 00 33 00 31 C7 32 00 23 00
 R 00 00 00 01
-T 00 0E 71 FD 72 21 73 20 70 00 27 00 25 C7 26 00
+T 00 0E 21 C7 22 00 2B 04 29 09 2A 00 60 2B 66 00
 R 00 00 00 01
-T 00 1C 33 00 31 C7 32 00 23 00 21 C7 22 00 2B 04
+T 00 1C 63 15 65 00 E6 00 E7 00 D6 00 B0 00 B1 00
 R 00 00 00 01
-T 00 2A 29 63 2A 00 60 2B 66 00 63 15 65 00 E6 00
+T 00 2A B2 00 B3 33 B4 33 B5 11 B6 00 B8 55 B9 00
 R 00 00 00 01
-T 00 38 E7 03 D6 00 B0 00 B1 00 B2 00 B3 33 B4 33
+T 00 38 BA 10 BB 33 BC 33 BD 02 BE 00 FF 24 29 25
 R 00 00 00 01
-T 00 46 B5 11 B6 00 B8 55 B9 00 BA 10 BB 33 BC 33
+T 00 46 16 26 45 30 29 31 11 32 44 20 29 21 16 22
 R 00 00 00 01
-T 00 54 BD 02 BE 00 FF 2C 31 2D 15 2E 40 24 29 25
+T 00 54 44 28 20 29 01 2A 40 61 00 69 00 60 00 62
 R 00 00 00 01
-T 00 62 16 26 45 30 29 31 11 32 44 20 29 21 16 22
+T 00 62 00 67 33 68 33 63 00 66 00 D1 00 D3 00 D0
 R 00 00 00 01
-T 00 70 44 28 20 29 01 2A 40 61 00 69 00 60 00 62
+T 00 70 00 D2 00 E1 B9 E2 00 DF 13 DE 02 DD 00 FF
 R 00 00 00 01
-T 00 7E 00 67 33 68 33 63 00 66 00 D1 00 D3 00 D0
-R 00 00 00 01
-T 00 8C 00 D2 00 E1 B9 E2 00 DF 13 DE 02 DD 00 FF
-R 00 00 00 01
-T 00 00 70 EF 62 00 00 71 10 62 00 53 62 01 AC 70
+T 00 00 70 EF 62 00 80 71 10 62 00 D3 62 01 AC 70
 R 00 00 00 02
-T 00 0E EF 62 03 AC 62 02 13 71 10 62 02 00 62 03
+T 00 0E EF 62 03 2C 62 02 13 71 10 62 02 08 62 03
 R 00 00 00 02
-T 00 1C 00 70 EF 62 01 00 62 04 00 71 10 62 04 0F
+T 00 1C 80 70 EF 62 01 88 62 04 00 71 10 62 04 8F
 R 00 00 00 02
-T 00 2A 62 05 F0 70 EF 62 07 F0 62 06 00 71 10 62
+T 00 2A 62 05 70 70 EF 62 07 70 62 06 00 71 10 62
 R 00 00 00 02
 T 00 38 06 00 62 07 00 70 EF 62 05 00 62 08 00 71
 R 00 00 00 02

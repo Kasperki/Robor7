@@ -95,16 +95,16 @@
  0000           ;
  0000           ANALOG_IO_CONTROL:		equ 0h	;Analog IO Control register (ABF_CR)
  0013           PORT_0_GLOBAL_SELECT:	equ 13h	;Port 0 global select register (PRT0GS)
- 0053           PORT_0_DRIVE_0:			equ 53h	;Port 0 drive mode 0 register (PRT0DM0)
+ 00D3           PORT_0_DRIVE_0:			equ d3h	;Port 0 drive mode 0 register (PRT0DM0)
  00AC           PORT_0_DRIVE_1:			equ ach	;Port 0 drive mode 1 register (PRT0DM1)
- 00AC           PORT_0_DRIVE_2:			equ ach	;Port 0 drive mode 2 register (PRT0DM2)
- 0000           PORT_0_INTENABLE:		equ 0h	;Port 0 interrupt enable register (PRT0IE)
- 0000           PORT_0_INTCTRL_0:		equ 0h	;Port 0 interrupt control 0 register (PRT0IC0)
- 0000           PORT_0_INTCTRL_1:		equ 0h	;Port 0 interrupt control 1 register (PRT0IC1)
+ 002C           PORT_0_DRIVE_2:			equ 2ch	;Port 0 drive mode 2 register (PRT0DM2)
+ 0088           PORT_0_INTENABLE:		equ 88h	;Port 0 interrupt enable register (PRT0IE)
+ 0008           PORT_0_INTCTRL_0:		equ 8h	;Port 0 interrupt control 0 register (PRT0IC0)
+ 0080           PORT_0_INTCTRL_1:		equ 80h	;Port 0 interrupt control 1 register (PRT0IC1)
  0000           PORT_1_GLOBAL_SELECT:	equ 0h	;Port 1 global select register (PRT1GS)
- 000F           PORT_1_DRIVE_0:			equ fh	;Port 1 drive mode 0 register (PRT1DM0)
- 00F0           PORT_1_DRIVE_1:			equ f0h	;Port 1 drive mode 1 register (PRT1DM1)
- 00F0           PORT_1_DRIVE_2:			equ f0h	;Port 1 drive mode 2 register (PRT1DM2)
+ 008F           PORT_1_DRIVE_0:			equ 8fh	;Port 1 drive mode 0 register (PRT1DM0)
+ 0070           PORT_1_DRIVE_1:			equ 70h	;Port 1 drive mode 1 register (PRT1DM1)
+ 0070           PORT_1_DRIVE_2:			equ 70h	;Port 1 drive mode 2 register (PRT1DM2)
  0000           PORT_1_INTENABLE:		equ 0h	;Port 1 interrupt enable register (PRT1IE)
  0000           PORT_1_INTCTRL_0:		equ 0h	;Port 1 interrupt control 0 register (PRT1IC0)
  0000           PORT_1_INTCTRL_1:		equ 0h	;Port 1 interrupt control 1 register (PRT1IC1)
@@ -1258,9 +1258,9 @@
  0018 7E            reti
  0019           
                     org   1Ch                      ;GPIO Interrupt Vector
-                    // call     void_handler
- 001C 7E            reti
- 001D           
+ 001C 7D0000        ljmp        PSoC_GPIO_ISR
+ 001F 7E            reti
+ 0020           
                     org   20h                      ;PSoC Block DBB00 Interrupt Vector
  0020 7D0000        ljmp        _PWM8_VASEN_ISR
  0023 7E            reti
@@ -1274,9 +1274,9 @@
  002B 7E            reti
  002C           
                     org   2Ch                      ;PSoC Block DCB03 Interrupt Vector
- 002C 7D0000        ljmp        _ADCINC_ADConversion_ISR
- 002F 7E            reti
- 0030           
+                    // call     void_handler
+ 002C 7E            reti
+ 002D           
                     org   30h                      ;PSoC Block DBB10 Interrupt Vector
  0030 7D0000        ljmp        _PWM8_SERVO_ISR
  0033 7E            reti
