@@ -1,6 +1,10 @@
 Starting MAKE...
 creating project.mk 
 
+lib/counter16_1.asm
+
+lib/counter16_1int.asm
+
 lib/lcd.asm
 
 lib/led.asm
@@ -27,72 +31,18 @@ lib/timer8.asm
 
 lib/timer8int.asm
 
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\MotorControl.h(12):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
-
-If there is no parameter, use <function name>(void);
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\MotorControl.h(17):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
-
-If there is no parameter, use <function name>(void);
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\UltraControl.h(10):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
-
-If there is no parameter, use <function name>(void);
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\UltraControl.h(11):[warning] [MISRA 2711]declaring a function without parameter prototypes may cause runtime errors.
-
-If there is no parameter, use <function name>(void);
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(51):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(54):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(56):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(56):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(61):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(61):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
-
-takes or returns values other than int
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(78):[warning] declaration of `Delay' does not match previous declaration at Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(56)
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(86):[warning] [MISRA 2712]old-style function definition for `TimerInterrupt'
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(97):[warning] [MISRA 2712]old-style function definition for `PinInterrupt'
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(134):[warning] [MISRA 2712]old-style function definition for `TestLoop'
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(134):[warning] declaration of `TestLoop' does not match previous declaration at Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\main.c(61)
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\motorcontrol.c(20):[warning] [MISRA 2712]old-style function definition for `InitPWM'
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\motorcontrol.c(50):[warning] [MISRA 2712]old-style function definition for `Stop'
-
-!W Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\ultracontrol.c(32):[warning] missing return value
+!W Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c(151):[warning] expression with no effect elided
 
 ./boot.asm
 
 Linking..
 
-  ROM 29% full. 4729 out of 16384 bytes used (does not include absolute areas).
+  ROM 29% full. 4725 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 24% full. 60 bytes used (does not include stack usage).
+  RAM 23% full. 58 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 18 warning(s) 10:58:15
+RobottiProjekti - 0 error(s) 1 warning(s) 15:31:09
 

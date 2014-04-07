@@ -14,6 +14,7 @@
 ; =============================================================================
  
 include "PSoCGPIOINT.inc"
+include "Counter16_1.inc"
 include "LCD.inc"
 include "LED.inc"
 include "PWM8_OIKEA.inc"

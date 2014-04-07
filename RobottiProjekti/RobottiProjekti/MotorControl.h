@@ -9,10 +9,10 @@
 //----------------------
 //Prototypes
 
-void InitPWM();
+void InitPWM(void);
 void MoveForward(int pusle);
 void MoveBackward(int pulse);
 void TurnLeft(int pulse);
 void TurnRight(int pulse);
-void Stop();
+void Stop(void);
 void TestTurnLeft(int pulse);

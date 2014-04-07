@@ -16,7 +16,7 @@
 const float OIKEUSKERROIN = 1.0f; //Kerroin vasemalle puolelle jotta robotti kulkisi suoraan
 
 //Käynnistää PWM Moduulit
-void InitPWM()
+void InitPWM(void)
 {
 	PWM8_VASEN_Start();
 	PWM8_OIKEA_Start();
@@ -46,7 +46,7 @@ void MoveBackward(int pulse)
 }
 
 //Pysäyttää Moottorit
-void Stop()
+void Stop(void)
 {
 	PWM8_OIKEA_WritePulseWidth(0);
 	PWM8_VASEN_WritePulseWidth(0);

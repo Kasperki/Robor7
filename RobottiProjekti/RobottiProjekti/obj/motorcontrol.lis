@@ -4,10 +4,10 @@
                         .area lit(rom, con, rel, lit)
  0000           _OIKEUSKERROIN::
  0000 3F800000          .word 0x3f80,0x0
- 0004                   .dbfile Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0004                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
  0004                   .dbsym e OIKEUSKERROIN _OIKEUSKERROIN kD
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0000                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
  0000                   .dbfunc e InitPWM _InitPWM fV
  0000           _InitPWM::
  0000                   .dbline -1
@@ -30,7 +30,7 @@
  0000           ; const float OIKEUSKERROIN = 1.0f; //Kerroin vasemalle puolelle jotta robotti kulkisi suoraan
  0000           ; 
  0000           ; //Käynnistää PWM Moduulit
- 0000           ; void InitPWM()
+ 0000           ; void InitPWM(void)
  0000           ; {
  0000                   .dbline 21
  0000           ;       PWM8_VASEN_Start();
@@ -463,7 +463,7 @@
  024B           ; }
  024B           ; 
  024B           ; //Pysäyttää Moottorit
- 024B           ; void Stop()
+ 024B           ; void Stop(void)
  024B           ; {
  024B                   .dbline 51
  024B           ;       PWM8_OIKEA_WritePulseWidth(0);

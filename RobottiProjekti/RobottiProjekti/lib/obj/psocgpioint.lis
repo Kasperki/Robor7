@@ -634,16 +634,6 @@
  0000               or   F, 0
  0000               macro Resume_CodeCompressor
  0000               add  SP, 0
- 0000           UAEcho_Data_ADDR:	equ	0h
- 0100           UAEcho_DriveMode_0_ADDR:	equ	100h
- 0101           UAEcho_DriveMode_1_ADDR:	equ	101h
- 0003           UAEcho_DriveMode_2_ADDR:	equ	3h
- 0002           UAEcho_GlobalSelect_ADDR:	equ	2h
- 0102           UAEcho_IntCtrl_0_ADDR:	equ	102h
- 0103           UAEcho_IntCtrl_1_ADDR:	equ	103h
- 0001           UAEcho_IntEn_ADDR:	equ	1h
- 0080           UAEcho_MASK:	equ	80h
- 0000           ; Port_0_3 address and mask equates
  0000           Port_0_3_Data_ADDR:	equ	0h
  0100           Port_0_3_DriveMode_0_ADDR:	equ	100h
  0101           Port_0_3_DriveMode_1_ADDR:	equ	101h
@@ -653,6 +643,38 @@
  0103           Port_0_3_IntCtrl_1_ADDR:	equ	103h
  0001           Port_0_3_IntEn_ADDR:	equ	1h
  0008           Port_0_3_MASK:	equ	8h
+ 0000           ; UAEcho address and mask equates
+ 0004           UAEcho_Data_ADDR:	equ	4h
+ 0104           UAEcho_DriveMode_0_ADDR:	equ	104h
+ 0105           UAEcho_DriveMode_1_ADDR:	equ	105h
+ 0007           UAEcho_DriveMode_2_ADDR:	equ	7h
+ 0006           UAEcho_GlobalSelect_ADDR:	equ	6h
+ 0106           UAEcho_IntCtrl_0_ADDR:	equ	106h
+ 0107           UAEcho_IntCtrl_1_ADDR:	equ	107h
+ 0005           UAEcho_IntEn_ADDR:	equ	5h
+ 0020           UAEcho_MASK:	equ	20h
+ 0000           ; UAEcho_Data access macros
+ 0000           ;   GetUAEcho_Data macro, return in a
+ 0000           macro GetUAEcho_Data
+ 0000                   mov             a,[Port_1_Data_SHADE]
+ 0000                   and             a, 20h
+ 0000           macro SetUAEcho_Data
+ 0000                   or              [Port_1_Data_SHADE], 20h
+ 0000                   mov             a, [Port_1_Data_SHADE]
+ 0000                   mov             reg[UAEcho_Data_ADDR], a
+ 0000           macro ClearUAEcho_Data
+ 0000                   and             [Port_1_Data_SHADE], ~20h
+ 0000                   mov             a, [Port_1_Data_SHADE]
+ 0000                   mov             reg[UAEcho_Data_ADDR], a
+ 0000           AnalogColumn_InputMUX_0_Data_ADDR:	equ	0h
+ 0100           AnalogColumn_InputMUX_0_DriveMode_0_ADDR:	equ	100h
+ 0101           AnalogColumn_InputMUX_0_DriveMode_1_ADDR:	equ	101h
+ 0003           AnalogColumn_InputMUX_0_DriveMode_2_ADDR:	equ	3h
+ 0002           AnalogColumn_InputMUX_0_GlobalSelect_ADDR:	equ	2h
+ 0102           AnalogColumn_InputMUX_0_IntCtrl_0_ADDR:	equ	102h
+ 0103           AnalogColumn_InputMUX_0_IntCtrl_1_ADDR:	equ	103h
+ 0001           AnalogColumn_InputMUX_0_IntEn_ADDR:	equ	1h
+ 0002           AnalogColumn_InputMUX_0_MASK:	equ	2h
  0000           ; UATrig address and mask equates
  0000           UATrig_Data_ADDR:	equ	0h
  0100           UATrig_DriveMode_0_ADDR:	equ	100h

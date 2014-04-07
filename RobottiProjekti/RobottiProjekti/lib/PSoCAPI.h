@@ -18,6 +18,7 @@
 #define __PSOCAPI_H
 
 #include "PSoCGPIOINT.h"
+#include "Counter16_1.h"
 #include "LCD.h"
 #include "LED.h"
 #include "PWM8_OIKEA.h"

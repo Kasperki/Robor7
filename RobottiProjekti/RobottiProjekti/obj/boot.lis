@@ -94,20 +94,20 @@
  0000           ; register initial values
  0000           ;
  0000           ANALOG_IO_CONTROL:		equ 0h	;Analog IO Control register (ABF_CR)
- 0013           PORT_0_GLOBAL_SELECT:	equ 13h	;Port 0 global select register (PRT0GS)
- 00D3           PORT_0_DRIVE_0:			equ d3h	;Port 0 drive mode 0 register (PRT0DM0)
+ 0093           PORT_0_GLOBAL_SELECT:	equ 93h	;Port 0 global select register (PRT0GS)
+ 0053           PORT_0_DRIVE_0:			equ 53h	;Port 0 drive mode 0 register (PRT0DM0)
  00AC           PORT_0_DRIVE_1:			equ ach	;Port 0 drive mode 1 register (PRT0DM1)
  002C           PORT_0_DRIVE_2:			equ 2ch	;Port 0 drive mode 2 register (PRT0DM2)
- 0088           PORT_0_INTENABLE:		equ 88h	;Port 0 interrupt enable register (PRT0IE)
+ 0008           PORT_0_INTENABLE:		equ 8h	;Port 0 interrupt enable register (PRT0IE)
  0008           PORT_0_INTCTRL_0:		equ 8h	;Port 0 interrupt control 0 register (PRT0IC0)
- 0080           PORT_0_INTCTRL_1:		equ 80h	;Port 0 interrupt control 1 register (PRT0IC1)
+ 0000           PORT_0_INTCTRL_1:		equ 0h	;Port 0 interrupt control 1 register (PRT0IC1)
  0000           PORT_1_GLOBAL_SELECT:	equ 0h	;Port 1 global select register (PRT1GS)
  008F           PORT_1_DRIVE_0:			equ 8fh	;Port 1 drive mode 0 register (PRT1DM0)
- 0070           PORT_1_DRIVE_1:			equ 70h	;Port 1 drive mode 1 register (PRT1DM1)
- 0070           PORT_1_DRIVE_2:			equ 70h	;Port 1 drive mode 2 register (PRT1DM2)
- 0000           PORT_1_INTENABLE:		equ 0h	;Port 1 interrupt enable register (PRT1IE)
+ 0050           PORT_1_DRIVE_1:			equ 50h	;Port 1 drive mode 1 register (PRT1DM1)
+ 0050           PORT_1_DRIVE_2:			equ 50h	;Port 1 drive mode 2 register (PRT1DM2)
+ 0020           PORT_1_INTENABLE:		equ 20h	;Port 1 interrupt enable register (PRT1IE)
  0000           PORT_1_INTCTRL_0:		equ 0h	;Port 1 interrupt control 0 register (PRT1IC0)
- 0000           PORT_1_INTCTRL_1:		equ 0h	;Port 1 interrupt control 1 register (PRT1IC1)
+ 0020           PORT_1_INTCTRL_1:		equ 20h	;Port 1 interrupt control 1 register (PRT1IC1)
  0000           PORT_2_GLOBAL_SELECT:	equ 0h	;Port 2 global select register (PRT2GS)
  007F           PORT_2_DRIVE_0:			equ 7fh	;Port 2 drive mode 0 register (PRT2DM0)
  0080           PORT_2_DRIVE_1:			equ 80h	;Port 2 drive mode 1 register (PRT2DM1)
@@ -1286,9 +1286,9 @@
  0034 7E            reti
  0035           
                     org   38h                      ;PSoC Block DCB12 Interrupt Vector
-                    // call     void_handler
- 0038 7E            reti
- 0039           
+ 0038 7D0000        ljmp        _Counter16_1_ISR
+ 003B 7E            reti
+ 003C           
                     org   3Ch                      ;PSoC Block DCB13 Interrupt Vector
                     // call     void_handler
  003C 7E            reti

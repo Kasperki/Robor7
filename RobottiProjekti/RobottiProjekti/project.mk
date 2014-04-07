@@ -1,14 +1,14 @@
 PROJNAME=RobottiProjekti
 DEVICE=CY8C27443B
 BASEDEVICE=CY8C27000B
-PROJPATH=Z:/LOLLOL~1/ROBOTT~1/ROBOTT~1
+PROJPATH=Z:/Robo/Roobbo/Robor7/ROBOTT~1/ROBOTT~1
 PSOCDIR=C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1
 INCLUDE_PATH=C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1
 CSRCS= main.c motorcontrol.c ultracontrol.c
 LIBCSRCS=
 STDCSRCS=
 ASMSRCS=
-LIBASMSRCS= lcd.asm led.asm psocconfig.asm psocconfigtbl.asm psocgpioint.asm pwm8_oikea.asm pwm8_oikeaint.asm pwm8_servo.asm pwm8_servoint.asm pwm8_vasen.asm pwm8_vasenint.asm timer8.asm timer8int.asm
+LIBASMSRCS= counter16_1.asm counter16_1int.asm lcd.asm led.asm psocconfig.asm psocconfigtbl.asm psocgpioint.asm pwm8_oikea.asm pwm8_oikeaint.asm pwm8_servo.asm pwm8_servoint.asm pwm8_vasen.asm pwm8_vasenint.asm timer8.asm timer8int.asm
 STDASMSRCS=
 OBJECT_SOURCES= main.c motorcontrol.c ultracontrol.c
 FILLVALUE=0x30

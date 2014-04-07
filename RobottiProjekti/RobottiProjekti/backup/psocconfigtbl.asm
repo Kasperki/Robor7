@@ -20,6 +20,15 @@ export LoadConfigTBL_robottiprojekti_Bank0
 export LoadConfigTBL_robottiprojekti_Ordered
 AREA lit(rom, rel)
 LoadConfigTBL_robottiprojekti_Bank0:
+;  Instance name Counter16_1, User Module Counter16
+;       Instance name Counter16_1, Block Name CNTR16_LSB(DBB11)
+	db		37h, 00h		;Counter16_1_CONTROL_LSB_REG(DBB11CR0)
+	db		35h, 13h		;Counter16_1_PERIOD_LSB_REG(DBB11DR1)
+	db		36h, 00h		;Counter16_1_COMPARE_LSB_REG(DBB11DR2)
+;       Instance name Counter16_1, Block Name CNTR16_MSB(DCB12)
+	db		3bh, 00h		;Counter16_1_CONTROL_MSB_REG(DCB12CR0)
+	db		39h, 00h		;Counter16_1_PERIOD_MSB_REG(DCB12DR1)
+	db		3ah, 00h		;Counter16_1_COMPARE_MSB_REG(DCB12DR2)
 ;  Instance name LCD, User Module LCD
 ;  Instance name LED, User Module LED
 ;  Instance name PWM8_OIKEA, User Module PWM8
@@ -43,7 +52,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		29h, 09h		;Timer8_PERIOD_REG(DCB02DR1)
 	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
 ;  Global Register values Bank 0
-	db		60h, 2bh		; AnalogColumnInputSelect register (AMX_IN)
+	db		60h, 28h		; AnalogColumnInputSelect register (AMX_IN)
 	db		66h, 00h		; AnalogComparatorControl1 register (CMP_CR1)
 	db		63h, 15h		; AnalogReferenceControl register (ARF_CR)
 	db		65h, 00h		; AnalogSyncControl register (ASY_CR)
@@ -66,6 +75,15 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		beh, 00h		; Row_1_OutputDrive_1 register (RDI1SRO1)
 	db		ffh
 LoadConfigTBL_robottiprojekti_Bank1:
+;  Instance name Counter16_1, User Module Counter16
+;       Instance name Counter16_1, Block Name CNTR16_LSB(DBB11)
+	db		34h, 01h		;Counter16_1_FUNC_LSB_REG(DBB11FN)
+	db		35h, f5h		;Counter16_1_INPUT_LSB_REG(DBB11IN)
+	db		36h, 40h		;Counter16_1_OUTPUT_LSB_REG(DBB11OU)
+;       Instance name Counter16_1, Block Name CNTR16_MSB(DCB12)
+	db		38h, 21h		;Counter16_1_FUNC_MSB_REG(DCB12FN)
+	db		39h, 35h		;Counter16_1_INPUT_MSB_REG(DCB12IN)
+	db		3ah, 40h		;Counter16_1_OUTPUT_MSB_REG(DCB12OU)
 ;  Instance name LCD, User Module LCD
 ;  Instance name LED, User Module LED
 ;  Instance name PWM8_OIKEA, User Module PWM8
@@ -111,30 +129,30 @@ AREA psoc_config(rom, rel)
 LoadConfigTBL_robottiprojekti_Ordered:
 ;  Ordered Global Register values
 	M8C_SetBank0
-	mov	reg[00h], 80h		; Port_0_Data register (PRT0DR)
+	mov	reg[00h], 00h		; Port_0_Data register (PRT0DR)
 	M8C_SetBank1
-	mov	reg[00h], d3h		; Port_0_DriveMode_0 register (PRT0DM0)
+	mov	reg[00h], 53h		; Port_0_DriveMode_0 register (PRT0DM0)
 	mov	reg[01h], ach		; Port_0_DriveMode_1 register (PRT0DM1)
 	M8C_SetBank0
 	mov	reg[03h], 2ch		; Port_0_DriveMode_2 register (PRT0DM2)
-	mov	reg[02h], 13h		; Port_0_GlobalSelect register (PRT0GS)
+	mov	reg[02h], 93h		; Port_0_GlobalSelect register (PRT0GS)
 	M8C_SetBank1
 	mov	reg[02h], 08h		; Port_0_IntCtrl_0 register (PRT0IC0)
-	mov	reg[03h], 80h		; Port_0_IntCtrl_1 register (PRT0IC1)
+	mov	reg[03h], 00h		; Port_0_IntCtrl_1 register (PRT0IC1)
 	M8C_SetBank0
-	mov	reg[01h], 88h		; Port_0_IntEn register (PRT0IE)
+	mov	reg[01h], 08h		; Port_0_IntEn register (PRT0IE)
 	mov	reg[04h], 00h		; Port_1_Data register (PRT1DR)
 	M8C_SetBank1
 	mov	reg[04h], 8fh		; Port_1_DriveMode_0 register (PRT1DM0)
-	mov	reg[05h], 70h		; Port_1_DriveMode_1 register (PRT1DM1)
+	mov	reg[05h], 50h		; Port_1_DriveMode_1 register (PRT1DM1)
 	M8C_SetBank0
-	mov	reg[07h], 70h		; Port_1_DriveMode_2 register (PRT1DM2)
+	mov	reg[07h], 50h		; Port_1_DriveMode_2 register (PRT1DM2)
 	mov	reg[06h], 00h		; Port_1_GlobalSelect register (PRT1GS)
 	M8C_SetBank1
 	mov	reg[06h], 00h		; Port_1_IntCtrl_0 register (PRT1IC0)
-	mov	reg[07h], 00h		; Port_1_IntCtrl_1 register (PRT1IC1)
+	mov	reg[07h], 20h		; Port_1_IntCtrl_1 register (PRT1IC1)
 	M8C_SetBank0
-	mov	reg[05h], 00h		; Port_1_IntEn register (PRT1IE)
+	mov	reg[05h], 20h		; Port_1_IntEn register (PRT1IE)
 	mov	reg[08h], 00h		; Port_2_Data register (PRT2DR)
 	M8C_SetBank1
 	mov	reg[08h], 7fh		; Port_2_DriveMode_0 register (PRT2DM0)

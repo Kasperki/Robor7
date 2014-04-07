@@ -20,7 +20,7 @@ S __fpsub Ref0000
 S __fpmul Ref0000
 A text size 465 flags 0
 dbfile ./motorcontrol.c
-dbfile Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\motorcontrol.c
+dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
 dbfunc e InitPWM 0 fV
 dbline FFFFFFFF 0
 dbline 14 0
@@ -103,7 +103,7 @@ S _TurnLeft Def025B
 S _MoveForward Def0009
 S _InitPWM Def0000
 A lit size 4 flags 1
-dbfile Z:\LOLLOL~1\ROBOTT~1\ROBOTT~1\motorcontrol.c
+dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
 dbsym e OIKEUSKERROIN 0 kD
 S _OIKEUSKERROIN Def0000
 T 00 00 3F 80 00 00

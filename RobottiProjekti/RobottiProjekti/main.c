@@ -16,6 +16,10 @@
 
 #pragma interrupt_handler PinInterrupt
 
+void Delay(int);
+void TestLoop(void);
+void CounterISR(void);
+
 //Kellot
 volatile int timeT = 0;
 int timeUltra = 0,timeUltraRead = 0;
@@ -25,6 +29,7 @@ volatile unsigned long int milliT = 0;
 volatile int a = 0;
 char buffer[10];
 
+int pertti = 0;
 int timeForward = 50; //.... 4m täydellä vauhdilla 3.7s
 int turnTime = 55; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
@@ -40,20 +45,21 @@ void main(void)
 	M8C_EnableIntMask(INT_MSK0, INT_MSK0_GPIO);	//VITTU
 	
 	//Start LCD
-	LED_Start();
 	LCD_Start();
-	LED_Switch(1);
 	//InitializeTimer
 	Timer8_Start();
 	Timer8_EnableInt();
 		
+	Counter16_1_EnableInt();
+	Counter16_1_Start();
+	
 	//Start Motor PWMs
-	InitPWM();
+	//InitPWM();
 	
 	//Init Servo
-	InitUAServo();
+	//InitUAServo();
 		
-	Delay(500);
+	//Delay(500);
 	
 	//Counter8_Start();
 	
@@ -82,7 +88,7 @@ void Delay(int dealy)
 
 //Palauttaa eerolle millisekunnit siitä asti ku psoc on käynnistytnyt
 //Kutsutaan joka 0.001s = 1ms välein.
-void TimerInterrupt()
+void TimerInterrupt(void)
 {
   timeT++;
 	
@@ -92,14 +98,18 @@ void TimerInterrupt()
   timeUltraRead++;
 }
 
+//Counter INTERRUPT
+void CounterISR(void)
+{
+  pertti++;
+}
 
-void PinInterrupt()
+void PinInterrupt(void)
 {
 	static BYTE port0_prevValue;
 	static nousevaReuna;
-	LED_Switch(0);
 	
-	a++;
+	//a++;
 	
 	//UÅ ECHO 
 	/* Check if interrupt because of P0_7 change from read */
@@ -130,26 +140,31 @@ void PinInterrupt()
 
 
 //For Testing
-void TestLoop()
+void TestLoop(void)
 {
-	static int t =0,j;
 	while(1)
 	{
-		ControlTrigger(&timeUltra);	
 		
-
+		UATrig_Data_ADDR |= UATrig_MASK;
+		Delay(1);
+		pertti = 0;
+		UATrig_Data_ADDR &= 0b00000000;	
+		Delay(10);
+		a = pertti;
+		//~UATrig_MASK
+		
 		itoa(buffer,a,10);
 		LCD_Position(0,0);
 		LCD_PrCString("     ");
 		LCD_Position(0,0);
 		LCD_PrString(buffer);
 		
-		itoa(buffer,t++,10);
-		LCD_Position(1,0);
-		LCD_PrCString("     ");
-		LCD_Position(1,0);
-		LCD_PrString(buffer);
-		for (j=0;j<9000;j++);
+//		itoa(buffer,t++,10);
+//		LCD_Position(1,0);
+//		LCD_PrCString("     ");
+//		LCD_Position(1,0);
+//		LCD_PrString(buffer);
+//		for (j=0;j<9000;j++);
 			
 		//Test 4m
 		/*
