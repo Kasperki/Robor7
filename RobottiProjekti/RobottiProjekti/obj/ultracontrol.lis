@@ -16,11 +16,12 @@
  0000                   .dbfunc e InitUAServo _InitUAServo fV
  0000           _InitUAServo::
  0000                   .dbline -1
- 0000                   .dbline 17
+ 0000                   .dbline 18
  0000           ; #include <m8c.h>        // part specific constants and macros
  0000           ; #include "PSoCAPI.h"
  0000           ; #include<stdio.h>
  0000           ; #include<stdlib.h>
+ 0000           ; #include "delay.h"
  0000           ; 
  0000           ; //----------------------------------------------------
  0000           ;   //PORT0_6 TRIGGER
@@ -34,13 +35,13 @@
  0000           ; //Init PGA AND ADC
  0000           ; void InitUAServo(void)
  0000           ; {
- 0000                   .dbline 18
+ 0000                   .dbline 19
  0000           ;       PWM8_SERVO_Start();
  0000 10                push X
  0001 7C0000            xcall _PWM8_SERVO_Start
- 0004                   .dbline 19
- 0004           ;       PWM8_SERVO_WritePulseWidth(15);
- 0004 500F              mov A,15
+ 0004                   .dbline 20
+ 0004           ;       PWM8_SERVO_WritePulseWidth(17);
+ 0004 5011              mov A,17
  0006 7C0000            xcall _PWM8_SERVO_WritePulseWidth
  0009 20                pop X
  000A                   .dbline -2
@@ -51,14 +52,14 @@
  000B                   .dbfunc e getDataUA _getDataUA fI
  000B           _getDataUA::
  000B                   .dbline -1
- 000B                   .dbline 25
+ 000B                   .dbline 26
  000B           ; }
  000B           ; 
  000B           ; 
  000B           ; //Return distance from Ultrasonic sensor in centimeters 
  000B           ; int getDataUA(void)
  000B           ; {
- 000B                   .dbline 32
+ 000B                   .dbline 33
  000B           ;       /*if(ADCINC_fIsDataAvailable() != 0)
  000B           ;       {               
  000B           ;               return (int)(ADCINC_iGetData() * distanceToCm);
@@ -79,13 +80,13 @@
  0012                   .dbline -1
  0012 10                push X
  0013 4F                mov X,SP
- 0014                   .dbline 37
+ 0014                   .dbline 38
  0014           ; }
  0014           ; 
  0014           ; //Sends Trigger pulse
  0014           ; void ControlTrigger(int *time)
  0014           ; {             
- 0014                   .dbline 39
+ 0014                   .dbline 40
  0014           ;       //Wait 60ms and send pulse again
  0014           ;       if (*time >= 80)
  0014 52FC              mov A,[X-4]
@@ -99,19 +100,19 @@
  0024 1980              sbb A,(0 ^ 0x80)
  0026 C00B              jc L4
  0028           X0:
- 0028                   .dbline 41
+ 0028                   .dbline 42
  0028           ;       {
  0028           ;               *time = 0;
- 0028                   .dbline 41
+ 0028                   .dbline 42
  0028 52FC              mov A,[X-4]
  002A 5300              mov [__r1],A
  002C 5000              mov A,0
  002E 3F00              mvi [__r1],A
  0030 3F00              mvi [__r1],A
- 0032                   .dbline 42
+ 0032                   .dbline 43
  0032           ;       }
  0032           L4:
- 0032                   .dbline 45
+ 0032                   .dbline 46
  0032           ;       
  0032           ;       //Send Trigger Pulse every 1ms 
  0032           ;       if (*time <= 1)
@@ -130,16 +131,16 @@
  004A 1A00              sbb A,[__rX]
  004C C006              jc L6
  004E           X1:
- 004E                   .dbline 47
+ 004E                   .dbline 48
  004E           ;       {
  004E           ;               UATrig_Data_ADDR |= UATrig_MASK;
- 004E                   .dbline 47
+ 004E                   .dbline 48
  004E 430040            or REG[0],64
- 0051                   .dbline 48
+ 0051                   .dbline 49
  0051           ;       }
  0051 8004              xjmp L7
  0053           L6:
- 0053                   .dbline 50
+ 0053                   .dbline 51
  0053           ;       else    
  0053           ;               UATrig_Data_ADDR &= ~UATrig_MASK;
  0053 4100BF            and REG[0],-65
@@ -151,9 +152,9 @@
  0057 7F                ret
  0058                   .dbsym l time -5 pI
  0058                   .dbend
- 0058                   .dbfunc e ControlServo _ControlServo fV
- 0058           ;          pulse -> X-5
- 0058           _ControlServo::
+ 0058                   .dbfunc e sendTrigPulse _sendTrigPulse fV
+ 0058           ;      ultraData -> X-5
+ 0058           _sendTrigPulse::
  0058                   .dbline -1
  0058 10                push X
  0059 4F                mov X,SP
@@ -161,19 +162,61 @@
  005A           ;       
  005A           ; }
  005A           ; 
- 005A           ; //Control PWM to move sensor
- 005A           ; void ControlServo(int pulse)
- 005A           ; {
+ 005A           ; void sendTrigPulse(int *ultraData)
+ 005A           ; {     
  005A                   .dbline 57
- 005A           ;       PWM8_SERVO_WritePulseWidth((BYTE)pulse);        
+ 005A           ;       *ultraData = 0;
  005A 52FC              mov A,[X-4]
- 005C 10                push X
- 005D 7C0000            xcall _PWM8_SERVO_WritePulseWidth
- 0060 20                pop X
- 0061                   .dbline -2
- 0061           L8:
- 0061 20                pop X
- 0062                   .dbline 0 ; func end
- 0062 7F                ret
- 0063                   .dbsym l pulse -5 I
- 0063                   .dbend
+ 005C 5300              mov [__r1],A
+ 005E 5000              mov A,0
+ 0060 3F00              mvi [__r1],A
+ 0062 3F00              mvi [__r1],A
+ 0064                   .dbline 58
+ 0064           ;       UATrig_Data_ADDR |= UATrig_MASK;        
+ 0064 430040            or REG[0],64
+ 0067                   .dbline 59
+ 0067           ;       Delay50u();
+ 0067 10                push X
+ 0068 7C0000            xcall _Delay50u
+ 006B 20                pop X
+ 006C                   .dbline 60
+ 006C           ;       UATrig_Data_ADDR &= ~UATrig_MASK;
+ 006C 4100BF            and REG[0],-65
+ 006F                   .dbline 61
+ 006F           ;       Delay10msTimes(7);
+ 006F 10                push X
+ 0070 5007              mov A,7
+ 0072 7C0000            xcall _Delay10msTimes
+ 0075 20                pop X
+ 0076                   .dbline -2
+ 0076           L8:
+ 0076 20                pop X
+ 0077                   .dbline 0 ; func end
+ 0077 7F                ret
+ 0078                   .dbsym l ultraData -5 pI
+ 0078                   .dbend
+ 0078                   .dbfunc e ControlServo _ControlServo fV
+ 0078           ;          pulse -> X-5
+ 0078           _ControlServo::
+ 0078                   .dbline -1
+ 0078 10                push X
+ 0079 4F                mov X,SP
+ 007A                   .dbline 66
+ 007A           ; }     
+ 007A           ; 
+ 007A           ; //Control PWM to move sensor
+ 007A           ; void ControlServo(int pulse)
+ 007A           ; {
+ 007A                   .dbline 67
+ 007A           ;       PWM8_SERVO_WritePulseWidth((BYTE)pulse);        
+ 007A 52FC              mov A,[X-4]
+ 007C 10                push X
+ 007D 7C0000            xcall _PWM8_SERVO_WritePulseWidth
+ 0080 20                pop X
+ 0081                   .dbline -2
+ 0081           L9:
+ 0081 20                pop X
+ 0082                   .dbline 0 ; func end
+ 0082 7F                ret
+ 0083                   .dbsym l pulse -5 I
+ 0083                   .dbend

@@ -8,6 +8,7 @@
 #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
 #include<stdio.h>
 #include<stdlib.h>
+#include "delay.h"
 
 //Omat header filet
 #include "MotorControl.h"
@@ -26,9 +27,11 @@ int timeUltra = 0,timeUltraRead = 0;
 volatile unsigned long int milliT = 0;
 
 //Test
-volatile int a = 0;
+volatile int distanceCM = 0;
 char buffer[10];
 
+int vaihe = 0;
+int left, right;
 int timeForward = 50; //.... 4m täydellä vauhdilla 3.7s
 int turnTime = 55; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
@@ -58,18 +61,42 @@ void main(void)
 	//Init Servo
 	InitUAServo();
 		
-	//Delay10msTimes(50);
+	Delay10msTimes(50);
+	vaihe = 1;
 	
 	//Testink
-	TestLoop();
+	//TestLoop();
 
 	//MainLoop**********
 	//***********************
-	/*while(1)
+	while(1)
 	{
+		// Eteenpäin ajo vaihe, ajetaan eteenpäin niin pitkään kunnes ollaan 20cm päästä seinästä.
+		if( vaihe == 1 )
+		{	
+			sendTrigPulse(&ultraData);
+			
+			distanceCM = ultraData * 2;	
+			
+			if (distanceCM > 30)
+			{	
+				MoveForward(HALF_SPEED);
+			}
+			else 
+			{
+				Stop();
+				vaihe = 2;
+			}
+		}
+		// Vaiheessa ollaan pysähtyneenä ja katsomme vasemmalle ja oikealle ja teemme päätöksen kumpaan suuntaan käännymme.
+		if ( vaihe == 2 )
+		{
+				ControlServo(SERVO_LEFT);
+		
+		}
 
 		
-	}*/
+	}
 }
 
 
