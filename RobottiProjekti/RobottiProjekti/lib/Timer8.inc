@@ -26,7 +26,7 @@ Timer8_INT_MASK:                           equ 0x04
 ; Constants for Timer8 user defined values
 ;--------------------------------------------------
 
-Timer8_PERIOD:                             equ 0x09
+Timer8_PERIOD:                             equ 0x13
 Timer8_COMPARE_VALUE:                      equ 0x00
 
 

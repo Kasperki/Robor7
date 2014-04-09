@@ -491,390 +491,116 @@
  025B                   .dbline -1
  025B 10                push X
  025C 4F                mov X,SP
- 025D 3802              add SP,2
- 025F                   .dbline 59
- 025F           ; }
- 025F           ; 
- 025F           ; //Kääntyy vasemmalle
- 025F           ; void TurnLeft(int pulse)
- 025F           ; {
- 025F                   .dbline 60
- 025F           ;       LEFTC_Data_ADDR &= NOLLAA;
- 025F 4104F0            and REG[0x4],-16
- 0262                   .dbline 60
- 0262                   .dbline 61
- 0262           ;       LEFTC_Data_ADDR |= LEFTFRIGHTB
- 0262 430406            or REG[0x4],6
- 0265                   .dbline 63
- 0265           ;               
- 0265           ;       PWM8_VASEN_WritePulseWidth((BYTE)pulse);
- 0265 52FC              mov A,[X-4]
- 0267 10                push X
- 0268 7C0000            xcall _PWM8_VASEN_WritePulseWidth
- 026B 20                pop X
- 026C                   .dbline 64
- 026C           ;       PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * 0.8f));
- 026C 52FC              mov A,[X-4]
- 026E 5300              mov [__r3],A
- 0270 52FB              mov A,[X-5]
- 0272 5300              mov [__r2],A
- 0274 470080            tst [__r2],-128
- 0277 A009              jz X6
- 0279 5500FF            mov [__r1],-1
- 027C 5500FF            mov [__r0],-1
- 027F 8007              jmp X7
- 0281           X6:
- 0281 550000            mov [__r1],0
- 0284 550000            mov [__r0],0
- 0287           X7:
- 0287 5100              mov A,[__r0]
- 0289 08                push A
- 028A 5100              mov A,[__r1]
- 028C 08                push A
- 028D 5100              mov A,[__r2]
- 028F 08                push A
- 0290 5100              mov A,[__r3]
- 0292 08                push A
- 0293 7C0000            xcall __long2fp
- 0296 18                pop A
- 0297 5300              mov [__r3],A
- 0299 18                pop A
- 029A 5300              mov [__r2],A
- 029C 18                pop A
- 029D 5300              mov [__r1],A
- 029F 18                pop A
- 02A0 08                push A
- 02A1 5100              mov A,[__r1]
- 02A3 08                push A
- 02A4 5100              mov A,[__r2]
- 02A6 08                push A
- 02A7 5100              mov A,[__r3]
- 02A9 08                push A
- 02AA 503F              mov A,63
- 02AC 08                push A
- 02AD 504C              mov A,76
- 02AF 08                push A
- 02B0 50CC              mov A,-52
- 02B2 08                push A
- 02B3 50CD              mov A,-51
- 02B5 08                push A
- 02B6 7C0000            xcall __fpmul
- 02B9 18                pop A
- 02BA 5300              mov [__r3],A
- 02BC 18                pop A
- 02BD 5300              mov [__r2],A
- 02BF 18                pop A
- 02C0 5300              mov [__r1],A
- 02C2 18                pop A
- 02C3 5300              mov [__r0],A
- 02C5 38FC              add SP,-4
- 02C7 5047              mov A,71
- 02C9 08                push A
- 02CA 5000              mov A,0
- 02CC 08                push A
- 02CD 08                push A
- 02CE 08                push A
- 02CF 5100              mov A,[__r0]
- 02D1 08                push A
- 02D2 5100              mov A,[__r1]
- 02D4 08                push A
- 02D5 5100              mov A,[__r2]
- 02D7 08                push A
- 02D8 5100              mov A,[__r3]
- 02DA 08                push A
- 02DB 7C0000            xcall __fpcmp
- 02DE 38F8              add SP,-8
- 02E0 39FF              cmp A,-1
- 02E2 A047              jz L13
- 02E4 5047              mov A,71
- 02E6 08                push A
- 02E7 5000              mov A,0
- 02E9 08                push A
- 02EA 08                push A
- 02EB 08                push A
- 02EC 5100              mov A,[__r0]
- 02EE 08                push A
- 02EF 5100              mov A,[__r1]
- 02F1 08                push A
- 02F2 5100              mov A,[__r2]
- 02F4 08                push A
- 02F5 5100              mov A,[__r3]
- 02F7 08                push A
- 02F8 7C0000            xcall __fpsub
- 02FB 18                pop A
- 02FC 5300              mov [__r7],A
- 02FE 18                pop A
- 02FF 5300              mov [__r6],A
- 0301 18                pop A
- 0302 5300              mov [__r5],A
- 0304 18                pop A
- 0305 38FC              add SP,-4
- 0307 08                push A
- 0308 5100              mov A,[__r5]
- 030A 08                push A
- 030B 5100              mov A,[__r6]
- 030D 08                push A
- 030E 5100              mov A,[__r7]
- 0310 08                push A
- 0311 7C0000            xcall __fp2long
- 0314 18                pop A
- 0315 5300              mov [__r5],A
- 0317 18                pop A
- 0318 5300              mov [__r4],A
- 031A 38FE              add SP,-2
- 031C 5100              mov A,[__r5]
- 031E 0100              add A,0
- 0320 5401              mov [X+1],A
- 0322 5100              mov A,[__r4]
- 0324 0980              adc A,-128
- 0326 5400              mov [X+0],A
- 0328 8020              xjmp L14
- 032A           L13:
- 032A 5100              mov A,[__r0]
- 032C 08                push A
- 032D 5100              mov A,[__r1]
- 032F 08                push A
- 0330 5100              mov A,[__r2]
- 0332 08                push A
- 0333 5100              mov A,[__r3]
- 0335 08                push A
- 0336 7C0000            xcall __fp2long
- 0339 18                pop A
- 033A 5300              mov [__r1],A
- 033C 18                pop A
- 033D 5300              mov [__r0],A
- 033F 38FE              add SP,-2
- 0341 5100              mov A,[__r1]
- 0343 5401              mov [X+1],A
- 0345 5100              mov A,[__r0]
- 0347 5400              mov [X+0],A
- 0349           L14:
- 0349 5201              mov A,[X+1]
- 034B 10                push X
- 034C 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
- 034F 20                pop X
- 0350                   .dbline -2
- 0350           L11:
- 0350 38FE              add SP,-2
- 0352 20                pop X
- 0353                   .dbline 0 ; func end
- 0353 7F                ret
- 0354                   .dbsym l pulse -5 I
- 0354                   .dbend
- 0354                   .dbfunc e TurnRight _TurnRight fV
- 0354           ;          pulse -> X-5
- 0354           _TurnRight::
- 0354                   .dbline -1
- 0354 10                push X
- 0355 4F                mov X,SP
- 0356 3802              add SP,2
- 0358                   .dbline 69
- 0358           ; }
- 0358           ; 
- 0358           ; //Kääntyy oikealle
- 0358           ; void TurnRight(int pulse)
- 0358           ; {             
- 0358                   .dbline 70
- 0358           ;       LEFTC_Data_ADDR &= NOLLAA;
- 0358 4104F0            and REG[0x4],-16
- 035B                   .dbline 70
- 035B                   .dbline 71
- 035B           ;       LEFTC_Data_ADDR |= LEFTBRIGHTF;
- 035B 430409            or REG[0x4],9
- 035E                   .dbline 71
- 035E                   .dbline 73
- 035E           ;       
- 035E           ;       PWM8_VASEN_WritePulseWidth((BYTE)(pulse * 0.8f));
- 035E 52FC              mov A,[X-4]
- 0360 5300              mov [__r3],A
- 0362 52FB              mov A,[X-5]
- 0364 5300              mov [__r2],A
- 0366 470080            tst [__r2],-128
- 0369 A009              jz X9
- 036B 5500FF            mov [__r1],-1
- 036E 5500FF            mov [__r0],-1
- 0371 8007              jmp X10
- 0373           X9:
- 0373 550000            mov [__r1],0
- 0376 550000            mov [__r0],0
- 0379           X10:
- 0379 5100              mov A,[__r0]
- 037B 08                push A
- 037C 5100              mov A,[__r1]
- 037E 08                push A
- 037F 5100              mov A,[__r2]
- 0381 08                push A
- 0382 5100              mov A,[__r3]
- 0384 08                push A
- 0385 7C0000            xcall __long2fp
- 0388 18                pop A
- 0389 5300              mov [__r3],A
- 038B 18                pop A
- 038C 5300              mov [__r2],A
- 038E 18                pop A
- 038F 5300              mov [__r1],A
- 0391 18                pop A
- 0392 08                push A
- 0393 5100              mov A,[__r1]
- 0395 08                push A
- 0396 5100              mov A,[__r2]
- 0398 08                push A
- 0399 5100              mov A,[__r3]
- 039B 08                push A
- 039C 503F              mov A,63
- 039E 08                push A
- 039F 504C              mov A,76
- 03A1 08                push A
- 03A2 50CC              mov A,-52
- 03A4 08                push A
- 03A5 50CD              mov A,-51
- 03A7 08                push A
- 03A8 7C0000            xcall __fpmul
- 03AB 18                pop A
- 03AC 5300              mov [__r3],A
- 03AE 18                pop A
- 03AF 5300              mov [__r2],A
- 03B1 18                pop A
- 03B2 5300              mov [__r1],A
- 03B4 18                pop A
- 03B5 5300              mov [__r0],A
- 03B7 38FC              add SP,-4
- 03B9 5047              mov A,71
- 03BB 08                push A
- 03BC 5000              mov A,0
- 03BE 08                push A
- 03BF 08                push A
- 03C0 08                push A
- 03C1 5100              mov A,[__r0]
- 03C3 08                push A
- 03C4 5100              mov A,[__r1]
- 03C6 08                push A
- 03C7 5100              mov A,[__r2]
- 03C9 08                push A
- 03CA 5100              mov A,[__r3]
- 03CC 08                push A
- 03CD 7C0000            xcall __fpcmp
- 03D0 38F8              add SP,-8
- 03D2 39FF              cmp A,-1
- 03D4 A047              jz L17
- 03D6 5047              mov A,71
- 03D8 08                push A
- 03D9 5000              mov A,0
- 03DB 08                push A
- 03DC 08                push A
- 03DD 08                push A
- 03DE 5100              mov A,[__r0]
- 03E0 08                push A
- 03E1 5100              mov A,[__r1]
- 03E3 08                push A
- 03E4 5100              mov A,[__r2]
- 03E6 08                push A
- 03E7 5100              mov A,[__r3]
- 03E9 08                push A
- 03EA 7C0000            xcall __fpsub
- 03ED 18                pop A
- 03EE 5300              mov [__r7],A
- 03F0 18                pop A
- 03F1 5300              mov [__r6],A
- 03F3 18                pop A
- 03F4 5300              mov [__r5],A
- 03F6 18                pop A
- 03F7 38FC              add SP,-4
- 03F9 08                push A
- 03FA 5100              mov A,[__r5]
- 03FC 08                push A
- 03FD 5100              mov A,[__r6]
- 03FF 08                push A
- 0400 5100              mov A,[__r7]
- 0402 08                push A
- 0403 7C0000            xcall __fp2long
- 0406 18                pop A
- 0407 5300              mov [__r5],A
- 0409 18                pop A
- 040A 5300              mov [__r4],A
- 040C 38FE              add SP,-2
- 040E 5100              mov A,[__r5]
- 0410 0100              add A,0
- 0412 5401              mov [X+1],A
- 0414 5100              mov A,[__r4]
- 0416 0980              adc A,-128
- 0418 5400              mov [X+0],A
- 041A 8020              xjmp L18
- 041C           L17:
- 041C 5100              mov A,[__r0]
- 041E 08                push A
- 041F 5100              mov A,[__r1]
- 0421 08                push A
- 0422 5100              mov A,[__r2]
- 0424 08                push A
- 0425 5100              mov A,[__r3]
- 0427 08                push A
- 0428 7C0000            xcall __fp2long
- 042B 18                pop A
- 042C 5300              mov [__r1],A
- 042E 18                pop A
- 042F 5300              mov [__r0],A
- 0431 38FE              add SP,-2
- 0433 5100              mov A,[__r1]
- 0435 5401              mov [X+1],A
- 0437 5100              mov A,[__r0]
- 0439 5400              mov [X+0],A
- 043B           L18:
- 043B 5201              mov A,[X+1]
- 043D 10                push X
- 043E 7C0000            xcall _PWM8_VASEN_WritePulseWidth
- 0441 20                pop X
- 0442                   .dbline 74
- 0442           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
- 0442 52FC              mov A,[X-4]
- 0444 10                push X
- 0445 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
- 0448 20                pop X
- 0449                   .dbline -2
- 0449           L15:
- 0449 38FE              add SP,-2
- 044B 20                pop X
- 044C                   .dbline 0 ; func end
- 044C 7F                ret
- 044D                   .dbsym l pulse -5 I
- 044D                   .dbend
- 044D                   .dbfunc e TestTurnLeft _TestTurnLeft fV
- 044D           ;          pulse -> X-5
- 044D           _TestTurnLeft::
- 044D                   .dbline -1
- 044D 10                push X
- 044E 4F                mov X,SP
- 044F                   .dbline 80
- 044F           ; }
- 044F           ; 
- 044F           ; 
- 044F           ; //TEST LEFTTURN
- 044F           ; void TestTurnLeft(int pulse)
- 044F           ; {
- 044F                   .dbline 81
- 044F           ;       LEFTC_Data_ADDR &= NOLLAA;
- 044F 4104F0            and REG[0x4],-16
- 0452                   .dbline 81
- 0452                   .dbline 82
- 0452           ;       LEFTC_Data_ADDR |= 0b00000001;
- 0452 430401            or REG[0x4],1
- 0455                   .dbline 84
- 0455           ;       
- 0455           ;       PWM8_VASEN_WritePulseWidth(0);
- 0455 10                push X
- 0456 5000              mov A,0
- 0458 7C0000            xcall _PWM8_VASEN_WritePulseWidth
- 045B 20                pop X
- 045C                   .dbline 85
- 045C           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
- 045C 52FC              mov A,[X-4]
- 045E 10                push X
- 045F 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
- 0462 20                pop X
- 0463                   .dbline -2
- 0463           L19:
- 0463 20                pop X
- 0464                   .dbline 0 ; func end
- 0464 7F                ret
- 0465                   .dbsym l pulse -5 I
- 0465                   .dbend
+ 025D                   .dbline 59
+ 025D           ; }
+ 025D           ; 
+ 025D           ; //Kääntyy vasemmalle
+ 025D           ; void TurnLeft(int pulse)
+ 025D           ; {
+ 025D                   .dbline 60
+ 025D           ;       LEFTC_Data_ADDR &= NOLLAA;
+ 025D 4104F0            and REG[0x4],-16
+ 0260                   .dbline 60
+ 0260                   .dbline 61
+ 0260           ;       LEFTC_Data_ADDR |= LEFTFRIGHTB
+ 0260 430406            or REG[0x4],6
+ 0263                   .dbline 63
+ 0263           ;               
+ 0263           ;       PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+ 0263 52FC              mov A,[X-4]
+ 0265 10                push X
+ 0266 7C0000            xcall _PWM8_VASEN_WritePulseWidth
+ 0269 20                pop X
+ 026A                   .dbline 64
+ 026A           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+ 026A 52FC              mov A,[X-4]
+ 026C 10                push X
+ 026D 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
+ 0270 20                pop X
+ 0271                   .dbline -2
+ 0271           L11:
+ 0271 20                pop X
+ 0272                   .dbline 0 ; func end
+ 0272 7F                ret
+ 0273                   .dbsym l pulse -5 I
+ 0273                   .dbend
+ 0273                   .dbfunc e TurnRight _TurnRight fV
+ 0273           ;          pulse -> X-5
+ 0273           _TurnRight::
+ 0273                   .dbline -1
+ 0273 10                push X
+ 0274 4F                mov X,SP
+ 0275                   .dbline 69
+ 0275           ; }
+ 0275           ; 
+ 0275           ; //Kääntyy oikealle
+ 0275           ; void TurnRight(int pulse)
+ 0275           ; {             
+ 0275                   .dbline 70
+ 0275           ;       LEFTC_Data_ADDR &= NOLLAA;
+ 0275 4104F0            and REG[0x4],-16
+ 0278                   .dbline 70
+ 0278                   .dbline 71
+ 0278           ;       LEFTC_Data_ADDR |= LEFTBRIGHTF;
+ 0278 430409            or REG[0x4],9
+ 027B                   .dbline 71
+ 027B                   .dbline 73
+ 027B           ;       
+ 027B           ;       PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+ 027B 52FC              mov A,[X-4]
+ 027D 10                push X
+ 027E 7C0000            xcall _PWM8_VASEN_WritePulseWidth
+ 0281 20                pop X
+ 0282                   .dbline 74
+ 0282           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+ 0282 52FC              mov A,[X-4]
+ 0284 10                push X
+ 0285 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
+ 0288 20                pop X
+ 0289                   .dbline -2
+ 0289           L12:
+ 0289 20                pop X
+ 028A                   .dbline 0 ; func end
+ 028A 7F                ret
+ 028B                   .dbsym l pulse -5 I
+ 028B                   .dbend
+ 028B                   .dbfunc e TestTurnLeft _TestTurnLeft fV
+ 028B           ;          pulse -> X-5
+ 028B           _TestTurnLeft::
+ 028B                   .dbline -1
+ 028B 10                push X
+ 028C 4F                mov X,SP
+ 028D                   .dbline 80
+ 028D           ; }
+ 028D           ; 
+ 028D           ; 
+ 028D           ; //TEST LEFTTURN
+ 028D           ; void TestTurnLeft(int pulse)
+ 028D           ; {
+ 028D                   .dbline 81
+ 028D           ;       LEFTC_Data_ADDR &= NOLLAA;
+ 028D 4104F0            and REG[0x4],-16
+ 0290                   .dbline 81
+ 0290                   .dbline 82
+ 0290           ;       LEFTC_Data_ADDR |= 0b00000001;
+ 0290 430401            or REG[0x4],1
+ 0293                   .dbline 84
+ 0293           ;       
+ 0293           ;       PWM8_VASEN_WritePulseWidth(0);
+ 0293 10                push X
+ 0294 5000              mov A,0
+ 0296 7C0000            xcall _PWM8_VASEN_WritePulseWidth
+ 0299 20                pop X
+ 029A                   .dbline 85
+ 029A           ;       PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+ 029A 52FC              mov A,[X-4]
+ 029C 10                push X
+ 029D 7C0000            xcall _PWM8_OIKEA_WritePulseWidth
+ 02A0 20                pop X
+ 02A1                   .dbline -2
+ 02A1           L13:
+ 02A1 20                pop X
+ 02A2                   .dbline 0 ; func end
+ 02A2 7F                ret
+ 02A3                   .dbsym l pulse -5 I
+ 02A3                   .dbend

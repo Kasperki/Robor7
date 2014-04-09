@@ -1,235 +1,237 @@
 Project:      output/RobottiProjekti
 Build Number: 0
-Date:         Wed Apr 09 12:39:39 2014
+Date:         Wed Apr 09 14:03:19 2014
 Compiler:     ICCM8C
 Version:      7.05.00
 
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                             lit   0150   00A0 =    160. bytes (rel,con,rom,lit)
+                             lit   0150   00A6 =    166. bytes (rel,con,rom,lit)
 
        Addr  Global Symbol
       -----  --------------------------------
-       0156  _OIKEUSKERROIN
-       015A  LoadConfigTBL_robottiprojekti_Bank0
+       0150  _OIKEUSKERROIN
+       0154  LoadConfigTBL_robottiprojekti_Bank0
        01A9  LoadConfigTBL_robottiprojekti_Bank1
-       01F0  __lit_end
+       01F6  __lit_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                           idata   01F0   001A =     26. bytes (rel,con,rom,lit)
+                           idata   01F6   001A =     26. bytes (rel,con,rom,lit)
 
        Addr  Global Symbol
       -----  --------------------------------
-       01F0  __idata_start
-       020A  __idata_end
+       01F6  __idata_start
+       0210  __idata_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                     psoc_config   020A   012F =    303. bytes (rel,con,rom,code)
+                     psoc_config   0210   012F =    303. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
-       020A  LoadConfigTBL_robottiprojekti_Ordered
-       02CF  _LoadConfigInit
-       02CF  LoadConfigInit
-       02E2  _LoadConfig_robottiprojekti
-       02E2  LoadConfig_robottiprojekti
-       0339  __psoc_config_end
+       0210  LoadConfigTBL_robottiprojekti_Ordered
+       02D5  _LoadConfigInit
+       02D5  LoadConfigInit
+       02E8  _LoadConfig_robottiprojekti
+       02E8  LoadConfig_robottiprojekti
+       033F  __psoc_config_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                     UserModules   0339   04E0 =   1248. bytes (rel,con,rom,code)
+                     UserModules   033F   04F6 =   1270. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
-       0339  _Timer8_ISR
-       0399  _Timer8_EnableInt
-       0399  Timer8_EnableInt
-       039D  Timer8_DisableInt
-       039D  _Timer8_DisableInt
-       03A1  _Timer8_Start
-       03A1  Timer8_Start
-       03A5  _Timer8_Stop
-       03A5  Timer8_Stop
-       03A9  Timer8_WritePeriod
-       03A9  _Timer8_WritePeriod
-       03AC  Timer8_WriteCompareValue
-       03AC  _Timer8_WriteCompareValue
-       03AF  bTimer8_ReadCompareValue
-       03AF  Timer8_bReadCompareValue
-       03AF  _bTimer8_ReadCompareValue
-       03AF  _Timer8_bReadCompareValue
-       03B2  _Timer8_bReadTimerSaveCV
-       03B2  bTimer8_ReadTimerSaveCV
-       03B2  _bTimer8_ReadCounter
-       03B2  Timer8_bReadTimerSaveCV
-       03B2  bTimer8_ReadCounter
-       03B2  _bTimer8_ReadTimerSaveCV
-       03D9  Timer8_bReadTimer
-       03D9  _Timer8_bReadTimer
-       03D9  _bTimer8_CaptureCounter
-       03D9  bTimer8_ReadTimer
-       03D9  _bTimer8_ReadTimer
-       03D9  bTimer8_CaptureCounter
-       03DE  _PWM8_VASEN_ISR
-       03DF  _PWM8_VASEN_EnableInt
-       03DF  PWM8_VASEN_EnableInt
-       03E3  _PWM8_VASEN_DisableInt
-       03E3  PWM8_VASEN_DisableInt
-       03E7  _PWM8_VASEN_Start
-       03E7  PWM8_VASEN_Start
-       03EB  _PWM8_VASEN_Stop
-       03EB  PWM8_VASEN_Stop
-       03EF  PWM8_VASEN_WritePeriod
-       03EF  _PWM8_VASEN_WritePeriod
-       03F2  PWM8_VASEN_WritePulseWidth
-       03F2  _PWM8_VASEN_WritePulseWidth
-       03F5  _PWM8_VASEN_bReadPulseWidth
-       03F5  bPWM8_VASEN_ReadPulseWidth
-       03F5  PWM8_VASEN_bReadPulseWidth
-       03F5  _bPWM8_VASEN_ReadPulseWidth
-       03F8  _PWM8_VASEN_bReadCounter
-       03F8  PWM8_VASEN_bReadCounter
-       03F8  bPWM8_VASEN_ReadCounter
-       03F8  _bPWM8_VASEN_ReadCounter
-       0421  _PWM8_SERVO_ISR
-       0422  PWM8_SERVO_EnableInt
-       0422  _PWM8_SERVO_EnableInt
-       0426  _PWM8_SERVO_DisableInt
-       0426  PWM8_SERVO_DisableInt
-       042A  _PWM8_SERVO_Start
-       042A  PWM8_SERVO_Start
-       042E  PWM8_SERVO_Stop
-       042E  _PWM8_SERVO_Stop
-       0432  _PWM8_SERVO_WritePeriod
-       0432  PWM8_SERVO_WritePeriod
-       0435  _PWM8_SERVO_WritePulseWidth
-       0435  PWM8_SERVO_WritePulseWidth
-       0438  _bPWM8_SERVO_ReadPulseWidth
-       0438  _PWM8_SERVO_bReadPulseWidth
-       0438  PWM8_SERVO_bReadPulseWidth
-       0438  bPWM8_SERVO_ReadPulseWidth
-       043B  bPWM8_SERVO_ReadCounter
-       043B  _PWM8_SERVO_bReadCounter
-       043B  _bPWM8_SERVO_ReadCounter
-       043B  PWM8_SERVO_bReadCounter
-       0464  _PWM8_OIKEA_ISR
-       0465  PWM8_OIKEA_EnableInt
-       0465  _PWM8_OIKEA_EnableInt
-       0469  PWM8_OIKEA_DisableInt
-       0469  _PWM8_OIKEA_DisableInt
-       046D  _PWM8_OIKEA_Start
-       046D  PWM8_OIKEA_Start
-       0471  PWM8_OIKEA_Stop
-       0471  _PWM8_OIKEA_Stop
-       0475  _PWM8_OIKEA_WritePeriod
-       0475  PWM8_OIKEA_WritePeriod
-       0478  PWM8_OIKEA_WritePulseWidth
-       0478  _PWM8_OIKEA_WritePulseWidth
-       047B  bPWM8_OIKEA_ReadPulseWidth
-       047B  _bPWM8_OIKEA_ReadPulseWidth
-       047B  _PWM8_OIKEA_bReadPulseWidth
-       047B  PWM8_OIKEA_bReadPulseWidth
-       047E  _PWM8_OIKEA_bReadCounter
-       047E  bPWM8_OIKEA_ReadCounter
-       047E  _bPWM8_OIKEA_ReadCounter
-       047E  PWM8_OIKEA_bReadCounter
-       04A7  _LCD_PrCString
-       04A7  LCD_PrCString
-       04B9  LCD_HEX_STR
-       04C9  _LCD_PrHexByte
-       04C9  LCD_PrHexByte
-       04DC  LCD_PrHexInt
-       04DC  _LCD_PrHexInt
-       04E3  LCD_PrString
-       04E3  _LCD_PrString
-       04ED  LCD_WriteData
-       04ED  _LCD_WriteData
-       04ED  LCD_Write_Data
-       04ED  _LCD_Write_Data
-       0501  _LCD_Control
-       0501  LCD_Control
-       05A8  _LCD_Init
-       05A8  _LCD_Start
-       05A8  LCD_Init
-       05A8  LCD_Start
-       0614  LCD_ROW_OFFSET
-       0618  _LCD_Position
-       0618  LCD_Position
-       0624  _LCD_Delay50uTimes
-       0624  LCD_Delay50uTimes
-       062A  LCD_Delay50u_Table
-       0632  LCD_Delay50u
-       0632  _LCD_Delay50u
-       0646  LCD_DrawBG
-       066C  _LCD_DrawBG
-       0695  LCD_DrawVBG
-       06C2  _LCD_DrawVBG
-       06F2  LCD_InitVBG
-       06F2  _LCD_InitVBG
-       071F  LCD_BG_TYPE1
-       0726  LCD_BG_TYPE2
-       072D  _LCD_InitBG
-       072D  LCD_InitBG
-       075D  _Counter16_1_ISR
-       07BD  Counter16_1_EnableInt
-       07BD  _Counter16_1_EnableInt
-       07C1  _Counter16_1_DisableInt
-       07C1  Counter16_1_DisableInt
-       07C5  _Counter16_1_Start
-       07C5  Counter16_1_Start
-       07C9  _Counter16_1_Stop
-       07C9  Counter16_1_Stop
-       07CD  Counter16_1_WritePeriod
-       07CD  _Counter16_1_WritePeriod
-       07D3  Counter16_1_WriteCompareValue
-       07D3  _Counter16_1_WriteCompareValue
-       07D9  wCounter16_1_ReadCompareValue
-       07D9  _Counter16_1_wReadCompareValue
-       07D9  _wCounter16_1_ReadCompareValue
-       07D9  Counter16_1_wReadCompareValue
-       07DF  _wCounter16_1_ReadCounter
-       07DF  wCounter16_1_ReadCounter
-       07DF  _Counter16_1_wReadCounter
-       07DF  Counter16_1_wReadCounter
-       0819  __UserModules_end
+       033F  _Timer8_ISR
+       039F  _Timer8_EnableInt
+       039F  Timer8_EnableInt
+       03A3  Timer8_DisableInt
+       03A3  _Timer8_DisableInt
+       03A7  Timer8_Start
+       03A7  _Timer8_Start
+       03AB  _Timer8_Stop
+       03AB  Timer8_Stop
+       03AF  Timer8_WritePeriod
+       03AF  _Timer8_WritePeriod
+       03B2  _Timer8_WriteCompareValue
+       03B2  Timer8_WriteCompareValue
+       03B5  bTimer8_ReadCompareValue
+       03B5  _Timer8_bReadCompareValue
+       03B5  Timer8_bReadCompareValue
+       03B5  _bTimer8_ReadCompareValue
+       03B8  Timer8_bReadTimerSaveCV
+       03B8  bTimer8_ReadTimerSaveCV
+       03B8  bTimer8_ReadCounter
+       03B8  _Timer8_bReadTimerSaveCV
+       03B8  _bTimer8_ReadCounter
+       03B8  _bTimer8_ReadTimerSaveCV
+       03DF  bTimer8_ReadTimer
+       03DF  _bTimer8_CaptureCounter
+       03DF  bTimer8_CaptureCounter
+       03DF  _Timer8_bReadTimer
+       03DF  _bTimer8_ReadTimer
+       03DF  Timer8_bReadTimer
+       03E4  _PWM8_VASEN_ISR
+       03E5  PWM8_VASEN_EnableInt
+       03E5  _PWM8_VASEN_EnableInt
+       03E9  _PWM8_VASEN_DisableInt
+       03E9  PWM8_VASEN_DisableInt
+       03ED  _PWM8_VASEN_Start
+       03ED  PWM8_VASEN_Start
+       03F1  PWM8_VASEN_Stop
+       03F1  _PWM8_VASEN_Stop
+       03F5  PWM8_VASEN_WritePeriod
+       03F5  _PWM8_VASEN_WritePeriod
+       03F8  _PWM8_VASEN_WritePulseWidth
+       03F8  PWM8_VASEN_WritePulseWidth
+       03FB  PWM8_VASEN_bReadPulseWidth
+       03FB  _bPWM8_VASEN_ReadPulseWidth
+       03FB  _PWM8_VASEN_bReadPulseWidth
+       03FB  bPWM8_VASEN_ReadPulseWidth
+       03FE  _PWM8_VASEN_bReadCounter
+       03FE  PWM8_VASEN_bReadCounter
+       03FE  _bPWM8_VASEN_ReadCounter
+       03FE  bPWM8_VASEN_ReadCounter
+       0427  _PWM8_SERVO_ISR
+       0428  _PWM8_SERVO_EnableInt
+       0428  PWM8_SERVO_EnableInt
+       042C  _PWM8_SERVO_DisableInt
+       042C  PWM8_SERVO_DisableInt
+       0430  PWM8_SERVO_Start
+       0430  _PWM8_SERVO_Start
+       0434  _PWM8_SERVO_Stop
+       0434  PWM8_SERVO_Stop
+       0438  _PWM8_SERVO_WritePeriod
+       0438  PWM8_SERVO_WritePeriod
+       043E  _PWM8_SERVO_WritePulseWidth
+       043E  PWM8_SERVO_WritePulseWidth
+       0444  _wPWM8_SERVO_ReadPulseWidth
+       0444  _PWM8_SERVO_wReadPulseWidth
+       0444  PWM8_SERVO_wReadPulseWidth
+       0444  wPWM8_SERVO_ReadPulseWidth
+       044A  PWM8_SERVO_wReadCounter
+       044A  wPWM8_SERVO_ReadCounter
+       044A  _PWM8_SERVO_wReadCounter
+       044A  _wPWM8_SERVO_ReadCounter
+       0480  _PWM8_OIKEA_ISR
+       0481  _PWM8_OIKEA_EnableInt
+       0481  PWM8_OIKEA_EnableInt
+       0485  _PWM8_OIKEA_DisableInt
+       0485  PWM8_OIKEA_DisableInt
+       0489  _PWM8_OIKEA_Start
+       0489  PWM8_OIKEA_Start
+       048D  PWM8_OIKEA_Stop
+       048D  _PWM8_OIKEA_Stop
+       0491  _PWM8_OIKEA_WritePeriod
+       0491  PWM8_OIKEA_WritePeriod
+       0494  _PWM8_OIKEA_WritePulseWidth
+       0494  PWM8_OIKEA_WritePulseWidth
+       0497  _bPWM8_OIKEA_ReadPulseWidth
+       0497  PWM8_OIKEA_bReadPulseWidth
+       0497  bPWM8_OIKEA_ReadPulseWidth
+       0497  _PWM8_OIKEA_bReadPulseWidth
+       049A  bPWM8_OIKEA_ReadCounter
+       049A  _PWM8_OIKEA_bReadCounter
+       049A  PWM8_OIKEA_bReadCounter
+       049A  _bPWM8_OIKEA_ReadCounter
+       04C3  _LCD_PrCString
+       04C3  LCD_PrCString
+       04D5  LCD_HEX_STR
+       04E5  LCD_PrHexByte
+       04E5  _LCD_PrHexByte
+       04F8  _LCD_PrHexInt
+       04F8  LCD_PrHexInt
+       04FF  LCD_PrString
+       04FF  _LCD_PrString
+       0509  LCD_Write_Data
+       0509  _LCD_WriteData
+       0509  _LCD_Write_Data
+       0509  LCD_WriteData
+       051D  LCD_Control
+       051D  _LCD_Control
+       05C4  _LCD_Init
+       05C4  _LCD_Start
+       05C4  LCD_Init
+       05C4  LCD_Start
+       0630  LCD_ROW_OFFSET
+       0634  _LCD_Position
+       0634  LCD_Position
+       0640  _LCD_Delay50uTimes
+       0640  LCD_Delay50uTimes
+       0646  LCD_Delay50u_Table
+       064E  LCD_Delay50u
+       064E  _LCD_Delay50u
+       0662  LCD_DrawBG
+       0688  _LCD_DrawBG
+       06B1  LCD_DrawVBG
+       06DE  _LCD_DrawVBG
+       070E  LCD_InitVBG
+       070E  _LCD_InitVBG
+       073B  LCD_BG_TYPE1
+       0742  LCD_BG_TYPE2
+       0749  _LCD_InitBG
+       0749  LCD_InitBG
+       0779  _Counter16_1_ISR
+       07D9  _Counter16_1_EnableInt
+       07D9  Counter16_1_EnableInt
+       07DD  Counter16_1_DisableInt
+       07DD  _Counter16_1_DisableInt
+       07E1  _Counter16_1_Start
+       07E1  Counter16_1_Start
+       07E5  _Counter16_1_Stop
+       07E5  Counter16_1_Stop
+       07E9  Counter16_1_WritePeriod
+       07E9  _Counter16_1_WritePeriod
+       07EF  Counter16_1_WriteCompareValue
+       07EF  _Counter16_1_WriteCompareValue
+       07F5  wCounter16_1_ReadCompareValue
+       07F5  _Counter16_1_wReadCompareValue
+       07F5  _wCounter16_1_ReadCompareValue
+       07F5  Counter16_1_wReadCompareValue
+       07FB  _wCounter16_1_ReadCounter
+       07FB  wCounter16_1_ReadCounter
+       07FB  _Counter16_1_wReadCounter
+       07FB  Counter16_1_wReadCounter
+       0835  __UserModules_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                            text   0819   0BD7 =   3031. bytes (rel,con,rom,code)
+                            text   0835   0967 =   2407. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
-       0819  Delay10msTimes
-       0819  _Delay10msTimes
-       0819  __text_start
-       0826  _Delay50uTimes
-       0826  Delay50uTimes
-       082C  Delay50u_Table
-       0834  Delay50u
-       0834  _Delay50u
-       0848  _main
-       08D7  _TimerInterrupt
-       08E9  _CounterISR
-       08EF  _PinInterrupt
-       08F2  _TestLoop
-       094B  _InitPWM
-       0954  _MoveForward
-       0A75  _MoveBackward
-       0B96  _Stop
-       0BA6  _TurnLeft
-       0C9F  _TurnRight
-       0D98  _TestTurnLeft
-       0DB0  _InitUAServo
-       0DBB  _getDataUA
-       0DC2  _ControlTrigger
-       0E08  _sendTrigPulse
-       0E28  _ControlServo
-       0E33  PSoC_GPIO_ISR
-       1273  _itoa
-       13F0  __text_end
+       0835  _Delay10msTimes
+       0835  Delay10msTimes
+       0835  __text_start
+       0842  Delay50uTimes
+       0842  _Delay50uTimes
+       0848  Delay50u_Table
+       0850  Delay50u
+       0850  _Delay50u
+       0864  _main
+       0988  _CheckLeft
+       09A6  _CheckRight
+       09C4  _TimerInterrupt
+       09D6  _CounterISR
+       09DC  _PinInterrupt
+       09DF  _TestLoop
+       0A1C  _Delay
+       0A69  _InitPWM
+       0A72  _MoveForward
+       0B93  _MoveBackward
+       0CB4  _Stop
+       0CC4  _TurnLeft
+       0CDC  _TurnRight
+       0CF4  _TestTurnLeft
+       0D0C  _InitUAServo
+       0D19  _getDataUA
+       0D20  _ControlTrigger
+       0D66  _sendTrigPulse
+       0D86  _ControlServo
+       0D93  PSoC_GPIO_ISR
+       119C  __text_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
@@ -325,11 +327,11 @@ obj/ultracontrol.o	[ ultracontrol.c ]
 <library>	[ timer8int.asm, timer8.asm, pwm8_vasenint.asm, pwm8_vasen.asm, pwm8_servoint.asm, pwm8_servo.asm ]
 [ pwm8_oikeaint.asm, pwm8_oikea.asm, psocgpioint.asm, psocconfigtbl.asm, psocconfig.asm, lcd.asm ]
 [ counter16_1int.asm, counter16_1.asm, rZ.asm, rY.asm, rX.asm, r11.asm, r10.asm, r9.asm, r8.asm, r7.asm ]
-[ r6.asm, r5.asm, r4.asm, r3.asm, r2.asm, r1.asm, r0.asm, divmodu_16x16_16_util.asm, fp2long_util.asm ]
-[ fp_analysiseject_util.asm, fp_clrreg_util.asm, fp_nan_res_util.asm, fp_saveres_util.asm ]
-[ fp_sendtoreg_util.asm, fp_sinf_res_util.asm, fp_szero_res_util.asm, fp_type_oprnd_util.asm ]
-[ fp_unnormal_util.asm, fpadd_util.asm, fpcmp_util.asm, fpmul_util.asm, fpsub_util.asm, i_div16_block_util.asm ]
-[ i_div32_not_util.asm, i_mulu8_block_util.asm, long2fp_util.asm, itoa.s ]
+[ r6.asm, r5.asm, r4.asm, r3.asm, r2.asm, r1.asm, r0.asm, fp2long_util.asm, fp_analysiseject_util.asm ]
+[ fp_clrreg_util.asm, fp_nan_res_util.asm, fp_saveres_util.asm, fp_sendtoreg_util.asm, fp_sinf_res_util.asm ]
+[ fp_szero_res_util.asm, fp_type_oprnd_util.asm, fp_unnormal_util.asm, fpadd_util.asm, fpcmp_util.asm ]
+[ fpmul_util.asm, fpsub_util.asm, i_div32_not_util.asm, i_mulu8_block_util.asm, long2fp_util.asm ]
+
 
 Area Definitions
 

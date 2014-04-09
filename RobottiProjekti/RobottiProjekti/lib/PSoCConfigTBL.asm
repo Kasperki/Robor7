@@ -36,11 +36,15 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		27h, 00h		;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
 	db		25h, c7h		;PWM8_OIKEA_PERIOD_REG(DBB01DR1)
 	db		26h, 00h		;PWM8_OIKEA_COMPARE_REG(DBB01DR2)
-;  Instance name PWM8_SERVO, User Module PWM8
-;       Instance name PWM8_SERVO, Block Name PWM8(DBB10)
-	db		33h, 00h		;PWM8_SERVO_CONTROL_REG(DBB10CR0)
-	db		31h, c7h		;PWM8_SERVO_PERIOD_REG(DBB10DR1)
-	db		32h, 00h		;PWM8_SERVO_COMPARE_REG(DBB10DR2)
+;  Instance name PWM8_SERVO, User Module PWM16
+;       Instance name PWM8_SERVO, Block Name PWM16_LSB(DCB03)
+	db		2fh, 00h		;PWM8_SERVO_CONTROL_LSB_REG(DCB03CR0)
+	db		2dh, 8fh		;PWM8_SERVO_PERIOD_LSB_REG(DCB03DR1)
+	db		2eh, 00h		;PWM8_SERVO_COMPARE_LSB_REG(DCB03DR2)
+;       Instance name PWM8_SERVO, Block Name PWM16_MSB(DBB10)
+	db		33h, 00h		;PWM8_SERVO_CONTROL_MSB_REG(DBB10CR0)
+	db		31h, 01h		;PWM8_SERVO_PERIOD_MSB_REG(DBB10DR1)
+	db		32h, 00h		;PWM8_SERVO_COMPARE_MSB_REG(DBB10DR2)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
 	db		23h, 00h		;PWM8_VASEN_CONTROL_REG(DBB00CR0)
@@ -49,7 +53,7 @@ LoadConfigTBL_robottiprojekti_Bank0:
 ;  Instance name Timer8, User Module Timer8
 ;       Instance name Timer8, Block Name TIMER8(DCB02)
 	db		2bh, 04h		;Timer8_CONTROL_REG(DCB02CR0)
-	db		29h, 09h		;Timer8_PERIOD_REG(DCB02DR1)
+	db		29h, 13h		;Timer8_PERIOD_REG(DCB02DR1)
 	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
 ;  Global Register values Bank 0
 	db		60h, 28h		; AnalogColumnInputSelect register (AMX_IN)
@@ -91,11 +95,15 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		24h, 29h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
 	db		25h, 16h		;PWM8_OIKEA_INPUT_REG(DBB01IN)
 	db		26h, 45h		;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
-;  Instance name PWM8_SERVO, User Module PWM8
-;       Instance name PWM8_SERVO, Block Name PWM8(DBB10)
-	db		30h, 29h		;PWM8_SERVO_FUNC_REG(DBB10FN)
-	db		31h, 11h		;PWM8_SERVO_INPUT_REG(DBB10IN)
-	db		32h, 44h		;PWM8_SERVO_OUTPUT_REG(DBB10OU)
+;  Instance name PWM8_SERVO, User Module PWM16
+;       Instance name PWM8_SERVO, Block Name PWM16_LSB(DCB03)
+	db		2ch, 01h		;PWM8_SERVO_FUNC_LSB_REG(DCB03FN)
+	db		2dh, 11h		;PWM8_SERVO_INPUT_LSB_REG(DCB03IN)
+	db		2eh, 40h		;PWM8_SERVO_OUTPUT_LSB_REG(DCB03OU)
+;       Instance name PWM8_SERVO, Block Name PWM16_MSB(DBB10)
+	db		30h, 21h		;PWM8_SERVO_FUNC_MSB_REG(DBB10FN)
+	db		31h, 31h		;PWM8_SERVO_INPUT_MSB_REG(DBB10IN)
+	db		32h, 44h		;PWM8_SERVO_OUTPUT_MSB_REG(DBB10OU)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
 	db		20h, 29h		;PWM8_VASEN_FUNC_REG(DBB00FN)
@@ -121,7 +129,7 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		d2h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
 	db		e1h, b9h		; OscillatorControl_1 register (OSC_CR1)
 	db		e2h, 00h		; OscillatorControl_2 register (OSC_CR2)
-	db		dfh, 13h		; OscillatorControl_3 register (OSC_CR3)
+	db		dfh, 09h		; OscillatorControl_3 register (OSC_CR3)
 	db		deh, 02h		; OscillatorControl_4 register (OSC_CR4)
 	db		ddh, 00h		; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
 	db		ffh

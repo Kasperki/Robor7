@@ -17,7 +17,7 @@ float distanceToCm = 0.033f;
 void InitUAServo(void)
 {
 	PWM8_SERVO_Start();
-	PWM8_SERVO_WritePulseWidth(17);
+	PWM8_SERVO_WritePulseWidth(33);
 }
 
 

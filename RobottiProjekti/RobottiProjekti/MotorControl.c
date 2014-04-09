@@ -61,7 +61,7 @@ void TurnLeft(int pulse)
 	LEFTC_Data_ADDR |= LEFTFRIGHTB
 		
 	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
-	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * 0.8f));
+	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 
 //Kääntyy oikealle
@@ -70,7 +70,7 @@ void TurnRight(int pulse)
 	LEFTC_Data_ADDR &= NOLLAA;
 	LEFTC_Data_ADDR |= LEFTBRIGHTF;
 	
-	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * 0.8f));
+	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
 	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 

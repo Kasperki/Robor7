@@ -20,6 +20,8 @@
 void Delay(int);
 void TestLoop(void);
 void CounterISR(void);
+void CheckLeft(void);
+void CheckRight(void);
 
 //Kellot
 volatile int timeT = 0;
@@ -61,7 +63,7 @@ void main(void)
 	//Init Servo
 	InitUAServo();
 		
-	Delay10msTimes(50);
+	Delay10msTimes(100);
 	vaihe = 1;
 	
 	//Testink
@@ -77,11 +79,15 @@ void main(void)
 			sendTrigPulse(&ultraData);
 			
 			distanceCM = ultraData * 2;	
-			
-			if (distanceCM > 30)
+
+			if (distanceCM >= 60)
 			{	
 				MoveForward(HALF_SPEED);
 			}
+			else if (distanceCM < 60 && distanceCM > 40)
+			{
+				MoveForward(SLOW_SPEED);
+			}				
 			else 
 			{
 				Stop();
@@ -91,15 +97,47 @@ void main(void)
 		// Vaiheessa ollaan pysähtyneenä ja katsomme vasemmalle ja oikealle ja teemme päätöksen kumpaan suuntaan käännymme.
 		if ( vaihe == 2 )
 		{
-				ControlServo(SERVO_LEFT);
-		
+				CheckLeft();
+				left = ultraData * 2;
+				CheckRight();
+				right = ultraData * 2;
+			
+				if (right>left)
+				{	//turn right
+					TurnRight(TURN_SPEED);
+					Delay10msTimes(55);
+					Stop();
+				}
+				else 
+				{
+					TurnLeft(TURN_SPEED);
+					Delay10msTimes(55);
+					Stop();
+					//turnlefti
+				}
+					
+				ControlServo(SERVO_MIDDLE);
+				Delay(1000);
+				vaihe = 1;
 		}
 
 		
 	}
 }
 
+void CheckLeft(void)
+{
+	ControlServo(SERVO_LEFT);
+	Delay10msTimes(50);
+	sendTrigPulse(&ultraData);
+}
 
+void CheckRight(void)
+{
+	ControlServo(SERVO_RIGHT);
+	Delay10msTimes(50);
+	sendTrigPulse(&ultraData);
+}
 
 //Palauttaa eerolle millisekunnit siitä asti ku psoc on käynnistytnyt
 //Kutsutaan joka 0.001s = 1ms välein.
@@ -124,27 +162,41 @@ void PinInterrupt(void){}
 
 
 
+
+
 //For Testing
 void TestLoop(void)
 {
 	while(1)
 	{	
-		sendTrigPulse(&ultraData);
+		TurnRight(TURN_SPEED);
+		Delay10msTimes(75);
+		
+		Stop();
+		Delay10msTimes(250);
+		
+		TurnLeft(TURN_SPEED);
+		Delay10msTimes(75);
+		
+		Stop();
+		Delay10msTimes(250);
+		
+		/*sendTrigPulse(&ultraData);
 		
 		distanceCM = ultraData * 2;		
-				
+	
 		itoa(buffer,distanceCM,10);
 		LCD_Position(0,0);
 		LCD_PrCString("     ");
 		LCD_Position(0,0);
 		LCD_PrString(buffer);
-				
+		*/		
 	}
 }
 
 ////OMA Delay function 
-//void Delay(int delay)
-//{
-//	unsigned long int timme = milliT + delay;
-//	while (milliT < timme){}
-//}
+void Delay(int delay)
+{
+	unsigned long int timme = milliT + delay;
+	while (milliT < timme){}
+}

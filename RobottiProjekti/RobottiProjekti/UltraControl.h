@@ -1,8 +1,8 @@
 //-----------------
 //Defines
-#define SERVO_LEFT 25
-#define SERVO_MIDDLE 16
-#define SERVO_RIGHT 8
+#define SERVO_LEFT 50
+#define SERVO_MIDDLE 33
+#define SERVO_RIGHT 16
 
 
 //-----------

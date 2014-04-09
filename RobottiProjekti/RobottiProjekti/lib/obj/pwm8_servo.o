@@ -19,7 +19,7 @@ dbfunc 0 ? 0 I
 dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 A robottiprojekti_RAM size 0 flags 20
-A UserModules size 42 flags 0
+A UserModules size 58 flags 0
 dbfile lib/pwm8_servo.asm
 dbfunc 0 ? 0 I
 dbline 2 0
@@ -31,76 +31,94 @@ dbline 98 B
 dbline 2 C
 dbline B4 F
 dbline D0 10
-dbline D2 12
-dbline EB 13
-dbline ED 15
-dbline 108 16
-dbline 10A 18
-dbline 12F 19
-dbline 130 1A
-dbline 131 1C
-dbline 2 1D
-dbline 2 20
-dbline 134 22
-dbline 135 24
+dbline D1 12
+dbline D2 13
+dbline D4 15
+dbline ED 16
+dbline EE 18
+dbline EF 19
+dbline F1 1B
+dbline 10C 1C
+dbline 10D 1E
+dbline 10E 1F
+dbline 110 21
+dbline 135 22
+dbline 136 23
 dbline 137 25
-dbline 2 28
-dbline 13A 2A
-dbline 13B 2C
+dbline 138 26
+dbline 139 28
+dbline 2 29
+dbline 2 2C
 dbline 13C 2E
-dbline 13D 2F
-dbline 13E 31
-dbline 2 33
-dbline 140 35
-dbline 141 37
-dbline 2 39
-dbline 2 3B
-dbline 144 3E
-dbline 145 3F
-dbline 147 41
+dbline 13D 30
+dbline 13F 31
+dbline 2 34
+dbline 141 36
+dbline 142 38
+dbline 143 3A
+dbline 144 3B
+dbline 145 3D
+dbline 146 3F
+dbline 147 40
+dbline 148 42
+dbline 149 44
+dbline 14A 46
+dbline 2 48
+dbline 14C 4A
+dbline 14D 4C
+dbline 2 4E
+dbline 2 50
+dbline 150 53
+dbline 151 54
+dbline 152 55
+dbline 154 57
 S $sb$PWM8_SERVO_WritePeriod Def0010
-S $se$PWM8_SERVO_WritePeriod Def0013
+S $se$PWM8_SERVO_WritePeriod Def0016
 S $sb$PWM8_SERVO_EnableInt Def0000
 S $se$PWM8_SERVO_EnableInt Def0004
 S PWM8_SERVO_Stop Def000C
-S bPWM8_SERVO_ReadCounter Def0019
-S PWM8_SERVO_bReadCounter Def0019
 S $sb$PWM8_SERVO_Stop Def000C
 S $se$PWM8_SERVO_Stop Def0010
 S _PWM8_SERVO_WritePeriod Def0010
 S _PWM8_SERVO_EnableInt Def0000
-S $sb$PWM8_SERVO_bReadCounter Def0019
-S $se$PWM8_SERVO_bReadCounter Def0042
+S wPWM8_SERVO_ReadCounter Def0022
+S PWM8_SERVO_wReadCounter Def0022
 S PWM8_SERVO_DisableInt Def0004
-S bPWM8_SERVO_ReadPulseWidth Def0016
-S PWM8_SERVO_bReadPulseWidth Def0016
+S $sb$PWM8_SERVO_wReadCounter Def0022
+S $se$PWM8_SERVO_wReadCounter Def0058
 S $sb$PWM8_SERVO_DisableInt Def0004
+S wPWM8_SERVO_ReadPulseWidth Def001C
+S PWM8_SERVO_wReadPulseWidth Def001C
 S $se$PWM8_SERVO_DisableInt Def0008
-S $sb$PWM8_SERVO_bReadPulseWidth Def0016
 S _PWM8_SERVO_Stop Def000C
-S $se$PWM8_SERVO_bReadPulseWidth Def0019
 S PWM8_SERVO_Start Def0008
-S PWM8_SERVO_WritePulseWidth Def0013
-S _bPWM8_SERVO_ReadCounter Def0019
-S _PWM8_SERVO_bReadCounter Def0019
+S PWM8_SERVO_WritePulseWidth Def0016
+S $sb$PWM8_SERVO_wReadPulseWidth Def001C
+S $se$PWM8_SERVO_wReadPulseWidth Def0022
 S $sb$PWM8_SERVO_Start Def0008
 S $se$PWM8_SERVO_Start Def000C
-S $sb$PWM8_SERVO_WritePulseWidth Def0013
-S $se$PWM8_SERVO_WritePulseWidth Def0016
+S $sb$PWM8_SERVO_WritePulseWidth Def0016
+S _wPWM8_SERVO_ReadCounter Def0022
+S _PWM8_SERVO_wReadCounter Def0022
+S $se$PWM8_SERVO_WritePulseWidth Def001C
 S _PWM8_SERVO_DisableInt Def0004
-S _bPWM8_SERVO_ReadPulseWidth Def0016
-S _PWM8_SERVO_bReadPulseWidth Def0016
+S _wPWM8_SERVO_ReadPulseWidth Def001C
+S _PWM8_SERVO_wReadPulseWidth Def001C
 S _PWM8_SERVO_Start Def0008
 S PWM8_SERVO_WritePeriod Def0010
 S PWM8_SERVO_EnableInt Def0000
-S _PWM8_SERVO_WritePulseWidth Def0013
-T 00 00 43 E1 10 7F 41 E1 EF 7F 43 33 01 7F 41 33
+S _PWM8_SERVO_WritePulseWidth Def0016
+T 00 00 43 E1 10 7F 41 E1 EF 7F 43 2F 01 7F 41 2F
 R 00 00 00 02
-T 00 0E FE 7F 60 31 7F 60 32 7F 5D 32 7F 4F 5D 32
+T 00 0E FE 7F 60 2D 5B 60 31 7F 60 2E 5B 60 32 7F
 R 00 00 00 02
-T 00 1C 08 41 33 FE 71 10 5D 31 08 62 31 00 70 EF
+T 00 1C 5D 32 5C 5D 2E 7F 4F 5D 32 08 5D 2E 08 41
 R 00 00 00 02
-T 00 2A 5D 30 5D 32 08 52 00 60 32 71 10 52 01 60
+T 00 2A 2F FE 71 10 5D 2D 08 62 2D 00 70 EF 5D 30
 R 00 00 00 02
-T 00 38 31 70 EF 43 33 01 18 38 FE 7F
+T 00 38 5D 32 08 5D 2C 5D 2E 08 52 00 60 32 52 01
+R 00 00 00 02
+T 00 46 60 2E 71 10 52 02 60 2D 70 EF 43 2F 01 18
+R 00 00 00 02
+T 00 54 20 38 FD 7F
 R 00 00 00 02

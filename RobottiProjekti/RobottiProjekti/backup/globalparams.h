@@ -35,9 +35,9 @@
 #define CLOCK_INPUT_VC3        0x2     // VC3 clock source
 #define CLOCK_INPUT_VC3_MASK   0x3     // VC3 clock source mask
 #define CLOCK_INPUT_VC3_JUST   0x2     // VC3 clock source justified
-#define CLOCK_DIV_VC3          0x13    // VC3 clock divider
+#define CLOCK_DIV_VC3          0x9     // VC3 clock divider
 #define CLOCK_DIV_VC3_MASK     0xff    // VC3 clock divider mask
-#define CLOCK_DIV_VC3_JUST     0x13    // VC3 clock divider justified
+#define CLOCK_DIV_VC3_JUST     0x9     // VC3 clock divider justified
 #define ANALOG_BUFFER_PWR      0x0     // Analog buffer power level
 #define ANALOG_BUFFER_PWR_MASK 0x1     // Analog buffer power level mask
 #define ANALOG_BUFFER_PWR_JUST 0x0     // Analog buffer power level justified
