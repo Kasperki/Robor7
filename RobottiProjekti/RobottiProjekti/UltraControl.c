@@ -34,7 +34,7 @@ int getDataUA(void)
 
 //Sends Trigger pulse
 void ControlTrigger(int *time)
-{
+{		
 	//Wait 60ms and send pulse again
 	if (*time >= 80)
 	{
@@ -50,6 +50,15 @@ void ControlTrigger(int *time)
 		UATrig_Data_ADDR &= ~UATrig_MASK;
 	
 }
+
+void sendTrigPulse(int *ultraData)
+{	
+	*ultraData = 0;
+	UATrig_Data_ADDR |= UATrig_MASK;	
+	Delay50u();
+	UATrig_Data_ADDR &= ~UATrig_MASK;
+	Delay10msTimes(7);
+}	
 
 //Control PWM to move sensor
 void ControlServo(int pulse)

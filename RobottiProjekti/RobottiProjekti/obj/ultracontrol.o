@@ -8,7 +8,7 @@ S _PWM8_SERVO_Start Ref0000
 S _PWM8_SERVO_WritePulseWidth Ref0000
 A text size 63 flags 0
 dbfile ./ultracontrol.c
-dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
 dbfunc e InitUAServo 0 fV
 dbline FFFFFFFF 0
 dbline 11 0
@@ -50,7 +50,7 @@ S _InitUAServo Def0000
 S _getDataUA Def000B
 A data size 4 flags 20
 dbfile ./ultracontrol.c
-dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
 dbsym e distanceToCm 0 D
 S _distanceToCm Def0000
 A idata size 4 flags 1

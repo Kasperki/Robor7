@@ -29,7 +29,6 @@ volatile unsigned long int milliT = 0;
 volatile int a = 0;
 char buffer[10];
 
-int pertti = 0;
 int timeForward = 50; //.... 4m täydellä vauhdilla 3.7s
 int turnTime = 55; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
@@ -54,14 +53,12 @@ void main(void)
 	Counter16_1_Start();
 	
 	//Start Motor PWMs
-	//InitPWM();
+	InitPWM();
 	
 	//Init Servo
-	//InitUAServo();
+	InitUAServo();
 		
-	//Delay(500);
-	
-	//Counter8_Start();
+	//Delay10msTimes(50);
 	
 	//Testink
 	TestLoop();
@@ -70,21 +67,12 @@ void main(void)
 	//***********************
 	/*while(1)
 	{
-		//Controlls the ultraSonic trigger
-		ControlTrigger(&timeUltra);	
-			
-		//Gets the data
-		//ultraData = getDataUA();
+
 		
 	}*/
 }
 
-//Delay function
-void Delay(int dealy)
-{
-	unsigned long int timme = milliT + dealy;
-	while (milliT < timme){}
-}
+
 
 //Palauttaa eerolle millisekunnit siitä asti ku psoc on käynnistytnyt
 //Kutsutaan joka 0.001s = 1ms välein.
@@ -94,106 +82,42 @@ void TimerInterrupt(void)
 	
   //DO NOT TOUCH
   milliT++;
-  timeUltra++;
-  timeUltraRead++;
 }
+
+
 
 //Counter INTERRUPT
 void CounterISR(void)
 {
-  pertti++;
+  	ultraData++;
 }
 
-void PinInterrupt(void)
-{
-	static BYTE port0_prevValue;
-	static nousevaReuna;
-	
-	//a++;
-	
-	//UÅ ECHO 
-	/* Check if interrupt because of P0_7 change from read */
-	if ((PRT0DR ^ port0_prevValue)==0x80)
-	{
-	
-		if (nousevaReuna == 0)
-		{
-			timeUltraRead = 0;
-			nousevaReuna = 1;
-			//Counter8_Start();
-			//a = 1;
-		}
-		else 
-		{
-			nousevaReuna = 0;
-			//ultraData = Counter8_wReadCounter();
-			//Counter8_Stop();
-			//a = 0;
-			//ultraData = timeUltraRead;
-		}
-	}
+// Pin interrupt
+void PinInterrupt(void){}
 
-	/* Store values of P0_40 for next ISR */
-	port0_prevValue = PRT0DR & 0x80;
-	
-}
 
 
 //For Testing
 void TestLoop(void)
 {
 	while(1)
-	{
+	{	
+		sendTrigPulse(&ultraData);
 		
-		UATrig_Data_ADDR |= UATrig_MASK;
-		Delay(1);
-		pertti = 0;
-		UATrig_Data_ADDR &= 0b00000000;	
-		Delay(10);
-		a = pertti;
-		//~UATrig_MASK
-		
-		itoa(buffer,a,10);
+		distanceCM = ultraData * 2;		
+				
+		itoa(buffer,distanceCM,10);
 		LCD_Position(0,0);
 		LCD_PrCString("     ");
 		LCD_Position(0,0);
 		LCD_PrString(buffer);
-		
-//		itoa(buffer,t++,10);
-//		LCD_Position(1,0);
-//		LCD_PrCString("     ");
-//		LCD_Position(1,0);
-//		LCD_PrString(buffer);
-//		for (j=0;j<9000;j++);
-			
-		//Test 4m
-		/*
-		if (timeT < 250)
-			TurnLeft(FULL_SPEED);
-		else if (timeT < 500)
-			TurnRight(HALF_SPEED);
-		else 
-			Stop();
-		*/
-	
-		//About 90
-		/*if (timeT < 2000)
-			ControlServo(8);
-		else if(timeT < 4000)
-			ControlServo(15);
-		else if(timeT < 6000)
-			ControlServo(25);
-		else
-			Stop();
-		*/	
-		//Test 90 degree Turn
-		/*	
-			if(timeT <= 100) //1.0s
-				TurnRight(FULL_SPEED);
-			else if(timeT <= 400)
-				timeT = 0;
-		*/
-		
+				
 	}
 }
 
+////OMA Delay function 
+//void Delay(int delay)
+//{
+//	unsigned long int timme = milliT + delay;
+//	while (milliT < timme){}
+//}

@@ -9,10 +9,10 @@
  0000 3D072B02          .word 0x3d07,0x2b02
                         .area data(ram, con, rel)
  0004                   .dbfile ./ultracontrol.c
- 0004                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0004                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0004                   .dbsym e distanceToCm _distanceToCm D
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+ 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
  0000                   .dbfunc e InitUAServo _InitUAServo fV
  0000           _InitUAServo::
  0000                   .dbline -1
@@ -84,7 +84,7 @@
  0014           ; 
  0014           ; //Sends Trigger pulse
  0014           ; void ControlTrigger(int *time)
- 0014           ; {
+ 0014           ; {             
  0014                   .dbline 39
  0014           ;       //Wait 60ms and send pulse again
  0014           ;       if (*time >= 80)

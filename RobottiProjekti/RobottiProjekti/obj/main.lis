@@ -9,77 +9,70 @@
  0000 0000              .word 0
                         .area data(ram, con, rel)
  0002                   .dbfile ./main.c
- 0002                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0002                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0002                   .dbsym e timeT _timeT I
  0002           _timeUltra::
  0002                   .blkb 2
                         .area idata(rom,lit)
  0002 0000              .word 0
                         .area data(ram, con, rel)
- 0004                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0004                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0004                   .dbsym e timeUltra _timeUltra I
  0004           _timeUltraRead::
  0004                   .blkb 2
                         .area idata(rom,lit)
  0004 0000              .word 0
                         .area data(ram, con, rel)
- 0006                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0006                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0006                   .dbsym e timeUltraRead _timeUltraRead I
  0006           _milliT::
  0006                   .blkb 4
                         .area idata(rom,lit)
  0006 00000000          .word 0,0
                         .area data(ram, con, rel)
- 000A                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000A                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000A                   .dbsym e milliT _milliT l
  000A           _a::
  000A                   .blkb 2
                         .area idata(rom,lit)
  000A 0000              .word 0
                         .area data(ram, con, rel)
- 000C                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000C                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000C                   .dbsym e a _a I
- 000C           _pertti::
+ 000C           _timeForward::
  000C                   .blkb 2
                         .area idata(rom,lit)
- 000C 0000              .word 0
+ 000C 0032              .word 50
                         .area data(ram, con, rel)
- 000E                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 000E                   .dbsym e pertti _pertti I
- 000E           _timeForward::
+ 000E                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000E                   .dbsym e timeForward _timeForward I
+ 000E           _turnTime::
  000E                   .blkb 2
                         .area idata(rom,lit)
- 000E 0032              .word 50
+ 000E 0037              .word 55
                         .area data(ram, con, rel)
- 0010                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0010                   .dbsym e timeForward _timeForward I
- 0010           _turnTime::
+ 0010                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0010                   .dbsym e turnTime _turnTime I
+ 0010           _timeRobotWidth::
  0010                   .blkb 2
                         .area idata(rom,lit)
- 0010 0037              .word 55
+ 0010 000F              .word 15
                         .area data(ram, con, rel)
- 0012                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0012                   .dbsym e turnTime _turnTime I
- 0012           _timeRobotWidth::
+ 0012                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0012                   .dbsym e timeRobotWidth _timeRobotWidth I
+ 0012           _ultraData::
  0012                   .blkb 2
                         .area idata(rom,lit)
- 0012 000F              .word 15
+ 0012 0000              .word 0
                         .area data(ram, con, rel)
- 0014                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0014                   .dbsym e timeRobotWidth _timeRobotWidth I
- 0014           _ultraData::
- 0014                   .blkb 2
-                        .area idata(rom,lit)
- 0014 0000              .word 0
-                        .area data(ram, con, rel)
- 0016                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0016                   .dbsym e ultraData _ultraData I
+ 0014                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0014                   .dbsym e ultraData _ultraData I
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000                   .dbfunc e main _main fV
  0000           _main::
  0000                   .dbline -1
- 0000                   .dbline 40
+ 0000                   .dbline 39
  0000           ; //----------------------------------------------------------------------------
  0000           ; // Robotti Projekti
  0000           ; // Robor7 @ 2014
@@ -111,7 +104,6 @@
  0000           ; volatile int a = 0;
  0000           ; char buffer[10];
  0000           ; 
- 0000           ; int pertti = 0;
  0000           ; int timeForward = 50; //.... 4m täydellä vauhdilla 3.7s
  0000           ; int turnTime = 55;       //.... 90 asteen käännökseen meneväaika
  0000           ; int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
@@ -120,38 +112,38 @@
  0000           ; //Main Method
  0000           ; void main(void)
  0000           ; {
- 0000                   .dbline 44
+ 0000                   .dbline 43
  0000           ;       //Init**************************
  0000           ;       
  0000           ;       //Enables Global Interrupts
  0000           ;       M8C_EnableGInt; 
  0000 7101                      or  F, 01h
  0002           
- 0002                   .dbline 45
+ 0002                   .dbline 44
  0002           ;       M8C_EnableIntMask(INT_MSK0, INT_MSK0_GPIO);     //VITTU
  0002 43E020            or REG[0xe0],32
- 0005                   .dbline 48
+ 0005                   .dbline 47
  0005           ;       
  0005           ;       //Start LCD
  0005           ;       LCD_Start();
  0005 10                push X
  0006 7C0000            xcall _LCD_Start
- 0009                   .dbline 50
+ 0009                   .dbline 49
  0009           ;       //InitializeTimer
  0009           ;       Timer8_Start();
  0009 7C0000            xcall _Timer8_Start
- 000C                   .dbline 51
+ 000C                   .dbline 50
  000C           ;       Timer8_EnableInt();
  000C 7C0000            xcall _Timer8_EnableInt
- 000F                   .dbline 53
+ 000F                   .dbline 52
  000F           ;               
  000F           ;       Counter16_1_EnableInt();
  000F 7C0000            xcall _Counter16_1_EnableInt
- 0012                   .dbline 54
+ 0012                   .dbline 53
  0012           ;       Counter16_1_Start();
  0012 7C0000            xcall _Counter16_1_Start
  0015 20                pop X
- 0016                   .dbline 67
+ 0016                   .dbline 66
  0016           ;       
  0016           ;       //Start Motor PWMs
  0016           ;       //InitPWM();
@@ -165,7 +157,7 @@
  0016           ;       
  0016           ;       //Testink
  0016           ;       TestLoop();
- 0016 90AB              xcall _TestLoop
+ 0016 908F              xcall _TestLoop
  0018                   .dbline -2
  0018           L1:
  0018                   .dbline 0 ; func end
@@ -173,13 +165,13 @@
  001A                   .dbend
  001A                   .dbfunc e Delay _Delay fV
  001A           ;          timme -> X+0
- 001A           ;          dealy -> X-5
+ 001A           ;          delay -> X-5
  001A           _Delay::
  001A                   .dbline -1
  001A 10                push X
  001B 4F                mov X,SP
  001C 3804              add SP,4
- 001E                   .dbline 84
+ 001E                   .dbline 83
  001E           ; 
  001E           ;       //MainLoop**********
  001E           ;       //***********************
@@ -195,10 +187,10 @@
  001E           ; }
  001E           ; 
  001E           ; //Delay function
- 001E           ; void Delay(int dealy)
+ 001E           ; void Delay(int delay)
  001E           ; {
- 001E                   .dbline 85
- 001E           ;       unsigned long int timme = milliT + dealy;
+ 001E                   .dbline 84
+ 001E           ;       unsigned long int timme = milliT + delay;
  001E 52FC              mov A,[X-4]
  0020 5300              mov [__r3],A
  0022 52FB              mov A,[X-5]
@@ -225,11 +217,11 @@
  004D 0A00              adc A,[__r0]
  004F 5400              mov [X+0],A
  0051           L3:
- 0051                   .dbline 86
+ 0051                   .dbline 85
  0051           ;       while (milliT < timme){}
- 0051                   .dbline 86
+ 0051                   .dbline 85
  0051           L4:
- 0051                   .dbline 86
+ 0051                   .dbline 85
  0051 5109              mov A,[_milliT+3]
  0053 1303              sub A,[X+3]
  0055 5108              mov A,[_milliT+2]
@@ -247,23 +239,23 @@
  0066                   .dbline 0 ; func end
  0066 7F                ret
  0067                   .dbsym l timme 0 l
- 0067                   .dbsym l dealy -5 I
+ 0067                   .dbsym l delay -5 I
  0067                   .dbend
  0067                   .dbfunc e TimerInterrupt _TimerInterrupt fV
  0067           _TimerInterrupt::
  0067                   .dbline -1
- 0067                   .dbline 92
+ 0067                   .dbline 91
  0067           ; }
  0067           ; 
  0067           ; //Palauttaa eerolle millisekunnit siitä asti ku psoc on käynnistytnyt
  0067           ; //Kutsutaan joka 0.001s = 1ms välein.
  0067           ; void TimerInterrupt(void)
  0067           ; {
- 0067                   .dbline 93
+ 0067                   .dbline 92
  0067           ;   timeT++;
  0067 7601              inc [_timeT+1]
  0069 0E0000            adc [_timeT],0
- 006C                   .dbline 96
+ 006C                   .dbline 95
  006C           ;       
  006C           ;   //DO NOT TOUCH
  006C           ;   milliT++;
@@ -271,11 +263,11 @@
  006F 0E0800            adc [_milliT+2],0
  0072 0E0700            adc [_milliT+1],0
  0075 0E0600            adc [_milliT],0
- 0078                   .dbline 97
+ 0078                   .dbline 96
  0078           ;   timeUltra++;
  0078 7603              inc [_timeUltra+1]
  007A 0E0200            adc [_timeUltra],0
- 007D                   .dbline 98
+ 007D                   .dbline 97
  007D           ;   timeUltraRead++;
  007D 7605              inc [_timeUltraRead+1]
  007F 0E0400            adc [_timeUltraRead],0
@@ -284,262 +276,227 @@
  0082                   .dbline 0 ; func end
  0082 7F                ret
  0083                   .dbend
- 0083                   .dbfunc e CounterISR _CounterISR fV
- 0083           _CounterISR::
+ 0083                   .dbfunc e sendTrigPulse _sendTrigPulse fV
+ 0083           _sendTrigPulse::
  0083                   .dbline -1
- 0083                   .dbline 103
+ 0083                   .dbline 101
  0083           ; }
  0083           ; 
- 0083           ; //Counter INTERRUPT
- 0083           ; void CounterISR(void)
- 0083           ; {
- 0083                   .dbline 104
- 0083           ;   pertti++;
- 0083 760D              inc [_pertti+1]
- 0085 0E0C00            adc [_pertti],0
- 0088                   .dbline -2
- 0088           L7:
- 0088                   .dbline 0 ; func end
- 0088 7F                ret
- 0089                   .dbend
+ 0083           ; void sendTrigPulse(void )
+ 0083           ; {     
+ 0083                   .dbline 102
+ 0083           ;       ultraData = 0;
+ 0083 551300            mov [_ultraData+1],0
+ 0086 551200            mov [_ultraData],0
+ 0089                   .dbline 103
+ 0089           ;       UATrig_Data_ADDR |= UATrig_MASK;        
+ 0089 430040            or REG[0],64
+ 008C                   .dbline 104
+ 008C           ;       Delay50u();
+ 008C 7C0000            xcall _Delay50u
+ 008F                   .dbline 105
+ 008F           ;       UATrig_Data_ADDR &= ~UATrig_MASK;
+ 008F 4100BF            and REG[0],-65
+ 0092                   .dbline 106
+ 0092           ;       Delay10msTimes(7);
+ 0092 5000              mov A,0
+ 0094 08                push A
+ 0095 5007              mov A,7
+ 0097 08                push A
+ 0098 7C0000            xcall _Delay10msTimes
+ 009B 38FE              add SP,-2
+ 009D                   .dbline -2
+ 009D           L7:
+ 009D                   .dbline 0 ; func end
+ 009D 7F                ret
+ 009E                   .dbend
+ 009E                   .dbfunc e CounterISR _CounterISR fV
+ 009E           _CounterISR::
+ 009E                   .dbline -1
+ 009E                   .dbline 111
+ 009E           ; }     
+ 009E           ; 
+ 009E           ; //Counter INTERRUPT
+ 009E           ; void CounterISR(void)
+ 009E           ; {
+ 009E                   .dbline 112
+ 009E           ;       ultraData++;
+ 009E 7613              inc [_ultraData+1]
+ 00A0 0E1200            adc [_ultraData],0
+ 00A3                   .dbline -2
+ 00A3           L8:
+ 00A3                   .dbline 0 ; func end
+ 00A3 7F                ret
+ 00A4                   .dbend
+ 00A4                   .dbfunc e PinInterrupt _PinInterrupt fV
+ 00A4           _PinInterrupt::
+ 00A4                   .dbline -1
+ 00A4 08                push A
+ 00A5                   .dbline 115
+ 00A5           ; }
+ 00A5           ; 
+ 00A5           ; void PinInterrupt(void){}
+ 00A5                   .dbline -2
+ 00A5           L9:
+ 00A5 18                pop A
+ 00A6                   .dbline 0 ; func end
+ 00A6 7E                reti
+ 00A7                   .dbend
+ 00A7                   .dbfunc e TestLoop _TestLoop fV
+ 00A7           _TestLoop::
+ 00A7                   .dbline -1
+ 00A7                   .dbline 152
+ 00A7           ; //{
+ 00A7           ; //    static BYTE port0_prevValue;
+ 00A7           ; //    static nousevaReuna;
+ 00A7           ; //    
+ 00A7           ; //    //a++;
+ 00A7           ; //    
+ 00A7           ; //    //UÅ ECHO 
+ 00A7           ; //    /* Check if interrupt because of P0_7 change from read */
+ 00A7           ; //    if ((PRT0DR ^ port0_prevValue)==0x80)
+ 00A7           ; //    {
+ 00A7           ; //    
+ 00A7           ; //            if (nousevaReuna == 0)
+ 00A7           ; //            {
+ 00A7           ; //                    timeUltraRead = 0;
+ 00A7           ; //                    nousevaReuna = 1;
+ 00A7           ; //                    //Counter8_Start();
+ 00A7           ; //                    //a = 1;
+ 00A7           ; //            }
+ 00A7           ; //            else 
+ 00A7           ; //            {
+ 00A7           ; //                    nousevaReuna = 0;
+ 00A7           ; //                    //ultraData = Counter8_wReadCounter();
+ 00A7           ; //                    //Counter8_Stop();
+ 00A7           ; //                    //a = 0;
+ 00A7           ; //                    //ultraData = timeUltraRead;
+ 00A7           ; //            }
+ 00A7           ; //    }
+ 00A7           ; //
+ 00A7           ; //    /* Store values of P0_40 for next ISR */
+ 00A7           ; //    port0_prevValue = PRT0DR & 0x80;
+ 00A7           ; //    
+ 00A7           ; //}
+ 00A7           ; 
+ 00A7           ; 
+ 00A7           ; //For Testing
+ 00A7           ; void TestLoop(void)
+ 00A7           ; {
+ 00A7 804E              xjmp L12
+ 00A9           L11:
+ 00A9                   .dbline 154
+ 00A9           ;       while(1)
+ 00A9           ;       {       
+ 00A9                   .dbline 155
+ 00A9           ;               sendTrigPulse();
+ 00A9 9FD8              xcall _sendTrigPulse
+ 00AB                   .dbline 157
+ 00AB           ;               
+ 00AB           ;               a = ultraData * 2;              
+ 00AB 5F0013            mov [__r1],[_ultraData+1]
+ 00AE 5F0012            mov [__r0],[_ultraData]
+ 00B1 6500              asl [__r1]
+ 00B3 6B00              rlc [__r0]
+ 00B5 5F0B00            mov [_a+1],[__r1]
+ 00B8 5F0A00            mov [_a],[__r0]
+ 00BB                   .dbline 159
+ 00BB           ;                               
+ 00BB           ;               itoa(buffer,a,10);
+ 00BB 5000              mov A,0
+ 00BD 08                push A
+ 00BE 500A              mov A,10
+ 00C0 08                push A
+ 00C1 510A              mov A,[_a]
+ 00C3 08                push A
+ 00C4 510B              mov A,[_a+1]
+ 00C6 08                push A
+ 00C7 5000              mov A,>_buffer
+ 00C9 08                push A
+ 00CA 5000              mov A,<_buffer
+ 00CC 08                push A
+ 00CD 7C0000            xcall _itoa
+ 00D0 38FA              add SP,-6
+ 00D2                   .dbline 160
+ 00D2           ;               LCD_Position(0,0);
+ 00D2 10                push X
+ 00D3 5000              mov A,0
+ 00D5 5700              mov X,0
+ 00D7 7C0000            xcall _LCD_Position
+ 00DA                   .dbline 161
+ 00DA           ;               LCD_PrCString("     ");
+ 00DA 5000              mov A,>L14
+ 00DC 08                push A
+ 00DD 5000              mov A,<L14
+ 00DF 5C                mov X,A
+ 00E0 18                pop A
+ 00E1 7C0000            xcall _LCD_PrCString
+ 00E4                   .dbline 162
+ 00E4           ;               LCD_Position(0,0);
+ 00E4 5000              mov A,0
+ 00E6 5700              mov X,0
+ 00E8 7C0000            xcall _LCD_Position
+ 00EB                   .dbline 163
+ 00EB           ;               LCD_PrString(buffer);
+ 00EB 5000              mov A,>_buffer
+ 00ED 08                push A
+ 00EE 5000              mov A,<_buffer
+ 00F0 5C                mov X,A
+ 00F1 18                pop A
+ 00F2 7C0000            xcall _LCD_PrString
+ 00F5 20                pop X
+ 00F6                   .dbline 200
+ 00F6           ;               
+ 00F6           ; //            itoa(buffer,t++,10);
+ 00F6           ; //            LCD_Position(1,0);
+ 00F6           ; //            LCD_PrCString("     ");
+ 00F6           ; //            LCD_Position(1,0);
+ 00F6           ; //            LCD_PrString(buffer);
+ 00F6           ; //            for (j=0;j<9000;j++);
+ 00F6           ;                       
+ 00F6           ;               //Test 4m
+ 00F6           ;               /*
+ 00F6           ;               if (timeT < 250)
+ 00F6           ;                       TurnLeft(FULL_SPEED);
+ 00F6           ;               else if (timeT < 500)
+ 00F6           ;                       TurnRight(HALF_SPEED);
+ 00F6           ;               else 
+ 00F6           ;                       Stop();
+ 00F6           ;               */
+ 00F6           ;       
+ 00F6           ;               //About 90
+ 00F6           ;               /*if (timeT < 2000)
+ 00F6           ;                       ControlServo(8);
+ 00F6           ;               else if(timeT < 4000)
+ 00F6           ;                       ControlServo(15);
+ 00F6           ;               else if(timeT < 6000)
+ 00F6           ;                       ControlServo(25);
+ 00F6           ;               else
+ 00F6           ;                       Stop();
+ 00F6           ;               */      
+ 00F6           ;               //Test 90 degree Turn
+ 00F6           ;               /*      
+ 00F6           ;                       if(timeT <= 100) //1.0s
+ 00F6           ;                               TurnRight(FULL_SPEED);
+ 00F6           ;                       else if(timeT <= 400)
+ 00F6           ;                               timeT = 0;
+ 00F6           ;               */
+ 00F6           ;               
+ 00F6           ;       }
+ 00F6           L12:
+ 00F6                   .dbline 153
+ 00F6 8FB2              xjmp L11
+ 00F8           X3:
+ 00F8                   .dbline -2
+ 00F8           L10:
+ 00F8                   .dbline 0 ; func end
+ 00F8 7F                ret
+ 00F9                   .dbend
                         .area bss(ram, con, rel)
- 0000                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0000           L9:
- 0000                   .blkb 1
- 0001           L10:
- 0001                   .blkb 2
-                        .area text(rom, con, rel)
- 0089                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0089                   .dbfunc e PinInterrupt _PinInterrupt fV
- 0089                   .dbsym s nousevaReuna L10 I
- 0089                   .dbsym s port0_prevValue L9 c
- 0089           _PinInterrupt::
- 0089                   .dbline -1
- 0089 08                push A
- 008A 5100              mov A,[__r0]
- 008C 08                push A
- 008D                   .dbline 108
- 008D           ; }
- 008D           ; 
- 008D           ; void PinInterrupt(void)
- 008D           ; {
- 008D                   .dbline 116
- 008D           ;       static BYTE port0_prevValue;
- 008D           ;       static nousevaReuna;
- 008D           ;       
- 008D           ;       //a++;
- 008D           ;       
- 008D           ;       //UÅ ECHO 
- 008D           ;       /* Check if interrupt because of P0_7 change from read */
- 008D           ;       if ((PRT0DR ^ port0_prevValue)==0x80)
- 008D 5D00              mov A,REG[0]
- 008F 5300              mov [__r0],A
- 0091 5100              mov A,[L9]
- 0093 3400              xor [__r0],A
- 0095 3C0080            cmp [__r0],-128
- 0098 B01F              jnz L11
- 009A                   .dbline 119
- 009A           ;       {
- 009A           ;       
- 009A           ;               if (nousevaReuna == 0)
- 009A                   .dbline 119
- 009A 3C0100            cmp [L10],0
- 009D B014              jnz L13
- 009F 3C0200            cmp [L10+1],0
- 00A2 B00F              jnz L13
- 00A4           X3:
- 00A4                   .dbline 121
- 00A4           ;               {
- 00A4           ;                       timeUltraRead = 0;
- 00A4                   .dbline 121
- 00A4 550500            mov [_timeUltraRead+1],0
- 00A7 550400            mov [_timeUltraRead],0
- 00AA                   .dbline 122
- 00AA           ;                       nousevaReuna = 1;
- 00AA 550201            mov [L10+1],1
- 00AD 550100            mov [L10],0
- 00B0                   .dbline 125
- 00B0           ;                       //Counter8_Start();
- 00B0           ;                       //a = 1;
- 00B0           ;               }
- 00B0 8007              xjmp L14
- 00B2           L13:
- 00B2                   .dbline 127
- 00B2           ;               else 
- 00B2           ;               {
- 00B2                   .dbline 128
- 00B2           ;                       nousevaReuna = 0;
- 00B2 550200            mov [L10+1],0
- 00B5 550100            mov [L10],0
- 00B8                   .dbline 133
- 00B8           ;                       //ultraData = Counter8_wReadCounter();
- 00B8           ;                       //Counter8_Stop();
- 00B8           ;                       //a = 0;
- 00B8           ;                       //ultraData = timeUltraRead;
- 00B8           ;               }
- 00B8           L14:
- 00B8                   .dbline 134
- 00B8           ;       }
- 00B8           L11:
- 00B8                   .dbline 137
- 00B8           ; 
- 00B8           ;       /* Store values of P0_40 for next ISR */
- 00B8           ;       port0_prevValue = PRT0DR & 0x80;
- 00B8 5D00              mov A,REG[0]
- 00BA 2180              and A,-128
- 00BC 5300              mov [L9],A
- 00BE                   .dbline -2
- 00BE           L8:
- 00BE 18                pop A
- 00BF 5300              mov [__r0],A
- 00C1 18                pop A
- 00C2                   .dbline 0 ; func end
- 00C2 7E                reti
- 00C3                   .dbend
- 00C3                   .dbfunc e TestLoop _TestLoop fV
- 00C3           _TestLoop::
- 00C3                   .dbline -1
- 00C3                   .dbline 144
- 00C3           ;       
- 00C3           ; }
- 00C3           ; 
- 00C3           ; 
- 00C3           ; //For Testing
- 00C3           ; void TestLoop(void)
- 00C3           ; {
- 00C3 8060              xjmp L17
- 00C5           L16:
- 00C5                   .dbline 146
- 00C5           ;       while(1)
- 00C5           ;       {
- 00C5                   .dbline 148
- 00C5           ;               
- 00C5           ;               UATrig_Data_ADDR |= UATrig_MASK;
- 00C5 430040            or REG[0],64
- 00C8                   .dbline 149
- 00C8           ;               Delay(1);
- 00C8 5000              mov A,0
- 00CA 08                push A
- 00CB 5001              mov A,1
- 00CD 08                push A
- 00CE 9F4A              xcall _Delay
- 00D0 38FE              add SP,-2
- 00D2                   .dbline 150
- 00D2           ;               pertti = 0;
- 00D2 550D00            mov [_pertti+1],0
- 00D5 550C00            mov [_pertti],0
- 00D8                   .dbline 151
- 00D8           ;               UATrig_Data_ADDR &= 0b00000000; 
- 00D8 620000            mov REG[0],0
- 00DB                   .dbline 152
- 00DB           ;               Delay(10);
- 00DB 5000              mov A,0
- 00DD 08                push A
- 00DE 500A              mov A,10
- 00E0 08                push A
- 00E1 9F37              xcall _Delay
- 00E3                   .dbline 153
- 00E3           ;               a = pertti;
- 00E3 5F0B0D            mov [_a+1],[_pertti+1]
- 00E6 5F0A0C            mov [_a],[_pertti]
- 00E9                   .dbline 156
- 00E9           ;               //~UATrig_MASK
- 00E9           ;               
- 00E9           ;               itoa(buffer,a,10);
- 00E9 5000              mov A,0
- 00EB 08                push A
- 00EC 500A              mov A,10
- 00EE 08                push A
- 00EF 510A              mov A,[_a]
- 00F1 08                push A
- 00F2 510B              mov A,[_a+1]
- 00F4 08                push A
- 00F5 5003              mov A,>_buffer
- 00F7 08                push A
- 00F8 5003              mov A,<_buffer
- 00FA 08                push A
- 00FB 7C0000            xcall _itoa
- 00FE 38F8              add SP,-8
- 0100                   .dbline 157
- 0100           ;               LCD_Position(0,0);
- 0100 10                push X
- 0101 5000              mov A,0
- 0103 5700              mov X,0
- 0105 7C0000            xcall _LCD_Position
- 0108                   .dbline 158
- 0108           ;               LCD_PrCString("     ");
- 0108 5000              mov A,>L19
- 010A 08                push A
- 010B 5000              mov A,<L19
- 010D 5C                mov X,A
- 010E 18                pop A
- 010F 7C0000            xcall _LCD_PrCString
- 0112                   .dbline 159
- 0112           ;               LCD_Position(0,0);
- 0112 5000              mov A,0
- 0114 5700              mov X,0
- 0116 7C0000            xcall _LCD_Position
- 0119                   .dbline 160
- 0119           ;               LCD_PrString(buffer);
- 0119 5003              mov A,>_buffer
- 011B 08                push A
- 011C 5003              mov A,<_buffer
- 011E 5C                mov X,A
- 011F 18                pop A
- 0120 7C0000            xcall _LCD_PrString
- 0123 20                pop X
- 0124                   .dbline 197
- 0124           ;               
- 0124           ; //            itoa(buffer,t++,10);
- 0124           ; //            LCD_Position(1,0);
- 0124           ; //            LCD_PrCString("     ");
- 0124           ; //            LCD_Position(1,0);
- 0124           ; //            LCD_PrString(buffer);
- 0124           ; //            for (j=0;j<9000;j++);
- 0124           ;                       
- 0124           ;               //Test 4m
- 0124           ;               /*
- 0124           ;               if (timeT < 250)
- 0124           ;                       TurnLeft(FULL_SPEED);
- 0124           ;               else if (timeT < 500)
- 0124           ;                       TurnRight(HALF_SPEED);
- 0124           ;               else 
- 0124           ;                       Stop();
- 0124           ;               */
- 0124           ;       
- 0124           ;               //About 90
- 0124           ;               /*if (timeT < 2000)
- 0124           ;                       ControlServo(8);
- 0124           ;               else if(timeT < 4000)
- 0124           ;                       ControlServo(15);
- 0124           ;               else if(timeT < 6000)
- 0124           ;                       ControlServo(25);
- 0124           ;               else
- 0124           ;                       Stop();
- 0124           ;               */      
- 0124           ;               //Test 90 degree Turn
- 0124           ;               /*      
- 0124           ;                       if(timeT <= 100) //1.0s
- 0124           ;                               TurnRight(FULL_SPEED);
- 0124           ;                       else if(timeT <= 400)
- 0124           ;                               timeT = 0;
- 0124           ;               */
- 0124           ;               
- 0124           ;       }
- 0124           L17:
- 0124                   .dbline 145
- 0124 8FA0              xjmp L16
- 0126           X4:
- 0126                   .dbline -2
- 0126           L15:
- 0126                   .dbline 0 ; func end
- 0126 7F                ret
- 0127                   .dbend
-                        .area bss(ram, con, rel)
- 0003                   .dbfile Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0003           _buffer::
- 0003                   .blkb 10
- 000D                   .dbsym e buffer _buffer A[10:10]c
+ 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0000           _buffer::
+ 0000                   .blkb 10
+ 000A                   .dbsym e buffer _buffer A[10:10]c
                         .area lit(rom, con, rel, lit)
- 0000           L19:
+ 0000           L14:
  0000 202020202000      .byte 32,32,32,32,32,0

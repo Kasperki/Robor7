@@ -11,3 +11,4 @@ void InitUAServo(void);
 int getDataUA(void);
 void ControlTrigger(int *);
 int ControlServo(int pulse);
+void sendTrigPulse(int *);

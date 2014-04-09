@@ -31,18 +31,32 @@ lib/timer8.asm
 
 lib/timer8int.asm
 
-!W Z:\Robo\Roobbo\Robor7\ROBOTT~1\ROBOTT~1\main.c(151):[warning] expression with no effect elided
+!W Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c(104):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
+
+takes or returns values other than int
+
+!W Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c(104):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+
+takes or returns values other than int
+
+!W Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c(106):[warning] [MISRA 2200]calling an undeclared function may cause unexpected behavior if the function 
+
+takes or returns values other than int
+
+!W Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c(106):[warning] [MISRA 2714]calling a function without prototype may cause unexpected behavior if the function 
+
+takes or returns values other than int
 
 ./boot.asm
 
 Linking..
 
-  ROM 29% full. 4725 out of 16384 bytes used (does not include absolute areas).
+  ROM 29% full. 4724 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 23% full. 58 bytes used (does not include stack usage).
+  RAM 21% full. 53 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 1 warning(s) 15:31:09
+RobottiProjekti - 0 error(s) 4 warning(s) 11:44:35
 
