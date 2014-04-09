@@ -140,9 +140,9 @@ LoadConfigTBL_robottiprojekti_Ordered:
 	mov	reg[00h], 00h		; Port_0_Data register (PRT0DR)
 	M8C_SetBank1
 	mov	reg[00h], 53h		; Port_0_DriveMode_0 register (PRT0DM0)
-	mov	reg[01h], ach		; Port_0_DriveMode_1 register (PRT0DM1)
+	mov	reg[01h], 8ch		; Port_0_DriveMode_1 register (PRT0DM1)
 	M8C_SetBank0
-	mov	reg[03h], 2ch		; Port_0_DriveMode_2 register (PRT0DM2)
+	mov	reg[03h], 0ch		; Port_0_DriveMode_2 register (PRT0DM2)
 	mov	reg[02h], 93h		; Port_0_GlobalSelect register (PRT0GS)
 	M8C_SetBank1
 	mov	reg[02h], 08h		; Port_0_IntCtrl_0 register (PRT0IC0)

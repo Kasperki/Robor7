@@ -72,6 +72,24 @@ BYTE			AnalogColumn_InputMUX_0_IntCtrl_1_ADDR;
 #pragma	ioport	AnalogColumn_InputMUX_0_IntEn_ADDR:	0x1
 BYTE			AnalogColumn_InputMUX_0_IntEn_ADDR;
 #define AnalogColumn_InputMUX_0_MASK 0x2
+// LineFinder address and mask defines
+#pragma	ioport	LineFinder_Data_ADDR:	0x0
+BYTE			LineFinder_Data_ADDR;
+#pragma	ioport	LineFinder_DriveMode_0_ADDR:	0x100
+BYTE			LineFinder_DriveMode_0_ADDR;
+#pragma	ioport	LineFinder_DriveMode_1_ADDR:	0x101
+BYTE			LineFinder_DriveMode_1_ADDR;
+#pragma	ioport	LineFinder_DriveMode_2_ADDR:	0x3
+BYTE			LineFinder_DriveMode_2_ADDR;
+#pragma	ioport	LineFinder_GlobalSelect_ADDR:	0x2
+BYTE			LineFinder_GlobalSelect_ADDR;
+#pragma	ioport	LineFinder_IntCtrl_0_ADDR:	0x102
+BYTE			LineFinder_IntCtrl_0_ADDR;
+#pragma	ioport	LineFinder_IntCtrl_1_ADDR:	0x103
+BYTE			LineFinder_IntCtrl_1_ADDR;
+#pragma	ioport	LineFinder_IntEn_ADDR:	0x1
+BYTE			LineFinder_IntEn_ADDR;
+#define LineFinder_MASK 0x20
 // UATrig address and mask defines
 #pragma	ioport	UATrig_Data_ADDR:	0x0
 BYTE			UATrig_Data_ADDR;

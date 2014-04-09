@@ -13,7 +13,8 @@
 //Port1_2 RIGHTC
 //Port1_3 RIGHTD
 
-const float OIKEUSKERROIN = 1.0f; //Kerroin vasemalle puolelle jotta robotti kulkisi suoraan
+//Voi joutua korjaamaan
+const float OIKEUSKERROIN = 0.90f; //Kerroin nopeammalle puolelle jotta robotti kulkisi suoraan
 
 //Käynnistää PWM Moduulit
 void InitPWM(void)
@@ -31,8 +32,18 @@ void MoveForward(int pulse)
 	LEFTC_Data_ADDR &= NOLLAA;
 	LEFTC_Data_ADDR |= FORWARD;
 
-	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
-	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
+}
+
+//Kulkee eteenpäin arvolla..
+void MoveForward2(int pulse, float kerroinVasen, float kerroinOikea)
+{				
+	LEFTC_Data_ADDR &= NOLLAA;
+	LEFTC_Data_ADDR |= FORWARD;
+
+	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * kerroinVasen));
+	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * kerroinOikea * OIKEUSKERROIN));
 }
 
 //Kulkee taaksepäin arvolla
@@ -41,8 +52,8 @@ void MoveBackward(int pulse)
 	LEFTC_Data_ADDR &= NOLLAA;
 	LEFTC_Data_ADDR |= BACKWARD;
 	
-	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
-	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
+	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
+	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 }
 
 //Pysäyttää Moottorit

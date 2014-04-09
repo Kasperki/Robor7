@@ -62,6 +62,16 @@ AnalogColumn_InputMUX_0_IntCtrl_0_ADDR:	equ	102h
 AnalogColumn_InputMUX_0_IntCtrl_1_ADDR:	equ	103h
 AnalogColumn_InputMUX_0_IntEn_ADDR:	equ	1h
 AnalogColumn_InputMUX_0_MASK:	equ	2h
+; LineFinder address and mask equates
+LineFinder_Data_ADDR:	equ	0h
+LineFinder_DriveMode_0_ADDR:	equ	100h
+LineFinder_DriveMode_1_ADDR:	equ	101h
+LineFinder_DriveMode_2_ADDR:	equ	3h
+LineFinder_GlobalSelect_ADDR:	equ	2h
+LineFinder_IntCtrl_0_ADDR:	equ	102h
+LineFinder_IntCtrl_1_ADDR:	equ	103h
+LineFinder_IntEn_ADDR:	equ	1h
+LineFinder_MASK:	equ	20h
 ; UATrig address and mask equates
 UATrig_Data_ADDR:	equ	0h
 UATrig_DriveMode_0_ADDR:	equ	100h

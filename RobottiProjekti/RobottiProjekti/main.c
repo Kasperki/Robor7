@@ -28,12 +28,16 @@ volatile int timeT = 0;
 int timeUltra = 0,timeUltraRead = 0;
 volatile unsigned long int milliT = 0;
 
-//Test
 volatile int distanceCM = 0;
 char buffer[10];
 
+// Linefinder test
+volatile int onBlackLine = 0, blackLineCounter = 0;
+
+int lastTurn = 1; // muuttuja jolla pidetään kirjaa viimesimmästä käännöksestä. 1 = oikea ja 2 = vasen.
 int vaihe = 0;
 int left, right;
+int etaisyysSeinasta = 0;
 int timeForward = 50; //.... 4m täydellä vauhdilla 3.7s
 int turnTime = 55; 	   //.... 90 asteen käännökseen meneväaika
 int timeRobotWidth = 15; //.... Robotin leveyteen menevä aika ?
@@ -73,6 +77,15 @@ void main(void)
 	//***********************
 	while(1)
 	{
+		itoa(buffer, vaihe, 10);
+		LCD_Position(1,0);
+		LCD_PrString(buffer);
+		
+		itoa(buffer, blackLineCounter, 10);
+		LCD_Position(0,0);
+		LCD_PrString(buffer);		
+		
+		
 		// Eteenpäin ajo vaihe, ajetaan eteenpäin niin pitkään kunnes ollaan 20cm päästä seinästä.
 		if( vaihe == 1 )
 		{	
@@ -82,9 +95,33 @@ void main(void)
 
 			if (distanceCM >= 60)
 			{	
-				MoveForward(HALF_SPEED);
+				if (lastTurn == 2)
+				{
+					CheckRight();				
+				}				
+				if (lastTurn == 1)
+				{
+					CheckLeft();
+				}
+				etaisyysSeinasta = ultraData * 2;
+				
+				ControlServo(SERVO_MIDDLE);
+				Delay10msTimes(50);
+				if (etaisyysSeinasta < 10)
+				{
+					MoveForward2(TURN_SPEED, 1.0f, 0.70f);
+					
+				}
+				else if (etaisyysSeinasta > 30)
+				{
+					MoveForward2(TURN_SPEED, 0.70f, 1.0f);	
+					
+				}
+				else {
+					MoveForward(HALF_SPEED);	
+				}
 			}
-			else if (distanceCM < 60 && distanceCM > 40)
+			else if (distanceCM < 60 && distanceCM > 35)
 			{
 				MoveForward(SLOW_SPEED);
 			}				
@@ -105,22 +142,36 @@ void main(void)
 				if (right>left)
 				{	//turn right
 					TurnRight(TURN_SPEED);
-					Delay10msTimes(55);
+					Delay10msTimes(42);		//Voi joutua korjaamaan
 					Stop();
+					lastTurn = 1;
 				}
 				else 
 				{
-					TurnLeft(TURN_SPEED);
-					Delay10msTimes(55);
-					Stop();
 					//turnlefti
+					TurnLeft(TURN_SPEED);
+					Delay10msTimes(42);		//Voi joutua korjaamaan
+					Stop();
+					lastTurn = 2;
 				}
-					
-				ControlServo(SERVO_MIDDLE);
+				ControlServo(SERVO_MIDDLE_FROM_RIGHT);
+				
 				Delay(1000);
 				vaihe = 1;
 		}
-
+		
+		//Mustat miehet
+		if (blackLineCounter > 0)
+			vaihe = 3;
+		
+		if (vaihe == 3)
+			MoveForward(SLOW_SPEED);
+		
+		if (blackLineCounter >= 5)
+		{
+			Stop(); 
+			vaihe = 4; 
+		}
 		
 	}
 }
@@ -147,6 +198,16 @@ void TimerInterrupt(void)
 	
   //DO NOT TOUCH
   milliT++;
+	
+	//Linefinder START
+	
+	if ((LineFinder_Data_ADDR & LineFinder_MASK) && (onBlackLine == 0)) {
+		onBlackLine = 1;
+		blackLineCounter++;
+	} else if (!(LineFinder_Data_ADDR & LineFinder_MASK)) { // tänne vaan jos EI olla mustalla viivalla atm
+		onBlackLine = 0;
+	}
+	//LineFinder STOP
 }
 
 
@@ -169,17 +230,28 @@ void TestLoop(void)
 {
 	while(1)
 	{	
-		TurnRight(TURN_SPEED);
-		Delay10msTimes(75);
-		
-		Stop();
+		ControlServo(SERVO_LEFT);
 		Delay10msTimes(250);
-		
-		TurnLeft(TURN_SPEED);
-		Delay10msTimes(75);
-		
-		Stop();
+		ControlServo(SERVO_MIDDLE_FROM_LEFT);
 		Delay10msTimes(250);
+		ControlServo(SERVO_RIGHT);
+		Delay10msTimes(250);
+		ControlServo(SERVO_MIDDLE_FROM_RIGHT);
+		Delay10msTimes(250);		
+		
+		
+		
+//		TurnRight(TURN_SPEED);
+//		Delay10msTimes(75);
+//		
+//		Stop();
+//		Delay10msTimes(250);
+//		
+//		TurnLeft(TURN_SPEED);
+//		Delay10msTimes(75);
+//		
+//		Stop();
+//		Delay10msTimes(250);
 		
 		/*sendTrigPulse(&ultraData);
 		
