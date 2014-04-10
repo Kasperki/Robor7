@@ -31,7 +31,7 @@ void MoveForward(int pulse)
 {				
 	LEFTC_Data_ADDR &= NOLLAA;
 	LEFTC_Data_ADDR |= FORWARD;
-
+	
 	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
 	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
 }

@@ -34,6 +34,8 @@ char buffer[10];
 // Linefinder test
 volatile int onBlackLine = 0, blackLineCounter = 0;
 
+int kaannokset = 0;
+int maxKaannokset = 3; //Voi joutua korjaamaan
 int lastTurn = 1; // muuttuja jolla pidetään kirjaa viimesimmästä käännöksestä. 1 = oikea ja 2 = vasen.
 int vaihe = 0;
 int left, right;
@@ -81,10 +83,10 @@ void main(void)
 		LCD_Position(1,0);
 		LCD_PrString(buffer);
 		
-		itoa(buffer, blackLineCounter, 10);
+		itoa(buffer, distanceCM, 10);
 		LCD_Position(0,0);
 		LCD_PrString(buffer);		
-		
+		LCD_PrCString("          ");
 		
 		// Eteenpäin ajo vaihe, ajetaan eteenpäin niin pitkään kunnes ollaan 20cm päästä seinästä.
 		if( vaihe == 1 )
@@ -98,30 +100,56 @@ void main(void)
 				if (lastTurn == 2)
 				{
 					CheckRight();				
+					ControlServo(SERVO_MIDDLE_FROM_RIGHT);
 				}				
 				if (lastTurn == 1)
 				{
 					CheckLeft();
+					ControlServo(SERVO_MIDDLE_FROM_LEFT);
 				}
 				etaisyysSeinasta = ultraData * 2;
+				Delay10msTimes(20);
+			
 				
-				ControlServo(SERVO_MIDDLE);
-				Delay10msTimes(50);
-				if (etaisyysSeinasta < 10)
-				{
-					MoveForward2(TURN_SPEED, 1.0f, 0.70f);
+				if (etaisyysSeinasta < 12)
+				{					
+					if (lastTurn == 1)
+					{
+						//Lähinseinä oikea
+						
+					}
+					else 
+					{
+						//Lähinseinä vasen
+						
+					}
 					
+					MoveForward(HALF_SPEED);
 				}
-				else if (etaisyysSeinasta > 30)
+				else if (etaisyysSeinasta > 28)
 				{
-					MoveForward2(TURN_SPEED, 0.70f, 1.0f);	
+					if (lastTurn == 1)
+					{
+						//kauempi seinä vasen
+						
+					}
+					else 
+					{
+						//kauempi seinä oikea
+						
+					}
 					
+					
+					MoveForward(HALF_SPEED);
 				}
-				else {
-					MoveForward(HALF_SPEED);	
+				else 
+				{
+					//MoveForward(HALF_SPEED);
+					//Delay10msTimes(5);
+					MoveForward(HALF_SPEED);
 				}
 			}
-			else if (distanceCM < 60 && distanceCM > 35)
+			else if (distanceCM < 60 && distanceCM > 30)
 			{
 				MoveForward(SLOW_SPEED);
 			}				
@@ -142,7 +170,8 @@ void main(void)
 				if (right>left)
 				{	//turn right
 					TurnRight(TURN_SPEED);
-					Delay10msTimes(42);		//Voi joutua korjaamaan
+					kaannokset++;
+					Delay10msTimes(40);		//Voi joutua korjaamaan
 					Stop();
 					lastTurn = 1;
 				}
@@ -150,7 +179,8 @@ void main(void)
 				{
 					//turnlefti
 					TurnLeft(TURN_SPEED);
-					Delay10msTimes(42);		//Voi joutua korjaamaan
+					kaannokset++;
+					Delay10msTimes(40);		//Voi joutua korjaamaan
 					Stop();
 					lastTurn = 2;
 				}
@@ -161,16 +191,22 @@ void main(void)
 		}
 		
 		//Mustat miehet
-		if (blackLineCounter > 0)
+		if(kaannokset > maxKaannokset)
+		{
+			blackLineCounter = 0;
 			vaihe = 3;
+		}
 		
-		if (vaihe == 3)
+		if (vaihe == 3 && blackLineCounter > 0)
+			vaihe = 4;
+		
+		if (vaihe == 4)
 			MoveForward(SLOW_SPEED);
 		
-		if (blackLineCounter >= 5)
+		if (blackLineCounter >= 3)
 		{
 			Stop(); 
-			vaihe = 4; 
+			vaihe = 5; 
 		}
 		
 	}
@@ -179,14 +215,14 @@ void main(void)
 void CheckLeft(void)
 {
 	ControlServo(SERVO_LEFT);
-	Delay10msTimes(50);
+	Delay10msTimes(25);
 	sendTrigPulse(&ultraData);
 }
 
 void CheckRight(void)
 {
 	ControlServo(SERVO_RIGHT);
-	Delay10msTimes(50);
+	Delay10msTimes(25);
 	sendTrigPulse(&ultraData);
 }
 

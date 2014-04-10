@@ -35,12 +35,12 @@ lib/timer8int.asm
 
 Linking..
 
-  ROM 34% full. 5540 out of 16384 bytes used (does not include absolute areas).
+  ROM 35% full. 5612 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 27% full. 67 bytes used (does not include stack usage).
+  RAM 28% full. 71 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 0 warning(s) 17:29:28
+RobottiProjekti - 0 error(s) 0 warning(s) 11:55:14
 

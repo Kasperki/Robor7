@@ -4,10 +4,10 @@
                         .area lit(rom, con, rel, lit)
  0000           _OIKEUSKERROIN::
  0000 3F666666          .word 0x3f66,0x6666
- 0004                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0004                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
  0004                   .dbsym e OIKEUSKERROIN _OIKEUSKERROIN kD
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
+ 0000                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\motorcontrol.c
  0000                   .dbfunc e InitPWM _InitPWM fV
  0000           _InitPWM::
  0000                   .dbline -1
@@ -71,7 +71,7 @@
  0010 43040A            or REG[0x4],10
  0013                   .dbline 33
  0013                   .dbline 35
- 0013           ; 
+ 0013           ;       
  0013           ;       PWM8_VASEN_WritePulseWidth((BYTE)pulse);
  0013 52FC              mov A,[X-4]
  0015 10                push X
