@@ -53,75 +53,89 @@
                         .area data(ram, con, rel)
  0010                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0010                   .dbsym e blackLineCounter _blackLineCounter I
- 0010           _kaannokset::
+ 0010           _once::
  0010                   .blkb 2
                         .area idata(rom,lit)
  0010 0000              .word 0
                         .area data(ram, con, rel)
  0012                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0012                   .dbsym e kaannokset _kaannokset I
- 0012           _maxKaannokset::
+ 0012                   .dbsym e once _once I
+ 0012           _temp::
  0012                   .blkb 2
                         .area idata(rom,lit)
- 0012 0003              .word 3
+ 0012 0000              .word 0
                         .area data(ram, con, rel)
  0014                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0014                   .dbsym e maxKaannokset _maxKaannokset I
- 0014           _lastTurn::
+ 0014                   .dbsym e temp _temp I
+ 0014           _kaannokset::
  0014                   .blkb 2
                         .area idata(rom,lit)
- 0014 0001              .word 1
+ 0014 0000              .word 0
                         .area data(ram, con, rel)
  0016                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0016                   .dbsym e lastTurn _lastTurn I
- 0016           _vaihe::
+ 0016                   .dbsym e kaannokset _kaannokset I
+ 0016           _maxKaannokset::
  0016                   .blkb 2
                         .area idata(rom,lit)
- 0016 0000              .word 0
+ 0016 0003              .word 3
                         .area data(ram, con, rel)
  0018                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0018                   .dbsym e vaihe _vaihe I
- 0018           _etaisyysSeinasta::
+ 0018                   .dbsym e maxKaannokset _maxKaannokset I
+ 0018           _lastTurn::
  0018                   .blkb 2
                         .area idata(rom,lit)
- 0018 0000              .word 0
+ 0018 0001              .word 1
                         .area data(ram, con, rel)
  001A                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 001A                   .dbsym e etaisyysSeinasta _etaisyysSeinasta I
- 001A           _timeForward::
+ 001A                   .dbsym e lastTurn _lastTurn I
+ 001A           _vaihe::
  001A                   .blkb 2
                         .area idata(rom,lit)
- 001A 0032              .word 50
+ 001A 0000              .word 0
                         .area data(ram, con, rel)
  001C                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 001C                   .dbsym e timeForward _timeForward I
- 001C           _turnTime::
+ 001C                   .dbsym e vaihe _vaihe I
+ 001C           _etaisyysSeinasta::
  001C                   .blkb 2
                         .area idata(rom,lit)
- 001C 0037              .word 55
+ 001C 0000              .word 0
                         .area data(ram, con, rel)
  001E                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 001E                   .dbsym e turnTime _turnTime I
- 001E           _timeRobotWidth::
+ 001E                   .dbsym e etaisyysSeinasta _etaisyysSeinasta I
+ 001E           _timeForward::
  001E                   .blkb 2
                         .area idata(rom,lit)
- 001E 000F              .word 15
+ 001E 0032              .word 50
                         .area data(ram, con, rel)
  0020                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0020                   .dbsym e timeRobotWidth _timeRobotWidth I
- 0020           _ultraData::
+ 0020                   .dbsym e timeForward _timeForward I
+ 0020           _turnTime::
  0020                   .blkb 2
                         .area idata(rom,lit)
- 0020 0000              .word 0
+ 0020 0037              .word 55
                         .area data(ram, con, rel)
  0022                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
- 0022                   .dbsym e ultraData _ultraData I
+ 0022                   .dbsym e turnTime _turnTime I
+ 0022           _timeRobotWidth::
+ 0022                   .blkb 2
+                        .area idata(rom,lit)
+ 0022 000F              .word 15
+                        .area data(ram, con, rel)
+ 0024                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0024                   .dbsym e timeRobotWidth _timeRobotWidth I
+ 0024           _ultraData::
+ 0024                   .blkb 2
+                        .area idata(rom,lit)
+ 0024 0000              .word 0
+                        .area data(ram, con, rel)
+ 0026                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0026                   .dbsym e ultraData _ultraData I
                         .area text(rom, con, rel)
  0000                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000                   .dbfunc e main _main fV
  0000           _main::
  0000                   .dbline -1
- 0000                   .dbline 50
+ 0000                   .dbline 51
  0000           ; //----------------------------------------------------------------------------
  0000           ; // Robotti Projekti
  0000           ; // Robor7 @ 2014
@@ -157,7 +171,8 @@
  0000           ; 
  0000           ; // Linefinder test
  0000           ; volatile int onBlackLine = 0, blackLineCounter = 0;
- 0000           ; 
+ 0000           ; int once = 0;
+ 0000           ; int temp = 0;
  0000           ; int kaannokset = 0;
  0000           ; int maxKaannokset = 3; //Voi joutua korjaamaan
  0000           ; int lastTurn = 1; // muuttuja jolla pidetään kirjaa viimesimmästä käännöksestä. 1 = oikea ja 2 = vasen.
@@ -172,61 +187,61 @@
  0000           ; //Main Method
  0000           ; void main(void)
  0000           ; {
- 0000                   .dbline 54
+ 0000                   .dbline 55
  0000           ;       //Init**************************
  0000           ;       
  0000           ;       //Enables Global Interrupts
  0000           ;       M8C_EnableGInt; 
  0000 7101                      or  F, 01h
  0002           
- 0002                   .dbline 55
+ 0002                   .dbline 56
  0002           ;       M8C_EnableIntMask(INT_MSK0, INT_MSK0_GPIO);     //VITTU
  0002 43E020            or REG[0xe0],32
- 0005                   .dbline 58
+ 0005                   .dbline 59
  0005           ;       
  0005           ;       //Start LCD
  0005           ;       LCD_Start();
  0005 10                push X
  0006 7C0000            xcall _LCD_Start
- 0009                   .dbline 60
+ 0009                   .dbline 61
  0009           ;       //InitializeTimer
  0009           ;       Timer8_Start();
  0009 7C0000            xcall _Timer8_Start
- 000C                   .dbline 61
+ 000C                   .dbline 62
  000C           ;       Timer8_EnableInt();
  000C 7C0000            xcall _Timer8_EnableInt
- 000F                   .dbline 63
+ 000F                   .dbline 64
  000F           ;               
  000F           ;       Counter16_1_EnableInt();
  000F 7C0000            xcall _Counter16_1_EnableInt
- 0012                   .dbline 64
+ 0012                   .dbline 65
  0012           ;       Counter16_1_Start();
  0012 7C0000            xcall _Counter16_1_Start
  0015 20                pop X
- 0016                   .dbline 67
+ 0016                   .dbline 68
  0016           ;       
  0016           ;       //Start Motor PWMs
  0016           ;       InitPWM();
  0016 7C0000            xcall _InitPWM
- 0019                   .dbline 70
+ 0019                   .dbline 71
  0019           ;       
  0019           ;       //Init Servo
  0019           ;       InitUAServo();
  0019 7C0000            xcall _InitUAServo
- 001C                   .dbline 72
+ 001C                   .dbline 73
  001C           ;               
  001C           ;       Delay10msTimes(100);
  001C 10                push X
  001D 5064              mov A,100
  001F 7C0000            xcall _Delay10msTimes
  0022 20                pop X
- 0023                   .dbline 73
+ 0023                   .dbline 74
  0023           ;       vaihe = 1;
- 0023 551701            mov [_vaihe+1],1
- 0026 551600            mov [_vaihe],0
- 0029 8261              xjmp L3
+ 0023 551B01            mov [_vaihe+1],1
+ 0026 551A00            mov [_vaihe],0
+ 0029 842B              xjmp L3
  002B           L2:
- 002B                   .dbline 81
+ 002B                   .dbline 82
  002B           ;       
  002B           ;       //Testink
  002B           ;       //TestLoop();
@@ -235,15 +250,16 @@
  002B           ;       //***********************
  002B           ;       while(1)
  002B           ;       {
- 002B                   .dbline 82
- 002B           ;               itoa(buffer, vaihe, 10);
+ 002B                   .dbline 84
+ 002B           ;               
+ 002B           ;               itoa(buffer, etaisyysSeinasta, 10);
  002B 5000              mov A,0
  002D 08                push A
  002E 500A              mov A,10
  0030 08                push A
- 0031 5116              mov A,[_vaihe]
+ 0031 511C              mov A,[_etaisyysSeinasta]
  0033 08                push A
- 0034 5117              mov A,[_vaihe+1]
+ 0034 511D              mov A,[_etaisyysSeinasta+1]
  0036 08                push A
  0037 5004              mov A,>_buffer
  0039 08                push A
@@ -251,90 +267,90 @@
  003C 08                push A
  003D 7C0000            xcall _itoa
  0040 38FA              add SP,-6
- 0042                   .dbline 83
- 0042           ;               LCD_Position(1,0);
+ 0042                   .dbline 85
+ 0042           ;               LCD_Position(0,0);
  0042 10                push X
- 0043 5700              mov X,0
- 0045 5001              mov A,1
+ 0043 5000              mov A,0
+ 0045 5700              mov X,0
  0047 7C0000            xcall _LCD_Position
- 004A                   .dbline 84
- 004A           ;               LCD_PrString(buffer);
+ 004A                   .dbline 86
+ 004A           ;               LCD_PrString(buffer);           
  004A 5004              mov A,>_buffer
  004C 08                push A
  004D 5004              mov A,<_buffer
  004F 5C                mov X,A
  0050 18                pop A
  0051 7C0000            xcall _LCD_PrString
- 0054 20                pop X
- 0055                   .dbline 86
- 0055           ;               
- 0055           ;               itoa(buffer, distanceCM, 10);
- 0055 5000              mov A,0
- 0057 08                push A
- 0058 500A              mov A,10
- 005A 08                push A
- 005B 510A              mov A,[_distanceCM]
- 005D 08                push A
- 005E 510B              mov A,[_distanceCM+1]
- 0060 08                push A
- 0061 5004              mov A,>_buffer
- 0063 08                push A
- 0064 5004              mov A,<_buffer
- 0066 08                push A
- 0067 7C0000            xcall _itoa
- 006A 38FA              add SP,-6
- 006C                   .dbline 87
- 006C           ;               LCD_Position(0,0);
- 006C 10                push X
- 006D 5000              mov A,0
- 006F 5700              mov X,0
- 0071 7C0000            xcall _LCD_Position
- 0074                   .dbline 88
- 0074           ;               LCD_PrString(buffer);           
- 0074 5004              mov A,>_buffer
- 0076 08                push A
- 0077 5004              mov A,<_buffer
- 0079 5C                mov X,A
- 007A 18                pop A
- 007B 7C0000            xcall _LCD_PrString
- 007E                   .dbline 89
- 007E           ;               LCD_PrCString("          ");
- 007E 5000              mov A,>L5
+ 0054                   .dbline 87
+ 0054           ;               LCD_PrCString("          ");
+ 0054 5000              mov A,>L5
+ 0056 08                push A
+ 0057 5000              mov A,<L5
+ 0059 5C                mov X,A
+ 005A 18                pop A
+ 005B 7C0000            xcall _LCD_PrCString
+ 005E 20                pop X
+ 005F                   .dbline 89
+ 005F           ;               
+ 005F           ;               itoa(buffer, vaihe, 10);
+ 005F 5000              mov A,0
+ 0061 08                push A
+ 0062 500A              mov A,10
+ 0064 08                push A
+ 0065 511A              mov A,[_vaihe]
+ 0067 08                push A
+ 0068 511B              mov A,[_vaihe+1]
+ 006A 08                push A
+ 006B 5004              mov A,>_buffer
+ 006D 08                push A
+ 006E 5004              mov A,<_buffer
+ 0070 08                push A
+ 0071 7C0000            xcall _itoa
+ 0074 38FA              add SP,-6
+ 0076                   .dbline 90
+ 0076           ;               LCD_Position(1,0);
+ 0076 10                push X
+ 0077 5700              mov X,0
+ 0079 5001              mov A,1
+ 007B 7C0000            xcall _LCD_Position
+ 007E                   .dbline 91
+ 007E           ;               LCD_PrString(buffer);
+ 007E 5004              mov A,>_buffer
  0080 08                push A
- 0081 5000              mov A,<L5
+ 0081 5004              mov A,<_buffer
  0083 5C                mov X,A
  0084 18                pop A
- 0085 7C0000            xcall _LCD_PrCString
+ 0085 7C0000            xcall _LCD_PrString
  0088 20                pop X
- 0089                   .dbline 92
+ 0089                   .dbline 94
  0089           ;               
  0089           ;               // Eteenpäin ajo vaihe, ajetaan eteenpäin niin pitkään kunnes ollaan 20cm päästä seinästä.
  0089           ;               if( vaihe == 1 )
- 0089 3C1600            cmp [_vaihe],0
- 008C B0FB              jnz L6
- 008E 3C1701            cmp [_vaihe+1],1
- 0091 B0F6              jnz L6
+ 0089 3C1A00            cmp [_vaihe],0
+ 008C B2AD              jnz L6
+ 008E 3C1B01            cmp [_vaihe+1],1
+ 0091 B2A8              jnz L6
  0093           X1:
- 0093                   .dbline 94
+ 0093                   .dbline 96
  0093           ;               {       
  0093           ;                       sendTrigPulse(&ultraData);
- 0093                   .dbline 94
- 0093 5020              mov A,>_ultraData
+ 0093                   .dbline 96
+ 0093 5024              mov A,>_ultraData
  0095 08                push A
- 0096 5020              mov A,<_ultraData
+ 0096 5024              mov A,<_ultraData
  0098 08                push A
  0099 7C0000            xcall _sendTrigPulse
  009C 38FE              add SP,-2
- 009E                   .dbline 96
+ 009E                   .dbline 98
  009E           ;                       
  009E           ;                       distanceCM = ultraData * 2;     
- 009E 5F0021            mov [__r1],[_ultraData+1]
- 00A1 5F0020            mov [__r0],[_ultraData]
+ 009E 5F0025            mov [__r1],[_ultraData+1]
+ 00A1 5F0024            mov [__r0],[_ultraData]
  00A4 6500              asl [__r1]
  00A6 6B00              rlc [__r0]
  00A8 5F0B00            mov [_distanceCM+1],[__r1]
  00AB 5F0A00            mov [_distanceCM],[__r0]
- 00AE                   .dbline 98
+ 00AE                   .dbline 100
  00AE           ; 
  00AE           ;                       if (distanceCM >= 60)
  00AE 510B              mov A,[_distanceCM+1]
@@ -342,23 +358,23 @@
  00B2 510A              mov A,[_distanceCM]
  00B4 3180              xor A,-128
  00B6 1980              sbb A,(0 ^ 0x80)
- 00B8 C09D              jc L8
+ 00B8 C24F              jc L8
  00BA           X2:
- 00BA                   .dbline 100
+ 00BA                   .dbline 102
  00BA           ;                       {       
  00BA           ;                               if (lastTurn == 2)
- 00BA                   .dbline 100
- 00BA 3C1400            cmp [_lastTurn],0
+ 00BA                   .dbline 102
+ 00BA 3C1800            cmp [_lastTurn],0
  00BD B013              jnz L10
- 00BF 3C1502            cmp [_lastTurn+1],2
+ 00BF 3C1902            cmp [_lastTurn+1],2
  00C2 B00E              jnz L10
  00C4           X3:
- 00C4                   .dbline 102
+ 00C4                   .dbline 104
  00C4           ;                               {
  00C4           ;                                       CheckRight();                           
- 00C4                   .dbline 102
- 00C4 91E7              xcall _CheckRight
- 00C6                   .dbline 103
+ 00C4                   .dbline 104
+ 00C4 93B1              xcall _CheckRight
+ 00C6                   .dbline 105
  00C6           ;                                       ControlServo(SERVO_MIDDLE_FROM_RIGHT);
  00C6 5000              mov A,0
  00C8 08                push A
@@ -366,22 +382,22 @@
  00CB 08                push A
  00CC 7C0000            xcall _ControlServo
  00CF 38FE              add SP,-2
- 00D1                   .dbline 104
+ 00D1                   .dbline 106
  00D1           ;                               }                               
  00D1           L10:
- 00D1                   .dbline 105
+ 00D1                   .dbline 107
  00D1           ;                               if (lastTurn == 1)
- 00D1 3C1400            cmp [_lastTurn],0
+ 00D1 3C1800            cmp [_lastTurn],0
  00D4 B013              jnz L12
- 00D6 3C1501            cmp [_lastTurn+1],1
+ 00D6 3C1901            cmp [_lastTurn+1],1
  00D9 B00E              jnz L12
  00DB           X4:
- 00DB                   .dbline 107
+ 00DB                   .dbline 109
  00DB           ;                               {
  00DB           ;                                       CheckLeft();
- 00DB                   .dbline 107
- 00DB 91B2              xcall _CheckLeft
- 00DD                   .dbline 108
+ 00DB                   .dbline 109
+ 00DB 937C              xcall _CheckLeft
+ 00DD                   .dbline 110
  00DD           ;                                       ControlServo(SERVO_MIDDLE_FROM_LEFT);
  00DD 5000              mov A,0
  00DF 08                push A
@@ -389,768 +405,1151 @@
  00E2 08                push A
  00E3 7C0000            xcall _ControlServo
  00E6 38FE              add SP,-2
- 00E8                   .dbline 109
+ 00E8                   .dbline 111
  00E8           ;                               }
  00E8           L12:
- 00E8                   .dbline 110
+ 00E8                   .dbline 112
  00E8           ;                               etaisyysSeinasta = ultraData * 2;
- 00E8 5F0021            mov [__r1],[_ultraData+1]
- 00EB 5F0020            mov [__r0],[_ultraData]
+ 00E8 5F0025            mov [__r1],[_ultraData+1]
+ 00EB 5F0024            mov [__r0],[_ultraData]
  00EE 6500              asl [__r1]
  00F0 6B00              rlc [__r0]
- 00F2 5F1900            mov [_etaisyysSeinasta+1],[__r1]
- 00F5 5F1800            mov [_etaisyysSeinasta],[__r0]
- 00F8                   .dbline 111
+ 00F2 5F1D00            mov [_etaisyysSeinasta+1],[__r1]
+ 00F5 5F1C00            mov [_etaisyysSeinasta],[__r0]
+ 00F8                   .dbline 113
  00F8           ;                               Delay10msTimes(20);
  00F8 10                push X
  00F9 5014              mov A,20
  00FB 7C0000            xcall _Delay10msTimes
  00FE 20                pop X
- 00FF                   .dbline 114
- 00FF           ;                       
+ 00FF                   .dbline 115
  00FF           ;                               
- 00FF           ;                               if (etaisyysSeinasta < 12)
- 00FF 5119              mov A,[_etaisyysSeinasta+1]
- 0101 110C              sub A,12
- 0103 5118              mov A,[_etaisyysSeinasta]
- 0105 3180              xor A,-128
- 0107 1980              sbb A,(0 ^ 0x80)
- 0109 D018              jnc L14
- 010B           X5:
- 010B                   .dbline 116
- 010B           ;                               {                                       
- 010B           ;                                       if (lastTurn == 1)
- 010B                   .dbline 116
- 010B 3C1400            cmp [_lastTurn],0
- 010E B006              jnz L16
- 0110 3C1501            cmp [_lastTurn+1],1
- 0113 B001              jnz L16
- 0115           X6:
- 0115                   .dbline 120
- 0115           ;                                       {
- 0115           ;                                               //Lähinseinä oikea
- 0115           ;                                               
- 0115           ;                                       }
- 0115                   .dbline 120
- 0115           L16:
- 0115                   .dbline 122
- 0115           ;                                       else 
- 0115           ;                                       {
- 0115                   .dbline 125
- 0115           ;                                               //Lähinseinä vasen
- 0115           ;                                               
- 0115           ;                                       }
- 0115           L17:
- 0115                   .dbline 127
- 0115           ;                                       
- 0115           ;                                       MoveForward(HALF_SPEED);
- 0115 5000              mov A,0
- 0117 08                push A
- 0118 504B              mov A,75
- 011A 08                push A
- 011B 7C0000            xcall _MoveForward
- 011E 38FE              add SP,-2
- 0120                   .dbline 128
- 0120           ;                               }
- 0120 8067              xjmp L9
- 0122           L14:
- 0122                   .dbline 129
- 0122           ;                               else if (etaisyysSeinasta > 28)
- 0122 501C              mov A,28
- 0124 1219              sub A,[_etaisyysSeinasta+1]
- 0126 5118              mov A,[_etaisyysSeinasta]
- 0128 3180              xor A,-128
- 012A 5300              mov [__rX],A
- 012C 5080              mov A,(0 ^ 0x80)
- 012E 1A00              sbb A,[__rX]
- 0130 D018              jnc L18
- 0132           X7:
- 0132                   .dbline 131
- 0132           ;                               {
- 0132           ;                                       if (lastTurn == 1)
- 0132                   .dbline 131
- 0132 3C1400            cmp [_lastTurn],0
- 0135 B006              jnz L20
- 0137 3C1501            cmp [_lastTurn+1],1
- 013A B001              jnz L20
- 013C           X8:
- 013C                   .dbline 135
- 013C           ;                                       {
- 013C           ;                                               //kauempi seinä vasen
- 013C           ;                                               
- 013C           ;                                       }
- 013C                   .dbline 135
- 013C           L20:
- 013C                   .dbline 137
- 013C           ;                                       else 
- 013C           ;                                       {
- 013C                   .dbline 140
- 013C           ;                                               //kauempi seinä oikea
- 013C           ;                                               
- 013C           ;                                       }
- 013C           L21:
- 013C                   .dbline 143
- 013C           ;                                       
- 013C           ;                                       
- 013C           ;                                       MoveForward(HALF_SPEED);
- 013C 5000              mov A,0
- 013E 08                push A
- 013F 504B              mov A,75
- 0141 08                push A
- 0142 7C0000            xcall _MoveForward
- 0145 38FE              add SP,-2
- 0147                   .dbline 144
- 0147           ;                               }
- 0147 8040              xjmp L9
- 0149           L18:
- 0149                   .dbline 146
- 0149           ;                               else 
- 0149           ;                               {
- 0149                   .dbline 149
- 0149           ;                                       //MoveForward(HALF_SPEED);
- 0149           ;                                       //Delay10msTimes(5);
- 0149           ;                                       MoveForward(HALF_SPEED);
- 0149 5000              mov A,0
+ 00FF           ;                               if (temp == 0)
+ 00FF 3C1200            cmp [_temp],0
+ 0102 B00C              jnz L14
+ 0104 3C1300            cmp [_temp+1],0
+ 0107 B007              jnz L14
+ 0109           X5:
+ 0109                   .dbline 117
+ 0109           ;                               {
+ 0109           ;                                       temp = etaisyysSeinasta; //koodi joka korjaisi vasta jos ajetaan vinossa seinää kohti.
+ 0109                   .dbline 117
+ 0109 5F131D            mov [_temp+1],[_etaisyysSeinasta+1]
+ 010C 5F121C            mov [_temp],[_etaisyysSeinasta]
+ 010F                   .dbline 118
+ 010F           ;                               }       
+ 010F           L14:
+ 010F                   .dbline 120
+ 010F           ;                               
+ 010F           ;                               if (etaisyysSeinasta < 14)
+ 010F 511D              mov A,[_etaisyysSeinasta+1]
+ 0111 110E              sub A,14
+ 0113 511C              mov A,[_etaisyysSeinasta]
+ 0115 3180              xor A,-128
+ 0117 1980              sbb A,(0 ^ 0x80)
+ 0119 D0D8              jnc L16
+ 011B           X6:
+ 011B                   .dbline 122
+ 011B           ;                               {                                       
+ 011B           ;                                       if (lastTurn == 1)
+ 011B                   .dbline 122
+ 011B 3C1800            cmp [_lastTurn],0
+ 011E B050              jnz L18
+ 0120 3C1901            cmp [_lastTurn+1],1
+ 0123 B04B              jnz L18
+ 0125           X7:
+ 0125                   .dbline 124
+ 0125           ;                                       {       
+ 0125           ;                                               if (temp >= etaisyysSeinasta)
+ 0125                   .dbline 124
+ 0125 5113              mov A,[_temp+1]
+ 0127 121D              sub A,[_etaisyysSeinasta+1]
+ 0129 511C              mov A,[_etaisyysSeinasta]
+ 012B 3180              xor A,-128
+ 012D 5300              mov [__rX],A
+ 012F 5112              mov A,[_temp]
+ 0131 3180              xor A,-128
+ 0133 1A00              sbb A,[__rX]
+ 0135 C08D              jc L19
+ 0137           X8:
+ 0137                   .dbline 127
+ 0137           ;                                               {       
+ 0137           ;                                                       //Lähinseinä oikea
+ 0137           ;                                                       TurnRight(TURN_SPEED);
+ 0137                   .dbline 127
+ 0137 5000              mov A,0
+ 0139 08                push A
+ 013A 5073              mov A,115
+ 013C 08                push A
+ 013D 7C0000            xcall _TurnRight
+ 0140 38FE              add SP,-2
+ 0142                   .dbline 128
+ 0142           ;                                                       Delay10msTimes(8);
+ 0142 10                push X
+ 0143 5008              mov A,8
+ 0145 7C0000            xcall _Delay10msTimes
+ 0148 20                pop X
+ 0149                   .dbline 129
+ 0149           ;                                                       MoveForward2(100, 0, 1);
+ 0149 503F              mov A,63
  014B 08                push A
- 014C 504B              mov A,75
+ 014C 5080              mov A,-128
  014E 08                push A
- 014F 7C0000            xcall _MoveForward
- 0152 38FE              add SP,-2
- 0154                   .dbline 150
- 0154           ;                               }
- 0154                   .dbline 151
- 0154           ;                       }
- 0154 8033              xjmp L9
- 0156           L8:
- 0156                   .dbline 152
- 0156           ;                       else if (distanceCM < 60 && distanceCM > 30)
- 0156 510B              mov A,[_distanceCM+1]
- 0158 113C              sub A,60
- 015A 510A              mov A,[_distanceCM]
- 015C 3180              xor A,-128
- 015E 1980              sbb A,(0 ^ 0x80)
- 0160 D01E              jnc L22
- 0162           X9:
- 0162 501E              mov A,30
- 0164 120B              sub A,[_distanceCM+1]
- 0166 510A              mov A,[_distanceCM]
- 0168 3180              xor A,-128
- 016A 5300              mov [__rX],A
- 016C 5080              mov A,(0 ^ 0x80)
- 016E 1A00              sbb A,[__rX]
- 0170 D00E              jnc L22
- 0172           X10:
- 0172                   .dbline 154
- 0172           ;                       {
- 0172           ;                               MoveForward(SLOW_SPEED);
- 0172                   .dbline 154
- 0172 5000              mov A,0
- 0174 08                push A
- 0175 5046              mov A,70
- 0177 08                push A
- 0178 7C0000            xcall _MoveForward
- 017B 38FE              add SP,-2
- 017D                   .dbline 155
- 017D           ;                       }                               
- 017D 800A              xjmp L23
- 017F           L22:
- 017F                   .dbline 157
- 017F           ;                       else 
- 017F           ;                       {
- 017F                   .dbline 158
- 017F           ;                               Stop();
- 017F 7C0000            xcall _Stop
- 0182                   .dbline 159
- 0182           ;                               vaihe = 2;
- 0182 551702            mov [_vaihe+1],2
- 0185 551600            mov [_vaihe],0
- 0188                   .dbline 160
- 0188           ;                       }
- 0188           L23:
- 0188           L9:
- 0188                   .dbline 161
- 0188           ;               }
- 0188           L6:
- 0188                   .dbline 163
- 0188           ;               // Vaiheessa ollaan pysähtyneenä ja katsomme vasemmalle ja oikealle ja teemme päätöksen kumpaan suuntaan käännymme.
- 0188           ;               if ( vaihe == 2 )
- 0188 3C1600            cmp [_vaihe],0
- 018B B097              jnz L24
- 018D 3C1702            cmp [_vaihe+1],2
- 0190 B092              jnz L24
- 0192           X11:
- 0192                   .dbline 165
- 0192           ;               {
- 0192           ;                               CheckLeft();
- 0192                   .dbline 165
- 0192 90FB              xcall _CheckLeft
- 0194                   .dbline 166
- 0194           ;                               left = ultraData * 2;
- 0194 5F0021            mov [__r1],[_ultraData+1]
- 0197 5F0020            mov [__r0],[_ultraData]
- 019A 6500              asl [__r1]
- 019C 6B00              rlc [__r0]
- 019E 5F0300            mov [_left+1],[__r1]
- 01A1 5F0200            mov [_left],[__r0]
- 01A4                   .dbline 167
- 01A4           ;                               CheckRight();
- 01A4 9107              xcall _CheckRight
- 01A6                   .dbline 168
- 01A6           ;                               right = ultraData * 2;
- 01A6 5F0021            mov [__r1],[_ultraData+1]
- 01A9 5F0020            mov [__r0],[_ultraData]
- 01AC 6500              asl [__r1]
- 01AE 6B00              rlc [__r0]
- 01B0 5F0100            mov [_right+1],[__r1]
- 01B3 5F0000            mov [_right],[__r0]
- 01B6                   .dbline 170
- 01B6           ;                       
- 01B6           ;                               if (right>left)
- 01B6 5103              mov A,[_left+1]
- 01B8 1201              sub A,[_right+1]
- 01BA 5100              mov A,[_right]
- 01BC 3180              xor A,-128
- 01BE 5300              mov [__rX],A
- 01C0 5102              mov A,[_left]
- 01C2 3180              xor A,-128
- 01C4 1A00              sbb A,[__rX]
- 01C6 D023              jnc L26
- 01C8           X12:
- 01C8                   .dbline 172
- 01C8           ;                               {       //turn right
- 01C8           ;                                       TurnRight(TURN_SPEED);
- 01C8                   .dbline 172
- 01C8 5000              mov A,0
- 01CA 08                push A
- 01CB 5073              mov A,115
- 01CD 08                push A
- 01CE 7C0000            xcall _TurnRight
- 01D1 38FE              add SP,-2
- 01D3                   .dbline 173
- 01D3           ;                                       kaannokset++;
- 01D3 7611              inc [_kaannokset+1]
- 01D5 0E1000            adc [_kaannokset],0
- 01D8                   .dbline 174
- 01D8           ;                                       Delay10msTimes(40);             //Voi joutua korjaamaan
- 01D8 10                push X
- 01D9 5028              mov A,40
- 01DB 7C0000            xcall _Delay10msTimes
- 01DE 20                pop X
- 01DF                   .dbline 175
- 01DF           ;                                       Stop();
- 01DF 7C0000            xcall _Stop
- 01E2                   .dbline 176
- 01E2           ;                                       lastTurn = 1;
- 01E2 551501            mov [_lastTurn+1],1
- 01E5 551400            mov [_lastTurn],0
- 01E8                   .dbline 177
- 01E8           ;                               }
- 01E8 8021              xjmp L27
- 01EA           L26:
- 01EA                   .dbline 179
- 01EA           ;                               else 
- 01EA           ;                               {
- 01EA                   .dbline 181
- 01EA           ;                                       //turnlefti
- 01EA           ;                                       TurnLeft(TURN_SPEED);
- 01EA 5000              mov A,0
- 01EC 08                push A
- 01ED 5073              mov A,115
- 01EF 08                push A
- 01F0 7C0000            xcall _TurnLeft
- 01F3 38FE              add SP,-2
- 01F5                   .dbline 182
- 01F5           ;                                       kaannokset++;
- 01F5 7611              inc [_kaannokset+1]
- 01F7 0E1000            adc [_kaannokset],0
- 01FA                   .dbline 183
- 01FA           ;                                       Delay10msTimes(40);             //Voi joutua korjaamaan
- 01FA 10                push X
- 01FB 5028              mov A,40
- 01FD 7C0000            xcall _Delay10msTimes
- 0200 20                pop X
- 0201                   .dbline 184
- 0201           ;                                       Stop();
- 0201 7C0000            xcall _Stop
- 0204                   .dbline 185
- 0204           ;                                       lastTurn = 2;
- 0204 551502            mov [_lastTurn+1],2
- 0207 551400            mov [_lastTurn],0
- 020A                   .dbline 186
- 020A           ;                               }
- 020A           L27:
- 020A                   .dbline 187
- 020A           ;                               ControlServo(SERVO_MIDDLE_FROM_RIGHT);
- 020A 5000              mov A,0
- 020C 08                push A
- 020D 501F              mov A,31
- 020F 08                push A
- 0210 7C0000            xcall _ControlServo
- 0213                   .dbline 189
- 0213           ;                               
- 0213           ;                               Delay(1000);
- 0213 5003              mov A,3
- 0215 08                push A
- 0216 50E8              mov A,-24
- 0218 08                push A
- 0219 9147              xcall _Delay
- 021B 38FC              add SP,-4
- 021D                   .dbline 190
- 021D           ;                               vaihe = 1;
- 021D 551701            mov [_vaihe+1],1
- 0220 551600            mov [_vaihe],0
- 0223                   .dbline 191
- 0223           ;               }
- 0223           L24:
- 0223                   .dbline 194
- 0223           ;               
- 0223           ;               //Mustat miehet
- 0223           ;               if(kaannokset > maxKaannokset)
- 0223 5113              mov A,[_maxKaannokset+1]
- 0225 1211              sub A,[_kaannokset+1]
- 0227 5110              mov A,[_kaannokset]
- 0229 3180              xor A,-128
- 022B 5300              mov [__rX],A
- 022D 5112              mov A,[_maxKaannokset]
- 022F 3180              xor A,-128
- 0231 1A00              sbb A,[__rX]
- 0233 D00D              jnc L28
- 0235           X13:
- 0235                   .dbline 196
- 0235           ;               {
- 0235           ;                       blackLineCounter = 0;
- 0235                   .dbline 196
- 0235 550F00            mov [_blackLineCounter+1],0
- 0238 550E00            mov [_blackLineCounter],0
- 023B                   .dbline 197
- 023B           ;                       vaihe = 3;
- 023B 551703            mov [_vaihe+1],3
- 023E 551600            mov [_vaihe],0
- 0241                   .dbline 198
- 0241           ;               }
- 0241           L28:
- 0241                   .dbline 200
- 0241           ;               
- 0241           ;               if (vaihe == 3 && blackLineCounter > 0)
- 0241 3C1600            cmp [_vaihe],0
- 0244 B01C              jnz L30
- 0246 3C1703            cmp [_vaihe+1],3
- 0249 B017              jnz L30
- 024B           X14:
- 024B 5000              mov A,0
- 024D 120F              sub A,[_blackLineCounter+1]
- 024F 510E              mov A,[_blackLineCounter]
- 0251 3180              xor A,-128
- 0253 5300              mov [__rX],A
- 0255 5080              mov A,(0 ^ 0x80)
- 0257 1A00              sbb A,[__rX]
- 0259 D007              jnc L30
- 025B           X15:
- 025B                   .dbline 201
- 025B           ;                       vaihe = 4;
- 025B 551704            mov [_vaihe+1],4
- 025E 551600            mov [_vaihe],0
- 0261           L30:
- 0261                   .dbline 203
- 0261           ;               
- 0261           ;               if (vaihe == 4)
- 0261 3C1600            cmp [_vaihe],0
- 0264 B011              jnz L32
- 0266 3C1704            cmp [_vaihe+1],4
- 0269 B00C              jnz L32
- 026B           X16:
- 026B                   .dbline 204
- 026B           ;                       MoveForward(SLOW_SPEED);
- 026B 5000              mov A,0
- 026D 08                push A
- 026E 5046              mov A,70
- 0270 08                push A
- 0271 7C0000            xcall _MoveForward
- 0274 38FE              add SP,-2
- 0276           L32:
- 0276                   .dbline 206
- 0276           ;               
- 0276           ;               if (blackLineCounter >= 3)
- 0276 510F              mov A,[_blackLineCounter+1]
- 0278 1103              sub A,3
- 027A 510E              mov A,[_blackLineCounter]
- 027C 3180              xor A,-128
- 027E 1980              sbb A,(0 ^ 0x80)
- 0280 C00A              jc L34
- 0282           X17:
- 0282                   .dbline 208
- 0282           ;               {
- 0282           ;                       Stop(); 
- 0282                   .dbline 208
- 0282 7C0000            xcall _Stop
- 0285                   .dbline 209
- 0285           ;                       vaihe = 5; 
- 0285 551705            mov [_vaihe+1],5
- 0288 551600            mov [_vaihe],0
- 028B                   .dbline 210
- 028B           ;               }
- 028B           L34:
- 028B                   .dbline 212
- 028B           ;               
- 028B           ;       }
- 028B           L3:
- 028B                   .dbline 80
- 028B 8D9F              xjmp L2
- 028D           X0:
- 028D                   .dbline -2
- 028D           L1:
- 028D                   .dbline 0 ; func end
- 028D 8FFF              jmp .
- 028F                   .dbend
- 028F                   .dbfunc e CheckLeft _CheckLeft fV
- 028F           _CheckLeft::
- 028F                   .dbline -1
- 028F                   .dbline 216
- 028F           ; }
- 028F           ; 
- 028F           ; void CheckLeft(void)
- 028F           ; {
- 028F                   .dbline 217
- 028F           ;       ControlServo(SERVO_LEFT);
- 028F 5000              mov A,0
+ 014F 5000              mov A,0
+ 0151 08                push A
+ 0152 08                push A
+ 0153 08                push A
+ 0154 08                push A
+ 0155 08                push A
+ 0156 08                push A
+ 0157 08                push A
+ 0158 5064              mov A,100
+ 015A 08                push A
+ 015B 7C0000            xcall _MoveForward2
+ 015E 38F6              add SP,-10
+ 0160                   .dbline 130
+ 0160           ;                                                       Delay10msTimes(20);
+ 0160 10                push X
+ 0161 5014              mov A,20
+ 0163 7C0000            xcall _Delay10msTimes
+ 0166 20                pop X
+ 0167                   .dbline 131
+ 0167           ;                                                       temp = 0;
+ 0167 551300            mov [_temp+1],0
+ 016A 551200            mov [_temp],0
+ 016D                   .dbline 132
+ 016D           ;                                               }       
+ 016D                   .dbline 133
+ 016D           ;                                       }
+ 016D 8055              xjmp L19
+ 016F           L18:
+ 016F                   .dbline 134
+ 016F           ;                                       else if (lastTurn == 2)
+ 016F 3C1800            cmp [_lastTurn],0
+ 0172 B050              jnz L22
+ 0174 3C1902            cmp [_lastTurn+1],2
+ 0177 B04B              jnz L22
+ 0179           X9:
+ 0179                   .dbline 136
+ 0179           ;                                       {
+ 0179           ;                                               if (temp >= etaisyysSeinasta)
+ 0179                   .dbline 136
+ 0179 5113              mov A,[_temp+1]
+ 017B 121D              sub A,[_etaisyysSeinasta+1]
+ 017D 511C              mov A,[_etaisyysSeinasta]
+ 017F 3180              xor A,-128
+ 0181 5300              mov [__rX],A
+ 0183 5112              mov A,[_temp]
+ 0185 3180              xor A,-128
+ 0187 1A00              sbb A,[__rX]
+ 0189 C039              jc L24
+ 018B           X10:
+ 018B                   .dbline 139
+ 018B           ;                                               {       
+ 018B           ;                                                       //Lähinseinä vasen
+ 018B           ;                                                       TurnLeft(TURN_SPEED);
+ 018B                   .dbline 139
+ 018B 5000              mov A,0
+ 018D 08                push A
+ 018E 5073              mov A,115
+ 0190 08                push A
+ 0191 7C0000            xcall _TurnLeft
+ 0194 38FE              add SP,-2
+ 0196                   .dbline 140
+ 0196           ;                                                       Delay10msTimes(8);
+ 0196 10                push X
+ 0197 5008              mov A,8
+ 0199 7C0000            xcall _Delay10msTimes
+ 019C 20                pop X
+ 019D                   .dbline 141
+ 019D           ;                                                       MoveForward2(100, 1, 0);
+ 019D 5000              mov A,0
+ 019F 08                push A
+ 01A0 08                push A
+ 01A1 08                push A
+ 01A2 08                push A
+ 01A3 503F              mov A,63
+ 01A5 08                push A
+ 01A6 5080              mov A,-128
+ 01A8 08                push A
+ 01A9 5000              mov A,0
+ 01AB 08                push A
+ 01AC 08                push A
+ 01AD 08                push A
+ 01AE 5064              mov A,100
+ 01B0 08                push A
+ 01B1 7C0000            xcall _MoveForward2
+ 01B4 38F6              add SP,-10
+ 01B6                   .dbline 142
+ 01B6           ;                                                       Delay10msTimes(20);
+ 01B6 10                push X
+ 01B7 5014              mov A,20
+ 01B9 7C0000            xcall _Delay10msTimes
+ 01BC 20                pop X
+ 01BD                   .dbline 143
+ 01BD           ;                                                       temp = 0;
+ 01BD 551300            mov [_temp+1],0
+ 01C0 551200            mov [_temp],0
+ 01C3                   .dbline 144
+ 01C3           ;                                               }       
+ 01C3           L24:
+ 01C3                   .dbline 145
+ 01C3           ;                                       }
+ 01C3           L22:
+ 01C3           L19:
+ 01C3                   .dbline 147
+ 01C3           ;                                       
+ 01C3           ;                                       if (once == 0)
+ 01C3 3C1000            cmp [_once],0
+ 01C6 B01E              jnz L26
+ 01C8 3C1100            cmp [_once+1],0
+ 01CB B019              jnz L26
+ 01CD           X11:
+ 01CD                   .dbline 149
+ 01CD           ;                                       {       
+ 01CD           ;                                               once = 1;
+ 01CD                   .dbline 149
+ 01CD 551101            mov [_once+1],1
+ 01D0 551000            mov [_once],0
+ 01D3                   .dbline 150
+ 01D3           ;                                               MoveForward(100);
+ 01D3 5000              mov A,0
+ 01D5 08                push A
+ 01D6 5064              mov A,100
+ 01D8 08                push A
+ 01D9 7C0000            xcall _MoveForward
+ 01DC 38FE              add SP,-2
+ 01DE                   .dbline 151
+ 01DE           ;                                               Delay10msTimes(5);
+ 01DE 10                push X
+ 01DF 5005              mov A,5
+ 01E1 7C0000            xcall _Delay10msTimes
+ 01E4 20                pop X
+ 01E5                   .dbline 152
+ 01E5           ;                                       }
+ 01E5           L26:
+ 01E5                   .dbline 153
+ 01E5           ;                                       MoveForward(50);
+ 01E5 5000              mov A,0
+ 01E7 08                push A
+ 01E8 5032              mov A,50
+ 01EA 08                push A
+ 01EB 7C0000            xcall _MoveForward
+ 01EE 38FE              add SP,-2
+ 01F0                   .dbline 156
+ 01F0           ;                                       
+ 01F0           ;                                       //MoveForward(HALF_SPEED);
+ 01F0           ;                               }
+ 01F0 8149              xjmp L9
+ 01F2           L16:
+ 01F2                   .dbline 157
+ 01F2           ;                               else if (etaisyysSeinasta > 20)
+ 01F2 5014              mov A,20
+ 01F4 121D              sub A,[_etaisyysSeinasta+1]
+ 01F6 511C              mov A,[_etaisyysSeinasta]
+ 01F8 3180              xor A,-128
+ 01FA 5300              mov [__rX],A
+ 01FC 5080              mov A,(0 ^ 0x80)
+ 01FE 1A00              sbb A,[__rX]
+ 0200 D0D8              jnc L28
+ 0202           X12:
+ 0202                   .dbline 159
+ 0202           ;                               {
+ 0202           ;                                       if (lastTurn == 1)
+ 0202                   .dbline 159
+ 0202 3C1800            cmp [_lastTurn],0
+ 0205 B052              jnz L30
+ 0207 3C1901            cmp [_lastTurn+1],1
+ 020A B04D              jnz L30
+ 020C           X13:
+ 020C                   .dbline 161
+ 020C           ;                                       {
+ 020C           ;                                               if (temp <= etaisyysSeinasta)
+ 020C                   .dbline 161
+ 020C 511D              mov A,[_etaisyysSeinasta+1]
+ 020E 1213              sub A,[_temp+1]
+ 0210 5112              mov A,[_temp]
+ 0212 3180              xor A,-128
+ 0214 5300              mov [__rX],A
+ 0216 511C              mov A,[_etaisyysSeinasta]
+ 0218 3180              xor A,-128
+ 021A 1A00              sbb A,[__rX]
+ 021C C08D              jc L31
+ 021E           X14:
+ 021E                   .dbline 164
+ 021E           ;                                               {       
+ 021E           ;                                                       //kauempi seinä vasen
+ 021E           ;                                                       TurnLeft(TURN_SPEED);
+ 021E                   .dbline 164
+ 021E 5000              mov A,0
+ 0220 08                push A
+ 0221 5073              mov A,115
+ 0223 08                push A
+ 0224 7C0000            xcall _TurnLeft
+ 0227 38FE              add SP,-2
+ 0229                   .dbline 165
+ 0229           ;                                                       Delay10msTimes(8);
+ 0229 10                push X
+ 022A 5008              mov A,8
+ 022C 7C0000            xcall _Delay10msTimes
+ 022F 20                pop X
+ 0230                   .dbline 166
+ 0230           ;                                                       MoveForward2(100, 1, 0);
+ 0230 5000              mov A,0
+ 0232 08                push A
+ 0233 08                push A
+ 0234 08                push A
+ 0235 08                push A
+ 0236 503F              mov A,63
+ 0238 08                push A
+ 0239 5080              mov A,-128
+ 023B 08                push A
+ 023C 5000              mov A,0
+ 023E 08                push A
+ 023F 08                push A
+ 0240 08                push A
+ 0241 5064              mov A,100
+ 0243 08                push A
+ 0244 7C0000            xcall _MoveForward2
+ 0247 38F6              add SP,-10
+ 0249                   .dbline 167
+ 0249           ;                                                       Delay10msTimes(20);
+ 0249 10                push X
+ 024A 5014              mov A,20
+ 024C 7C0000            xcall _Delay10msTimes
+ 024F 20                pop X
+ 0250                   .dbline 168
+ 0250           ;                                                       temp = 0;
+ 0250 551300            mov [_temp+1],0
+ 0253 551200            mov [_temp],0
+ 0256                   .dbline 169
+ 0256           ;                                               }       
+ 0256                   .dbline 170
+ 0256           ;                                       }
+ 0256 8053              xjmp L31
+ 0258           L30:
+ 0258                   .dbline 171
+ 0258           ;                                       else if (lastTurn == 2)
+ 0258 3C1800            cmp [_lastTurn],0
+ 025B B04E              jnz L34
+ 025D 3C1902            cmp [_lastTurn+1],2
+ 0260 B049              jnz L34
+ 0262           X15:
+ 0262                   .dbline 173
+ 0262           ;                                       {
+ 0262           ;                                               if (temp <= etaisyysSeinasta)
+ 0262                   .dbline 173
+ 0262 511D              mov A,[_etaisyysSeinasta+1]
+ 0264 1213              sub A,[_temp+1]
+ 0266 5112              mov A,[_temp]
+ 0268 3180              xor A,-128
+ 026A 5300              mov [__rX],A
+ 026C 511C              mov A,[_etaisyysSeinasta]
+ 026E 3180              xor A,-128
+ 0270 1A00              sbb A,[__rX]
+ 0272 C037              jc L36
+ 0274           X16:
+ 0274                   .dbline 177
+ 0274           ;                                               {       
+ 0274           ;                                                       //kauempi seinä oikea
+ 0274           ; 
+ 0274           ;                                                       TurnRight(TURN_SPEED);                                          
+ 0274                   .dbline 177
+ 0274 5000              mov A,0
+ 0276 08                push A
+ 0277 5073              mov A,115
+ 0279 08                push A
+ 027A 7C0000            xcall _TurnRight
+ 027D 38FE              add SP,-2
+ 027F                   .dbline 178
+ 027F           ;                                                       Delay10msTimes(8);
+ 027F 10                push X
+ 0280 5008              mov A,8
+ 0282 7C0000            xcall _Delay10msTimes
+ 0285 20                pop X
+ 0286                   .dbline 179
+ 0286           ;                                                       MoveForward2(100, 0, 1);
+ 0286 503F              mov A,63
+ 0288 08                push A
+ 0289 5080              mov A,-128
+ 028B 08                push A
+ 028C 5000              mov A,0
+ 028E 08                push A
+ 028F 08                push A
+ 0290 08                push A
  0291 08                push A
- 0292 5032              mov A,50
+ 0292 08                push A
+ 0293 08                push A
  0294 08                push A
- 0295 7C0000            xcall _ControlServo
- 0298 38FE              add SP,-2
- 029A                   .dbline 218
- 029A           ;       Delay10msTimes(25);
- 029A 10                push X
- 029B 5019              mov A,25
- 029D 7C0000            xcall _Delay10msTimes
- 02A0 20                pop X
- 02A1                   .dbline 219
- 02A1           ;       sendTrigPulse(&ultraData);
- 02A1 5020              mov A,>_ultraData
- 02A3 08                push A
- 02A4 5020              mov A,<_ultraData
- 02A6 08                push A
- 02A7 7C0000            xcall _sendTrigPulse
- 02AA 38FE              add SP,-2
- 02AC                   .dbline -2
- 02AC           L36:
- 02AC                   .dbline 0 ; func end
- 02AC 7F                ret
- 02AD                   .dbend
- 02AD                   .dbfunc e CheckRight _CheckRight fV
- 02AD           _CheckRight::
- 02AD                   .dbline -1
- 02AD                   .dbline 223
- 02AD           ; }
- 02AD           ; 
- 02AD           ; void CheckRight(void)
- 02AD           ; {
- 02AD                   .dbline 224
- 02AD           ;       ControlServo(SERVO_RIGHT);
- 02AD 5000              mov A,0
- 02AF 08                push A
- 02B0 5011              mov A,17
- 02B2 08                push A
- 02B3 7C0000            xcall _ControlServo
- 02B6 38FE              add SP,-2
- 02B8                   .dbline 225
- 02B8           ;       Delay10msTimes(25);
- 02B8 10                push X
- 02B9 5019              mov A,25
- 02BB 7C0000            xcall _Delay10msTimes
- 02BE 20                pop X
- 02BF                   .dbline 226
- 02BF           ;       sendTrigPulse(&ultraData);
- 02BF 5020              mov A,>_ultraData
- 02C1 08                push A
- 02C2 5020              mov A,<_ultraData
- 02C4 08                push A
- 02C5 7C0000            xcall _sendTrigPulse
- 02C8 38FE              add SP,-2
- 02CA                   .dbline -2
- 02CA           L37:
- 02CA                   .dbline 0 ; func end
- 02CA 7F                ret
- 02CB                   .dbend
- 02CB                   .dbfunc e TimerInterrupt _TimerInterrupt fV
- 02CB           _TimerInterrupt::
- 02CB                   .dbline -1
- 02CB                   .dbline 232
- 02CB           ; }
- 02CB           ; 
- 02CB           ; //Palauttaa eerolle millisekunnit siitä asti ku psoc on käynnistytnyt
- 02CB           ; //Kutsutaan joka 0.001s = 1ms välein.
- 02CB           ; void TimerInterrupt(void)
- 02CB           ; {
- 02CB                   .dbline 233
- 02CB           ;   timeT++;
- 02CB 7601              inc [_timeT+1]
- 02CD 0E0000            adc [_timeT],0
- 02D0                   .dbline 236
- 02D0           ;       
- 02D0           ;   //DO NOT TOUCH
- 02D0           ;   milliT++;
- 02D0 060901            add [_milliT+3],1
- 02D3 0E0800            adc [_milliT+2],0
- 02D6 0E0700            adc [_milliT+1],0
- 02D9 0E0600            adc [_milliT],0
- 02DC                   .dbline 240
- 02DC           ;       
- 02DC           ;       //Linefinder START
- 02DC           ;       
- 02DC           ;       if ((LineFinder_Data_ADDR & LineFinder_MASK) && (onBlackLine == 0)) {
- 02DC 5D00              mov A,REG[0]
- 02DE 5300              mov [__r0],A
- 02E0 470020            tst [__r0],32
- 02E3 A018              jz L39
- 02E5 3C0C00            cmp [_onBlackLine],0
- 02E8 B013              jnz L39
- 02EA 3C0D00            cmp [_onBlackLine+1],0
- 02ED B00E              jnz L39
- 02EF           X18:
- 02EF                   .dbline 241
- 02EF           ;               onBlackLine = 1;
- 02EF                   .dbline 241
- 02EF 550D01            mov [_onBlackLine+1],1
- 02F2 550C00            mov [_onBlackLine],0
- 02F5                   .dbline 242
- 02F5           ;               blackLineCounter++;
- 02F5 760F              inc [_blackLineCounter+1]
- 02F7 0E0E00            adc [_blackLineCounter],0
- 02FA                   .dbline 243
- 02FA           ;       } else if (!(LineFinder_Data_ADDR & LineFinder_MASK)) { // tänne vaan jos EI olla mustalla viivalla atm
- 02FA 8010              xjmp L40
- 02FC           L39:
- 02FC                   .dbline 243
- 02FC 5D00              mov A,REG[0]
- 02FE 5300              mov [__r0],A
- 0300 470020            tst [__r0],32
- 0303 B007              jnz L41
- 0305                   .dbline 244
- 0305           ;               onBlackLine = 0;
- 0305                   .dbline 244
- 0305 550D00            mov [_onBlackLine+1],0
- 0308 550C00            mov [_onBlackLine],0
- 030B                   .dbline 245
- 030B           ;       }
- 030B           L41:
- 030B           L40:
- 030B                   .dbline -2
- 030B           L38:
- 030B                   .dbline 0 ; func end
- 030B 7F                ret
- 030C                   .dbend
- 030C                   .dbfunc e CounterISR _CounterISR fV
- 030C           _CounterISR::
- 030C                   .dbline -1
- 030C                   .dbline 253
- 030C           ;       //LineFinder STOP
- 030C           ; }
- 030C           ; 
- 030C           ; 
- 030C           ; 
- 030C           ; //Counter INTERRUPT
- 030C           ; void CounterISR(void)
- 030C           ; {
- 030C                   .dbline 254
- 030C           ;       ultraData++;
- 030C 7621              inc [_ultraData+1]
- 030E 0E2000            adc [_ultraData],0
- 0311                   .dbline -2
- 0311           L43:
- 0311                   .dbline 0 ; func end
- 0311 7F                ret
- 0312                   .dbend
- 0312                   .dbfunc e PinInterrupt _PinInterrupt fV
- 0312           _PinInterrupt::
- 0312                   .dbline -1
- 0312 08                push A
- 0313                   .dbline 258
- 0313           ; }
- 0313           ; 
- 0313           ; // Pin interrupt
- 0313           ; void PinInterrupt(void){}
- 0313                   .dbline -2
- 0313           L44:
- 0313 18                pop A
- 0314                   .dbline 0 ; func end
- 0314 7E                reti
- 0315                   .dbend
- 0315                   .dbfunc e TestLoop _TestLoop fV
- 0315           _TestLoop::
- 0315                   .dbline -1
- 0315                   .dbline 266
- 0315           ; 
- 0315           ; 
- 0315           ; 
- 0315           ; 
- 0315           ; 
- 0315           ; //For Testing
- 0315           ; void TestLoop(void)
- 0315           ; {
- 0315 8049              xjmp L47
- 0317           L46:
- 0317                   .dbline 268
- 0317           ;       while(1)
- 0317           ;       {       
- 0317                   .dbline 269
- 0317           ;               ControlServo(SERVO_LEFT);
- 0317 5000              mov A,0
- 0319 08                push A
- 031A 5032              mov A,50
- 031C 08                push A
- 031D 7C0000            xcall _ControlServo
- 0320 38FE              add SP,-2
- 0322                   .dbline 270
- 0322           ;               Delay10msTimes(250);
- 0322 10                push X
- 0323 50FA              mov A,-6
- 0325 7C0000            xcall _Delay10msTimes
- 0328 20                pop X
- 0329                   .dbline 271
- 0329           ;               ControlServo(SERVO_MIDDLE_FROM_LEFT);
- 0329 5000              mov A,0
- 032B 08                push A
- 032C 5022              mov A,34
- 032E 08                push A
- 032F 7C0000            xcall _ControlServo
- 0332 38FE              add SP,-2
- 0334                   .dbline 272
- 0334           ;               Delay10msTimes(250);
- 0334 10                push X
- 0335 50FA              mov A,-6
- 0337 7C0000            xcall _Delay10msTimes
- 033A 20                pop X
- 033B                   .dbline 273
- 033B           ;               ControlServo(SERVO_RIGHT);
- 033B 5000              mov A,0
- 033D 08                push A
- 033E 5011              mov A,17
- 0340 08                push A
- 0341 7C0000            xcall _ControlServo
- 0344 38FE              add SP,-2
- 0346                   .dbline 274
- 0346           ;               Delay10msTimes(250);
- 0346 10                push X
- 0347 50FA              mov A,-6
- 0349 7C0000            xcall _Delay10msTimes
- 034C 20                pop X
- 034D                   .dbline 275
- 034D           ;               ControlServo(SERVO_MIDDLE_FROM_RIGHT);
- 034D 5000              mov A,0
- 034F 08                push A
- 0350 501F              mov A,31
- 0352 08                push A
- 0353 7C0000            xcall _ControlServo
- 0356 38FE              add SP,-2
- 0358                   .dbline 276
- 0358           ;               Delay10msTimes(250);            
- 0358 10                push X
- 0359 50FA              mov A,-6
- 035B 7C0000            xcall _Delay10msTimes
- 035E 20                pop X
- 035F                   .dbline 302
- 035F           ;               
- 035F           ;               
- 035F           ;               
- 035F           ; //            TurnRight(TURN_SPEED);
- 035F           ; //            Delay10msTimes(75);
- 035F           ; //            
- 035F           ; //            Stop();
- 035F           ; //            Delay10msTimes(250);
- 035F           ; //            
- 035F           ; //            TurnLeft(TURN_SPEED);
- 035F           ; //            Delay10msTimes(75);
- 035F           ; //            
- 035F           ; //            Stop();
- 035F           ; //            Delay10msTimes(250);
- 035F           ;               
- 035F           ;               /*sendTrigPulse(&ultraData);
- 035F           ;               
- 035F           ;               distanceCM = ultraData * 2;             
- 035F           ;       
- 035F           ;               itoa(buffer,distanceCM,10);
- 035F           ;               LCD_Position(0,0);
- 035F           ;               LCD_PrCString("     ");
- 035F           ;               LCD_Position(0,0);
- 035F           ;               LCD_PrString(buffer);
- 035F           ;               */              
- 035F           ;       }
- 035F           L47:
- 035F                   .dbline 267
- 035F 8FB7              xjmp L46
- 0361           X19:
- 0361                   .dbline -2
- 0361           L45:
- 0361                   .dbline 0 ; func end
- 0361 7F                ret
- 0362                   .dbend
- 0362                   .dbfunc e Delay _Delay fV
- 0362           ;          timme -> X+0
- 0362           ;          delay -> X-5
- 0362           _Delay::
- 0362                   .dbline -1
- 0362 10                push X
- 0363 4F                mov X,SP
- 0364 3804              add SP,4
- 0366                   .dbline 307
- 0366           ; }
- 0366           ; 
- 0366           ; ////OMA Delay function 
- 0366           ; void Delay(int delay)
- 0366           ; {
- 0366                   .dbline 308
- 0366           ;       unsigned long int timme = milliT + delay;
- 0366 52FC              mov A,[X-4]
- 0368 5300              mov [__r3],A
- 036A 52FB              mov A,[X-5]
- 036C 5300              mov [__r2],A
- 036E 470080            tst [__r2],-128
- 0371 A009              jz X20
- 0373 5500FF            mov [__r1],-1
- 0376 5500FF            mov [__r0],-1
- 0379 8007              jmp X21
- 037B           X20:
- 037B 550000            mov [__r1],0
- 037E 550000            mov [__r0],0
- 0381           X21:
- 0381 5109              mov A,[_milliT+3]
- 0383 0200              add A,[__r3]
- 0385 5403              mov [X+3],A
- 0387 5108              mov A,[_milliT+2]
- 0389 0A00              adc A,[__r2]
- 038B 5402              mov [X+2],A
- 038D 5107              mov A,[_milliT+1]
- 038F 0A00              adc A,[__r1]
- 0391 5401              mov [X+1],A
- 0393 5106              mov A,[_milliT]
- 0395 0A00              adc A,[__r0]
- 0397 5400              mov [X+0],A
- 0399           L50:
- 0399                   .dbline 309
- 0399           ;       while (milliT < timme){}
- 0399                   .dbline 309
- 0399           L51:
- 0399                   .dbline 309
- 0399 5109              mov A,[_milliT+3]
- 039B 1303              sub A,[X+3]
- 039D 5108              mov A,[_milliT+2]
- 039F 1B02              sbb A,[X+2]
- 03A1 5107              mov A,[_milliT+1]
- 03A3 1B01              sbb A,[X+1]
- 03A5 5106              mov A,[_milliT]
- 03A7 1B00              sbb A,[X+0]
- 03A9 CFEF              jc L50
- 03AB           X22:
- 03AB                   .dbline -2
- 03AB           L49:
- 03AB 38FC              add SP,-4
- 03AD 20                pop X
- 03AE                   .dbline 0 ; func end
- 03AE 7F                ret
- 03AF                   .dbsym l timme 0 l
- 03AF                   .dbsym l delay -5 I
- 03AF                   .dbend
+ 0295 5064              mov A,100
+ 0297 08                push A
+ 0298 7C0000            xcall _MoveForward2
+ 029B 38F6              add SP,-10
+ 029D                   .dbline 180
+ 029D           ;                                                       Delay10msTimes(20);
+ 029D 10                push X
+ 029E 5014              mov A,20
+ 02A0 7C0000            xcall _Delay10msTimes
+ 02A3 20                pop X
+ 02A4                   .dbline 181
+ 02A4           ;                                                       temp = 0;
+ 02A4 551300            mov [_temp+1],0
+ 02A7 551200            mov [_temp],0
+ 02AA                   .dbline 182
+ 02AA           ;                                               }       
+ 02AA           L36:
+ 02AA                   .dbline 183
+ 02AA           ;                                       }
+ 02AA           L34:
+ 02AA           L31:
+ 02AA                   .dbline 184
+ 02AA           ;                                       if (once == 0)
+ 02AA 3C1000            cmp [_once],0
+ 02AD B01E              jnz L38
+ 02AF 3C1100            cmp [_once+1],0
+ 02B2 B019              jnz L38
+ 02B4           X17:
+ 02B4                   .dbline 186
+ 02B4           ;                                       {       
+ 02B4           ;                                               once = 1;
+ 02B4                   .dbline 186
+ 02B4 551101            mov [_once+1],1
+ 02B7 551000            mov [_once],0
+ 02BA                   .dbline 187
+ 02BA           ;                                               MoveForward(100);
+ 02BA 5000              mov A,0
+ 02BC 08                push A
+ 02BD 5064              mov A,100
+ 02BF 08                push A
+ 02C0 7C0000            xcall _MoveForward
+ 02C3 38FE              add SP,-2
+ 02C5                   .dbline 188
+ 02C5           ;                                               Delay10msTimes(5);
+ 02C5 10                push X
+ 02C6 5005              mov A,5
+ 02C8 7C0000            xcall _Delay10msTimes
+ 02CB 20                pop X
+ 02CC                   .dbline 189
+ 02CC           ;                                       }
+ 02CC           L38:
+ 02CC                   .dbline 190
+ 02CC           ;                                       MoveForward(50);
+ 02CC 5000              mov A,0
+ 02CE 08                push A
+ 02CF 5032              mov A,50
+ 02D1 08                push A
+ 02D2 7C0000            xcall _MoveForward
+ 02D5 38FE              add SP,-2
+ 02D7                   .dbline 193
+ 02D7           ;                                       
+ 02D7           ;                                       //MoveForward(HALF_SPEED);
+ 02D7           ;                               }
+ 02D7 8062              xjmp L9
+ 02D9           L28:
+ 02D9                   .dbline 195
+ 02D9           ;                               else 
+ 02D9           ;                               {
+ 02D9                   .dbline 196
+ 02D9           ;                                       if (once == 0)
+ 02D9 3C1000            cmp [_once],0
+ 02DC B01E              jnz L40
+ 02DE 3C1100            cmp [_once+1],0
+ 02E1 B019              jnz L40
+ 02E3           X18:
+ 02E3                   .dbline 198
+ 02E3           ;                                       {       
+ 02E3           ;                                               once = 1;
+ 02E3                   .dbline 198
+ 02E3 551101            mov [_once+1],1
+ 02E6 551000            mov [_once],0
+ 02E9                   .dbline 199
+ 02E9           ;                                               MoveForward(100);
+ 02E9 5000              mov A,0
+ 02EB 08                push A
+ 02EC 5064              mov A,100
+ 02EE 08                push A
+ 02EF 7C0000            xcall _MoveForward
+ 02F2 38FE              add SP,-2
+ 02F4                   .dbline 200
+ 02F4           ;                                               Delay10msTimes(5);
+ 02F4 10                push X
+ 02F5 5005              mov A,5
+ 02F7 7C0000            xcall _Delay10msTimes
+ 02FA 20                pop X
+ 02FB                   .dbline 201
+ 02FB           ;                                       }
+ 02FB           L40:
+ 02FB                   .dbline 202
+ 02FB           ;                                       MoveForward(50);
+ 02FB 5000              mov A,0
+ 02FD 08                push A
+ 02FE 5032              mov A,50
+ 0300 08                push A
+ 0301 7C0000            xcall _MoveForward
+ 0304 38FE              add SP,-2
+ 0306                   .dbline 203
+ 0306           ;                               }
+ 0306                   .dbline 204
+ 0306           ;                       }
+ 0306 8033              xjmp L9
+ 0308           L8:
+ 0308                   .dbline 205
+ 0308           ;                       else if (distanceCM < 60 && distanceCM > 20) // Tarkastus kuinka kauas seinästä pysähdytään
+ 0308 510B              mov A,[_distanceCM+1]
+ 030A 113C              sub A,60
+ 030C 510A              mov A,[_distanceCM]
+ 030E 3180              xor A,-128
+ 0310 1980              sbb A,(0 ^ 0x80)
+ 0312 D01E              jnc L42
+ 0314           X19:
+ 0314 5014              mov A,20
+ 0316 120B              sub A,[_distanceCM+1]
+ 0318 510A              mov A,[_distanceCM]
+ 031A 3180              xor A,-128
+ 031C 5300              mov [__rX],A
+ 031E 5080              mov A,(0 ^ 0x80)
+ 0320 1A00              sbb A,[__rX]
+ 0322 D00E              jnc L42
+ 0324           X20:
+ 0324                   .dbline 207
+ 0324           ;                       {
+ 0324           ;                               MoveForward(50);
+ 0324                   .dbline 207
+ 0324 5000              mov A,0
+ 0326 08                push A
+ 0327 5032              mov A,50
+ 0329 08                push A
+ 032A 7C0000            xcall _MoveForward
+ 032D 38FE              add SP,-2
+ 032F                   .dbline 208
+ 032F           ;                       }                               
+ 032F 800A              xjmp L43
+ 0331           L42:
+ 0331                   .dbline 210
+ 0331           ;                       else 
+ 0331           ;                       {
+ 0331                   .dbline 211
+ 0331           ;                               Stop();
+ 0331 7C0000            xcall _Stop
+ 0334                   .dbline 212
+ 0334           ;                               vaihe = 2;
+ 0334 551B02            mov [_vaihe+1],2
+ 0337 551A00            mov [_vaihe],0
+ 033A                   .dbline 213
+ 033A           ;                       }
+ 033A           L43:
+ 033A           L9:
+ 033A                   .dbline 214
+ 033A           ;               }
+ 033A           L6:
+ 033A                   .dbline 216
+ 033A           ;               // Vaiheessa ollaan pysähtyneenä ja katsomme vasemmalle ja oikealle ja teemme päätöksen kumpaan suuntaan käännymme.
+ 033A           ;               if ( vaihe == 2 )
+ 033A 3C1A00            cmp [_vaihe],0
+ 033D B0A3              jnz L44
+ 033F 3C1B02            cmp [_vaihe+1],2
+ 0342 B09E              jnz L44
+ 0344           X21:
+ 0344                   .dbline 218
+ 0344           ;               {
+ 0344           ;                               CheckLeft();
+ 0344                   .dbline 218
+ 0344 9113              xcall _CheckLeft
+ 0346                   .dbline 219
+ 0346           ;                               left = ultraData * 2;
+ 0346 5F0025            mov [__r1],[_ultraData+1]
+ 0349 5F0024            mov [__r0],[_ultraData]
+ 034C 6500              asl [__r1]
+ 034E 6B00              rlc [__r0]
+ 0350 5F0300            mov [_left+1],[__r1]
+ 0353 5F0200            mov [_left],[__r0]
+ 0356                   .dbline 220
+ 0356           ;                               CheckRight();
+ 0356 911F              xcall _CheckRight
+ 0358                   .dbline 221
+ 0358           ;                               right = ultraData * 2;
+ 0358 5F0025            mov [__r1],[_ultraData+1]
+ 035B 5F0024            mov [__r0],[_ultraData]
+ 035E 6500              asl [__r1]
+ 0360 6B00              rlc [__r0]
+ 0362 5F0100            mov [_right+1],[__r1]
+ 0365 5F0000            mov [_right],[__r0]
+ 0368                   .dbline 223
+ 0368           ;                       
+ 0368           ;                               if (right>left)
+ 0368 5103              mov A,[_left+1]
+ 036A 1201              sub A,[_right+1]
+ 036C 5100              mov A,[_right]
+ 036E 3180              xor A,-128
+ 0370 5300              mov [__rX],A
+ 0372 5102              mov A,[_left]
+ 0374 3180              xor A,-128
+ 0376 1A00              sbb A,[__rX]
+ 0378 D029              jnc L46
+ 037A           X22:
+ 037A                   .dbline 225
+ 037A           ;                               {       //turn right
+ 037A           ;                                       TurnRight(TURN_SPEED);
+ 037A                   .dbline 225
+ 037A 5000              mov A,0
+ 037C 08                push A
+ 037D 5073              mov A,115
+ 037F 08                push A
+ 0380 7C0000            xcall _TurnRight
+ 0383 38FE              add SP,-2
+ 0385                   .dbline 226
+ 0385           ;                                       kaannokset++;
+ 0385 7615              inc [_kaannokset+1]
+ 0387 0E1400            adc [_kaannokset],0
+ 038A                   .dbline 227
+ 038A           ;                                       Delay10msTimes(65);             //Voi joutua korjaamaan
+ 038A 10                push X
+ 038B 5041              mov A,65
+ 038D 7C0000            xcall _Delay10msTimes
+ 0390 20                pop X
+ 0391                   .dbline 228
+ 0391           ;                                       Stop();
+ 0391 7C0000            xcall _Stop
+ 0394                   .dbline 229
+ 0394           ;                                       lastTurn = 1;
+ 0394 551901            mov [_lastTurn+1],1
+ 0397 551800            mov [_lastTurn],0
+ 039A                   .dbline 230
+ 039A           ;                                       once = 0;
+ 039A 551100            mov [_once+1],0
+ 039D 551000            mov [_once],0
+ 03A0                   .dbline 231
+ 03A0           ;                               }
+ 03A0 8027              xjmp L47
+ 03A2           L46:
+ 03A2                   .dbline 233
+ 03A2           ;                               else 
+ 03A2           ;                               {
+ 03A2                   .dbline 235
+ 03A2           ;                                       //turnlefti
+ 03A2           ;                                       TurnLeft(TURN_SPEED);
+ 03A2 5000              mov A,0
+ 03A4 08                push A
+ 03A5 5073              mov A,115
+ 03A7 08                push A
+ 03A8 7C0000            xcall _TurnLeft
+ 03AB 38FE              add SP,-2
+ 03AD                   .dbline 236
+ 03AD           ;                                       kaannokset++;
+ 03AD 7615              inc [_kaannokset+1]
+ 03AF 0E1400            adc [_kaannokset],0
+ 03B2                   .dbline 237
+ 03B2           ;                                       Delay10msTimes(65);             //Voi joutua korjaamaan
+ 03B2 10                push X
+ 03B3 5041              mov A,65
+ 03B5 7C0000            xcall _Delay10msTimes
+ 03B8 20                pop X
+ 03B9                   .dbline 238
+ 03B9           ;                                       Stop();
+ 03B9 7C0000            xcall _Stop
+ 03BC                   .dbline 239
+ 03BC           ;                                       lastTurn = 2;
+ 03BC 551902            mov [_lastTurn+1],2
+ 03BF 551800            mov [_lastTurn],0
+ 03C2                   .dbline 240
+ 03C2           ;                                       once = 0;
+ 03C2 551100            mov [_once+1],0
+ 03C5 551000            mov [_once],0
+ 03C8                   .dbline 241
+ 03C8           ;                               }
+ 03C8           L47:
+ 03C8                   .dbline 242
+ 03C8           ;                               ControlServo(SERVO_MIDDLE_FROM_RIGHT);
+ 03C8 5000              mov A,0
+ 03CA 08                push A
+ 03CB 501F              mov A,31
+ 03CD 08                push A
+ 03CE 7C0000            xcall _ControlServo
+ 03D1                   .dbline 244
+ 03D1           ;                               
+ 03D1           ;                               Delay(1000);
+ 03D1 5003              mov A,3
+ 03D3 08                push A
+ 03D4 50E8              mov A,-24
+ 03D6 08                push A
+ 03D7 9153              xcall _Delay
+ 03D9 38FC              add SP,-4
+ 03DB                   .dbline 245
+ 03DB           ;                               vaihe = 1;
+ 03DB 551B01            mov [_vaihe+1],1
+ 03DE 551A00            mov [_vaihe],0
+ 03E1                   .dbline 246
+ 03E1           ;               }
+ 03E1           L44:
+ 03E1                   .dbline 249
+ 03E1           ;               
+ 03E1           ;               //Mustat miehet
+ 03E1           ;               if(kaannokset >= maxKaannokset && vaihe == 2)
+ 03E1 5115              mov A,[_kaannokset+1]
+ 03E3 1217              sub A,[_maxKaannokset+1]
+ 03E5 5116              mov A,[_maxKaannokset]
+ 03E7 3180              xor A,-128
+ 03E9 5300              mov [__rX],A
+ 03EB 5114              mov A,[_kaannokset]
+ 03ED 3180              xor A,-128
+ 03EF 1A00              sbb A,[__rX]
+ 03F1 C017              jc L48
+ 03F3           X23:
+ 03F3 3C1A00            cmp [_vaihe],0
+ 03F6 B012              jnz L48
+ 03F8 3C1B02            cmp [_vaihe+1],2
+ 03FB B00D              jnz L48
+ 03FD           X24:
+ 03FD                   .dbline 251
+ 03FD           ;               {
+ 03FD           ;                       blackLineCounter = 0;
+ 03FD                   .dbline 251
+ 03FD 550F00            mov [_blackLineCounter+1],0
+ 0400 550E00            mov [_blackLineCounter],0
+ 0403                   .dbline 252
+ 0403           ;                       vaihe = 3;
+ 0403 551B03            mov [_vaihe+1],3
+ 0406 551A00            mov [_vaihe],0
+ 0409                   .dbline 253
+ 0409           ;               }
+ 0409           L48:
+ 0409                   .dbline 258
+ 0409           ;               
+ 0409           ;               //if (vaihe == 3 && blackLineCounter > 0 && blackLineCounter <= 2) //&&vaihe == 3
+ 0409           ;                       //vaihe = 4;
+ 0409           ;               
+ 0409           ;               if (vaihe == 3)
+ 0409 3C1A00            cmp [_vaihe],0
+ 040C B033              jnz L50
+ 040E 3C1B03            cmp [_vaihe+1],3
+ 0411 B02E              jnz L50
+ 0413           X25:
+ 0413                   .dbline 260
+ 0413           ;               {
+ 0413           ;                       if (once == 0)
+ 0413                   .dbline 260
+ 0413 3C1000            cmp [_once],0
+ 0416 B01E              jnz L52
+ 0418 3C1100            cmp [_once+1],0
+ 041B B019              jnz L52
+ 041D           X26:
+ 041D                   .dbline 262
+ 041D           ;                       {       
+ 041D           ;                               once = 1;
+ 041D                   .dbline 262
+ 041D 551101            mov [_once+1],1
+ 0420 551000            mov [_once],0
+ 0423                   .dbline 263
+ 0423           ;                               MoveForward(100);
+ 0423 5000              mov A,0
+ 0425 08                push A
+ 0426 5064              mov A,100
+ 0428 08                push A
+ 0429 7C0000            xcall _MoveForward
+ 042C 38FE              add SP,-2
+ 042E                   .dbline 264
+ 042E           ;                               Delay10msTimes(5);
+ 042E 10                push X
+ 042F 5005              mov A,5
+ 0431 7C0000            xcall _Delay10msTimes
+ 0434 20                pop X
+ 0435                   .dbline 265
+ 0435           ;                       }
+ 0435           L52:
+ 0435                   .dbline 266
+ 0435           ;                       MoveForward(50);
+ 0435 5000              mov A,0
+ 0437 08                push A
+ 0438 5032              mov A,50
+ 043A 08                push A
+ 043B 7C0000            xcall _MoveForward
+ 043E 38FE              add SP,-2
+ 0440                   .dbline 267
+ 0440           ;               }
+ 0440           L50:
+ 0440                   .dbline 269
+ 0440           ;                       
+ 0440           ;               if (blackLineCounter >= 4)
+ 0440 510F              mov A,[_blackLineCounter+1]
+ 0442 1104              sub A,4
+ 0444 510E              mov A,[_blackLineCounter]
+ 0446 3180              xor A,-128
+ 0448 1980              sbb A,(0 ^ 0x80)
+ 044A C00A              jc L54
+ 044C           X27:
+ 044C                   .dbline 271
+ 044C           ;               {
+ 044C           ;                       Stop(); 
+ 044C                   .dbline 271
+ 044C 7C0000            xcall _Stop
+ 044F                   .dbline 272
+ 044F           ;                       vaihe = 5; 
+ 044F 551B05            mov [_vaihe+1],5
+ 0452 551A00            mov [_vaihe],0
+ 0455                   .dbline 273
+ 0455           ;               }
+ 0455           L54:
+ 0455                   .dbline 275
+ 0455           ;               
+ 0455           ;       }
+ 0455           L3:
+ 0455                   .dbline 81
+ 0455 8BD5              xjmp L2
+ 0457           X0:
+ 0457                   .dbline -2
+ 0457           L1:
+ 0457                   .dbline 0 ; func end
+ 0457 8FFF              jmp .
+ 0459                   .dbend
+ 0459                   .dbfunc e CheckLeft _CheckLeft fV
+ 0459           _CheckLeft::
+ 0459                   .dbline -1
+ 0459                   .dbline 279
+ 0459           ; }
+ 0459           ; 
+ 0459           ; void CheckLeft(void)
+ 0459           ; {
+ 0459                   .dbline 280
+ 0459           ;       ControlServo(SERVO_LEFT);
+ 0459 5000              mov A,0
+ 045B 08                push A
+ 045C 5032              mov A,50
+ 045E 08                push A
+ 045F 7C0000            xcall _ControlServo
+ 0462 38FE              add SP,-2
+ 0464                   .dbline 281
+ 0464           ;       Delay10msTimes(25);
+ 0464 10                push X
+ 0465 5019              mov A,25
+ 0467 7C0000            xcall _Delay10msTimes
+ 046A 20                pop X
+ 046B                   .dbline 282
+ 046B           ;       sendTrigPulse(&ultraData);
+ 046B 5024              mov A,>_ultraData
+ 046D 08                push A
+ 046E 5024              mov A,<_ultraData
+ 0470 08                push A
+ 0471 7C0000            xcall _sendTrigPulse
+ 0474 38FE              add SP,-2
+ 0476                   .dbline -2
+ 0476           L56:
+ 0476                   .dbline 0 ; func end
+ 0476 7F                ret
+ 0477                   .dbend
+ 0477                   .dbfunc e CheckRight _CheckRight fV
+ 0477           _CheckRight::
+ 0477                   .dbline -1
+ 0477                   .dbline 286
+ 0477           ; }
+ 0477           ; 
+ 0477           ; void CheckRight(void)
+ 0477           ; {
+ 0477                   .dbline 287
+ 0477           ;       ControlServo(SERVO_RIGHT);
+ 0477 5000              mov A,0
+ 0479 08                push A
+ 047A 5011              mov A,17
+ 047C 08                push A
+ 047D 7C0000            xcall _ControlServo
+ 0480 38FE              add SP,-2
+ 0482                   .dbline 288
+ 0482           ;       Delay10msTimes(25);
+ 0482 10                push X
+ 0483 5019              mov A,25
+ 0485 7C0000            xcall _Delay10msTimes
+ 0488 20                pop X
+ 0489                   .dbline 289
+ 0489           ;       sendTrigPulse(&ultraData);
+ 0489 5024              mov A,>_ultraData
+ 048B 08                push A
+ 048C 5024              mov A,<_ultraData
+ 048E 08                push A
+ 048F 7C0000            xcall _sendTrigPulse
+ 0492 38FE              add SP,-2
+ 0494                   .dbline -2
+ 0494           L57:
+ 0494                   .dbline 0 ; func end
+ 0494 7F                ret
+ 0495                   .dbend
+ 0495                   .dbfunc e TimerInterrupt _TimerInterrupt fV
+ 0495           _TimerInterrupt::
+ 0495                   .dbline -1
+ 0495                   .dbline 295
+ 0495           ; }
+ 0495           ; 
+ 0495           ; //Palauttaa eerolle millisekunnit siitä asti ku psoc on käynnistytnyt
+ 0495           ; //Kutsutaan joka 0.001s = 1ms välein.
+ 0495           ; void TimerInterrupt(void)
+ 0495           ; {
+ 0495                   .dbline 296
+ 0495           ;   timeT++;
+ 0495 7601              inc [_timeT+1]
+ 0497 0E0000            adc [_timeT],0
+ 049A                   .dbline 299
+ 049A           ;       
+ 049A           ;   //DO NOT TOUCH
+ 049A           ;   milliT++;
+ 049A 060901            add [_milliT+3],1
+ 049D 0E0800            adc [_milliT+2],0
+ 04A0 0E0700            adc [_milliT+1],0
+ 04A3 0E0600            adc [_milliT],0
+ 04A6                   .dbline 303
+ 04A6           ;       
+ 04A6           ;       //Linefinder START
+ 04A6           ;       
+ 04A6           ;       if ((LineFinder_Data_ADDR & LineFinder_MASK) && (onBlackLine == 0)) {
+ 04A6 5D00              mov A,REG[0]
+ 04A8 5300              mov [__r0],A
+ 04AA 470020            tst [__r0],32
+ 04AD A018              jz L59
+ 04AF 3C0C00            cmp [_onBlackLine],0
+ 04B2 B013              jnz L59
+ 04B4 3C0D00            cmp [_onBlackLine+1],0
+ 04B7 B00E              jnz L59
+ 04B9           X28:
+ 04B9                   .dbline 304
+ 04B9           ;               onBlackLine = 1;
+ 04B9                   .dbline 304
+ 04B9 550D01            mov [_onBlackLine+1],1
+ 04BC 550C00            mov [_onBlackLine],0
+ 04BF                   .dbline 305
+ 04BF           ;               blackLineCounter++;
+ 04BF 760F              inc [_blackLineCounter+1]
+ 04C1 0E0E00            adc [_blackLineCounter],0
+ 04C4                   .dbline 306
+ 04C4           ;       } else if (!(LineFinder_Data_ADDR & LineFinder_MASK)) { // tänne vaan jos EI olla mustalla viivalla atm
+ 04C4 8010              xjmp L60
+ 04C6           L59:
+ 04C6                   .dbline 306
+ 04C6 5D00              mov A,REG[0]
+ 04C8 5300              mov [__r0],A
+ 04CA 470020            tst [__r0],32
+ 04CD B007              jnz L61
+ 04CF                   .dbline 307
+ 04CF           ;               onBlackLine = 0;
+ 04CF                   .dbline 307
+ 04CF 550D00            mov [_onBlackLine+1],0
+ 04D2 550C00            mov [_onBlackLine],0
+ 04D5                   .dbline 308
+ 04D5           ;       }
+ 04D5           L61:
+ 04D5           L60:
+ 04D5                   .dbline -2
+ 04D5           L58:
+ 04D5                   .dbline 0 ; func end
+ 04D5 7F                ret
+ 04D6                   .dbend
+ 04D6                   .dbfunc e CounterISR _CounterISR fV
+ 04D6           _CounterISR::
+ 04D6                   .dbline -1
+ 04D6                   .dbline 316
+ 04D6           ;       //LineFinder STOP
+ 04D6           ; }
+ 04D6           ; 
+ 04D6           ; 
+ 04D6           ; 
+ 04D6           ; //Counter INTERRUPT
+ 04D6           ; void CounterISR(void)
+ 04D6           ; {
+ 04D6                   .dbline 317
+ 04D6           ;       ultraData++;
+ 04D6 7625              inc [_ultraData+1]
+ 04D8 0E2400            adc [_ultraData],0
+ 04DB                   .dbline -2
+ 04DB           L63:
+ 04DB                   .dbline 0 ; func end
+ 04DB 7F                ret
+ 04DC                   .dbend
+ 04DC                   .dbfunc e PinInterrupt _PinInterrupt fV
+ 04DC           _PinInterrupt::
+ 04DC                   .dbline -1
+ 04DC 08                push A
+ 04DD                   .dbline 321
+ 04DD           ; }
+ 04DD           ; 
+ 04DD           ; // Pin interrupt
+ 04DD           ; void PinInterrupt(void){}
+ 04DD                   .dbline -2
+ 04DD           L64:
+ 04DD 18                pop A
+ 04DE                   .dbline 0 ; func end
+ 04DE 7E                reti
+ 04DF                   .dbend
+ 04DF                   .dbfunc e TestLoop _TestLoop fV
+ 04DF           _TestLoop::
+ 04DF                   .dbline -1
+ 04DF                   .dbline 329
+ 04DF           ; 
+ 04DF           ; 
+ 04DF           ; 
+ 04DF           ; 
+ 04DF           ; 
+ 04DF           ; //For Testing
+ 04DF           ; void TestLoop(void)
+ 04DF           ; {
+ 04DF 8049              xjmp L67
+ 04E1           L66:
+ 04E1                   .dbline 331
+ 04E1           ;       while(1)
+ 04E1           ;       {       
+ 04E1                   .dbline 332
+ 04E1           ;               ControlServo(SERVO_LEFT);
+ 04E1 5000              mov A,0
+ 04E3 08                push A
+ 04E4 5032              mov A,50
+ 04E6 08                push A
+ 04E7 7C0000            xcall _ControlServo
+ 04EA 38FE              add SP,-2
+ 04EC                   .dbline 333
+ 04EC           ;               Delay10msTimes(250);
+ 04EC 10                push X
+ 04ED 50FA              mov A,-6
+ 04EF 7C0000            xcall _Delay10msTimes
+ 04F2 20                pop X
+ 04F3                   .dbline 334
+ 04F3           ;               ControlServo(SERVO_MIDDLE_FROM_LEFT);
+ 04F3 5000              mov A,0
+ 04F5 08                push A
+ 04F6 5022              mov A,34
+ 04F8 08                push A
+ 04F9 7C0000            xcall _ControlServo
+ 04FC 38FE              add SP,-2
+ 04FE                   .dbline 335
+ 04FE           ;               Delay10msTimes(250);
+ 04FE 10                push X
+ 04FF 50FA              mov A,-6
+ 0501 7C0000            xcall _Delay10msTimes
+ 0504 20                pop X
+ 0505                   .dbline 336
+ 0505           ;               ControlServo(SERVO_RIGHT);
+ 0505 5000              mov A,0
+ 0507 08                push A
+ 0508 5011              mov A,17
+ 050A 08                push A
+ 050B 7C0000            xcall _ControlServo
+ 050E 38FE              add SP,-2
+ 0510                   .dbline 337
+ 0510           ;               Delay10msTimes(250);
+ 0510 10                push X
+ 0511 50FA              mov A,-6
+ 0513 7C0000            xcall _Delay10msTimes
+ 0516 20                pop X
+ 0517                   .dbline 338
+ 0517           ;               ControlServo(SERVO_MIDDLE_FROM_RIGHT);
+ 0517 5000              mov A,0
+ 0519 08                push A
+ 051A 501F              mov A,31
+ 051C 08                push A
+ 051D 7C0000            xcall _ControlServo
+ 0520 38FE              add SP,-2
+ 0522                   .dbline 339
+ 0522           ;               Delay10msTimes(250);            
+ 0522 10                push X
+ 0523 50FA              mov A,-6
+ 0525 7C0000            xcall _Delay10msTimes
+ 0528 20                pop X
+ 0529                   .dbline 365
+ 0529           ;               
+ 0529           ;               
+ 0529           ;               
+ 0529           ; //            TurnRight(TURN_SPEED);
+ 0529           ; //            Delay10msTimes(75);
+ 0529           ; //            
+ 0529           ; //            Stop();
+ 0529           ; //            Delay10msTimes(250);
+ 0529           ; //            
+ 0529           ; //            TurnLeft(TURN_SPEED);
+ 0529           ; //            Delay10msTimes(75);
+ 0529           ; //            
+ 0529           ; //            Stop();
+ 0529           ; //            Delay10msTimes(250);
+ 0529           ;               
+ 0529           ;               /*sendTrigPulse(&ultraData);
+ 0529           ;               
+ 0529           ;               distanceCM = ultraData * 2;             
+ 0529           ;       
+ 0529           ;               itoa(buffer,distanceCM,10);
+ 0529           ;               LCD_Position(0,0);
+ 0529           ;               LCD_PrCString("     ");
+ 0529           ;               LCD_Position(0,0);
+ 0529           ;               LCD_PrString(buffer);
+ 0529           ;               */              
+ 0529           ;       }
+ 0529           L67:
+ 0529                   .dbline 330
+ 0529 8FB7              xjmp L66
+ 052B           X29:
+ 052B                   .dbline -2
+ 052B           L65:
+ 052B                   .dbline 0 ; func end
+ 052B 7F                ret
+ 052C                   .dbend
+ 052C                   .dbfunc e Delay _Delay fV
+ 052C           ;          timme -> X+0
+ 052C           ;          delay -> X-5
+ 052C           _Delay::
+ 052C                   .dbline -1
+ 052C 10                push X
+ 052D 4F                mov X,SP
+ 052E 3804              add SP,4
+ 0530                   .dbline 370
+ 0530           ; }
+ 0530           ; 
+ 0530           ; ////OMA Delay function 
+ 0530           ; void Delay(int delay)
+ 0530           ; {
+ 0530                   .dbline 371
+ 0530           ;       unsigned long int timme = milliT + delay;
+ 0530 52FC              mov A,[X-4]
+ 0532 5300              mov [__r3],A
+ 0534 52FB              mov A,[X-5]
+ 0536 5300              mov [__r2],A
+ 0538 470080            tst [__r2],-128
+ 053B A009              jz X30
+ 053D 5500FF            mov [__r1],-1
+ 0540 5500FF            mov [__r0],-1
+ 0543 8007              jmp X31
+ 0545           X30:
+ 0545 550000            mov [__r1],0
+ 0548 550000            mov [__r0],0
+ 054B           X31:
+ 054B 5109              mov A,[_milliT+3]
+ 054D 0200              add A,[__r3]
+ 054F 5403              mov [X+3],A
+ 0551 5108              mov A,[_milliT+2]
+ 0553 0A00              adc A,[__r2]
+ 0555 5402              mov [X+2],A
+ 0557 5107              mov A,[_milliT+1]
+ 0559 0A00              adc A,[__r1]
+ 055B 5401              mov [X+1],A
+ 055D 5106              mov A,[_milliT]
+ 055F 0A00              adc A,[__r0]
+ 0561 5400              mov [X+0],A
+ 0563           L70:
+ 0563                   .dbline 372
+ 0563           ;       while (milliT < timme){}
+ 0563                   .dbline 372
+ 0563           L71:
+ 0563                   .dbline 372
+ 0563 5109              mov A,[_milliT+3]
+ 0565 1303              sub A,[X+3]
+ 0567 5108              mov A,[_milliT+2]
+ 0569 1B02              sbb A,[X+2]
+ 056B 5107              mov A,[_milliT+1]
+ 056D 1B01              sbb A,[X+1]
+ 056F 5106              mov A,[_milliT]
+ 0571 1B00              sbb A,[X+0]
+ 0573 CFEF              jc L70
+ 0575           X32:
+ 0575                   .dbline -2
+ 0575           L69:
+ 0575 38FC              add SP,-4
+ 0577 20                pop X
+ 0578                   .dbline 0 ; func end
+ 0578 7F                ret
+ 0579                   .dbsym l timme 0 l
+ 0579                   .dbsym l delay -5 I
+ 0579                   .dbend
                         .area bss(ram, con, rel)
  0000                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000           _right::

@@ -33,7 +33,8 @@ char buffer[10];
 
 // Linefinder test
 volatile int onBlackLine = 0, blackLineCounter = 0;
-
+int once = 0;
+int temp = 0;
 int kaannokset = 0;
 int maxKaannokset = 3; //Voi joutua korjaamaan
 int lastTurn = 1; // muuttuja jolla pidetään kirjaa viimesimmästä käännöksestä. 1 = oikea ja 2 = vasen.
@@ -79,14 +80,15 @@ void main(void)
 	//***********************
 	while(1)
 	{
-		itoa(buffer, vaihe, 10);
-		LCD_Position(1,0);
-		LCD_PrString(buffer);
 		
-		itoa(buffer, distanceCM, 10);
+		itoa(buffer, etaisyysSeinasta, 10);
 		LCD_Position(0,0);
 		LCD_PrString(buffer);		
 		LCD_PrCString("          ");
+		
+		itoa(buffer, vaihe, 10);
+		LCD_Position(1,0);
+		LCD_PrString(buffer);
 		
 		// Eteenpäin ajo vaihe, ajetaan eteenpäin niin pitkään kunnes ollaan 20cm päästä seinästä.
 		if( vaihe == 1 )
@@ -109,49 +111,100 @@ void main(void)
 				}
 				etaisyysSeinasta = ultraData * 2;
 				Delay10msTimes(20);
-			
 				
-				if (etaisyysSeinasta < 12)
+				if (temp == 0)
+				{
+					temp = etaisyysSeinasta; //koodi joka korjaisi vasta jos ajetaan vinossa seinää kohti.
+				}	
+				
+				if (etaisyysSeinasta < 14)
 				{					
 					if (lastTurn == 1)
-					{
-						//Lähinseinä oikea
-						
+					{	
+						if (temp >= etaisyysSeinasta)
+						{	
+							//Lähinseinä oikea
+							TurnRight(TURN_SPEED);
+							Delay10msTimes(8);
+							MoveForward2(100, 0, 1);
+							Delay10msTimes(20);
+							temp = 0;
+						}	
 					}
-					else 
+					else if (lastTurn == 2)
 					{
-						//Lähinseinä vasen
-						
+						if (temp >= etaisyysSeinasta)
+						{	
+							//Lähinseinä vasen
+							TurnLeft(TURN_SPEED);
+							Delay10msTimes(8);
+							MoveForward2(100, 1, 0);
+							Delay10msTimes(20);
+							temp = 0;
+						}	
 					}
 					
-					MoveForward(HALF_SPEED);
+					if (once == 0)
+					{	
+						once = 1;
+						MoveForward(100);
+						Delay10msTimes(5);
+					}
+					MoveForward(50);
+					
+					//MoveForward(HALF_SPEED);
 				}
-				else if (etaisyysSeinasta > 28)
+				else if (etaisyysSeinasta > 20)
 				{
 					if (lastTurn == 1)
 					{
-						//kauempi seinä vasen
-						
+						if (temp <= etaisyysSeinasta)
+						{	
+							//kauempi seinä vasen
+							TurnLeft(TURN_SPEED);
+							Delay10msTimes(8);
+							MoveForward2(100, 1, 0);
+							Delay10msTimes(20);
+							temp = 0;
+						}	
 					}
-					else 
+					else if (lastTurn == 2)
 					{
-						//kauempi seinä oikea
-						
+						if (temp <= etaisyysSeinasta)
+						{	
+							//kauempi seinä oikea
+
+							TurnRight(TURN_SPEED);						
+							Delay10msTimes(8);
+							MoveForward2(100, 0, 1);
+							Delay10msTimes(20);
+							temp = 0;
+						}	
 					}
+					if (once == 0)
+					{	
+						once = 1;
+						MoveForward(100);
+						Delay10msTimes(5);
+					}
+					MoveForward(50);
 					
-					
-					MoveForward(HALF_SPEED);
+					//MoveForward(HALF_SPEED);
 				}
 				else 
 				{
-					//MoveForward(HALF_SPEED);
-					//Delay10msTimes(5);
-					MoveForward(HALF_SPEED);
+					if (once == 0)
+					{	
+						once = 1;
+						MoveForward(100);
+						Delay10msTimes(5);
+					}
+					MoveForward(50);
 				}
 			}
-			else if (distanceCM < 60 && distanceCM > 30)
+			else if (distanceCM < 60 && distanceCM > 20) // Tarkastus kuinka kauas seinästä pysähdytään
 			{
-				MoveForward(SLOW_SPEED);
+				MoveForward(50);
 			}				
 			else 
 			{
@@ -171,18 +224,20 @@ void main(void)
 				{	//turn right
 					TurnRight(TURN_SPEED);
 					kaannokset++;
-					Delay10msTimes(40);		//Voi joutua korjaamaan
+					Delay10msTimes(65);		//Voi joutua korjaamaan
 					Stop();
 					lastTurn = 1;
+					once = 0;
 				}
 				else 
 				{
 					//turnlefti
 					TurnLeft(TURN_SPEED);
 					kaannokset++;
-					Delay10msTimes(40);		//Voi joutua korjaamaan
+					Delay10msTimes(65);		//Voi joutua korjaamaan
 					Stop();
 					lastTurn = 2;
+					once = 0;
 				}
 				ControlServo(SERVO_MIDDLE_FROM_RIGHT);
 				
@@ -191,19 +246,27 @@ void main(void)
 		}
 		
 		//Mustat miehet
-		if(kaannokset > maxKaannokset)
+		if(kaannokset >= maxKaannokset && vaihe == 2)
 		{
 			blackLineCounter = 0;
 			vaihe = 3;
 		}
 		
-		if (vaihe == 3 && blackLineCounter > 0)
-			vaihe = 4;
+		//if (vaihe == 3 && blackLineCounter > 0 && blackLineCounter <= 2) //&&vaihe == 3
+			//vaihe = 4;
 		
-		if (vaihe == 4)
-			MoveForward(SLOW_SPEED);
-		
-		if (blackLineCounter >= 3)
+		if (vaihe == 3)
+		{
+			if (once == 0)
+			{	
+				once = 1;
+				MoveForward(100);
+				Delay10msTimes(5);
+			}
+			MoveForward(50);
+		}
+			
+		if (blackLineCounter >= 4)
 		{
 			Stop(); 
 			vaihe = 5; 
