@@ -5559,7 +5559,7 @@ _main:
 (0246) 		}
 (0247) 		
 (0248) 		//Mustat miehet
-(0249) 		if(kaannokset >= maxKaannokset && vaihe == 2)
+(0249) 		if(kaannokset >= maxKaannokset && vaihe == 1)
     0C60: 51 15    MOV   A,[kaannokset+1]
     0C62: 12 17    SUB   A,[maxKaannokset+1]
     0C64: 51 16    MOV   A,[maxKaannokset]
@@ -5571,7 +5571,7 @@ _main:
     0C70: C0 17    JC    0x0C88
     0C72: 3C 1A 00 CMP   [vaihe],0x0
     0C75: B0 12    JNZ   0x0C88
-    0C77: 3C 1B 02 CMP   [vaihe+1],0x2
+    0C77: 3C 1B 01 CMP   [vaihe+1],0x1
     0C7A: B0 0D    JNZ   0x0C88
 (0250) 		{
 (0251) 			blackLineCounter = 0;
@@ -5587,9 +5587,9 @@ _main:
 (0257) 		
 (0258) 		if (vaihe == 3)
     0C88: 3C 1A 00 CMP   [vaihe],0x0
-    0C8B: B0 33    JNZ   0x0CBF
+    0C8B: B0 48    JNZ   0x0CD4
     0C8D: 3C 1B 03 CMP   [vaihe+1],0x3
-    0C90: B0 2E    JNZ   0x0CBF
+    0C90: B0 43    JNZ   0x0CD4
 (0259) 		{
 (0260) 			if (once == 0)
     0C92: 3C 10 00 CMP   [once],0x0
@@ -5620,21 +5620,21 @@ _main:
     0CB9: 08       PUSH  A
     0CBA: 7C 0E 01 LCALL _MoveForward
     0CBD: 38 FE    ADD   SP,0xFE
-(0267) 		}
-(0268) 			
-(0269) 		if (blackLineCounter >= 4)
+(0267) 		
+(0268) 			if (blackLineCounter >= 4)
     0CBF: 51 0F    MOV   A,[blackLineCounter+1]
     0CC1: 11 04    SUB   A,0x4
     0CC3: 51 0E    MOV   A,[blackLineCounter]
     0CC5: 31 80    XOR   A,0x80
     0CC7: 19 80    SBB   A,0x80
     0CC9: C0 0A    JC    0x0CD4
-(0270) 		{
-(0271) 			Stop(); 
+(0269) 			{
+(0270) 				Stop(); 
     0CCB: 7C 12 6E LCALL _Stop
-(0272) 			vaihe = 5; 
+(0271) 				vaihe = 5; 
     0CCE: 55 1B 05 MOV   [vaihe+1],0x5
     0CD1: 55 1A 00 MOV   [vaihe],0x0
+(0272) 			}
 (0273) 		}
 (0274) 		
 (0275) 	}

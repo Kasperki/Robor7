@@ -246,7 +246,7 @@ void main(void)
 		}
 		
 		//Mustat miehet
-		if(kaannokset >= maxKaannokset && vaihe == 2)
+		if(kaannokset >= maxKaannokset && vaihe == 1)
 		{
 			blackLineCounter = 0;
 			vaihe = 3;
@@ -264,12 +264,12 @@ void main(void)
 				Delay10msTimes(5);
 			}
 			MoveForward(50);
-		}
-			
-		if (blackLineCounter >= 4)
-		{
-			Stop(); 
-			vaihe = 5; 
+		
+			if (blackLineCounter >= 4)
+			{
+				Stop(); 
+				vaihe = 5; 
+			}
 		}
 		
 	}

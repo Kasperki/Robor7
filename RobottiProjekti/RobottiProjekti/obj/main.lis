@@ -1084,7 +1084,7 @@
  03E1                   .dbline 249
  03E1           ;               
  03E1           ;               //Mustat miehet
- 03E1           ;               if(kaannokset >= maxKaannokset && vaihe == 2)
+ 03E1           ;               if(kaannokset >= maxKaannokset && vaihe == 1)
  03E1 5115              mov A,[_kaannokset+1]
  03E3 1217              sub A,[_maxKaannokset+1]
  03E5 5116              mov A,[_maxKaannokset]
@@ -1097,7 +1097,7 @@
  03F3           X23:
  03F3 3C1A00            cmp [_vaihe],0
  03F6 B012              jnz L48
- 03F8 3C1B02            cmp [_vaihe+1],2
+ 03F8 3C1B01            cmp [_vaihe+1],1
  03FB B00D              jnz L48
  03FD           X24:
  03FD                   .dbline 251
@@ -1120,9 +1120,9 @@
  0409           ;               
  0409           ;               if (vaihe == 3)
  0409 3C1A00            cmp [_vaihe],0
- 040C B033              jnz L50
+ 040C B048              jnz L50
  040E 3C1B03            cmp [_vaihe+1],3
- 0411 B02E              jnz L50
+ 0411 B043              jnz L50
  0413           X25:
  0413                   .dbline 260
  0413           ;               {
@@ -1164,12 +1164,9 @@
  043A 08                push A
  043B 7C0000            xcall _MoveForward
  043E 38FE              add SP,-2
- 0440                   .dbline 267
- 0440           ;               }
- 0440           L50:
- 0440                   .dbline 269
- 0440           ;                       
- 0440           ;               if (blackLineCounter >= 4)
+ 0440                   .dbline 268
+ 0440           ;               
+ 0440           ;                       if (blackLineCounter >= 4)
  0440 510F              mov A,[_blackLineCounter+1]
  0442 1104              sub A,4
  0444 510E              mov A,[_blackLineCounter]
@@ -1177,18 +1174,21 @@
  0448 1980              sbb A,(0 ^ 0x80)
  044A C00A              jc L54
  044C           X27:
- 044C                   .dbline 271
- 044C           ;               {
- 044C           ;                       Stop(); 
- 044C                   .dbline 271
+ 044C                   .dbline 270
+ 044C           ;                       {
+ 044C           ;                               Stop(); 
+ 044C                   .dbline 270
  044C 7C0000            xcall _Stop
- 044F                   .dbline 272
- 044F           ;                       vaihe = 5; 
+ 044F                   .dbline 271
+ 044F           ;                               vaihe = 5; 
  044F 551B05            mov [_vaihe+1],5
  0452 551A00            mov [_vaihe],0
+ 0455                   .dbline 272
+ 0455           ;                       }
+ 0455           L54:
  0455                   .dbline 273
  0455           ;               }
- 0455           L54:
+ 0455           L50:
  0455                   .dbline 275
  0455           ;               
  0455           ;       }
