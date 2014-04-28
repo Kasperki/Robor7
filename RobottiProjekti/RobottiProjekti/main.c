@@ -63,8 +63,32 @@ void main(void)
 	//***********************
 	while(1)
 	{
-		uartBuf = UART_1_cGetChar();
+		//TATTI OHJAUS
+		//int i = 0;
+		//for(i = 0; i < 8; i++)
+			//strPtr[i] = UART_1_cGetChar();
 		
+		//Parse
+		//for(int i = 0; i < 4; i++) X
+		//1083 -> 0.83f
+		//if(x < 0) xAbs = x * -1;
+		
+		//for(int i = 4; i < 8; i++) Y
+		//0023 -> -0.23f
+		//if(y < 0) yAbs = y * -1;
+		
+		//if(xAbs > yAbs)
+			//Käännytään
+			//if(x>0)
+				//TurnRight(x)
+			//else
+				//TurnLeft(x);
+		//else
+			//Suoraan -> Taakse
+		
+		
+		//EZ
+		uartBuf = UART_1_cGetChar();
 		
 		if (uartBuf == 0x31)
 		{
@@ -88,6 +112,7 @@ void main(void)
 		
 		LCD_Position(0,0);
 		LCD_PrHexByte(uartBuf);
+		//LCD_PrString(strPtr);
 	}
 }
 

@@ -1,6 +1,6 @@
 Project:      output/RobottiProjekti
 Build Number: 0
-Date:         Mon Apr 28 13:00:34 2014
+Date:         Mon Apr 28 13:31:55 2014
 Compiler:     ICCM8C
 Version:      7.05.00
 
@@ -191,7 +191,7 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                            text   0847   0A09 =   2569. bytes (rel,con,rom,code)
+                            text   0847   0A57 =   2647. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
@@ -204,23 +204,23 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
        0862  _Delay50u
        0862  Delay50u
        0876  _main
-       08BB  _PinInterrupt
-       08BE  _TestLoop
-       08C1  _Delay
-       090E  _InitPWM
-       0917  _MoveForward
-       0A38  _MoveForward2
-       0C63  _MoveBackward
-       0D84  _Stop
-       0D94  _TurnLeft
-       0DAC  _TurnRight
-       0DC4  _TestTurnLeft
-       0DDC  _InitUAServo
-       0DDD  _getDataUA
-       0DE4  _ControlTrigger
-       0E2A  _sendTrigPulse
-       0E4A  PSoC_GPIO_ISR
-       1250  __text_end
+       0909  _PinInterrupt
+       090C  _TestLoop
+       090F  _Delay
+       095C  _InitPWM
+       0965  _MoveForward
+       0A86  _MoveForward2
+       0CB1  _MoveBackward
+       0DD2  _Stop
+       0DE2  _TurnLeft
+       0DFA  _TurnRight
+       0E12  _TestTurnLeft
+       0E2A  _InitUAServo
+       0E2B  _getDataUA
+       0E32  _ControlTrigger
+       0E78  _sendTrigPulse
+       0E98  PSoC_GPIO_ISR
+       129E  __text_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------

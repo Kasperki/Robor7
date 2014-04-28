@@ -10,8 +10,8 @@
 			<SOURCE_FILE_LIST>
 				<SOURCE_FILE NAME="main.c" TYPE="UserSourceModule" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="flashsecurity.txt" TYPE="TextFile" LANGUAGE="" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
-				<SOURCE_FILE NAME="psocapi.h" TYPE="LibraryIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="223518896" LIBTIME="1"/>
-				<SOURCE_FILE NAME="psocapi.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="223518896" LIBTIME="3"/>
+				<SOURCE_FILE NAME="psocapi.h" TYPE="LibraryIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="232685904" LIBTIME="1"/>
+				<SOURCE_FILE NAME="psocapi.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="232685904" LIBTIME="3"/>
 				<SOURCE_FILE NAME="memory.inc" TYPE="UserIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="motorcontrol.c" TYPE="UserSourceModule" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="motorcontrol.h" TYPE="UserIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
@@ -20,6 +20,162 @@
 				<SOURCE_FILE NAME="delay.asm" TYPE="UserSourceModule" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE="[SOCDIR]\Source Files"/>
 				<SOURCE_FILE NAME="delay.h" TYPE="UserIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE="[SOCDIR]\Header Files"/>
 				<SOURCE_FILE NAME="psocgpioint.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="153608800" LIBTIME="179893118"/>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				

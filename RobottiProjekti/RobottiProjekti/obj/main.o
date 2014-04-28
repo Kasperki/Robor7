@@ -1,23 +1,29 @@
 XH
-H 4 areas 17 global symbols
+H 4 areas 1C global symbols
 M main.c
+S _Stop Ref0000
+S _TurnRight Ref0000
 S _LCD_PrHexByte Ref0000
+S _MoveBackward Ref0000
 S __r0 Ref0000
 S __r1 Ref0000
 S __r2 Ref0000
 S __r3 Ref0000
 S _UART_1_cGetChar Ref0000
 S _Delay10msTimes Ref0000
+S _TurnLeft Ref0000
 S _InitUAServo Ref0000
 S _UART_1_Start Ref0000
 S _LCD_Start Ref0000
 S _UART_1_CmdReset Ref0000
+S _MoveForward Ref0000
 S _LCD_Position Ref0000
 S _InitPWM Ref0000
-A text size 98 flags 0
+A text size E6 flags 0
 dbfile ./main.c
 dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
 dbfunc e main 0 fV
+dbsym l i 3 I
 dbsym l strPtr 1 pc
 dbsym l uartBuf 0 c
 dbline FFFFFFFF 0
@@ -31,41 +37,60 @@ dbline 34 18
 dbline 37 1B
 dbline 39 1E
 dbline 41 27
-dbline 59 27
-dbline 5C 2E
-dbline 5D 37
-dbline 5E 3E
-dbline 40 3E
-dbline FFFFFFFE 40
-dbline 0 43
-dbfunc e PinInterrupt 45 fV
-dbline FFFFFFFF 45
-dbline 63 46
-dbline FFFFFFFE 46
-dbline 0 47
-dbfunc e TestLoop 48 fV
-dbline FFFFFFFF 48
-dbline 68 48
-dbline 6A 48
-dbline 7A 48
-dbline 69 48
-dbline FFFFFFFE 4A
-dbline 0 4A
-dbfunc e Delay 4B fV
+dbline 42 27
+dbline 46 2D
+dbline 48 34
+dbline 4A 39
+dbline 4A 39
+dbline 4B 44
+dbline 4C 44
+dbline 4E 49
+dbline 4E 49
+dbline 4F 54
+dbline 50 54
+dbline 52 59
+dbline 52 59
+dbline 53 64
+dbline 54 64
+dbline 56 69
+dbline 56 69
+dbline 57 74
+dbline 58 74
+dbline 59 79
+dbline 5C 7C
+dbline 5D 85
+dbline 5F 8C
+dbline 40 8C
+dbline FFFFFFFE 8E
+dbline 0 91
+dbfunc e PinInterrupt 93 fV
+dbline FFFFFFFF 93
+dbline 64 94
+dbline FFFFFFFE 94
+dbline 0 95
+dbfunc e TestLoop 96 fV
+dbline FFFFFFFF 96
+dbline 69 96
+dbline 6B 96
+dbline 7B 96
+dbline 6A 96
+dbline FFFFFFFE 98
+dbline 0 98
+dbfunc e Delay 99 fV
 dbsym l timme 0 l
 dbsym l delay FFFFFFFB I
-dbline FFFFFFFF 4B
-dbline 7F 4F
-dbline 80 4F
-dbline 81 82
-dbline 81 82
-dbline 81 82
-dbline FFFFFFFE 94
-dbline 0 97
+dbline FFFFFFFF 99
+dbline 80 9D
+dbline 81 9D
+dbline 82 D0
+dbline 82 D0
+dbline 82 D0
+dbline FFFFFFFE E2
+dbline 0 E5
 S _main Def0000
-S _Delay Def004B
-S _PinInterrupt Def0045
-S _TestLoop Def0048
+S _Delay Def0099
+S _PinInterrupt Def0093
+S _TestLoop Def0096
 A data size C flags 20
 dbfile ./main.c
 dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
@@ -94,29 +119,41 @@ T 00 06 00 00 00 00
 R 00 00 00 02
 T 00 0A 00 00
 R 00 00 00 02
-T 00 00 10 4F 38 03 10 7C 00 00 50 00 7C 00 00 20
-R 00 00 00 00 02 08 00 0A 02 0D 00 08
+T 00 00 10 4F 38 05 10 7C 00 00 50 00 7C 00 00 20
+R 00 00 00 00 02 08 00 0E 02 0D 00 0C
 T 00 0E 71 01 43 E0 20 10 7C 00 00 20 7C 00 00 7C
-R 00 00 00 00 02 09 00 09 02 0D 00 0C
-T 00 1C 00 00 10 50 64 7C 00 00 20 80 18 10 7C
-R 00 00 00 00 02 02 00 07 02 08 00 06
-T 00 29 00 00 20 54 00 10 50 00 57 00 7C 00 00 20
-R 00 00 00 00 02 02 00 05 02 0D 00 0B
-T 00 37 10 52 00 7C 00 00 20 8F E8 38 FD 20 8F FF
-R 00 00 00 00 02 06 00 00
-T 00 45 08 18 7E 8F FF 7F 10 4F 38 04 52 FC 53
+R 00 00 00 00 02 09 00 0D 02 0D 00 11
+T 00 1C 00 00 10 50 64 7C 00 00 20 80 66 56 04 00
+R 00 00 00 00 02 02 00 0B 02 08 00 09
+T 00 2A 56 03 00 10 7C 00 00 20 54 00 3D 00 31 B0
+R 00 00 00 00 02 07 00 08
+T 00 38 0C 50 00 08 50 C7 08 7C 00 00 38 FE 3D 00
+R 00 00 00 00 02 0A 00 0F
+T 00 46 32 B0 0C 50 00 08 50 C7 08 7C 00 00 38 FE
+R 00 00 00 00 02 0C 00 01
+T 00 54 3D 00 33 B0 0C 50 00 08 50 C7 08 7C 00 00
+R 00 00 00 00 02 0E 00 03
+T 00 62 38 FE 3D 00 34 B0 0C 50 00 08 50 C7 08 7C
 R 00 00 00 00
-T 00 52 00 00 52 FB 53 00 00 47 00 00 80 A0 09 55
-R 00 00 00 00 03 02 00 04 03 07 00 03 03 0A 00 03
-T 00 5D 00 00 FF 55 00 00 FF 80 07 55 00 00 00 55
-R 00 00 00 00 03 02 00 02 03 06 00 01 03 0C 00 02
-T 00 68 00 00 00 51 00 09 02 00 00 54 03 51
-R 00 00 00 00 03 02 00 01 01 06 00 01 03 09 00 04
-T 00 71 00 08 0A 00 00 54 02 51 00 07 0A
-R 00 00 00 00 01 02 00 01 03 05 00 03 01 0A 00 01
-T 00 79 00 00 54 01 51 00 06 0A 00 00 54 00 51
-R 00 00 00 00 03 02 00 02 01 07 00 01 03 0A 00 01
-T 00 83 00 09 13 03 51 00 08 1B 02 51 00 07 1B 01
-R 00 00 00 00 01 02 00 01 01 07 00 01 01 0C 00 01
-T 00 8E 51 00 06 1B 00 CF EF 38 FC 20 7F
-R 00 00 00 00 01 03 00 01
+T 00 70 00 00 38 FE 3D 00 30 B0 04 7C 00 00 10 50
+R 00 00 00 00 02 02 00 0A 02 0C 00 00
+T 00 7E 00 57 00 7C 00 00 20 10 52 00 7C 00 00 20
+R 00 00 00 00 02 06 00 10 02 0D 00 02
+T 00 8C 8F 9A 38 FB 20 8F FF 08 18 7E 8F FF 7F 10
+R 00 00 00 00
+T 00 9A 4F 38 04 52 FC 53 00 00 52 FB 53 00 00 47
+R 00 00 00 00 03 08 00 07 03 0D 00 06
+T 00 A6 00 00 80 A0 09 55 00 00 FF 55 00 00 FF 80
+R 00 00 00 00 03 02 00 06 03 08 00 05 03 0C 00 04
+T 00 B1 07 55 00 00 00 55 00 00 00 51 00 09 02
+R 00 00 00 00 03 04 00 05 03 08 00 04 01 0C 00 01
+T 00 BB 00 00 54 03 51 00 08 0A 00 00 54 02 51
+R 00 00 00 00 03 02 00 07 01 07 00 01 03 0A 00 06
+T 00 C5 00 07 0A 00 00 54 01 51 00 06 0A
+R 00 00 00 00 01 02 00 01 03 05 00 05 01 0A 00 01
+T 00 CD 00 00 54 00 51 00 09 13 03 51 00 08 1B 02
+R 00 00 00 00 03 02 00 04 01 07 00 01 01 0C 00 01
+T 00 D8 51 00 07 1B 01 51 00 06 1B 00 CF EF 38 FC
+R 00 00 00 00 01 03 00 01 01 08 00 01
+T 00 E4 20 7F
+R 00 00 00 00
