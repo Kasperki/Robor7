@@ -16,8 +16,7 @@ float distanceToCm = 0.033f;
 //Init PGA AND ADC
 void InitUAServo(void)
 {
-	PWM8_SERVO_Start();
-	PWM8_SERVO_WritePulseWidth(33);
+
 }
 
 
@@ -61,8 +60,3 @@ void sendTrigPulse(int *ultraData)
 	Delay10msTimes(7);
 }	
 
-//Control PWM to move sensor
-void ControlServo(int pulse)
-{
-	PWM8_SERVO_WritePulseWidth((BYTE)pulse);	
-}

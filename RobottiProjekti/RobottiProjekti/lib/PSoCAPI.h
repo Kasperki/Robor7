@@ -18,12 +18,10 @@
 #define __PSOCAPI_H
 
 #include "PSoCGPIOINT.h"
-#include "Counter16_1.h"
 #include "LCD.h"
 #include "LED.h"
 #include "PWM8_OIKEA.h"
-#include "PWM8_SERVO.h"
 #include "PWM8_VASEN.h"
-#include "Timer8.h"
+#include "UART_1.h"
 
 #endif

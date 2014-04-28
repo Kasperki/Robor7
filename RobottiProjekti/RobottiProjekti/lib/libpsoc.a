@@ -1,252 +1,528 @@
 .start
 XH
-H 3 areas 11 global symbols
-M timer8int.asm
-S _TimerInterrupt Ref0000
-S __r0 Ref0000
-S __r1 Ref0000
-S __r2 Ref0000
-S __r3 Ref0000
-S __r4 Ref0000
-S __r5 Ref0000
-S __r6 Ref0000
-S __r7 Ref0000
-S __r8 Ref0000
-S __r9 Ref0000
-S __rX Ref0000
-S __rY Ref0000
-S __rZ Ref0000
-S __r10 Ref0000
-S __r11 Ref0000
+H 1 areas 0 global symbols
+M uart_1plus.asm
 A text size 0 flags 0
-dbfile lib/timer8int.asm
-dbfunc 0 ? 0 I
-dbfile Timer8.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/Timer8.inc
-dbfunc 0 ? 0 I
-dbfile lib/timer8int.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/timer8int.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A InterruptRAM size 0 flags 20
-A UserModules size 60 flags 0
-dbfile lib/timer8int.asm
-dbfunc 0 ? 0 I
-dbline 3 0
-dbline 9 1
-dbline A 3
-dbline B 4
-dbline C 6
-dbline D 7
-dbline E 9
-dbline F A
-dbline 10 C
-dbline 11 D
-dbline 12 F
-dbline 13 10
-dbline 14 12
-dbline 15 13
-dbline 16 15
-dbline 17 16
-dbline 18 18
-dbline 19 19
-dbline 1A 1B
-dbline 1B 1C
-dbline 1C 1E
-dbline 1D 1F
-dbline 1E 21
-dbline 1F 22
-dbline 20 24
-dbline 21 25
-dbline 22 27
-dbline 23 28
-dbline 24 2A
-dbline 25 2B
-dbline 26 2D
-dbline 51 2E
-dbline 7 31
-dbline 8 32
-dbline 9 34
-dbline A 35
-dbline B 37
-dbline C 38
-dbline D 3A
-dbline E 3B
-dbline F 3D
-dbline 10 3E
-dbline 11 40
-dbline 12 41
-dbline 13 43
-dbline 14 44
-dbline 15 46
-dbline 16 47
-dbline 17 49
-dbline 18 4A
-dbline 19 4C
-dbline 1A 4D
-dbline 1B 4F
-dbline 1C 50
-dbline 1D 52
-dbline 1E 53
-dbline 1F 55
-dbline 20 56
-dbline 21 58
-dbline 22 59
-dbline 23 5B
-dbline 24 5C
-dbline 29 5E
-dbline 5B 5F
-S _Timer8_ISR Def0000
-T 00 00 08 51 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 04 00 01 03 08 00 02 03 0C 00 03
-T 00 0B 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 02 00 04 03 06 00 05 03 0A 00 06
-T 00 14 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 02 00 07 03 06 00 08 03 0A 00 09
-T 00 1D 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 02 00 0A 03 06 00 0E 03 0A 00 0F
-T 00 26 00 00 08 51 00 00 08 51 00 00 08 7C
-R 00 00 00 02 03 02 00 0B 03 06 00 0C 03 0A 00 0D
-T 00 2F 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 02 02 00 00 03 06 00 0D 03 0A 00 0C
-T 00 39 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 0B 03 06 00 0F 03 0A 00 0E
-T 00 42 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 0A 03 06 00 09 03 0A 00 08
-T 00 4B 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 07 03 06 00 06 03 0A 00 05
-T 00 54 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 04 03 06 00 03 03 0A 00 02
-T 00 5D 00 00 18 7E
-R 00 00 00 02 03 02 00 01
 .end
 .start
 XH
-H 3 areas 2E global symbols
-M timer8.asm
+H 4 areas 8 global symbols
+M uart_1int.asm
 A text size 0 flags 0
-dbfile lib/timer8.asm
-dbfunc 0 ? 0 I
-dbfile Timer8.inc
+dbfile lib/uart_1int.asm
 dbfunc 0 ? 0 I
 dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
-dbfile ./lib/Timer8.inc
-dbfunc 0 ? 0 I
-dbfile lib/timer8.asm
+dbfile lib/uart_1int.asm
 dbfunc 0 ? 0 I
 dbfile memory.inc
 dbfunc 0 ? 0 I
-dbfile lib/timer8.asm
+dbfile lib/uart_1int.asm
+dbfunc 0 ? 0 I
+dbfile ./lib/UART_1.inc
+dbfunc 0 ? 0 I
+A InterruptRAM size 2 flags 20
+S UART_1_fStatus Def0000
+S _UART_1_fStatus Def0000
+S UART_1_bRxCnt Def0001
+S _UART_1_bRxCnt Def0001
+A UART_1_RAM size 10 flags 20
+S _UART_1_aRxBuffer Def0000
+S UART_1_aRxBuffer Def0000
+A UserModules size 51 flags 0
+dbfile lib/uart_1int.asm
+dbfunc 0 ? 0 I
+dbline 73 0
+dbline B4 1
+dbline B5 2
+dbline BB 3
+dbline BC 5
+dbline BD 7
+dbline BF 8
+dbline C0 A
+dbline C1 C
+dbline C2 D
+dbline C5 F
+dbline C8 10
+dbline C9 12
+dbline CB 14
+dbline CC 16
+dbline CD 19
+dbline CE 1B
+dbline D2 1D
+dbline D3 20
+dbline D4 23
+dbline D8 25
+dbline DB 27
+dbline DC 2A
+dbline DE 2C
+dbline DF 2E
+dbline E0 30
+dbline E6 33
+dbline E8 36
+dbline F6 38
+dbline F7 3A
+dbline FD 3C
+dbline FE 3F
+dbline 100 41
+dbline 102 44
+dbline 103 47
+dbline 108 49
+dbline 10A 4B
+dbline 10B 4C
+dbline 113 4E
+dbline 114 4F
+dbline 119 50
+S _UART_1_RX_ISR Def0001
+S _UART_1_TX_ISR Def0000
+T 00 00 7E 08 10 58 00 01 5D 3B 08 21 08 B0 04 18
+R 00 00 00 03 01 06 00 01
+T 00 0D 80 40 18 21 E0 A0 12 2C 00 00 49 3A 00 21
+R 00 00 00 03 01 0A 00 01
+T 00 1A 20 A0 32 41 3B FE 43 3B 01 80 2A 5D 3A 47
+R 00 00 00 03
+T 00 28 00 00 01 B0 23 39 0D B0 09 2E 00 00 01 56
+R 00 00 00 03 01 02 00 01 01 0C 00 01
+T 00 34 00 00 00 80 17 39 20 C0 13 3C 00 01 0F C0
+R 00 00 00 03 01 02 00 02 01 0C 00 01
+T 00 40 09 56 00 00 00 2E 00 00 10 80 06 54 00 00
+R 00 00 00 03 01 04 00 02 01 08 00 01 01 0E 00 02
+T 00 4B 75 5A 00 01 20 18 7E
+R 00 00 00 03 01 04 00 01
+.end
+.start
+XH
+H 3 areas 7B global symbols
+M uart_1.asm
+S UART_1_fStatus Ref0000
+S UART_1_bRxCnt Ref0000
+S UART_1_aRxBuffer Ref0000
+A text size 0 flags 0
+dbfile lib/uart_1.asm
+dbfunc 0 ? 0 I
+dbfile ./lib/UART_1.inc
+dbfunc 0 ? 0 I
+dbfile lib/uart_1.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/uart_1.asm
 dbfunc 0 ? 0 I
 dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
-A robottiprojekti_RAM size 0 flags 20
-A UserModules size 45 flags 0
-dbfile lib/timer8.asm
+A UART_1_RAM size 1 flags 20
+A UserModules size 1A9 flags 0
+dbfile lib/uart_1.asm
 dbfunc 0 ? 0 I
 dbline 2 0
-dbline 66 3
-dbline 2 4
-dbline 82 7
-dbline 2 8
-dbline 9E B
-dbline 2 C
-dbline BA F
-dbline D5 10
-dbline D7 12
-dbline F3 13
-dbline F5 15
-dbline 110 16
-dbline 112 18
-dbline 145 19
-dbline 146 1A
-dbline 147 1C
-dbline 148 1E
-dbline 149 1F
-dbline 14A 21
-dbline 14B 22
-dbline 14D 24
-dbline 14E 26
-dbline 14F 28
-dbline 150 2A
-dbline 151 2D
-dbline 152 2F
-dbline 154 31
-dbline 2 33
-dbline 2 35
-dbline 157 38
-dbline 158 39
-dbline 159 3B
-dbline 15A 3C
-dbline 15B 3E
-dbline 15D 3F
-dbline 186 40
-dbline 188 42
-dbline 18A 44
-S _Timer8_Start Def0008
-S Timer8_WritePeriod Def0010
-S Timer8_EnableInt Def0000
-S _bTimer8_CaptureCounter Def0040
-S $sb$Timer8_WritePeriod Def0010
-S $se$Timer8_WritePeriod Def0013
-S $sb$Timer8_EnableInt Def0000
-S $se$Timer8_EnableInt Def0004
-S bTimer8_ReadCompareValue Def0016
-S Timer8_bReadCompareValue Def0016
-S Timer8_Stop Def000C
-S bTimer8_ReadCounter Def0019
-S $sb$Timer8_bReadCompareValue Def0016
-S $se$Timer8_bReadCompareValue Def0019
-S $sb$Timer8_Stop Def000C
-S $se$Timer8_Stop Def0010
-S _Timer8_WritePeriod Def0010
-S Timer8_WriteCompareValue Def0013
-S _Timer8_EnableInt Def0000
-S bTimer8_ReadTimer Def0040
-S Timer8_bReadTimer Def0040
-S Timer8_DisableInt Def0004
-S $sb$Timer8_WriteCompareValue Def0013
-S $se$Timer8_WriteCompareValue Def0016
-S $sb$Timer8_bReadTimer Def0040
-S $sb$Timer8_DisableInt Def0004
-S $se$Timer8_bReadTimer Def0045
-S $se$Timer8_DisableInt Def0008
-S _bTimer8_ReadCompareValue Def0016
-S _Timer8_bReadCompareValue Def0016
-S _Timer8_Stop Def000C
-S bTimer8_ReadTimerSaveCV Def0019
-S Timer8_bReadTimerSaveCV Def0019
-S Timer8_Start Def0008
-S bTimer8_CaptureCounter Def0040
-S _bTimer8_ReadCounter Def0019
-S $sb$Timer8_bReadTimerSaveCV Def0019
-S $se$Timer8_bReadTimerSaveCV Def0040
-S $sb$Timer8_Start Def0008
-S $se$Timer8_Start Def000C
-S _Timer8_WriteCompareValue Def0013
-S _bTimer8_ReadTimer Def0040
-S _Timer8_bReadTimer Def0040
-S _Timer8_DisableInt Def0004
-S _bTimer8_ReadTimerSaveCV Def0019
-S _Timer8_bReadTimerSaveCV Def0019
-T 00 00 43 E1 04 7F 41 E1 FB 7F 43 2B 01 7F 41 2B
+dbline 2 3
+dbline B6 6
+dbline 2 7
+dbline 2 A
+dbline D6 D
+dbline 2 E
+dbline F8 10
+dbline F9 12
+dbline FA 14
+dbline 2 17
+dbline FD 19
+dbline 100 1A
+dbline 2 1D
+dbline 103 1F
+dbline 122 20
+dbline 123 22
+dbline 124 24
+dbline 126 26
+dbline 129 28
+dbline 145 29
+dbline 146 2C
+dbline 148 2F
+dbline 164 30
+dbline 166 32
+dbline 185 33
+dbline 187 35
+dbline 1A6 36
+dbline 1A8 38
+dbline 1C8 39
+dbline 1CA 3B
+dbline 1E9 3C
+dbline 2 3E
+dbline 1EB 40
+dbline 1EC 42
+dbline 1EE 44
+dbline 1EF 47
+dbline 1F2 49
+dbline 2 4C
+dbline 1F7 4E
+dbline 218 4F
+dbline 219 50
+dbline 21A 52
+dbline 2 54
+dbline 21D 57
+dbline 2 59
+dbline 223 5C
+dbline 224 5D
+dbline 225 5F
+dbline 2 61
+dbline 228 64
+dbline 2 66
+dbline 22F 69
+dbline 259 7A
+dbline 25A 7B
+dbline 25B 7C
+dbline 25C 7D
+dbline 25D 7E
+dbline 25E 7F
+dbline 25F 81
+dbline 260 83
+dbline 261 85
+dbline 262 86
+dbline 263 88
+dbline 264 8A
+dbline 266 8C
+dbline 285 8D
+dbline 286 8E
+dbline 287 90
+dbline 288 91
+dbline 28A 93
+dbline 3 94
+dbline 4 97
+dbline 5 99
+dbline 2B0 9B
+dbline 2D0 9C
+dbline 2D1 9F
+dbline 2D2 A1
+dbline 2D4 A3
+dbline 2F3 A4
+dbline 2F4 A6
+dbline 2F5 A7
+dbline 2F6 A9
+dbline 2F7 AB
+dbline 2F8 AC
+dbline 2FB AE
+dbline 2FC B0
+dbline 2FE B1
+dbline 2FF B2
+dbline 300 B4
+dbline 301 B6
+dbline 303 B7
+dbline 306 B8
+dbline 30A BA
+dbline 330 BB
+dbline 332 BD
+dbline 333 BF
+dbline 334 C0
+dbline 335 C2
+dbline 336 C4
+dbline 337 C5
+dbline 338 C7
+dbline 339 C8
+dbline 33C CA
+dbline 33D CB
+dbline 33E CD
+dbline 33F CE
+dbline 344 D0
+dbline 367 D1
+dbline 368 D3
+dbline 369 D5
+dbline 36A D7
+dbline 36B D8
+dbline 36F DA
+dbline 395 DB
+dbline 398 DC
+dbline 399 DE
+dbline 39A E0
+dbline 3A0 E2
+dbline 3A2 E4
+dbline 3 E6
+dbline 4 E9
+dbline 5 EB
+dbline 3A4 ED
+dbline 3A6 EE
+dbline 3A7 F0
+dbline 3AB F2
+dbline 3D1 F3
+dbline 3D3 F4
+dbline 3D4 F7
+dbline 3D5 F9
+dbline 3D6 FC
+dbline 3D9 FE
+dbline 3DA FF
+dbline 3DB 101
+dbline 3DC 103
+dbline 3 104
+dbline 4 107
+dbline 5 109
+dbline 3DE 10B
+dbline 3DF 10C
+dbline 3E0 10F
+dbline 3E1 112
+dbline 3E2 115
+dbline 3E3 118
+dbline 3E7 11A
+dbline 405 11B
+dbline 406 11C
+dbline 407 11D
+dbline 408 11E
+dbline 409 120
+dbline 40A 122
+dbline 40B 123
+dbline 40C 124
+dbline 40D 125
+dbline 40E 127
+dbline 40F 128
+dbline 413 12A
+dbline 415 12C
+dbline 431 12D
+dbline 432 12F
+dbline 433 131
+dbline 434 133
+dbline 436 135
+dbline 462 136
+dbline 464 139
+dbline 465 13C
+dbline 467 13F
+dbline 469 142
+dbline 48D 143
+dbline 48E 145
+dbline 490 147
+dbline 4B9 148
+dbline 4BA 14A
+dbline 4BB 14C
+dbline 4BD 14F
+dbline 4DC 150
+dbline 4DE 152
+dbline 518 153
+dbline 519 155
+dbline 51A 157
+dbline 51C 158
+dbline 51D 15A
+dbline 51E 15C
+dbline 51F 15D
+dbline 523 15F
+dbline 524 161
+dbline 525 163
+dbline 526 164
+dbline 527 166
+dbline 528 168
+dbline 529 16B
+dbline 52C 16D
+dbline 52E 16E
+dbline 52F 171
+dbline 532 173
+dbline 535 174
+dbline 536 175
+dbline 537 177
+dbline 538 17A
+dbline 539 17C
+dbline 53A 17E
+dbline 53B 180
+dbline 53C 182
+dbline 53D 184
+dbline 53E 187
+dbline 53F 189
+dbline 540 18C
+dbline 541 18E
+dbline 544 191
+dbline 545 192
+dbline 546 193
+dbline 547 196
+dbline 548 198
+dbline 549 199
+dbline 54A 19B
+dbline 54D 19C
+dbline 550 19D
+dbline 551 19E
+dbline 554 1A0
+dbline 574 1A1
+dbline 575 1A3
+dbline 576 1A5
+dbline 577 1A6
+dbline 579 1A8
+S $se$UART_1_PutChar Def009C
+S UART_1_bCmdLength Def0150
+S $sb$UART_1_IntCntl Def004F
+S _UART_1_TxIntMode Def003C
+S $se$UART_1_IntCntl Def006A
+S UART_1_PutSHexInt Def008D
+S UART_1_DisableInt Def0007
+S $sb$UART_1_szGetRestOfParams Def01A1
+S $se$UART_1_szGetRestOfParams Def01A9
+S UART_1_CPutString Def011B
+S $sb$UART_1_bCmdLength Def0150
+S $se$UART_1_bCmdLength Def0153
+S $sb$UART_1_PutSHexInt Def008D
+S $se$UART_1_PutSHexInt Def0094
+S $sb$UART_1_DisableInt Def0007
+S UART_1_szGetParam Def0153
+S $se$UART_1_DisableInt Def000E
+S UART_1_cGetChar Def009C
+S UART_1_SendData Def0030
+S _UART_1_Stop Def0029
+S _UART_1_SetTxIntMode Def000E
+S UART_1_Write Def00DB
+S UART_1_Start Def0020
+S _UART_1_PutString Def00D1
+S $sb$UART_1_CPutString Def011B
+S $se$UART_1_CPutString Def012D
+S _UART_1_PutChar Def0094
+S UART_1_CmdReset Def0136
+S $sb$UART_1_szGetParam Def0153
+S _UART_1_IntCntl Def004F
+S $se$UART_1_szGetParam Def01A1
+S $sb$UART_1_cGetChar Def009C
+S $se$UART_1_cGetChar Def00A4
+S $sb$UART_1_SendData Def0030
+S bUART_1_ReadRxData Def0036
+S UART_1_bReadRxData Def0036
+S _UART_1_szGetRestOfParams Def01A1
+S $se$UART_1_SendData Def0033
+S $sb$UART_1_Write Def00DB
+S $se$UART_1_Write Def00F3
+S $sb$UART_1_Start Def0020
+S bUART_1_ReadRxStatus Def0039
+S UART_1_bReadRxStatus Def0039
+S $se$UART_1_Start Def0029
+S bUART_1_ReadTxStatus Def0033
+S UART_1_bReadTxStatus Def0033
+S $sb$UART_1_CmdReset Def0136
+S $se$UART_1_CmdReset Def0143
+S _UART_1_bCmdLength Def0150
+S _UART_1_PutSHexInt Def008D
+S _UART_1_DisableInt Def0007
+S $sb$UART_1_bReadRxData Def0036
+S $se$UART_1_bReadRxData Def0039
+S UART_1_PutSHexByte Def007A
+S $sb$UART_1_bReadRxStatus Def0039
+S $sb$UART_1_bReadTxStatus Def0033
+S $se$UART_1_bReadRxStatus Def003C
+S $se$UART_1_bReadTxStatus Def0036
+S UART_1_CWrite Def00F3
+S _UART_1_CPutString Def011B
+S $lb$UART_1_HEX_STR Def006A
+S UART_1_bCmdCheck Def0143
+S $le$UART_1_HEX_STR Def007A
+S _UART_1_szGetParam Def0153
+S UART_1_cReadChar Def00A4
+S UART_1_PutCRLF Def012D
+S _UART_1_cGetChar Def009C
+S $sb$UART_1_PutSHexByte Def007A
+S UART_1_iReadChar Def00BB
+S _UART_1_SendData Def0030
+S $se$UART_1_PutSHexByte Def008D
+S UART_1_bErrCheck Def0148
+S _UART_1_Write Def00DB
+S $sb$UART_1_CWrite Def00F3
+S _UART_1_Start Def0020
+S $se$UART_1_CWrite Def011B
+S $sb$UART_1_bCmdCheck Def0143
+S UART_1_EnableInt Def0000
+S $se$UART_1_bCmdCheck Def0148
+S _UART_1_CmdReset Def0136
+S $sb$UART_1_cReadChar Def00A4
+S UART_1_TxIntMode Def003C
+S $sb$UART_1_PutCRLF Def012D
+S $se$UART_1_cReadChar Def00BB
+S $se$UART_1_PutCRLF Def0136
+S $sb$UART_1_iReadChar Def00BB
+S _bUART_1_ReadRxData Def0036
+S _UART_1_bReadRxData Def0036
+S $se$UART_1_iReadChar Def00D1
+S $sb$UART_1_bErrCheck Def0148
+S $se$UART_1_bErrCheck Def0150
+S _bUART_1_ReadRxStatus Def0039
+S _UART_1_bReadRxStatus Def0039
+S _bUART_1_ReadTxStatus Def0033
+S _UART_1_bReadTxStatus Def0033
+S $sb$UART_1_EnableInt Def0000
+S $se$UART_1_EnableInt Def0007
+S $sb$UART_1_TxIntMode Def003C
+S $se$UART_1_TxIntMode Def004F
+S _UART_1_PutSHexByte Def007A
+S UART_1_Stop Def0029
+S UART_1_SetTxIntMode Def000E
+S _UART_1_CWrite Def00F3
+S UART_1_PutString Def00D1
+S _UART_1_bCmdCheck Def0143
+S UART_1_PutChar Def0094
+S _UART_1_cReadChar Def00A4
+S UART_1_IntCntl Def004F
+S _UART_1_PutCRLF Def012D
+S _UART_1_iReadChar Def00BB
+S $sb$UART_1_Stop Def0029
+S UART_1_szGetRestOfParams Def01A1
+S $sb$UART_1_SetTxIntMode Def000E
+S $se$UART_1_Stop Def0030
+S $se$UART_1_SetTxIntMode Def0020
+S _UART_1_bErrCheck Def0148
+S $sb$UART_1_PutString Def00D1
+S $se$UART_1_PutString Def00DB
+S _UART_1_EnableInt Def0000
+S $sb$UART_1_PutChar Def0094
+T 00 00 43 E1 08 43 E1 40 7F 41 E1 F7 41 E1 BF 7F
 R 00 00 00 02
-T 00 0E FE 7F 60 29 7F 60 2A 7F 5D 2A 7F 4F 38 02
+T 00 0E 71 10 21 01 A0 07 43 2C 10 70 EF 7F 41 2C
 R 00 00 00 02
-T 00 1C 5D 2B 08 5D 2A 08 5D 28 5D 2A 54 01 50 00
+T 00 1C EF 70 EF 7F 29 01 60 2F 60 3B 91 0E 7F 41
 R 00 00 00 02
-T 00 2A 49 F7 01 A0 03 50 01 54 00 70 FE 41 2B FE
+T 00 2A 2F FE 41 3B FE 7F 60 2D 7F 5D 2F 7F 5D 3A
 R 00 00 00 02
-T 00 38 18 60 2A 18 60 2B 18 7E 5D 28 5D 2A 7F
+T 00 38 7F 5D 3B 7F 21 01 71 10 39 01 A0 06 41 2C
 R 00 00 00 02
+T 00 46 EF 80 04 43 2C 10 70 EF 7F 08 21 01 A0 06
+R 00 00 00 02
+T 00 54 43 E1 40 80 04 41 E1 BF 18 21 02 A0 06 43
+R 00 00 00 02
+T 00 62 E1 08 80 04 41 E1 F7 7F 30 31 32 33 34 35
+R 00 00 00 02
+T 00 70 36 37 38 39 41 42 43 44 45 46 08 67 67 67
+R 00 00 00 02
+T 00 7E 67 21 0F FF E7 90 0F 18 21 0F FF E0 90 08
+R 00 00 00 02
+T 00 8C 7F 4B 9F EA 5B 9F E7 7F 49 2F 10 AF FC 60
+R 00 00 00 02
+T 00 9A 2D 7F 49 3B 08 AF FC 5D 3A 7F 5D 3B 08 21
+R 00 00 00 02
+T 00 A8 08 B0 04 18 80 0B 5D 3A 4B 18 21 A0 B0 03
+R 00 00 00 02
+T 00 B6 4B 7F 50 00 7F 5D 3B 21 E8 08 21 08 B0 07
+R 00 00 00 02
+T 00 C4 18 29 01 4B 80 07 18 21 E0 4B 5D 3A 7F 52
+R 00 00 00 02
+T 00 D2 00 A0 06 9F BD 75 8F F8 7F 4F 52 FB A0 13
+R 00 00 00 02
+T 00 E0 7B FB 59 FD 52 00 49 2F 10 AF FC 60 2D 4F
+R 00 00 00 02
+T 00 EE 77 FD 8F EB 7F 4F 3D FA 00 B0 06 3D FB 00
+R 00 00 00 02
+T 00 FC A0 1D 10 52 FC 59 FD 28 49 2F 10 AF FC 60
+R 00 00 00 02
+T 01 0A 2D 20 07 FD 01 0F FC 00 17 FB 01 1F FA 00
+R 00 00 00 02
+T 01 18 8F DB 7F 08 10 28 A0 0B 9F 72 20 18 75 DF
+R 00 00 00 02
+T 01 26 F5 74 8F F2 38 FE 7F 50 0D 9F 63 50 0A 9F
+R 00 00 00 02
+T 01 34 5F 7F 55 00 00 00 55 00 00 00 26 00 00 00
+R 00 00 00 02 03 05 00 02 03 09 00 01 03 0D 00 00
+T 01 3F 55 00 00 00 7F 51 00 00 21 01 7F 51 00 00
+R 00 00 00 02 01 03 00 01 03 08 00 00 03 0E 00 00
+T 01 4A 21 F0 26 00 00 0F 7F 51 00 00 7F 50 00 00
+R 00 00 00 02 03 05 00 00 03 0A 00 01 03 0E 00 02
+T 01 55 02 00 00 5C 52 00 B0 04 10 80 33 39 20 B0
+R 00 00 00 02 01 03 00 01
+T 01 62 11 75 76 00 00 52 00 3C 00 00 0F BF F3 10
+R 00 00 00 02 01 05 00 01 01 0A 00 01
+T 01 6E 56 00 00 80 1F 10 75 76 00 00 3C 00 00 0F
+R 00 00 00 02 01 0A 00 01 01 0D 00 01
+T 01 7A AF F3 52 00 A0 12 39 20 BF F1 56 00 00 76
+R 00 00 00 02
+T 01 88 00 00 3C 00 00 0F B0 04 55 00 00 0F 20 10
+R 00 00 00 02 01 02 00 01 01 05 00 01 01 0B 00 01
+T 01 93 3D 00 00 B0 06 20 57 00 5B 7F 20 50 00 00
+R 00 00 00 02 43 0E 00 02
+T 01 A0 7F 50 00 00 02 00 00 5C 50 00 00 7F
+R 00 00 00 02 03 04 00 02 01 07 00 01 43 0B 00 02
 .end
 .start
 XH
@@ -389,162 +665,6 @@ R 00 00 00 02
 .start
 XH
 H 3 areas 1 global symbols
-M pwm8_servoint.asm
-A text size 0 flags 0
-dbfile lib/pwm8_servoint.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/pwm8_servoint.asm
-dbfunc 0 ? 0 I
-dbfile PWM8_SERVO.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/PWM8_SERVO.inc
-dbfunc 0 ? 0 I
-dbfile lib/pwm8_servoint.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A InterruptRAM size 0 flags 20
-A UserModules size 1 flags 0
-dbfile lib/pwm8_servoint.asm
-dbfunc 0 ? 0 I
-dbline 5A 0
-S _PWM8_SERVO_ISR Def0000
-T 00 00 7E
-R 00 00 00 02
-.end
-.start
-XH
-H 3 areas 24 global symbols
-M pwm8_servo.asm
-A text size 0 flags 0
-dbfile lib/pwm8_servo.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/pwm8_servo.asm
-dbfunc 0 ? 0 I
-dbfile PWM8_SERVO.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/PWM8_SERVO.inc
-dbfunc 0 ? 0 I
-dbfile lib/pwm8_servo.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A robottiprojekti_RAM size 0 flags 20
-A UserModules size 58 flags 0
-dbfile lib/pwm8_servo.asm
-dbfunc 0 ? 0 I
-dbline 2 0
-dbline 5F 3
-dbline 2 4
-dbline 7B 7
-dbline 2 8
-dbline 98 B
-dbline 2 C
-dbline B4 F
-dbline D0 10
-dbline D1 12
-dbline D2 13
-dbline D4 15
-dbline ED 16
-dbline EE 18
-dbline EF 19
-dbline F1 1B
-dbline 10C 1C
-dbline 10D 1E
-dbline 10E 1F
-dbline 110 21
-dbline 135 22
-dbline 136 23
-dbline 137 25
-dbline 138 26
-dbline 139 28
-dbline 2 29
-dbline 2 2C
-dbline 13C 2E
-dbline 13D 30
-dbline 13F 31
-dbline 2 34
-dbline 141 36
-dbline 142 38
-dbline 143 3A
-dbline 144 3B
-dbline 145 3D
-dbline 146 3F
-dbline 147 40
-dbline 148 42
-dbline 149 44
-dbline 14A 46
-dbline 2 48
-dbline 14C 4A
-dbline 14D 4C
-dbline 2 4E
-dbline 2 50
-dbline 150 53
-dbline 151 54
-dbline 152 55
-dbline 154 57
-S $sb$PWM8_SERVO_WritePeriod Def0010
-S $se$PWM8_SERVO_WritePeriod Def0016
-S $sb$PWM8_SERVO_EnableInt Def0000
-S $se$PWM8_SERVO_EnableInt Def0004
-S PWM8_SERVO_Stop Def000C
-S $sb$PWM8_SERVO_Stop Def000C
-S $se$PWM8_SERVO_Stop Def0010
-S _PWM8_SERVO_WritePeriod Def0010
-S _PWM8_SERVO_EnableInt Def0000
-S wPWM8_SERVO_ReadCounter Def0022
-S PWM8_SERVO_wReadCounter Def0022
-S PWM8_SERVO_DisableInt Def0004
-S $sb$PWM8_SERVO_wReadCounter Def0022
-S $se$PWM8_SERVO_wReadCounter Def0058
-S $sb$PWM8_SERVO_DisableInt Def0004
-S wPWM8_SERVO_ReadPulseWidth Def001C
-S PWM8_SERVO_wReadPulseWidth Def001C
-S $se$PWM8_SERVO_DisableInt Def0008
-S _PWM8_SERVO_Stop Def000C
-S PWM8_SERVO_Start Def0008
-S PWM8_SERVO_WritePulseWidth Def0016
-S $sb$PWM8_SERVO_wReadPulseWidth Def001C
-S $se$PWM8_SERVO_wReadPulseWidth Def0022
-S $sb$PWM8_SERVO_Start Def0008
-S $se$PWM8_SERVO_Start Def000C
-S $sb$PWM8_SERVO_WritePulseWidth Def0016
-S _wPWM8_SERVO_ReadCounter Def0022
-S _PWM8_SERVO_wReadCounter Def0022
-S $se$PWM8_SERVO_WritePulseWidth Def001C
-S _PWM8_SERVO_DisableInt Def0004
-S _wPWM8_SERVO_ReadPulseWidth Def001C
-S _PWM8_SERVO_wReadPulseWidth Def001C
-S _PWM8_SERVO_Start Def0008
-S PWM8_SERVO_WritePeriod Def0010
-S PWM8_SERVO_EnableInt Def0000
-S _PWM8_SERVO_WritePulseWidth Def0016
-T 00 00 43 E1 10 7F 41 E1 EF 7F 43 2F 01 7F 41 2F
-R 00 00 00 02
-T 00 0E FE 7F 60 2D 5B 60 31 7F 60 2E 5B 60 32 7F
-R 00 00 00 02
-T 00 1C 5D 32 5C 5D 2E 7F 4F 5D 32 08 5D 2E 08 41
-R 00 00 00 02
-T 00 2A 2F FE 71 10 5D 2D 08 62 2D 00 70 EF 5D 30
-R 00 00 00 02
-T 00 38 5D 32 08 5D 2C 5D 2E 08 52 00 60 32 52 01
-R 00 00 00 02
-T 00 46 60 2E 71 10 52 02 60 2D 70 EF 43 2F 01 18
-R 00 00 00 02
-T 00 54 20 38 FD 7F
-R 00 00 00 02
-.end
-.start
-XH
-H 3 areas 1 global symbols
 M pwm8_oikeaint.asm
 A text size 0 flags 0
 dbfile lib/pwm8_oikeaint.asm
@@ -682,14 +802,12 @@ R 00 00 00 02
 .end
 .start
 XH
-H 1 areas 2 global symbols
+H 1 areas 1 global symbols
 M psocgpioint.asm
-S _PinInterrupt Ref0000
-A text size 4 flags 0
+A text size 1 flags 0
 dbfile lib/psocgpioint.asm
 dbfunc 0 ? 0 I
-dbline 3B 0
-dbline 41 3
+dbline 40 0
 dbfile ./lib/PSoCGPIOINT.inc
 dbfunc 0 ? 0 I
 dbfile lib/psocgpioint.asm
@@ -697,8 +815,8 @@ dbfunc 0 ? 0 I
 dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
 S PSoC_GPIO_ISR Def0000
-T 00 00 7D 00 00 7E
-R 00 00 00 00 02 03 00 00
+T 00 00 7E
+R 00 00 00 00
 .end
 .start
 XH
@@ -709,115 +827,109 @@ dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
 dbfunc 0 ? 0 I
-A lit size A2 flags 0
+A lit size 7E flags 0
 S LoadConfigTBL_robottiprojekti_Bank0 Def0000
-S LoadConfigTBL_robottiprojekti_Bank1 Def0055
+S LoadConfigTBL_robottiprojekti_Bank1 Def0043
 A psoc_config size C5 flags 0
 dbfile lib/psocconfigtbl.asm
 dbfunc 0 ? 0 I
 dbline 2 0
-dbline 8C 2
+dbline 70 2
 dbline 2 5
-dbline 8E 7
-dbline 8F A
+dbline 72 7
+dbline 73 A
 dbline 2 D
-dbline 91 F
-dbline 92 12
+dbline 75 F
+dbline 76 12
 dbline 2 15
-dbline 94 17
-dbline 95 1A
+dbline 78 17
+dbline 79 1A
 dbline 2 1D
-dbline 97 1F
-dbline 98 22
+dbline 7B 1F
+dbline 7C 22
 dbline 2 25
-dbline 9A 27
-dbline 9B 2A
+dbline 7E 27
+dbline 7F 2A
 dbline 2 2D
-dbline 9D 2F
-dbline 9E 32
+dbline 81 2F
+dbline 82 32
 dbline 2 35
-dbline A0 37
-dbline A1 3A
+dbline 84 37
+dbline 85 3A
 dbline 2 3D
-dbline A3 3F
-dbline A4 42
+dbline 87 3F
+dbline 88 42
 dbline 2 45
-dbline A6 47
-dbline A7 4A
+dbline 8A 47
+dbline 8B 4A
 dbline 2 4D
-dbline A9 4F
-dbline AA 52
+dbline 8D 4F
+dbline 8E 52
 dbline 2 55
-dbline AC 57
-dbline AD 5A
+dbline 90 57
+dbline 91 5A
 dbline 2 5D
-dbline AF 5F
-dbline B0 62
+dbline 93 5F
+dbline 94 62
 dbline 2 65
-dbline B2 67
-dbline B3 6A
+dbline 96 67
+dbline 97 6A
 dbline 2 6D
-dbline B5 6F
-dbline B6 72
+dbline 99 6F
+dbline 9A 72
 dbline 2 75
-dbline B8 77
-dbline B9 7A
+dbline 9C 77
+dbline 9D 7A
 dbline 2 7D
-dbline BB 7F
-dbline BC 82
+dbline 9F 7F
+dbline A0 82
 dbline 2 85
-dbline BE 87
-dbline BF 8A
+dbline A2 87
+dbline A3 8A
 dbline 2 8D
-dbline C1 8F
-dbline C2 92
+dbline A5 8F
+dbline A6 92
 dbline 2 95
-dbline C4 97
-dbline C5 9A
+dbline A8 97
+dbline A9 9A
 dbline 2 9D
-dbline C7 9F
-dbline C8 A2
+dbline AB 9F
+dbline AC A2
 dbline 2 A5
-dbline CA A7
-dbline CB AA
+dbline AE A7
+dbline AF AA
 dbline 2 AD
-dbline CD AF
-dbline CE B2
+dbline B1 AF
+dbline B2 B2
 dbline 2 B5
-dbline D0 B7
-dbline D1 BA
+dbline B4 B7
+dbline B5 BA
 dbline 2 BD
-dbline D3 BF
+dbline B7 BF
 dbline 2 C2
-dbline D5 C4
+dbline B9 C4
 S LoadConfigTBL_robottiprojekti_Ordered Def0000
-T 00 00 37 00 35 13 36 00 3B 00 39 00 3A 00 27 00
+T 00 00 27 00 25 C7 26 00 23 00 21 C7 22 00 3B 00
 R 00 00 00 01
-T 00 0E 25 C7 26 00 2F 00 2D 8F 2E 00 33 00 31 01
+T 00 0E 39 00 3A 00 2F 00 2D 00 2E 00 60 28 66 00
 R 00 00 00 01
-T 00 1C 32 00 23 00 21 C7 22 00 2B 04 29 13 2A 00
+T 00 1C 63 15 65 00 E6 00 E7 00 D6 00 B0 00 B1 00
 R 00 00 00 01
-T 00 2A 60 28 66 00 63 15 65 00 E6 00 E7 00 D6 00
+T 00 2A B2 00 B3 33 B4 33 B5 11 B6 00 B8 55 B9 00
 R 00 00 00 01
-T 00 38 B0 00 B1 00 B2 00 B3 33 B4 33 B5 11 B6 00
+T 00 38 BA 10 BB 33 BC 33 BD 02 BE 00 FF 24 29 25
 R 00 00 00 01
-T 00 46 B8 55 B9 00 BA 10 BB 33 BC 33 BD 02 BE 00
+T 00 46 16 26 45 20 29 21 16 22 44 38 05 39 D1 3A
 R 00 00 00 01
-T 00 54 FF 34 01 35 F5 36 40 38 21 39 35 3A 40 24
+T 00 54 40 2C 0D 2D 01 2E 40 61 00 69 00 60 00 62
 R 00 00 00 01
-T 00 62 29 25 16 26 45 2C 01 2D 11 2E 40 30 21 31
+T 00 62 00 67 33 68 33 63 00 66 00 D1 00 D3 00 D0
 R 00 00 00 01
-T 00 70 31 32 44 20 29 21 16 22 44 28 20 29 01 2A
+T 00 70 00 D2 00 E1 79 E2 00 DF 26 DE 01 DD 00 FF
 R 00 00 00 01
-T 00 7E 40 61 00 69 00 60 00 62 00 67 33 68 33 63
-R 00 00 00 01
-T 00 8C 00 66 00 D1 00 D3 00 D0 00 D2 00 E1 B9 E2
-R 00 00 00 01
-T 00 9A 00 DF 09 DE 02 DD 00 FF
-R 00 00 00 01
-T 00 00 70 EF 62 00 00 71 10 62 00 53 62 01 8C 70
+T 00 00 70 EF 62 00 00 71 10 62 00 53 62 01 AC 70
 R 00 00 00 02
-T 00 0E EF 62 03 0C 62 02 93 71 10 62 02 08 62 03
+T 00 0E EF 62 03 0C 62 02 B3 71 10 62 02 08 62 03
 R 00 00 00 02
 T 00 1C 00 70 EF 62 01 08 62 04 00 71 10 62 04 8F
 R 00 00 00 02
@@ -1609,262 +1721,5 @@ R 00 00 00 01
 T 02 A4 7B 01 BF EE 77 00 3D 00 07 BF E4 38 FD 50
 R 00 00 00 01
 T 02 B2 0C 9D A5 7F
-R 00 00 00 01
-.end
-.start
-XH
-H 3 areas 11 global symbols
-M counter16_1int.asm
-S _CounterISR Ref0000
-S __r0 Ref0000
-S __r1 Ref0000
-S __r2 Ref0000
-S __r3 Ref0000
-S __r4 Ref0000
-S __r5 Ref0000
-S __r6 Ref0000
-S __r7 Ref0000
-S __r8 Ref0000
-S __r9 Ref0000
-S __rX Ref0000
-S __rY Ref0000
-S __rZ Ref0000
-S __r10 Ref0000
-S __r11 Ref0000
-A text size 0 flags 0
-dbfile lib/counter16_1int.asm
-dbfunc 0 ? 0 I
-dbfile Counter16_1.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/Counter16_1.inc
-dbfunc 0 ? 0 I
-dbfile lib/counter16_1int.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/counter16_1int.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A InterruptRAM size 0 flags 20
-A UserModules size 60 flags 0
-dbfile lib/counter16_1int.asm
-dbfunc 0 ? 0 I
-dbline 3 0
-dbline 9 1
-dbline A 3
-dbline B 4
-dbline C 6
-dbline D 7
-dbline E 9
-dbline F A
-dbline 10 C
-dbline 11 D
-dbline 12 F
-dbline 13 10
-dbline 14 12
-dbline 15 13
-dbline 16 15
-dbline 17 16
-dbline 18 18
-dbline 19 19
-dbline 1A 1B
-dbline 1B 1C
-dbline 1C 1E
-dbline 1D 1F
-dbline 1E 21
-dbline 1F 22
-dbline 20 24
-dbline 21 25
-dbline 22 27
-dbline 23 28
-dbline 24 2A
-dbline 25 2B
-dbline 26 2D
-dbline 51 2E
-dbline 7 31
-dbline 8 32
-dbline 9 34
-dbline A 35
-dbline B 37
-dbline C 38
-dbline D 3A
-dbline E 3B
-dbline F 3D
-dbline 10 3E
-dbline 11 40
-dbline 12 41
-dbline 13 43
-dbline 14 44
-dbline 15 46
-dbline 16 47
-dbline 17 49
-dbline 18 4A
-dbline 19 4C
-dbline 1A 4D
-dbline 1B 4F
-dbline 1C 50
-dbline 1D 52
-dbline 1E 53
-dbline 1F 55
-dbline 20 56
-dbline 21 58
-dbline 22 59
-dbline 23 5B
-dbline 24 5C
-dbline 29 5E
-dbline 5A 5F
-S _Counter16_1_ISR Def0000
-T 00 00 08 51 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 04 00 01 03 08 00 02 03 0C 00 03
-T 00 0B 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 02 00 04 03 06 00 05 03 0A 00 06
-T 00 14 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 02 00 07 03 06 00 08 03 0A 00 09
-T 00 1D 00 00 08 51 00 00 08 51 00 00 08 51
-R 00 00 00 02 03 02 00 0A 03 06 00 0E 03 0A 00 0F
-T 00 26 00 00 08 51 00 00 08 51 00 00 08 7C
-R 00 00 00 02 03 02 00 0B 03 06 00 0C 03 0A 00 0D
-T 00 2F 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 02 02 00 00 03 06 00 0D 03 0A 00 0C
-T 00 39 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 0B 03 06 00 0F 03 0A 00 0E
-T 00 42 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 0A 03 06 00 09 03 0A 00 08
-T 00 4B 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 07 03 06 00 06 03 0A 00 05
-T 00 54 00 00 18 53 00 00 18 53 00 00 18 53
-R 00 00 00 02 03 02 00 04 03 06 00 03 03 0A 00 02
-T 00 5D 00 00 18 7E
-R 00 00 00 02 03 02 00 01
-.end
-.start
-XH
-H 2 areas 24 global symbols
-M counter16_1.asm
-A text size 0 flags 0
-dbfile lib/counter16_1.asm
-dbfunc 0 ? 0 I
-dbfile Counter16_1.inc
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-dbfile ./lib/Counter16_1.inc
-dbfunc 0 ? 0 I
-dbfile lib/counter16_1.asm
-dbfunc 0 ? 0 I
-dbfile memory.inc
-dbfunc 0 ? 0 I
-dbfile lib/counter16_1.asm
-dbfunc 0 ? 0 I
-dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
-dbfunc 0 ? 0 I
-A UserModules size 5C flags 0
-dbfile lib/counter16_1.asm
-dbfunc 0 ? 0 I
-dbline 2 0
-dbline 56 3
-dbline 2 4
-dbline 71 7
-dbline 2 8
-dbline 8E B
-dbline 2 C
-dbline AA F
-dbline C6 10
-dbline C7 12
-dbline C8 13
-dbline CA 15
-dbline E3 16
-dbline E4 18
-dbline E5 19
-dbline E7 1B
-dbline 102 1C
-dbline 103 1E
-dbline 104 1F
-dbline 106 21
-dbline 12C 22
-dbline 12D 23
-dbline 12E 25
-dbline 12F 26
-dbline 130 28
-dbline 131 29
-dbline 132 2B
-dbline 2 2C
-dbline 2 2F
-dbline 135 31
-dbline 136 33
-dbline 138 34
-dbline 2 37
-dbline 13A 39
-dbline 13B 3B
-dbline 13C 3D
-dbline 13D 3E
-dbline 13E 40
-dbline 13F 42
-dbline 140 43
-dbline 141 45
-dbline 142 47
-dbline 143 49
-dbline 2 4B
-dbline 145 4D
-dbline 146 4F
-dbline 2 51
-dbline 148 53
-dbline 149 55
-dbline 14A 57
-dbline 14B 58
-dbline 14C 59
-dbline 14E 5B
-S _Counter16_1_WritePeriod Def0010
-S Counter16_1_WriteCompareValue Def0016
-S _Counter16_1_EnableInt Def0000
-S wCounter16_1_ReadCounter Def0022
-S Counter16_1_wReadCounter Def0022
-S $sb$Counter16_1_wReadCompareValue Def001C
-S $se$Counter16_1_wReadCompareValue Def0022
-S Counter16_1_DisableInt Def0004
-S $sb$Counter16_1_WriteCompareValue Def0016
-S $se$Counter16_1_WriteCompareValue Def001C
-S $sb$Counter16_1_wReadCounter Def0022
-S $se$Counter16_1_wReadCounter Def005C
-S $sb$Counter16_1_DisableInt Def0004
-S $se$Counter16_1_DisableInt Def0008
-S _Counter16_1_Stop Def000C
-S Counter16_1_Start Def0008
-S _wCounter16_1_ReadCompareValue Def001C
-S _Counter16_1_wReadCompareValue Def001C
-S $sb$Counter16_1_Start Def0008
-S $se$Counter16_1_Start Def000C
-S _Counter16_1_WriteCompareValue Def0016
-S _wCounter16_1_ReadCounter Def0022
-S _Counter16_1_wReadCounter Def0022
-S _Counter16_1_DisableInt Def0004
-S _Counter16_1_Start Def0008
-S Counter16_1_WritePeriod Def0010
-S Counter16_1_EnableInt Def0000
-S $sb$Counter16_1_WritePeriod Def0010
-S $se$Counter16_1_WritePeriod Def0016
-S $sb$Counter16_1_EnableInt Def0000
-S $se$Counter16_1_EnableInt Def0004
-S Counter16_1_Stop Def000C
-S wCounter16_1_ReadCompareValue Def001C
-S Counter16_1_wReadCompareValue Def001C
-S $sb$Counter16_1_Stop Def000C
-S $se$Counter16_1_Stop Def0010
-T 00 00 43 E1 40 7F 41 E1 BF 7F 43 37 01 7F 41 37
-R 00 00 00 01
-T 00 0E FE 7F 60 35 5B 60 39 7F 60 36 5B 60 3A 7F
-R 00 00 00 01
-T 00 1C 5D 3A 5C 5D 36 7F 4F 5D 3A 08 5D 36 08 5D
-R 00 00 00 01
-T 00 2A 37 08 41 37 FE 71 10 5D 35 08 62 35 00 70
-R 00 00 00 01
-T 00 38 EF 5D 38 5D 3A 08 5D 34 5D 36 08 52 00 60
-R 00 00 00 01
-T 00 46 3A 52 01 60 36 71 10 52 03 60 35 70 EF 52
-R 00 00 00 01
-T 00 54 02 60 37 18 20 38 FC 7F
 R 00 00 00 01
 .end

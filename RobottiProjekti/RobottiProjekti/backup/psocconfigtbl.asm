@@ -20,15 +20,6 @@ export LoadConfigTBL_robottiprojekti_Bank0
 export LoadConfigTBL_robottiprojekti_Ordered
 AREA lit(rom, rel)
 LoadConfigTBL_robottiprojekti_Bank0:
-;  Instance name Counter16_1, User Module Counter16
-;       Instance name Counter16_1, Block Name CNTR16_LSB(DBB11)
-	db		37h, 00h		;Counter16_1_CONTROL_LSB_REG(DBB11CR0)
-	db		35h, 13h		;Counter16_1_PERIOD_LSB_REG(DBB11DR1)
-	db		36h, 00h		;Counter16_1_COMPARE_LSB_REG(DBB11DR2)
-;       Instance name Counter16_1, Block Name CNTR16_MSB(DCB12)
-	db		3bh, 00h		;Counter16_1_CONTROL_MSB_REG(DCB12CR0)
-	db		39h, 00h		;Counter16_1_PERIOD_MSB_REG(DCB12DR1)
-	db		3ah, 00h		;Counter16_1_COMPARE_MSB_REG(DCB12DR2)
 ;  Instance name LCD, User Module LCD
 ;  Instance name LED, User Module LED
 ;  Instance name PWM8_OIKEA, User Module PWM8
@@ -36,25 +27,20 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		27h, 00h		;PWM8_OIKEA_CONTROL_REG(DBB01CR0)
 	db		25h, c7h		;PWM8_OIKEA_PERIOD_REG(DBB01DR1)
 	db		26h, 00h		;PWM8_OIKEA_COMPARE_REG(DBB01DR2)
-;  Instance name PWM8_SERVO, User Module PWM16
-;       Instance name PWM8_SERVO, Block Name PWM16_LSB(DCB03)
-	db		2fh, 00h		;PWM8_SERVO_CONTROL_LSB_REG(DCB03CR0)
-	db		2dh, 8fh		;PWM8_SERVO_PERIOD_LSB_REG(DCB03DR1)
-	db		2eh, 00h		;PWM8_SERVO_COMPARE_LSB_REG(DCB03DR2)
-;       Instance name PWM8_SERVO, Block Name PWM16_MSB(DBB10)
-	db		33h, 00h		;PWM8_SERVO_CONTROL_MSB_REG(DBB10CR0)
-	db		31h, 01h		;PWM8_SERVO_PERIOD_MSB_REG(DBB10DR1)
-	db		32h, 00h		;PWM8_SERVO_COMPARE_MSB_REG(DBB10DR2)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
 	db		23h, 00h		;PWM8_VASEN_CONTROL_REG(DBB00CR0)
 	db		21h, c7h		;PWM8_VASEN_PERIOD_REG(DBB00DR1)
 	db		22h, 00h		;PWM8_VASEN_COMPARE_REG(DBB00DR2)
-;  Instance name Timer8, User Module Timer8
-;       Instance name Timer8, Block Name TIMER8(DCB02)
-	db		2bh, 04h		;Timer8_CONTROL_REG(DCB02CR0)
-	db		29h, 13h		;Timer8_PERIOD_REG(DCB02DR1)
-	db		2ah, 00h		;Timer8_COMPARE_REG(DCB02DR2)
+;  Instance name UART_1, User Module UART
+;       Instance name UART_1, Block Name RX(DCB12)
+	db		3bh, 00h		;UART_1_RX_CONTROL_REG(DCB12CR0)
+	db		39h, 00h		;UART_1_(DCB12DR1)
+	db		3ah, 00h		;UART_1_RX_BUFFER_REG (DCB12DR2)
+;       Instance name UART_1, Block Name TX(DCB03)
+	db		2fh, 00h		;UART_1_TX_CONTROL_REG(DCB03CR0)
+	db		2dh, 00h		;UART_1_TX_BUFFER_REG (DCB03DR1)
+	db		2eh, 00h		;UART_1_(DCB03DR2)
 ;  Global Register values Bank 0
 	db		60h, 28h		; AnalogColumnInputSelect register (AMX_IN)
 	db		66h, 00h		; AnalogComparatorControl1 register (CMP_CR1)
@@ -79,15 +65,6 @@ LoadConfigTBL_robottiprojekti_Bank0:
 	db		beh, 00h		; Row_1_OutputDrive_1 register (RDI1SRO1)
 	db		ffh
 LoadConfigTBL_robottiprojekti_Bank1:
-;  Instance name Counter16_1, User Module Counter16
-;       Instance name Counter16_1, Block Name CNTR16_LSB(DBB11)
-	db		34h, 01h		;Counter16_1_FUNC_LSB_REG(DBB11FN)
-	db		35h, f5h		;Counter16_1_INPUT_LSB_REG(DBB11IN)
-	db		36h, 40h		;Counter16_1_OUTPUT_LSB_REG(DBB11OU)
-;       Instance name Counter16_1, Block Name CNTR16_MSB(DCB12)
-	db		38h, 21h		;Counter16_1_FUNC_MSB_REG(DCB12FN)
-	db		39h, 35h		;Counter16_1_INPUT_MSB_REG(DCB12IN)
-	db		3ah, 40h		;Counter16_1_OUTPUT_MSB_REG(DCB12OU)
 ;  Instance name LCD, User Module LCD
 ;  Instance name LED, User Module LED
 ;  Instance name PWM8_OIKEA, User Module PWM8
@@ -95,25 +72,20 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		24h, 29h		;PWM8_OIKEA_FUNC_REG(DBB01FN)
 	db		25h, 16h		;PWM8_OIKEA_INPUT_REG(DBB01IN)
 	db		26h, 45h		;PWM8_OIKEA_OUTPUT_REG(DBB01OU)
-;  Instance name PWM8_SERVO, User Module PWM16
-;       Instance name PWM8_SERVO, Block Name PWM16_LSB(DCB03)
-	db		2ch, 01h		;PWM8_SERVO_FUNC_LSB_REG(DCB03FN)
-	db		2dh, 11h		;PWM8_SERVO_INPUT_LSB_REG(DCB03IN)
-	db		2eh, 40h		;PWM8_SERVO_OUTPUT_LSB_REG(DCB03OU)
-;       Instance name PWM8_SERVO, Block Name PWM16_MSB(DBB10)
-	db		30h, 21h		;PWM8_SERVO_FUNC_MSB_REG(DBB10FN)
-	db		31h, 31h		;PWM8_SERVO_INPUT_MSB_REG(DBB10IN)
-	db		32h, 44h		;PWM8_SERVO_OUTPUT_MSB_REG(DBB10OU)
 ;  Instance name PWM8_VASEN, User Module PWM8
 ;       Instance name PWM8_VASEN, Block Name PWM8(DBB00)
 	db		20h, 29h		;PWM8_VASEN_FUNC_REG(DBB00FN)
 	db		21h, 16h		;PWM8_VASEN_INPUT_REG(DBB00IN)
 	db		22h, 44h		;PWM8_VASEN_OUTPUT_REG(DBB00OU)
-;  Instance name Timer8, User Module Timer8
-;       Instance name Timer8, Block Name TIMER8(DCB02)
-	db		28h, 20h		;Timer8_FUNC_REG(DCB02FN)
-	db		29h, 01h		;Timer8_INPUT_REG(DCB02IN)
-	db		2ah, 40h		;Timer8_OUTPUT_REG(DCB02OU)
+;  Instance name UART_1, User Module UART
+;       Instance name UART_1, Block Name RX(DCB12)
+	db		38h, 05h		;UART_1_RX_FUNC_REG   (DCB12FN)
+	db		39h, d1h		;UART_1_RX_INPUT_REG  (DCB12IN)
+	db		3ah, 40h		;UART_1_RX_OUTPUT_REG (DCB12OU)
+;       Instance name UART_1, Block Name TX(DCB03)
+	db		2ch, 0dh		;UART_1_TX_FUNC_REG   (DCB03FN)
+	db		2dh, 01h		;UART_1_TX_INPUT_REG  (DCB03IN)
+	db		2eh, 40h		;UART_1_TX_OUTPUT_REG (DCB03OU)
 ;  Global Register values Bank 1
 	db		61h, 00h		; AnalogClockSelect1 register (CLK_CR1)
 	db		69h, 00h		; AnalogClockSelect2 register (CLK_CR2)
@@ -127,10 +99,10 @@ LoadConfigTBL_robottiprojekti_Bank1:
 	db		d3h, 00h		; GlobalDigitalInterconnect_Drive_Even_Output register (GDI_E_OU)
 	db		d0h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Input register (GDI_O_IN)
 	db		d2h, 00h		; GlobalDigitalInterconnect_Drive_Odd_Output register (GDI_O_OU)
-	db		e1h, b9h		; OscillatorControl_1 register (OSC_CR1)
+	db		e1h, 79h		; OscillatorControl_1 register (OSC_CR1)
 	db		e2h, 00h		; OscillatorControl_2 register (OSC_CR2)
-	db		dfh, 09h		; OscillatorControl_3 register (OSC_CR3)
-	db		deh, 02h		; OscillatorControl_4 register (OSC_CR4)
+	db		dfh, 26h		; OscillatorControl_3 register (OSC_CR3)
+	db		deh, 01h		; OscillatorControl_4 register (OSC_CR4)
 	db		ddh, 00h		; OscillatorGlobalBusEnableControl register (OSC_GO_EN)
 	db		ffh
 AREA psoc_config(rom, rel)
@@ -140,10 +112,10 @@ LoadConfigTBL_robottiprojekti_Ordered:
 	mov	reg[00h], 00h		; Port_0_Data register (PRT0DR)
 	M8C_SetBank1
 	mov	reg[00h], 53h		; Port_0_DriveMode_0 register (PRT0DM0)
-	mov	reg[01h], 8ch		; Port_0_DriveMode_1 register (PRT0DM1)
+	mov	reg[01h], ach		; Port_0_DriveMode_1 register (PRT0DM1)
 	M8C_SetBank0
 	mov	reg[03h], 0ch		; Port_0_DriveMode_2 register (PRT0DM2)
-	mov	reg[02h], 93h		; Port_0_GlobalSelect register (PRT0GS)
+	mov	reg[02h], b3h		; Port_0_GlobalSelect register (PRT0GS)
 	M8C_SetBank1
 	mov	reg[02h], 08h		; Port_0_IntCtrl_0 register (PRT0IC0)
 	mov	reg[03h], 00h		; Port_0_IntCtrl_1 register (PRT0IC1)

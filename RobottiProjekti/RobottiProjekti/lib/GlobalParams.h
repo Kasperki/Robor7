@@ -26,18 +26,18 @@
 										//				0 = 3.3V
 #define WATCHDOG_ENABLE        0x0     //Watchdog Enable 1 = Enable
 
-#define CLOCK_DIV_VC1          0xb     // VC1 clock divider 
+#define CLOCK_DIV_VC1          0x7     // VC1 clock divider 
 #define CLOCK_DIV_VC1_MASK     0xf0    // VC1 clock divider mask
-#define CLOCK_DIV_VC1_JUST     0xb0    // jVC1 clock divider ustified
+#define CLOCK_DIV_VC1_JUST     0x70    // jVC1 clock divider ustified
 #define CLOCK_DIV_VC2          0x9     // VC2 clock divider 
 #define CLOCK_DIV_VC2_MASK     0xf     // VC2 clock divider mask
 #define CLOCK_DIV_VC2_JUST     0x9     // VC2 clock divider justified
-#define CLOCK_INPUT_VC3        0x2     // VC3 clock source
+#define CLOCK_INPUT_VC3        0x1     // VC3 clock source
 #define CLOCK_INPUT_VC3_MASK   0x3     // VC3 clock source mask
-#define CLOCK_INPUT_VC3_JUST   0x2     // VC3 clock source justified
-#define CLOCK_DIV_VC3          0x9     // VC3 clock divider
+#define CLOCK_INPUT_VC3_JUST   0x1     // VC3 clock source justified
+#define CLOCK_DIV_VC3          0x26    // VC3 clock divider
 #define CLOCK_DIV_VC3_MASK     0xff    // VC3 clock divider mask
-#define CLOCK_DIV_VC3_JUST     0x9     // VC3 clock divider justified
+#define CLOCK_DIV_VC3_JUST     0x26    // VC3 clock divider justified
 #define ANALOG_BUFFER_PWR      0x0     // Analog buffer power level
 #define ANALOG_BUFFER_PWR_MASK 0x1     // Analog buffer power level mask
 #define ANALOG_BUFFER_PWR_JUST 0x0     // Analog buffer power level justified
@@ -63,9 +63,9 @@
 // register initial values
 //
 #define ANALOG_IO_CONTROL      0x0     //Analog IO Control register (ABF_CR)
-#define PORT_0_GLOBAL_SELECT   0x93    //Port 0 global select register (PRT0GS)
+#define PORT_0_GLOBAL_SELECT   0xb3    //Port 0 global select register (PRT0GS)
 #define PORT_0_DRIVE_0         0x53    //Port 0 drive mode 0 register (PRT0DM0)
-#define PORT_0_DRIVE_1         0x8c    //Port 0 drive mode 1 register (PRT0DM1)
+#define PORT_0_DRIVE_1         0xac    //Port 0 drive mode 1 register (PRT0DM1)
 #define PORT_0_DRIVE_2         0xc     //Port 0 drive mode 1 register (PRT0DM2)
 #define PORT_0_INTENABLE       0x8     //Port 0 interrupt enable register (PRT0IE)
 #define PORT_0_INTCTRL_0       0x8     //Port 0 interrupt control 0 register (PRT0IC0)

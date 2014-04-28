@@ -53,21 +53,21 @@ POWER_SET_2V7_12MHZ:    equ 04h	 ; MASK for 2.7V, 12MHZ operation
 POWER_SET_2V7_6MHZ:     equ 02h	 ; MASK for 2.7V,  6MHZ operation
 POWER_SET_SLOW_IMO:     equ 01h  ; MASK for slow Internal Main Oscillator (IMO) 
 
-COMM_RX_PRESENT:		equ	0	;1 = TRUE
+COMM_RX_PRESENT:		equ	1	;1 = TRUE
 WATCHDOG_ENABLE:		equ 0	;Watchdog Enable 1 = Enable
 
-CLOCK_DIV_VC1:			equ	bh	;VC1 clock divider
+CLOCK_DIV_VC1:			equ	7h	;VC1 clock divider
 CLOCK_DIV_VC1_MASK:		equ	f0h	;VC1 clock divider mask
-CLOCK_DIV_VC1_JUST:		equ	b0h	;VC1 clock divider justified
+CLOCK_DIV_VC1_JUST:		equ	70h	;VC1 clock divider justified
 CLOCK_DIV_VC2:			equ	9h	;VC2 clock divider
 CLOCK_DIV_VC2_MASK:		equ	fh	;VC2 clock divider mask
 CLOCK_DIV_VC2_JUST:		equ	9h	;VC2 clock divider justified
-CLOCK_INPUT_VC3:		equ	2h	;VC3 clock source
+CLOCK_INPUT_VC3:		equ	1h	;VC3 clock source
 CLOCK_INPUT_VC3_MASK:	equ	3h	;VC3 clock source mask
-CLOCK_INPUT_VC3_JUST:	equ	2h	;VC3 clock source justified
-CLOCK_DIV_VC3:			equ	9h	;VC3 clock divider
+CLOCK_INPUT_VC3_JUST:	equ	1h	;VC3 clock source justified
+CLOCK_DIV_VC3:			equ	26h	;VC3 clock divider
 CLOCK_DIV_VC3_MASK:		equ	ffh	;VC3 clock divider mask
-CLOCK_DIV_VC3_JUST:		equ	9h	;VC3 clock divider justified
+CLOCK_DIV_VC3_JUST:		equ	26h	;VC3 clock divider justified
 ANALOG_BUFFER_PWR:		equ	0h	;Analog buffer power level
 ANALOG_BUFFER_PWR_MASK:	equ	1h	;Analog buffer power level mask
 ANALOG_BUFFER_PWR_JUST:	equ	0h	;Analog buffer power level justified
@@ -93,9 +93,9 @@ SYSCLK_2_DISABLE_JUST:			equ	0h	;SysClk*2 Disable setting justified
 ; register initial values
 ;
 ANALOG_IO_CONTROL:		equ 0h	;Analog IO Control register (ABF_CR)
-PORT_0_GLOBAL_SELECT:	equ 93h	;Port 0 global select register (PRT0GS)
+PORT_0_GLOBAL_SELECT:	equ b3h	;Port 0 global select register (PRT0GS)
 PORT_0_DRIVE_0:			equ 53h	;Port 0 drive mode 0 register (PRT0DM0)
-PORT_0_DRIVE_1:			equ 8ch	;Port 0 drive mode 1 register (PRT0DM1)
+PORT_0_DRIVE_1:			equ ach	;Port 0 drive mode 1 register (PRT0DM1)
 PORT_0_DRIVE_2:			equ ch	;Port 0 drive mode 2 register (PRT0DM2)
 PORT_0_INTENABLE:		equ 8h	;Port 0 interrupt enable register (PRT0IE)
 PORT_0_INTCTRL_0:		equ 8h	;Port 0 interrupt control 0 register (PRT0IC0)

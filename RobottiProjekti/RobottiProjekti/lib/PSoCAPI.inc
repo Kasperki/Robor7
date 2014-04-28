@@ -14,10 +14,8 @@
 ; =============================================================================
  
 include "PSoCGPIOINT.inc"
-include "Counter16_1.inc"
 include "LCD.inc"
 include "LED.inc"
 include "PWM8_OIKEA.inc"
-include "PWM8_SERVO.inc"
 include "PWM8_VASEN.inc"
-include "Timer8.inc"
+include "UART_1.inc"

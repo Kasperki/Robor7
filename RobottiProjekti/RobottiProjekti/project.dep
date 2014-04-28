@@ -7,28 +7,19 @@
 ./obj/delay.o : \
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
-./obj/main.o :  ./lib/COUNTE~1.H ./lib/LCD.h ./lib/LED.h\
-   ./lib/PSoCAPI.h ./lib/PSOCGP~1.H ./lib/PWM8_O~1.H ./lib/PWM8_S~1.H\
-   ./lib/PWM8_V~1.H ./lib/Timer8.h\
+./obj/main.o :  ./lib/LCD.h ./lib/LED.h ./lib/PSoCAPI.h\
+   ./lib/PSOCGP~1.H ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H ./lib/UART_1.h\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\MOTORC~1.H\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\ULTRAC~1.H\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\delay.h
-./obj/motorcontrol.o :  ./lib/COUNTE~1.H ./lib/LCD.h ./lib/LED.h\
-   ./lib/PSoCAPI.h ./lib/PSOCGP~1.H ./lib/PWM8_O~1.H ./lib/PWM8_S~1.H\
-   ./lib/PWM8_V~1.H ./lib/Timer8.h\
+./obj/motorcontrol.o :  ./lib/LCD.h ./lib/LED.h ./lib/PSoCAPI.h\
+   ./lib/PSOCGP~1.H ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H ./lib/UART_1.h\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h
-./obj/ultracontrol.o :  ./lib/COUNTE~1.H ./lib/LCD.h ./lib/LED.h\
-   ./lib/PSoCAPI.h ./lib/PSOCGP~1.H ./lib/PWM8_O~1.H ./lib/PWM8_S~1.H\
-   ./lib/PWM8_V~1.H ./lib/Timer8.h\
+./obj/ultracontrol.o :  ./lib/LCD.h ./lib/LED.h ./lib/PSoCAPI.h\
+   ./lib/PSOCGP~1.H ./lib/PWM8_O~1.H ./lib/PWM8_V~1.H ./lib/UART_1.h\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.h\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\delay.h
-./lib/obj/counter16_1.o :  ./lib/COUNTE~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
-./lib/obj/counter16_1int.o :  ./lib/COUNTE~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
 ./lib/obj/lcd.o :  ./lib/LCD.inc\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
@@ -48,21 +39,16 @@
 ./lib/obj/pwm8_oikeaint.o :  ./lib/PWM8_O~1.INC\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
-./lib/obj/pwm8_servo.o :  ./lib/PWM8_S~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
-./lib/obj/pwm8_servoint.o :  ./lib/PWM8_S~1.INC\
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
-   Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
 ./lib/obj/pwm8_vasen.o :  ./lib/PWM8_V~1.INC\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
 ./lib/obj/pwm8_vasenint.o :  ./lib/PWM8_V~1.INC\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
-./lib/obj/timer8.o :  ./lib/Timer8.inc\
+./lib/obj/uart_1.o :  ./lib/UART_1.inc\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
-./lib/obj/timer8int.o :  ./lib/Timer8.inc\
+./lib/obj/uart_1int.o :  ./lib/UART_1.inc\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
    Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\memory.inc
+./lib/obj/uart_1plus.o : 

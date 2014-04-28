@@ -1,10 +1,6 @@
 Starting MAKE...
 creating project.mk 
 
-lib/counter16_1.asm
-
-lib/counter16_1int.asm
-
 lib/lcd.asm
 
 lib/led.asm
@@ -19,28 +15,26 @@ lib/pwm8_oikea.asm
 
 lib/pwm8_oikeaint.asm
 
-lib/pwm8_servo.asm
-
-lib/pwm8_servoint.asm
-
 lib/pwm8_vasen.asm
 
 lib/pwm8_vasenint.asm
 
-lib/timer8.asm
+lib/uart_1.asm
 
-lib/timer8int.asm
+lib/uart_1int.asm
+
+lib/uart_1plus.asm
 
 ./boot.asm
 
 Linking..
 
-  ROM 38% full. 6074 out of 16384 bytes used (does not include absolute areas).
+  ROM 27% full. 4352 out of 16384 bytes used (does not include absolute areas).
 
-  RAM 30% full. 75 bytes used (does not include stack usage).
+  RAM 24% full. 60 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 0 warning(s) 12:23:40
+RobottiProjekti - 0 error(s) 0 warning(s) 13:00:35
 

@@ -35,190 +35,155 @@
  0000           ; //Init PGA AND ADC
  0000           ; void InitUAServo(void)
  0000           ; {
- 0000                   .dbline 19
- 0000           ;       PWM8_SERVO_Start();
- 0000 10                push X
- 0001 7C0000            xcall _PWM8_SERVO_Start
- 0004                   .dbline 20
- 0004           ;       PWM8_SERVO_WritePulseWidth(33);
- 0004 5700              mov X,0
- 0006 5021              mov A,33
- 0008 7C0000            xcall _PWM8_SERVO_WritePulseWidth
- 000B 20                pop X
- 000C                   .dbline -2
- 000C           L1:
- 000C                   .dbline 0 ; func end
- 000C 7F                ret
- 000D                   .dbend
- 000D                   .dbfunc e getDataUA _getDataUA fI
- 000D           _getDataUA::
- 000D                   .dbline -1
- 000D                   .dbline 26
- 000D           ; }
- 000D           ; 
- 000D           ; 
- 000D           ; //Return distance from Ultrasonic sensor in centimeters 
- 000D           ; int getDataUA(void)
- 000D           ; {
- 000D                   .dbline 33
- 000D           ;       /*if(ADCINC_fIsDataAvailable() != 0)
- 000D           ;       {               
- 000D           ;               return (int)(ADCINC_iGetData() * distanceToCm);
- 000D           ;       }
- 000D           ;       else 
- 000D           ;               return 0;*/
- 000D           ;       return 0;
- 000D 550000            mov [__r1],0
- 0010 550000            mov [__r0],0
- 0013                   .dbline -2
- 0013           L2:
- 0013                   .dbline 0 ; func end
- 0013 7F                ret
- 0014                   .dbend
- 0014                   .dbfunc e ControlTrigger _ControlTrigger fV
- 0014           ;           time -> X-5
- 0014           _ControlTrigger::
- 0014                   .dbline -1
- 0014 10                push X
- 0015 4F                mov X,SP
- 0016                   .dbline 38
- 0016           ; }
- 0016           ; 
- 0016           ; //Sends Trigger pulse
- 0016           ; void ControlTrigger(int *time)
- 0016           ; {             
- 0016                   .dbline 40
- 0016           ;       //Wait 60ms and send pulse again
- 0016           ;       if (*time >= 80)
- 0016 52FC              mov A,[X-4]
- 0018 5300              mov [__r1],A
- 001A 3E00              mvi A,[__r1]
- 001C 5300              mov [__r0],A
- 001E 3E00              mvi A,[__r1]
- 0020 1150              sub A,80
- 0022 5100              mov A,[__r0]
- 0024 3180              xor A,-128
- 0026 1980              sbb A,(0 ^ 0x80)
- 0028 C00B              jc L4
- 002A           X0:
- 002A                   .dbline 42
- 002A           ;       {
- 002A           ;               *time = 0;
- 002A                   .dbline 42
- 002A 52FC              mov A,[X-4]
- 002C 5300              mov [__r1],A
- 002E 5000              mov A,0
- 0030 3F00              mvi [__r1],A
- 0032 3F00              mvi [__r1],A
- 0034                   .dbline 43
- 0034           ;       }
- 0034           L4:
- 0034                   .dbline 46
- 0034           ;       
- 0034           ;       //Send Trigger Pulse every 1ms 
- 0034           ;       if (*time <= 1)
- 0034 52FC              mov A,[X-4]
- 0036 5300              mov [__r1],A
- 0038 3E00              mvi A,[__r1]
- 003A 5300              mov [__r0],A
- 003C 3E00              mvi A,[__r1]
- 003E 5300              mov [__r1],A
- 0040 5001              mov A,1
- 0042 1200              sub A,[__r1]
- 0044 5100              mov A,[__r0]
- 0046 3180              xor A,-128
- 0048 5300              mov [__rX],A
- 004A 5080              mov A,(0 ^ 0x80)
- 004C 1A00              sbb A,[__rX]
- 004E C006              jc L6
- 0050           X1:
- 0050                   .dbline 48
- 0050           ;       {
- 0050           ;               UATrig_Data_ADDR |= UATrig_MASK;
- 0050                   .dbline 48
- 0050 430040            or REG[0],64
- 0053                   .dbline 49
- 0053           ;       }
- 0053 8004              xjmp L7
- 0055           L6:
- 0055                   .dbline 51
- 0055           ;       else    
- 0055           ;               UATrig_Data_ADDR &= ~UATrig_MASK;
- 0055 4100BF            and REG[0],-65
- 0058           L7:
- 0058                   .dbline -2
- 0058           L3:
- 0058 20                pop X
- 0059                   .dbline 0 ; func end
- 0059 7F                ret
- 005A                   .dbsym l time -5 pI
- 005A                   .dbend
- 005A                   .dbfunc e sendTrigPulse _sendTrigPulse fV
- 005A           ;      ultraData -> X-5
- 005A           _sendTrigPulse::
- 005A                   .dbline -1
- 005A 10                push X
- 005B 4F                mov X,SP
- 005C                   .dbline 56
- 005C           ;       
- 005C           ; }
- 005C           ; 
- 005C           ; void sendTrigPulse(int *ultraData)
- 005C           ; {     
- 005C                   .dbline 57
- 005C           ;       *ultraData = 0;
- 005C 52FC              mov A,[X-4]
- 005E 5300              mov [__r1],A
- 0060 5000              mov A,0
- 0062 3F00              mvi [__r1],A
- 0064 3F00              mvi [__r1],A
- 0066                   .dbline 58
- 0066           ;       UATrig_Data_ADDR |= UATrig_MASK;        
- 0066 430040            or REG[0],64
- 0069                   .dbline 59
- 0069           ;       Delay50u();
- 0069 10                push X
- 006A 7C0000            xcall _Delay50u
- 006D 20                pop X
- 006E                   .dbline 60
- 006E           ;       UATrig_Data_ADDR &= ~UATrig_MASK;
- 006E 4100BF            and REG[0],-65
- 0071                   .dbline 61
- 0071           ;       Delay10msTimes(7);
- 0071 10                push X
- 0072 5007              mov A,7
- 0074 7C0000            xcall _Delay10msTimes
- 0077 20                pop X
- 0078                   .dbline -2
- 0078           L8:
- 0078 20                pop X
- 0079                   .dbline 0 ; func end
- 0079 7F                ret
- 007A                   .dbsym l ultraData -5 pI
- 007A                   .dbend
- 007A                   .dbfunc e ControlServo _ControlServo fV
- 007A           ;          pulse -> X-5
- 007A           _ControlServo::
- 007A                   .dbline -1
- 007A 10                push X
- 007B 4F                mov X,SP
- 007C                   .dbline 66
- 007C           ; }     
- 007C           ; 
- 007C           ; //Control PWM to move sensor
- 007C           ; void ControlServo(int pulse)
- 007C           ; {
- 007C                   .dbline 67
- 007C           ;       PWM8_SERVO_WritePulseWidth((BYTE)pulse);        
- 007C 52FC              mov A,[X-4]
- 007E 10                push X
- 007F 5700              mov X,0
- 0081 7C0000            xcall _PWM8_SERVO_WritePulseWidth
- 0084 20                pop X
- 0085                   .dbline -2
- 0085           L9:
- 0085 20                pop X
- 0086                   .dbline 0 ; func end
- 0086 7F                ret
- 0087                   .dbsym l pulse -5 I
- 0087                   .dbend
+ 0000                   .dbline -2
+ 0000           L1:
+ 0000                   .dbline 0 ; func end
+ 0000 7F                ret
+ 0001                   .dbend
+ 0001                   .dbfunc e getDataUA _getDataUA fI
+ 0001           _getDataUA::
+ 0001                   .dbline -1
+ 0001                   .dbline 25
+ 0001           ; 
+ 0001           ; }
+ 0001           ; 
+ 0001           ; 
+ 0001           ; //Return distance from Ultrasonic sensor in centimeters 
+ 0001           ; int getDataUA(void)
+ 0001           ; {
+ 0001                   .dbline 32
+ 0001           ;       /*if(ADCINC_fIsDataAvailable() != 0)
+ 0001           ;       {               
+ 0001           ;               return (int)(ADCINC_iGetData() * distanceToCm);
+ 0001           ;       }
+ 0001           ;       else 
+ 0001           ;               return 0;*/
+ 0001           ;       return 0;
+ 0001 550000            mov [__r1],0
+ 0004 550000            mov [__r0],0
+ 0007                   .dbline -2
+ 0007           L2:
+ 0007                   .dbline 0 ; func end
+ 0007 7F                ret
+ 0008                   .dbend
+ 0008                   .dbfunc e ControlTrigger _ControlTrigger fV
+ 0008           ;           time -> X-5
+ 0008           _ControlTrigger::
+ 0008                   .dbline -1
+ 0008 10                push X
+ 0009 4F                mov X,SP
+ 000A                   .dbline 37
+ 000A           ; }
+ 000A           ; 
+ 000A           ; //Sends Trigger pulse
+ 000A           ; void ControlTrigger(int *time)
+ 000A           ; {             
+ 000A                   .dbline 39
+ 000A           ;       //Wait 60ms and send pulse again
+ 000A           ;       if (*time >= 80)
+ 000A 52FC              mov A,[X-4]
+ 000C 5300              mov [__r1],A
+ 000E 3E00              mvi A,[__r1]
+ 0010 5300              mov [__r0],A
+ 0012 3E00              mvi A,[__r1]
+ 0014 1150              sub A,80
+ 0016 5100              mov A,[__r0]
+ 0018 3180              xor A,-128
+ 001A 1980              sbb A,(0 ^ 0x80)
+ 001C C00B              jc L4
+ 001E           X0:
+ 001E                   .dbline 41
+ 001E           ;       {
+ 001E           ;               *time = 0;
+ 001E                   .dbline 41
+ 001E 52FC              mov A,[X-4]
+ 0020 5300              mov [__r1],A
+ 0022 5000              mov A,0
+ 0024 3F00              mvi [__r1],A
+ 0026 3F00              mvi [__r1],A
+ 0028                   .dbline 42
+ 0028           ;       }
+ 0028           L4:
+ 0028                   .dbline 45
+ 0028           ;       
+ 0028           ;       //Send Trigger Pulse every 1ms 
+ 0028           ;       if (*time <= 1)
+ 0028 52FC              mov A,[X-4]
+ 002A 5300              mov [__r1],A
+ 002C 3E00              mvi A,[__r1]
+ 002E 5300              mov [__r0],A
+ 0030 3E00              mvi A,[__r1]
+ 0032 5300              mov [__r1],A
+ 0034 5001              mov A,1
+ 0036 1200              sub A,[__r1]
+ 0038 5100              mov A,[__r0]
+ 003A 3180              xor A,-128
+ 003C 5300              mov [__rX],A
+ 003E 5080              mov A,(0 ^ 0x80)
+ 0040 1A00              sbb A,[__rX]
+ 0042 C006              jc L6
+ 0044           X1:
+ 0044                   .dbline 47
+ 0044           ;       {
+ 0044           ;               UATrig_Data_ADDR |= UATrig_MASK;
+ 0044                   .dbline 47
+ 0044 430040            or REG[0],64
+ 0047                   .dbline 48
+ 0047           ;       }
+ 0047 8004              xjmp L7
+ 0049           L6:
+ 0049                   .dbline 50
+ 0049           ;       else    
+ 0049           ;               UATrig_Data_ADDR &= ~UATrig_MASK;
+ 0049 4100BF            and REG[0],-65
+ 004C           L7:
+ 004C                   .dbline -2
+ 004C           L3:
+ 004C 20                pop X
+ 004D                   .dbline 0 ; func end
+ 004D 7F                ret
+ 004E                   .dbsym l time -5 pI
+ 004E                   .dbend
+ 004E                   .dbfunc e sendTrigPulse _sendTrigPulse fV
+ 004E           ;      ultraData -> X-5
+ 004E           _sendTrigPulse::
+ 004E                   .dbline -1
+ 004E 10                push X
+ 004F 4F                mov X,SP
+ 0050                   .dbline 55
+ 0050           ;       
+ 0050           ; }
+ 0050           ; 
+ 0050           ; void sendTrigPulse(int *ultraData)
+ 0050           ; {     
+ 0050                   .dbline 56
+ 0050           ;       *ultraData = 0;
+ 0050 52FC              mov A,[X-4]
+ 0052 5300              mov [__r1],A
+ 0054 5000              mov A,0
+ 0056 3F00              mvi [__r1],A
+ 0058 3F00              mvi [__r1],A
+ 005A                   .dbline 57
+ 005A           ;       UATrig_Data_ADDR |= UATrig_MASK;        
+ 005A 430040            or REG[0],64
+ 005D                   .dbline 58
+ 005D           ;       Delay50u();
+ 005D 10                push X
+ 005E 7C0000            xcall _Delay50u
+ 0061 20                pop X
+ 0062                   .dbline 59
+ 0062           ;       UATrig_Data_ADDR &= ~UATrig_MASK;
+ 0062 4100BF            and REG[0],-65
+ 0065                   .dbline 60
+ 0065           ;       Delay10msTimes(7);
+ 0065 10                push X
+ 0066 5007              mov A,7
+ 0068 7C0000            xcall _Delay10msTimes
+ 006B 20                pop X
+ 006C                   .dbline -2
+ 006C           L8:
+ 006C 20                pop X
+ 006D                   .dbline 0 ; func end
+ 006D 7F                ret
+ 006E                   .dbsym l ultraData -5 pI
+ 006E                   .dbend
