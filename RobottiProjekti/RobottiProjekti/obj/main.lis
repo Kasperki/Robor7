@@ -9,48 +9,54 @@
  0000 0000              .word 0
                         .area data(ram, con, rel)
  0002                   .dbfile ./main.c
- 0002                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0002                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0002                   .dbsym e timeT _timeT I
  0002           _timeUltra::
  0002                   .blkb 2
                         .area idata(rom,lit)
  0002 0000              .word 0
                         .area data(ram, con, rel)
- 0004                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0004                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0004                   .dbsym e timeUltra _timeUltra I
  0004           _timeUltraRead::
  0004                   .blkb 2
                         .area idata(rom,lit)
  0004 0000              .word 0
                         .area data(ram, con, rel)
- 0006                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0006                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0006                   .dbsym e timeUltraRead _timeUltraRead I
  0006           _milliT::
  0006                   .blkb 4
                         .area idata(rom,lit)
  0006 00000000          .word 0,0
                         .area data(ram, con, rel)
- 000A                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000A                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000A                   .dbsym e milliT _milliT l
  000A           _distanceCM::
  000A                   .blkb 2
                         .area idata(rom,lit)
  000A 0000              .word 0
                         .area data(ram, con, rel)
- 000C                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 000C                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  000C                   .dbsym e distanceCM _distanceCM I
                         .area text(rom, con, rel)
- 0000                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000                   .dbfunc e main _main fV
- 0000           ;              i -> X+3
- 0000           ;         strPtr -> X+1
- 0000           ;        uartBuf -> X+0
+ 0000           ;              i -> X+31
+ 0000           ;        uartBuf -> X+30
+ 0000           ;         axis_y -> X+26
+ 0000           ;         axis_x -> X+22
+ 0000           ;              y -> X+17
+ 0000           ;              x -> X+12
+ 0000           ;         y_temp -> X+7
+ 0000           ;         x_temp -> X+2
+ 0000           ;         strPtr -> X+0
  0000           _main::
  0000                   .dbline -1
  0000 10                push X
  0001 4F                mov X,SP
- 0002 3805              add SP,5
- 0004                   .dbline 34
+ 0002 3821              add SP,33
+ 0004                   .dbline 35
  0004           ; //----------------------------------------------------------------------------
  0004           ; // Robotti Projekti
  0004           ; // Robor7 @ 2014
@@ -82,60 +88,67 @@
  0004           ; char buffer[10];
  0004           ; 
  0004           ; 
+ 0004           ; 
  0004           ; //Main Method
  0004           ; void main(void)
  0004           ; {
- 0004                   .dbline 40
+ 0004                   .dbline 47
  0004           ;       //Init**************************
  0004           ;       //UART
  0004           ;       char * strPtr;                        // Parameter pointer
  0004           ;       char uartBuf;
+ 0004           ;       char x_temp[5];
+ 0004           ;       char y_temp[5];
+ 0004           ;       char x[5];
+ 0004           ;       char y[5];
+ 0004           ;       float axis_x;
+ 0004           ;       float axis_y;
  0004           ;     
  0004           ;       UART_1_CmdReset();                      // Initialize receiver/cmd // buffer
  0004 10                push X
  0005 7C0000            xcall _UART_1_CmdReset
- 0008                   .dbline 42
+ 0008                   .dbline 49
  0008           ;     //UART_1_IntCntl(UART_1_ENABLE_RX_INT);     // Enable RX interrupts
  0008           ;       UART_1_Start(UART_1_PARITY_NONE); 
  0008 5000              mov A,0
  000A 7C0000            xcall _UART_1_Start
  000D 20                pop X
- 000E                   .dbline 45
+ 000E                   .dbline 52
  000E           ;       
  000E           ;       //Enables Global Interrupts
  000E           ;       M8C_EnableGInt; 
  000E 7101                      or  F, 01h
  0010           
- 0010                   .dbline 46
+ 0010                   .dbline 53
  0010           ;       M8C_EnableIntMask(INT_MSK0, INT_MSK0_GPIO);     //VITTU
  0010 43E020            or REG[0xe0],32
- 0013                   .dbline 49
+ 0013                   .dbline 56
  0013           ;       
  0013           ;       //Start LCD
  0013           ;       LCD_Start();
  0013 10                push X
  0014 7C0000            xcall _LCD_Start
  0017 20                pop X
- 0018                   .dbline 52
+ 0018                   .dbline 59
  0018           ;       
  0018           ;       //Start Motor PWMs
  0018           ;       InitPWM();
  0018 7C0000            xcall _InitPWM
- 001B                   .dbline 55
+ 001B                   .dbline 62
  001B           ;       
  001B           ;       //Init Servo
  001B           ;       InitUAServo();
  001B 7C0000            xcall _InitUAServo
- 001E                   .dbline 57
+ 001E                   .dbline 64
  001E           ;               
  001E           ;       Delay10msTimes(100);
  001E 10                push X
  001F 5064              mov A,100
  0021 7C0000            xcall _Delay10msTimes
  0024 20                pop X
- 0025 8066              xjmp L3
+ 0025 818A              xjmp L3
  0027           L2:
- 0027                   .dbline 65
+ 0027                   .dbline 72
  0027           ;       
  0027           ;       //Testink
  0027           ;       //TestLoop();
@@ -144,251 +157,514 @@
  0027           ;       //***********************
  0027           ;       while(1)
  0027           ;       {
- 0027                   .dbline 66
+ 0027                   .dbline 76
+ 0027           ;               //TATTI OHJAUS
+ 0027           ;               
+ 0027           ;               
  0027           ;               int i = 0;
- 0027 560400            mov [X+4],0
- 002A 560300            mov [X+3],0
- 002D                   .dbline 70
- 002D           ;               //for(i = 0; i < 8; i++)
- 002D           ;                       //strPtr[i] = UART_1_cGetChar();
- 002D           ;               
- 002D           ;               uartBuf = UART_1_cGetChar();
- 002D 10                push X
- 002E 7C0000            xcall _UART_1_cGetChar
- 0031 20                pop X
- 0032 5400              mov [X+0],A
- 0034                   .dbline 72
- 0034           ;               
- 0034           ;               if (uartBuf == 0x31)
- 0034 3D0031            cmp [X+0],49
- 0037 B00C              jnz L5
- 0039                   .dbline 74
- 0039           ;               {
- 0039           ;                       MoveForward(FULL_SPEED);
- 0039                   .dbline 74
- 0039 5000              mov A,0
- 003B 08                push A
- 003C 50C7              mov A,-57
- 003E 08                push A
- 003F 7C0000            xcall _MoveForward
- 0042 38FE              add SP,-2
- 0044                   .dbline 75
- 0044           ;               }
- 0044           L5:
- 0044                   .dbline 76
- 0044           ;               if (uartBuf == 0x32)
- 0044 3D0032            cmp [X+0],50
- 0047 B00C              jnz L7
- 0049                   .dbline 78
- 0049           ;               {
- 0049           ;                       TurnRight(FULL_SPEED);
- 0049                   .dbline 78
- 0049 5000              mov A,0
- 004B 08                push A
- 004C 50C7              mov A,-57
- 004E 08                push A
- 004F 7C0000            xcall _TurnRight
- 0052 38FE              add SP,-2
- 0054                   .dbline 79
- 0054           ;               }
- 0054           L7:
- 0054                   .dbline 80
- 0054           ;               if (uartBuf == 0x33)
- 0054 3D0033            cmp [X+0],51
- 0057 B00C              jnz L9
- 0059                   .dbline 82
- 0059           ;               {
- 0059           ;                       MoveBackward(FULL_SPEED);
- 0059                   .dbline 82
- 0059 5000              mov A,0
- 005B 08                push A
- 005C 50C7              mov A,-57
- 005E 08                push A
- 005F 7C0000            xcall _MoveBackward
- 0062 38FE              add SP,-2
- 0064                   .dbline 83
- 0064           ;               }
- 0064           L9:
- 0064                   .dbline 84
- 0064           ;               if (uartBuf == 0x34)
- 0064 3D0034            cmp [X+0],52
- 0067 B00C              jnz L11
- 0069                   .dbline 86
- 0069           ;               {
- 0069           ;                       TurnLeft(FULL_SPEED);
- 0069                   .dbline 86
- 0069 5000              mov A,0
- 006B 08                push A
- 006C 50C7              mov A,-57
- 006E 08                push A
- 006F 7C0000            xcall _TurnLeft
- 0072 38FE              add SP,-2
- 0074                   .dbline 87
- 0074           ;               }
- 0074           L11:
- 0074                   .dbline 88
- 0074           ;               if(uartBuf == 0x30)
- 0074 3D0030            cmp [X+0],48
- 0077 B004              jnz L13
- 0079                   .dbline 89
- 0079           ;                       Stop();
- 0079 7C0000            xcall _Stop
- 007C           L13:
- 007C                   .dbline 92
- 007C           ;               
- 007C           ;               
- 007C           ;               LCD_Position(0,0);
- 007C 10                push X
- 007D 5000              mov A,0
- 007F 5700              mov X,0
- 0081 7C0000            xcall _LCD_Position
- 0084 20                pop X
- 0085                   .dbline 93
- 0085           ;               LCD_PrHexByte(uartBuf);
- 0085 10                push X
- 0086 5200              mov A,[X+0]
- 0088 7C0000            xcall _LCD_PrHexByte
- 008B 20                pop X
- 008C                   .dbline 95
- 008C           ;               //LCD_PrString(strPtr);
- 008C           ;       }
- 008C           L3:
- 008C                   .dbline 64
- 008C 8F9A              xjmp L2
- 008E           X0:
- 008E                   .dbline -2
- 008E           L1:
- 008E 38FB              add SP,-5
- 0090 20                pop X
- 0091                   .dbline 0 ; func end
- 0091 8FFF              jmp .
- 0093                   .dbsym l i 3 I
- 0093                   .dbsym l strPtr 1 pc
- 0093                   .dbsym l uartBuf 0 c
- 0093                   .dbend
- 0093                   .dbfunc e PinInterrupt _PinInterrupt fV
- 0093           _PinInterrupt::
- 0093                   .dbline -1
- 0093 08                push A
- 0094                   .dbline 100
- 0094           ; }
- 0094           ; 
- 0094           ; 
- 0094           ; // Pin interrupt
- 0094           ; void PinInterrupt(void){}
- 0094                   .dbline -2
- 0094           L15:
- 0094 18                pop A
- 0095                   .dbline 0 ; func end
- 0095 7E                reti
- 0096                   .dbend
- 0096                   .dbfunc e TestLoop _TestLoop fV
- 0096           _TestLoop::
- 0096                   .dbline -1
- 0096                   .dbline 105
- 0096           ; 
- 0096           ; 
- 0096           ; //For Testing
- 0096           ; void TestLoop(void)
- 0096           ; {
- 0096           L17:
- 0096                   .dbline 107
- 0096           ;       while(1)
- 0096           ;       {       
- 0096                   .dbline 123
- 0096           ;               /*ControlServo(SERVO_LEFT);
- 0096           ;               Delay10msTimes(250);
- 0096           ;               ControlServo(SERVO_MIDDLE_FROM_LEFT);
- 0096           ;               Delay10msTimes(250);
- 0096           ;               ControlServo(SERVO_RIGHT);
- 0096           ;               Delay10msTimes(250);
- 0096           ;               ControlServo(SERVO_MIDDLE_FROM_RIGHT);
- 0096           ;               Delay10msTimes(250);            
- 0096           ;                       
- 0096           ;               itoa(buffer,distanceCM,10);
- 0096           ;               LCD_Position(0,0);
- 0096           ;               LCD_PrCString("     ");
- 0096           ;               LCD_Position(0,0);
- 0096           ;               LCD_PrString(buffer);
- 0096           ;               */              
- 0096           ;       }
- 0096           L18:
- 0096                   .dbline 106
- 0096 8FFF              xjmp L17
- 0098           X1:
- 0098                   .dbline -2
- 0098           L16:
- 0098                   .dbline 0 ; func end
- 0098 7F                ret
- 0099                   .dbend
- 0099                   .dbfunc e Delay _Delay fV
- 0099           ;          timme -> X+0
- 0099           ;          delay -> X-5
- 0099           _Delay::
- 0099                   .dbline -1
- 0099 10                push X
- 009A 4F                mov X,SP
- 009B 3804              add SP,4
- 009D                   .dbline 128
- 009D           ; }
- 009D           ; 
- 009D           ; ////OMA Delay function 
- 009D           ; void Delay(int delay)
- 009D           ; {
- 009D                   .dbline 129
- 009D           ;       unsigned long int timme = milliT + delay;
- 009D 52FC              mov A,[X-4]
- 009F 5300              mov [__r3],A
- 00A1 52FB              mov A,[X-5]
- 00A3 5300              mov [__r2],A
- 00A5 470080            tst [__r2],-128
- 00A8 A009              jz X2
- 00AA 5500FF            mov [__r1],-1
- 00AD 5500FF            mov [__r0],-1
- 00B0 8007              jmp X3
- 00B2           X2:
- 00B2 550000            mov [__r1],0
- 00B5 550000            mov [__r0],0
- 00B8           X3:
- 00B8 5109              mov A,[_milliT+3]
- 00BA 0200              add A,[__r3]
- 00BC 5403              mov [X+3],A
- 00BE 5108              mov A,[_milliT+2]
- 00C0 0A00              adc A,[__r2]
- 00C2 5402              mov [X+2],A
- 00C4 5107              mov A,[_milliT+1]
- 00C6 0A00              adc A,[__r1]
- 00C8 5401              mov [X+1],A
- 00CA 5106              mov A,[_milliT]
- 00CC 0A00              adc A,[__r0]
- 00CE 5400              mov [X+0],A
- 00D0           L21:
- 00D0                   .dbline 130
- 00D0           ;       while (milliT < timme){}
- 00D0                   .dbline 130
- 00D0           L22:
- 00D0                   .dbline 130
- 00D0 5109              mov A,[_milliT+3]
- 00D2 1303              sub A,[X+3]
- 00D4 5108              mov A,[_milliT+2]
- 00D6 1B02              sbb A,[X+2]
- 00D8 5107              mov A,[_milliT+1]
- 00DA 1B01              sbb A,[X+1]
- 00DC 5106              mov A,[_milliT]
- 00DE 1B00              sbb A,[X+0]
- 00E0 CFEF              jc L21
- 00E2           X4:
- 00E2                   .dbline -2
- 00E2           L20:
- 00E2 38FC              add SP,-4
- 00E4 20                pop X
- 00E5                   .dbline 0 ; func end
- 00E5 7F                ret
- 00E6                   .dbsym l timme 0 l
- 00E6                   .dbsym l delay -5 I
- 00E6                   .dbend
+ 0027 562000            mov [X+32],0
+ 002A 561F00            mov [X+31],0
+ 002D                   .dbline 77
+ 002D           ;               for(i = 0; i < 8; i++)
+ 002D 562000            mov [X+32],0
+ 0030 561F00            mov [X+31],0
+ 0033           L5:
+ 0033                   .dbline 78
+ 0033           ;                       strPtr[i] = UART_1_cGetChar();
+ 0033 10                push X
+ 0034 7C0000            xcall _UART_1_cGetChar
+ 0037 20                pop X
+ 0038 5300              mov [__r0],A
+ 003A 5220              mov A,[X+32]
+ 003C 0301              add A,[X+1]
+ 003E 5300              mov [__r3],A
+ 0040 5100              mov A,[__r0]
+ 0042 3F00              mvi [__r3],A
+ 0044           L6:
+ 0044                   .dbline 77
+ 0044 7720              inc [X+32]
+ 0046 0F1F00            adc [X+31],0
+ 0049                   .dbline 77
+ 0049 5220              mov A,[X+32]
+ 004B 1108              sub A,8
+ 004D 521F              mov A,[X+31]
+ 004F 3180              xor A,-128
+ 0051 1980              sbb A,(0 ^ 0x80)
+ 0053 CFDF              jc L5
+ 0055           X1:
+ 0055                   .dbline 80
+ 0055           ;               
+ 0055           ;               LCD_Position(0,0);
+ 0055 10                push X
+ 0056 5000              mov A,0
+ 0058 5700              mov X,0
+ 005A 7C0000            xcall _LCD_Position
+ 005D 20                pop X
+ 005E                   .dbline 82
+ 005E           ;               //LCD_PrHexByte(uartBuf);
+ 005E           ;               LCD_PrString(strPtr);
+ 005E 10                push X
+ 005F 5200              mov A,[X+0]
+ 0061 08                push A
+ 0062 5201              mov A,[X+1]
+ 0064 5C                mov X,A
+ 0065 18                pop A
+ 0066 7C0000            xcall _LCD_PrString
+ 0069 20                pop X
+ 006A                   .dbline 85
+ 006A           ;               
+ 006A           ;               //Parse X
+ 006A           ;               for(i = 0; i < 4; i++)
+ 006A 562000            mov [X+32],0
+ 006D 561F00            mov [X+31],0
+ 0070           L9:
+ 0070                   .dbline 86
+ 0070           ;               {
+ 0070                   .dbline 87
+ 0070           ;                       x_temp[i] = strPtr[i];                                  
+ 0070 5220              mov A,[X+32]
+ 0072 0301              add A,[X+1]
+ 0074 5300              mov [__r1],A
+ 0076 3E00              mvi A,[__r1]
+ 0078 5300              mov [__r0],A
+ 007A 5A00              mov [__r3],X
+ 007C 060002            add [__r3],2
+ 007F 5220              mov A,[X+32]
+ 0081 0200              add A,[__r3]
+ 0083 5300              mov [__r3],A
+ 0085 5100              mov A,[__r0]
+ 0087 3F00              mvi [__r3],A
+ 0089                   .dbline 88
+ 0089           ;               }                       
+ 0089           L10:
+ 0089                   .dbline 85
+ 0089 7720              inc [X+32]
+ 008B 0F1F00            adc [X+31],0
+ 008E                   .dbline 85
+ 008E 5220              mov A,[X+32]
+ 0090 1104              sub A,4
+ 0092 521F              mov A,[X+31]
+ 0094 3180              xor A,-128
+ 0096 1980              sbb A,(0 ^ 0x80)
+ 0098 CFD7              jc L9
+ 009A           X2:
+ 009A                   .dbline 90
+ 009A           ;               //Parse Y
+ 009A           ;               for(i = 4; i < 8; i++)
+ 009A 562004            mov [X+32],4
+ 009D 561F00            mov [X+31],0
+ 00A0           L13:
+ 00A0                   .dbline 91
+ 00A0           ;               {
+ 00A0                   .dbline 92
+ 00A0           ;                       y_temp[i-4] = strPtr[i];        
+ 00A0 5220              mov A,[X+32]
+ 00A2 0301              add A,[X+1]
+ 00A4 5300              mov [__r1],A
+ 00A6 3E00              mvi A,[__r1]
+ 00A8 5300              mov [__r0],A
+ 00AA 5A00              mov [__r3],X
+ 00AC 060003            add [__r3],3
+ 00AF 5220              mov A,[X+32]
+ 00B1 0200              add A,[__r3]
+ 00B3 5300              mov [__r3],A
+ 00B5 5100              mov A,[__r0]
+ 00B7 3F00              mvi [__r3],A
+ 00B9                   .dbline 93
+ 00B9           ;               }
+ 00B9           L14:
+ 00B9                   .dbline 90
+ 00B9 7720              inc [X+32]
+ 00BB 0F1F00            adc [X+31],0
+ 00BE                   .dbline 90
+ 00BE 5220              mov A,[X+32]
+ 00C0 1108              sub A,8
+ 00C2 521F              mov A,[X+31]
+ 00C4 3180              xor A,-128
+ 00C6 1980              sbb A,(0 ^ 0x80)
+ 00C8 CFD7              jc L13
+ 00CA           X3:
+ 00CA                   .dbline 96
+ 00CA           ;               
+ 00CA           ;               //1083 -> 0.83f
+ 00CA           ;               if (x_temp[0] == 0)
+ 00CA 3D0200            cmp [X+2],0
+ 00CD B038              jnz L18
+ 00CF                   .dbline 98
+ 00CF           ;               {
+ 00CF           ;                       x[0] = '-';
+ 00CF                   .dbline 98
+ 00CF 560C2D            mov [X+12],45
+ 00D2                   .dbline 99
+ 00D2           ;                       x[1] = x_temp[1];
+ 00D2 5203              mov A,[X+3]
+ 00D4 540D              mov [X+13],A
+ 00D6                   .dbline 100
+ 00D6           ;                       x[2] = '.';
+ 00D6 560E2E            mov [X+14],46
+ 00D9                   .dbline 101
+ 00D9           ;                       x[3] = x_temp[2];
+ 00D9 5204              mov A,[X+4]
+ 00DB 540F              mov [X+15],A
+ 00DD                   .dbline 102
+ 00DD           ;                       x[4] = x_temp[3];
+ 00DD 5205              mov A,[X+5]
+ 00DF 5410              mov [X+16],A
+ 00E1                   .dbline 103
+ 00E1           ;                       x[5] = '\0';
+ 00E1 561100            mov [X+17],0
+ 00E4                   .dbline 104
+ 00E4           ;                       axis_x = atof(x);
+ 00E4 5A00              mov [__r1],X
+ 00E6 06000C            add [__r1],12
+ 00E9 5100              mov A,[__r0]
+ 00EB 08                push A
+ 00EC 5100              mov A,[__r1]
+ 00EE 08                push A
+ 00EF 7C0000            xcall _atof
+ 00F2 38FE              add SP,-2
+ 00F4 5100              mov A,[__r0]
+ 00F6 5416              mov [X+22],A
+ 00F8 5100              mov A,[__r1]
+ 00FA 5417              mov [X+23],A
+ 00FC 5100              mov A,[__r2]
+ 00FE 5418              mov [X+24],A
+ 0100 5100              mov A,[__r3]
+ 0102 5419              mov [X+25],A
+ 0104                   .dbline 105
+ 0104           ;               } else if (x_temp[0] == 1)
+ 0104 8038              xjmp L19
+ 0106           L18:
+ 0106                   .dbline 105
+ 0106 3D0201            cmp [X+2],1
+ 0109 B033              jnz L28
+ 010B                   .dbline 107
+ 010B           ;               {
+ 010B           ;                       x[0] = x_temp[1];
+ 010B                   .dbline 107
+ 010B 5203              mov A,[X+3]
+ 010D 540C              mov [X+12],A
+ 010F                   .dbline 108
+ 010F           ;                       x[1] = '.';
+ 010F 560D2E            mov [X+13],46
+ 0112                   .dbline 109
+ 0112           ;                       x[2] = x_temp[2];
+ 0112 5204              mov A,[X+4]
+ 0114 540E              mov [X+14],A
+ 0116                   .dbline 110
+ 0116           ;                       x[3] = x_temp[3];
+ 0116 5205              mov A,[X+5]
+ 0118 540F              mov [X+15],A
+ 011A                   .dbline 111
+ 011A           ;                       x[4] = '\0';
+ 011A 561000            mov [X+16],0
+ 011D                   .dbline 112
+ 011D           ;                       axis_x = atof(x);
+ 011D 5A00              mov [__r1],X
+ 011F 06000C            add [__r1],12
+ 0122 5100              mov A,[__r0]
+ 0124 08                push A
+ 0125 5100              mov A,[__r1]
+ 0127 08                push A
+ 0128 7C0000            xcall _atof
+ 012B 38FE              add SP,-2
+ 012D 5100              mov A,[__r0]
+ 012F 5416              mov [X+22],A
+ 0131 5100              mov A,[__r1]
+ 0133 5417              mov [X+23],A
+ 0135 5100              mov A,[__r2]
+ 0137 5418              mov [X+24],A
+ 0139 5100              mov A,[__r3]
+ 013B 5419              mov [X+25],A
+ 013D                   .dbline 113
+ 013D           ;               }
+ 013D           L28:
+ 013D           L19:
+ 013D                   .dbline 115
+ 013D           ;               //0023 -> -0.23f
+ 013D           ;               if (y_temp[0] == 0)
+ 013D 3D0700            cmp [X+7],0
+ 0140 B038              jnz L37
+ 0142                   .dbline 117
+ 0142           ;               {
+ 0142           ;                       y[0] = '-';
+ 0142                   .dbline 117
+ 0142 56112D            mov [X+17],45
+ 0145                   .dbline 118
+ 0145           ;                       y[1] = y_temp[1];
+ 0145 5208              mov A,[X+8]
+ 0147 5412              mov [X+18],A
+ 0149                   .dbline 119
+ 0149           ;                       y[2] = '.';
+ 0149 56132E            mov [X+19],46
+ 014C                   .dbline 120
+ 014C           ;                       y[3] = y_temp[2];
+ 014C 5209              mov A,[X+9]
+ 014E 5414              mov [X+20],A
+ 0150                   .dbline 121
+ 0150           ;                       y[4] = y_temp[3];
+ 0150 520A              mov A,[X+10]
+ 0152 5415              mov [X+21],A
+ 0154                   .dbline 122
+ 0154           ;                       y[5] = '\0';
+ 0154 561600            mov [X+22],0
+ 0157                   .dbline 123
+ 0157           ;                       axis_y = atof(y);
+ 0157 5A00              mov [__r1],X
+ 0159 060011            add [__r1],17
+ 015C 5100              mov A,[__r0]
+ 015E 08                push A
+ 015F 5100              mov A,[__r1]
+ 0161 08                push A
+ 0162 7C0000            xcall _atof
+ 0165 38FE              add SP,-2
+ 0167 5100              mov A,[__r0]
+ 0169 541A              mov [X+26],A
+ 016B 5100              mov A,[__r1]
+ 016D 541B              mov [X+27],A
+ 016F 5100              mov A,[__r2]
+ 0171 541C              mov [X+28],A
+ 0173 5100              mov A,[__r3]
+ 0175 541D              mov [X+29],A
+ 0177                   .dbline 124
+ 0177           ;               } else if (y_temp[0] == 1)
+ 0177 8038              xjmp L38
+ 0179           L37:
+ 0179                   .dbline 124
+ 0179 3D0701            cmp [X+7],1
+ 017C B033              jnz L47
+ 017E                   .dbline 126
+ 017E           ;               {
+ 017E           ;                       y[0] = y_temp[1];
+ 017E                   .dbline 126
+ 017E 5208              mov A,[X+8]
+ 0180 5411              mov [X+17],A
+ 0182                   .dbline 127
+ 0182           ;                       y[1] = '.';
+ 0182 56122E            mov [X+18],46
+ 0185                   .dbline 128
+ 0185           ;                       y[2] = y_temp[2];
+ 0185 5209              mov A,[X+9]
+ 0187 5413              mov [X+19],A
+ 0189                   .dbline 129
+ 0189           ;                       y[3] = y_temp[3];
+ 0189 520A              mov A,[X+10]
+ 018B 5414              mov [X+20],A
+ 018D                   .dbline 130
+ 018D           ;                       y[4] = '\0';
+ 018D 561500            mov [X+21],0
+ 0190                   .dbline 131
+ 0190           ;                       axis_y = atof(y);
+ 0190 5A00              mov [__r1],X
+ 0192 060011            add [__r1],17
+ 0195 5100              mov A,[__r0]
+ 0197 08                push A
+ 0198 5100              mov A,[__r1]
+ 019A 08                push A
+ 019B 7C0000            xcall _atof
+ 019E 38FE              add SP,-2
+ 01A0 5100              mov A,[__r0]
+ 01A2 541A              mov [X+26],A
+ 01A4 5100              mov A,[__r1]
+ 01A6 541B              mov [X+27],A
+ 01A8 5100              mov A,[__r2]
+ 01AA 541C              mov [X+28],A
+ 01AC 5100              mov A,[__r3]
+ 01AE 541D              mov [X+29],A
+ 01B0                   .dbline 132
+ 01B0           ;               }
+ 01B0           L47:
+ 01B0           L38:
+ 01B0                   .dbline 178
+ 01B0           ;               
+ 01B0           ;               //if(x < 0) xAbs = x * -1;
+ 01B0           ;               
+ 01B0           ;               
+ 01B0           ;               
+ 01B0           ;               //if(y < 0) yAbs = y * -1;
+ 01B0           ;               
+ 01B0           ;               //if(xAbs > yAbs)
+ 01B0           ;                       //Käännytään
+ 01B0           ;                       //if(x>0)
+ 01B0           ;                               //TurnRight(x)
+ 01B0           ;                       //else
+ 01B0           ;                               //TurnLeft(x);
+ 01B0           ;               //else
+ 01B0           ;                       //Suoraan -> Taakse
+ 01B0           ;               
+ 01B0           ;               
+ 01B0           ;               //EZ
+ 01B0           ; //            uartBuf = UART_1_cGetChar();
+ 01B0           ; //            
+ 01B0           ; //            if (uartBuf == 0x31)
+ 01B0           ; //            {
+ 01B0           ; //                    MoveForward(FULL_SPEED);
+ 01B0           ; //            }
+ 01B0           ; //            if (uartBuf == 0x32)
+ 01B0           ; //            {
+ 01B0           ; //                    TurnRight(FULL_SPEED);
+ 01B0           ; //            }
+ 01B0           ; //            if (uartBuf == 0x33)
+ 01B0           ; //            {
+ 01B0           ; //                    MoveBackward(FULL_SPEED);
+ 01B0           ; //            }
+ 01B0           ; //            if (uartBuf == 0x34)
+ 01B0           ; //            {
+ 01B0           ; //                    TurnLeft(FULL_SPEED);
+ 01B0           ; //            }
+ 01B0           ; //            if(uartBuf == 0x30)
+ 01B0           ; //                    Stop();
+ 01B0           ;               
+ 01B0           ;               
+ 01B0           ; 
+ 01B0           ;               
+ 01B0           ; //            LCD_Position(1,0);
+ 01B0           ; //            //LCD_PrHexByte(uartBuf);
+ 01B0           ; //            LCD_PrString(y);
+ 01B0           ;       }
+ 01B0           L3:
+ 01B0                   .dbline 71
+ 01B0 8E76              xjmp L2
+ 01B2           X0:
+ 01B2                   .dbline -2
+ 01B2           L1:
+ 01B2 38DF              add SP,-33
+ 01B4 20                pop X
+ 01B5                   .dbline 0 ; func end
+ 01B5 8FFF              jmp .
+ 01B7                   .dbsym l i 31 I
+ 01B7                   .dbsym l uartBuf 30 c
+ 01B7                   .dbsym l axis_y 26 D
+ 01B7                   .dbsym l axis_x 22 D
+ 01B7                   .dbsym l y 17 A[5:5]c
+ 01B7                   .dbsym l x 12 A[5:5]c
+ 01B7                   .dbsym l y_temp 7 A[5:5]c
+ 01B7                   .dbsym l x_temp 2 A[5:5]c
+ 01B7                   .dbsym l strPtr 0 pc
+ 01B7                   .dbend
+ 01B7                   .dbfunc e PinInterrupt _PinInterrupt fV
+ 01B7           _PinInterrupt::
+ 01B7                   .dbline -1
+ 01B7 08                push A
+ 01B8                   .dbline 183
+ 01B8           ; }
+ 01B8           ; 
+ 01B8           ; 
+ 01B8           ; // Pin interrupt
+ 01B8           ; void PinInterrupt(void){}
+ 01B8                   .dbline -2
+ 01B8           L56:
+ 01B8 18                pop A
+ 01B9                   .dbline 0 ; func end
+ 01B9 7E                reti
+ 01BA                   .dbend
+ 01BA                   .dbfunc e TestLoop _TestLoop fV
+ 01BA           _TestLoop::
+ 01BA                   .dbline -1
+ 01BA                   .dbline 188
+ 01BA           ; 
+ 01BA           ; 
+ 01BA           ; //For Testing
+ 01BA           ; void TestLoop(void)
+ 01BA           ; {
+ 01BA           L58:
+ 01BA                   .dbline 190
+ 01BA           ;       while(1)
+ 01BA           ;       {       
+ 01BA                   .dbline 206
+ 01BA           ;               /*ControlServo(SERVO_LEFT);
+ 01BA           ;               Delay10msTimes(250);
+ 01BA           ;               ControlServo(SERVO_MIDDLE_FROM_LEFT);
+ 01BA           ;               Delay10msTimes(250);
+ 01BA           ;               ControlServo(SERVO_RIGHT);
+ 01BA           ;               Delay10msTimes(250);
+ 01BA           ;               ControlServo(SERVO_MIDDLE_FROM_RIGHT);
+ 01BA           ;               Delay10msTimes(250);            
+ 01BA           ;                       
+ 01BA           ;               itoa(buffer,distanceCM,10);
+ 01BA           ;               LCD_Position(0,0);
+ 01BA           ;               LCD_PrCString("     ");
+ 01BA           ;               LCD_Position(0,0);
+ 01BA           ;               LCD_PrString(buffer);
+ 01BA           ;               */              
+ 01BA           ;       }
+ 01BA           L59:
+ 01BA                   .dbline 189
+ 01BA 8FFF              xjmp L58
+ 01BC           X4:
+ 01BC                   .dbline -2
+ 01BC           L57:
+ 01BC                   .dbline 0 ; func end
+ 01BC 7F                ret
+ 01BD                   .dbend
+ 01BD                   .dbfunc e Delay _Delay fV
+ 01BD           ;          timme -> X+0
+ 01BD           ;          delay -> X-5
+ 01BD           _Delay::
+ 01BD                   .dbline -1
+ 01BD 10                push X
+ 01BE 4F                mov X,SP
+ 01BF 3804              add SP,4
+ 01C1                   .dbline 211
+ 01C1           ; }
+ 01C1           ; 
+ 01C1           ; ////OMA Delay function 
+ 01C1           ; void Delay(int delay)
+ 01C1           ; {
+ 01C1                   .dbline 212
+ 01C1           ;       unsigned long int timme = milliT + delay;
+ 01C1 52FC              mov A,[X-4]
+ 01C3 5300              mov [__r3],A
+ 01C5 52FB              mov A,[X-5]
+ 01C7 5300              mov [__r2],A
+ 01C9 470080            tst [__r2],-128
+ 01CC A009              jz X5
+ 01CE 5500FF            mov [__r1],-1
+ 01D1 5500FF            mov [__r0],-1
+ 01D4 8007              jmp X6
+ 01D6           X5:
+ 01D6 550000            mov [__r1],0
+ 01D9 550000            mov [__r0],0
+ 01DC           X6:
+ 01DC 5109              mov A,[_milliT+3]
+ 01DE 0200              add A,[__r3]
+ 01E0 5403              mov [X+3],A
+ 01E2 5108              mov A,[_milliT+2]
+ 01E4 0A00              adc A,[__r2]
+ 01E6 5402              mov [X+2],A
+ 01E8 5107              mov A,[_milliT+1]
+ 01EA 0A00              adc A,[__r1]
+ 01EC 5401              mov [X+1],A
+ 01EE 5106              mov A,[_milliT]
+ 01F0 0A00              adc A,[__r0]
+ 01F2 5400              mov [X+0],A
+ 01F4           L62:
+ 01F4                   .dbline 213
+ 01F4           ;       while (milliT < timme){}
+ 01F4                   .dbline 213
+ 01F4           L63:
+ 01F4                   .dbline 213
+ 01F4 5109              mov A,[_milliT+3]
+ 01F6 1303              sub A,[X+3]
+ 01F8 5108              mov A,[_milliT+2]
+ 01FA 1B02              sbb A,[X+2]
+ 01FC 5107              mov A,[_milliT+1]
+ 01FE 1B01              sbb A,[X+1]
+ 0200 5106              mov A,[_milliT]
+ 0202 1B00              sbb A,[X+0]
+ 0204 CFEF              jc L62
+ 0206           X7:
+ 0206                   .dbline -2
+ 0206           L61:
+ 0206 38FC              add SP,-4
+ 0208 20                pop X
+ 0209                   .dbline 0 ; func end
+ 0209 7F                ret
+ 020A                   .dbsym l timme 0 l
+ 020A                   .dbsym l delay -5 I
+ 020A                   .dbend
                         .area bss(ram, con, rel)
- 0000                   .dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c
+ 0000                   .dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\main.c
  0000           _buffer::
  0000                   .blkb 10
  000A                   .dbsym e buffer _buffer A[10:10]c

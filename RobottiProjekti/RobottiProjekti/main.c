@@ -29,6 +29,7 @@ volatile int distanceCM = 0;
 char buffer[10];
 
 
+
 //Main Method
 void main(void)
 {
@@ -36,6 +37,12 @@ void main(void)
 	//UART
 	char * strPtr;                        // Parameter pointer
 	char uartBuf;
+	char x_temp[5];
+	char y_temp[5];
+	char x[5];
+	char y[5];
+	float axis_x;
+	float axis_y;
     
 	UART_1_CmdReset();                      // Initialize receiver/cmd // buffer
     //UART_1_IntCntl(UART_1_ENABLE_RX_INT);     // Enable RX interrupts
@@ -64,17 +71,68 @@ void main(void)
 	while(1)
 	{
 		//TATTI OHJAUS
-		//int i = 0;
-		//for(i = 0; i < 8; i++)
-			//strPtr[i] = UART_1_cGetChar();
 		
-		//Parse
-		//for(int i = 0; i < 4; i++) X
-		//1083 -> 0.83f
+		
+		int i = 0;
+		for(i = 0; i < 8; i++)
+			strPtr[i] = UART_1_cGetChar();
+		
+
+		
+//		//Parse X
+//		for(i = 0; i < 4; i++)
+//		{
+//			x_temp[i] = strPtr[i];					
+//		}			
+//		//Parse Y
+//		for(i = 4; i < 8; i++)
+//		{
+//			y_temp[i-4] = strPtr[i];	
+//		}
+//		
+//		//1083 -> 0.83f
+//		if (x_temp[0] == 0)
+//		{
+//			x[0] = '-';
+//			x[1] = x_temp[1];
+//			x[2] = '.';
+//			x[3] = x_temp[2];
+//			x[4] = x_temp[3];
+//			x[5] = '\0';
+//			axis_x = atof(x);
+//		} else if (x_temp[0] == 1)
+//		{
+//			x[0] = x_temp[1];
+//			x[1] = '.';
+//			x[2] = x_temp[2];
+//			x[3] = x_temp[3];
+//			x[4] = '\0';
+//			axis_x = atof(x);
+//		}
+//		//0023 -> -0.23f
+//		if (y_temp[0] == 0)
+//		{
+//			y[0] = '-';
+//			y[1] = y_temp[1];
+//			y[2] = '.';
+//			y[3] = y_temp[2];
+//			y[4] = y_temp[3];
+//			y[5] = '\0';
+//			axis_y = atof(y);
+//		} else if (y_temp[0] == 1)
+//		{
+//			y[0] = y_temp[1];
+//			y[1] = '.';
+//			y[2] = y_temp[2];
+//			y[3] = y_temp[3];
+//			y[4] = '\0';
+//			axis_y = atof(y);
+//		}
+		
 		//if(x < 0) xAbs = x * -1;
 		
-		//for(int i = 4; i < 8; i++) Y
-		//0023 -> -0.23f
+		
+		
 		//if(y < 0) yAbs = y * -1;
 		
 		//if(xAbs > yAbs)
@@ -88,31 +146,36 @@ void main(void)
 		
 		
 		//EZ
-		uartBuf = UART_1_cGetChar();
-		
-		if (uartBuf == 0x31)
-		{
-			MoveForward(FULL_SPEED);
-		}
-		if (uartBuf == 0x32)
-		{
-			TurnRight(FULL_SPEED);
-		}
-		if (uartBuf == 0x33)
-		{
-			MoveBackward(FULL_SPEED);
-		}
-		if (uartBuf == 0x34)
-		{
-			TurnLeft(FULL_SPEED);
-		}
-		if(uartBuf == 0x30)
-			Stop();
-		
-		
+//		uartBuf = UART_1_cGetChar();
+//		
+//		if (uartBuf == 0x31)
+//		{
+//			MoveForward(FULL_SPEED);
+//		}
+//		if (uartBuf == 0x32)
+//		{
+//			TurnRight(FULL_SPEED);
+//		}
+//		if (uartBuf == 0x33)
+//		{
+//			MoveBackward(FULL_SPEED);
+//		}
+//		if (uartBuf == 0x34)
+//		{
+//			TurnLeft(FULL_SPEED);
+//		}
+//		if(uartBuf == 0x30)
+//			Stop();
+
 		LCD_Position(0,0);
-		LCD_PrHexByte(uartBuf);
-		//LCD_PrString(strPtr);
+		//LCD_PrHexByte(uartBuf);
+		LCD_PrString(strPtr);
+		
+
+		
+//		LCD_Position(1,0);
+//		//LCD_PrHexByte(uartBuf);
+//		LCD_PrString(y);
 	}
 }
 

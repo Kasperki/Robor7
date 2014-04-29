@@ -1,226 +1,233 @@
 Project:      output/RobottiProjekti
 Build Number: 0
-Date:         Mon Apr 28 13:31:55 2014
+Date:         Tue Apr 29 15:57:54 2014
 Compiler:     ICCM8C
 Version:      7.05.00
 
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                             lit   0150   0082 =    130. bytes (rel,con,rom,lit)
+                             lit   0150   0183 =    387. bytes (rel,con,rom,lit)
 
        Addr  Global Symbol
       -----  --------------------------------
        0150  _OIKEUSKERROIN
        0154  LoadConfigTBL_robottiprojekti_Bank0
        0197  LoadConfigTBL_robottiprojekti_Bank1
-       01D2  __lit_end
+       01D2  __ctype
+       02D3  __lit_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                           idata   01D2   0010 =     16. bytes (rel,con,rom,lit)
+                           idata   02D3   0010 =     16. bytes (rel,con,rom,lit)
 
        Addr  Global Symbol
       -----  --------------------------------
-       01D2  __idata_start
-       01E2  __idata_end
+       02D3  __idata_start
+       02E3  __idata_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                     psoc_config   01E2   012F =    303. bytes (rel,con,rom,code)
+                     psoc_config   02E3   012F =    303. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
-       01E2  LoadConfigTBL_robottiprojekti_Ordered
-       02A7  _LoadConfigInit
-       02A7  LoadConfigInit
-       02BA  _LoadConfig_robottiprojekti
-       02BA  LoadConfig_robottiprojekti
-       0311  __psoc_config_end
+       02E3  LoadConfigTBL_robottiprojekti_Ordered
+       03A8  _LoadConfigInit
+       03A8  LoadConfigInit
+       03BB  _LoadConfig_robottiprojekti
+       03BB  LoadConfig_robottiprojekti
+       0412  __psoc_config_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                     UserModules   0311   0536 =   1334. bytes (rel,con,rom,code)
+                     UserModules   0412   0536 =   1334. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
-       0311  _UART_1_TX_ISR
-       0312  _UART_1_RX_ISR
-       0362  _UART_1_EnableInt
-       0362  UART_1_EnableInt
-       0369  UART_1_DisableInt
-       0369  _UART_1_DisableInt
-       0370  UART_1_SetTxIntMode
-       0370  _UART_1_SetTxIntMode
-       0382  UART_1_Start
-       0382  _UART_1_Start
-       038B  UART_1_Stop
-       038B  _UART_1_Stop
-       0392  _UART_1_SendData
-       0392  UART_1_SendData
-       0395  bUART_1_ReadTxStatus
-       0395  _UART_1_bReadTxStatus
-       0395  _bUART_1_ReadTxStatus
-       0395  UART_1_bReadTxStatus
-       0398  UART_1_bReadRxData
-       0398  bUART_1_ReadRxData
-       0398  _bUART_1_ReadRxData
-       0398  _UART_1_bReadRxData
-       039B  bUART_1_ReadRxStatus
-       039B  _bUART_1_ReadRxStatus
-       039B  _UART_1_bReadRxStatus
-       039B  UART_1_bReadRxStatus
-       039E  _UART_1_TxIntMode
-       039E  UART_1_TxIntMode
-       03B1  _UART_1_IntCntl
-       03B1  UART_1_IntCntl
-       03DC  _UART_1_PutSHexByte
-       03DC  UART_1_PutSHexByte
-       03EF  UART_1_PutSHexInt
-       03EF  _UART_1_PutSHexInt
-       03F6  _UART_1_PutChar
-       03F6  UART_1_PutChar
-       03FE  UART_1_cGetChar
-       03FE  _UART_1_cGetChar
-       0406  _UART_1_cReadChar
-       0406  UART_1_cReadChar
-       041D  _UART_1_iReadChar
-       041D  UART_1_iReadChar
-       0433  UART_1_PutString
-       0433  _UART_1_PutString
-       043D  _UART_1_Write
-       043D  UART_1_Write
-       0455  _UART_1_CWrite
-       0455  UART_1_CWrite
-       047D  UART_1_CPutString
-       047D  _UART_1_CPutString
-       048F  UART_1_PutCRLF
-       048F  _UART_1_PutCRLF
-       0498  UART_1_CmdReset
-       0498  _UART_1_CmdReset
-       04A5  _UART_1_bCmdCheck
-       04A5  UART_1_bCmdCheck
-       04AA  _UART_1_bErrCheck
-       04AA  UART_1_bErrCheck
-       04B2  UART_1_bCmdLength
-       04B2  _UART_1_bCmdLength
-       04B5  _UART_1_szGetParam
-       04B5  UART_1_szGetParam
-       0503  UART_1_szGetRestOfParams
-       0503  _UART_1_szGetRestOfParams
-       050B  _PWM8_VASEN_ISR
-       050C  PWM8_VASEN_EnableInt
-       050C  _PWM8_VASEN_EnableInt
-       0510  PWM8_VASEN_DisableInt
-       0510  _PWM8_VASEN_DisableInt
-       0514  _PWM8_VASEN_Start
-       0514  PWM8_VASEN_Start
-       0518  _PWM8_VASEN_Stop
-       0518  PWM8_VASEN_Stop
-       051C  PWM8_VASEN_WritePeriod
-       051C  _PWM8_VASEN_WritePeriod
-       051F  _PWM8_VASEN_WritePulseWidth
-       051F  PWM8_VASEN_WritePulseWidth
-       0522  _PWM8_VASEN_bReadPulseWidth
-       0522  PWM8_VASEN_bReadPulseWidth
-       0522  _bPWM8_VASEN_ReadPulseWidth
-       0522  bPWM8_VASEN_ReadPulseWidth
-       0525  bPWM8_VASEN_ReadCounter
-       0525  _bPWM8_VASEN_ReadCounter
-       0525  _PWM8_VASEN_bReadCounter
-       0525  PWM8_VASEN_bReadCounter
-       054E  _PWM8_OIKEA_ISR
-       054F  _PWM8_OIKEA_EnableInt
-       054F  PWM8_OIKEA_EnableInt
-       0553  _PWM8_OIKEA_DisableInt
-       0553  PWM8_OIKEA_DisableInt
-       0557  _PWM8_OIKEA_Start
-       0557  PWM8_OIKEA_Start
-       055B  PWM8_OIKEA_Stop
-       055B  _PWM8_OIKEA_Stop
-       055F  PWM8_OIKEA_WritePeriod
-       055F  _PWM8_OIKEA_WritePeriod
-       0562  PWM8_OIKEA_WritePulseWidth
-       0562  _PWM8_OIKEA_WritePulseWidth
-       0565  bPWM8_OIKEA_ReadPulseWidth
-       0565  PWM8_OIKEA_bReadPulseWidth
-       0565  _bPWM8_OIKEA_ReadPulseWidth
-       0565  _PWM8_OIKEA_bReadPulseWidth
-       0568  bPWM8_OIKEA_ReadCounter
-       0568  PWM8_OIKEA_bReadCounter
-       0568  _bPWM8_OIKEA_ReadCounter
-       0568  _PWM8_OIKEA_bReadCounter
-       0591  _LCD_PrCString
-       0591  LCD_PrCString
-       05A3  LCD_HEX_STR
-       05B3  _LCD_PrHexByte
-       05B3  LCD_PrHexByte
-       05C6  _LCD_PrHexInt
-       05C6  LCD_PrHexInt
-       05CD  LCD_PrString
-       05CD  _LCD_PrString
-       05D7  LCD_Write_Data
-       05D7  _LCD_Write_Data
-       05D7  LCD_WriteData
-       05D7  _LCD_WriteData
-       05EB  _LCD_Control
-       05EB  LCD_Control
-       0692  _LCD_Init
-       0692  LCD_Init
-       0692  _LCD_Start
-       0692  LCD_Start
-       06FE  LCD_ROW_OFFSET
-       0702  _LCD_Position
-       0702  LCD_Position
-       070E  _LCD_Delay50uTimes
-       070E  LCD_Delay50uTimes
-       0714  LCD_Delay50u_Table
-       071C  LCD_Delay50u
-       071C  _LCD_Delay50u
-       0730  LCD_DrawBG
-       0756  _LCD_DrawBG
-       077F  LCD_DrawVBG
-       07AC  _LCD_DrawVBG
-       07DC  _LCD_InitVBG
-       07DC  LCD_InitVBG
-       0809  LCD_BG_TYPE1
-       0810  LCD_BG_TYPE2
-       0817  LCD_InitBG
-       0817  _LCD_InitBG
-       0847  __UserModules_end
+       0412  _UART_1_TX_ISR
+       0413  _UART_1_RX_ISR
+       0463  _UART_1_EnableInt
+       0463  UART_1_EnableInt
+       046A  UART_1_DisableInt
+       046A  _UART_1_DisableInt
+       0471  UART_1_SetTxIntMode
+       0471  _UART_1_SetTxIntMode
+       0483  UART_1_Start
+       0483  _UART_1_Start
+       048C  UART_1_Stop
+       048C  _UART_1_Stop
+       0493  _UART_1_SendData
+       0493  UART_1_SendData
+       0496  bUART_1_ReadTxStatus
+       0496  _UART_1_bReadTxStatus
+       0496  _bUART_1_ReadTxStatus
+       0496  UART_1_bReadTxStatus
+       0499  UART_1_bReadRxData
+       0499  bUART_1_ReadRxData
+       0499  _bUART_1_ReadRxData
+       0499  _UART_1_bReadRxData
+       049C  bUART_1_ReadRxStatus
+       049C  _bUART_1_ReadRxStatus
+       049C  _UART_1_bReadRxStatus
+       049C  UART_1_bReadRxStatus
+       049F  _UART_1_TxIntMode
+       049F  UART_1_TxIntMode
+       04B2  _UART_1_IntCntl
+       04B2  UART_1_IntCntl
+       04DD  _UART_1_PutSHexByte
+       04DD  UART_1_PutSHexByte
+       04F0  UART_1_PutSHexInt
+       04F0  _UART_1_PutSHexInt
+       04F7  _UART_1_PutChar
+       04F7  UART_1_PutChar
+       04FF  UART_1_cGetChar
+       04FF  _UART_1_cGetChar
+       0507  _UART_1_cReadChar
+       0507  UART_1_cReadChar
+       051E  _UART_1_iReadChar
+       051E  UART_1_iReadChar
+       0534  UART_1_PutString
+       0534  _UART_1_PutString
+       053E  _UART_1_Write
+       053E  UART_1_Write
+       0556  _UART_1_CWrite
+       0556  UART_1_CWrite
+       057E  UART_1_CPutString
+       057E  _UART_1_CPutString
+       0590  UART_1_PutCRLF
+       0590  _UART_1_PutCRLF
+       0599  UART_1_CmdReset
+       0599  _UART_1_CmdReset
+       05A6  _UART_1_bCmdCheck
+       05A6  UART_1_bCmdCheck
+       05AB  _UART_1_bErrCheck
+       05AB  UART_1_bErrCheck
+       05B3  UART_1_bCmdLength
+       05B3  _UART_1_bCmdLength
+       05B6  _UART_1_szGetParam
+       05B6  UART_1_szGetParam
+       0604  UART_1_szGetRestOfParams
+       0604  _UART_1_szGetRestOfParams
+       060C  _PWM8_VASEN_ISR
+       060D  PWM8_VASEN_EnableInt
+       060D  _PWM8_VASEN_EnableInt
+       0611  PWM8_VASEN_DisableInt
+       0611  _PWM8_VASEN_DisableInt
+       0615  _PWM8_VASEN_Start
+       0615  PWM8_VASEN_Start
+       0619  _PWM8_VASEN_Stop
+       0619  PWM8_VASEN_Stop
+       061D  PWM8_VASEN_WritePeriod
+       061D  _PWM8_VASEN_WritePeriod
+       0620  _PWM8_VASEN_WritePulseWidth
+       0620  PWM8_VASEN_WritePulseWidth
+       0623  _PWM8_VASEN_bReadPulseWidth
+       0623  PWM8_VASEN_bReadPulseWidth
+       0623  _bPWM8_VASEN_ReadPulseWidth
+       0623  bPWM8_VASEN_ReadPulseWidth
+       0626  bPWM8_VASEN_ReadCounter
+       0626  _bPWM8_VASEN_ReadCounter
+       0626  _PWM8_VASEN_bReadCounter
+       0626  PWM8_VASEN_bReadCounter
+       064F  _PWM8_OIKEA_ISR
+       0650  _PWM8_OIKEA_EnableInt
+       0650  PWM8_OIKEA_EnableInt
+       0654  _PWM8_OIKEA_DisableInt
+       0654  PWM8_OIKEA_DisableInt
+       0658  _PWM8_OIKEA_Start
+       0658  PWM8_OIKEA_Start
+       065C  PWM8_OIKEA_Stop
+       065C  _PWM8_OIKEA_Stop
+       0660  PWM8_OIKEA_WritePeriod
+       0660  _PWM8_OIKEA_WritePeriod
+       0663  PWM8_OIKEA_WritePulseWidth
+       0663  _PWM8_OIKEA_WritePulseWidth
+       0666  bPWM8_OIKEA_ReadPulseWidth
+       0666  PWM8_OIKEA_bReadPulseWidth
+       0666  _bPWM8_OIKEA_ReadPulseWidth
+       0666  _PWM8_OIKEA_bReadPulseWidth
+       0669  bPWM8_OIKEA_ReadCounter
+       0669  PWM8_OIKEA_bReadCounter
+       0669  _bPWM8_OIKEA_ReadCounter
+       0669  _PWM8_OIKEA_bReadCounter
+       0692  _LCD_PrCString
+       0692  LCD_PrCString
+       06A4  LCD_HEX_STR
+       06B4  _LCD_PrHexByte
+       06B4  LCD_PrHexByte
+       06C7  _LCD_PrHexInt
+       06C7  LCD_PrHexInt
+       06CE  LCD_PrString
+       06CE  _LCD_PrString
+       06D8  LCD_Write_Data
+       06D8  _LCD_Write_Data
+       06D8  LCD_WriteData
+       06D8  _LCD_WriteData
+       06EC  _LCD_Control
+       06EC  LCD_Control
+       0793  _LCD_Init
+       0793  LCD_Init
+       0793  _LCD_Start
+       0793  LCD_Start
+       07FF  LCD_ROW_OFFSET
+       0803  _LCD_Position
+       0803  LCD_Position
+       080F  _LCD_Delay50uTimes
+       080F  LCD_Delay50uTimes
+       0815  LCD_Delay50u_Table
+       081D  LCD_Delay50u
+       081D  _LCD_Delay50u
+       0831  LCD_DrawBG
+       0857  _LCD_DrawBG
+       0880  LCD_DrawVBG
+       08AD  _LCD_DrawVBG
+       08DD  _LCD_InitVBG
+       08DD  LCD_InitVBG
+       090A  LCD_BG_TYPE1
+       0911  LCD_BG_TYPE2
+       0918  LCD_InitBG
+       0918  _LCD_InitBG
+       0948  __UserModules_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                            text   0847   0A57 =   2647. bytes (rel,con,rom,code)
+                            text   0948   1155 =   4437. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
-       0847  Delay10msTimes
-       0847  __text_start
-       0847  _Delay10msTimes
-       0854  Delay50uTimes
-       0854  _Delay50uTimes
-       085A  Delay50u_Table
-       0862  _Delay50u
-       0862  Delay50u
-       0876  _main
-       0909  _PinInterrupt
-       090C  _TestLoop
-       090F  _Delay
-       095C  _InitPWM
-       0965  _MoveForward
-       0A86  _MoveForward2
-       0CB1  _MoveBackward
-       0DD2  _Stop
-       0DE2  _TurnLeft
-       0DFA  _TurnRight
-       0E12  _TestTurnLeft
-       0E2A  _InitUAServo
-       0E2B  _getDataUA
-       0E32  _ControlTrigger
-       0E78  _sendTrigPulse
-       0E98  PSoC_GPIO_ISR
-       129E  __text_end
+       0948  _Delay10msTimes
+       0948  Delay10msTimes
+       0948  __text_start
+       0955  Delay50uTimes
+       0955  _Delay50uTimes
+       095B  Delay50u_Table
+       0963  Delay50u
+       0963  _Delay50u
+       0977  _main
+       0B2E  _PinInterrupt
+       0B31  _TestLoop
+       0B34  _Delay
+       0B81  _InitPWM
+       0B8A  _MoveForward
+       0CAB  _MoveForward2
+       0ED6  _MoveBackward
+       0FF7  _Stop
+       1007  _TurnLeft
+       101F  _TurnRight
+       1037  _TestTurnLeft
+       104F  _InitUAServo
+       1050  _getDataUA
+       1057  _ControlTrigger
+       109D  _sendTrigPulse
+       10BD  PSoC_GPIO_ISR
+       15A0  _atof
+       1970  _powi
+       1A0E  _isdigit
+       1A2C  _islower
+       1A4A  _isspace
+       1A68  _toupper
+       1A9D  __text_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
@@ -320,8 +327,9 @@ obj/ultracontrol.o	[ ultracontrol.c ]
 [ psocgpioint.asm, psocconfigtbl.asm, psocconfig.asm, lcd.asm, rZ.asm, rY.asm, rX.asm, r7.asm, r6.asm ]
 [ r5.asm, r4.asm, r3.asm, r2.asm, r1.asm, r0.asm, fp2long_util.asm, fp_analysiseject_util.asm, fp_clrreg_util.asm ]
 [ fp_nan_res_util.asm, fp_saveres_util.asm, fp_sendtoreg_util.asm, fp_sinf_res_util.asm, fp_szero_res_util.asm ]
-[ fp_type_oprnd_util.asm, fp_unnormal_util.asm, fpadd_util.asm, fpcmp_util.asm, fpmul_util.asm ]
-[ fpsub_util.asm, i_div32_not_util.asm, i_mulu8_block_util.asm, long2fp_util.asm ]
+[ fp_type_oprnd_util.asm, fp_unnormal_util.asm, fpadd_util.asm, fpcmp_util.asm, fpdiv_util.asm ]
+[ fpmul_util.asm, fpsub_util.asm, i_div32_not_util.asm, i_mulu8_block_util.asm, long2fp_util.asm ]
+[ atof.s, isdigit.s, islower.s, isspace.s, ctype.s, toupper.s ]
 
 Area Definitions
 

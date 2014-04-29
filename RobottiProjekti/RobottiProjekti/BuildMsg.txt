@@ -29,12 +29,12 @@ lib/uart_1plus.asm
 
 Linking..
 
-  ROM 28% full. 4430 out of 16384 bytes used (does not include absolute areas).
+  ROM 40% full. 6477 out of 16384 bytes used (does not include absolute areas).
 
   RAM 24% full. 60 bytes used (does not include stack usage).
 
 Built with ICCM8C STD V7.05.00
 
  
-RobottiProjekti - 0 error(s) 0 warning(s) 13:31:55
+RobottiProjekti - 0 error(s) 0 warning(s) 15:57:55
 

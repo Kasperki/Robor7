@@ -8,7 +8,7 @@ S __rX Ref0000
 S _Delay10msTimes Ref0000
 A text size 6E flags 0
 dbfile ./ultracontrol.c
-dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
 dbfunc e InitUAServo 0 fV
 dbline FFFFFFFF 0
 dbline 12 0
@@ -52,7 +52,7 @@ S _sendTrigPulse Def004E
 S _getDataUA Def0001
 A data size 4 flags 20
 dbfile ./ultracontrol.c
-dbfile Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
+dbfile Z:\AMMATI~2\Koodi\Robor7\ROBOTT~1\ROBOTT~1\ultracontrol.c
 dbsym e distanceToCm 0 D
 S _distanceToCm Def0000
 A idata size 4 flags 1
