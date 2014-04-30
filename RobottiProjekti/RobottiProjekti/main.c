@@ -9,6 +9,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "delay.h"
+#include <math.h> 
+#include "string.h"
 
 //Omat header filet
 #include "MotorControl.h"
@@ -43,7 +45,12 @@ void main(void)
 	char y[5];
 	float axis_x;
 	float axis_y;
-    
+    float xAbs,yAbs;
+	int apu = 0;
+
+    int Status;
+    char* buf;
+	
 	UART_1_CmdReset();                      // Initialize receiver/cmd // buffer
     //UART_1_IntCntl(UART_1_ENABLE_RX_INT);     // Enable RX interrupts
 	UART_1_Start(UART_1_PARITY_NONE); 
@@ -71,111 +78,119 @@ void main(void)
 	while(1)
 	{
 		//TATTI OHJAUS
-		
-		
-		int i = 0;
+		int j = 0; int i = 0;
+		for(j = 0; j < 9; j++)
+		{
+			if (UART_1_cGetChar() == 'A')
+			{
+				break;
+			}
+		}
+			
 		for(i = 0; i < 8; i++)
 			strPtr[i] = UART_1_cGetChar();
 		
-
+		//Parse X
+		for(i = 0; i < 4; i++)
+		{
+			x_temp[i] = strPtr[i];					
+		}			
+		//Parse Y
+		for(i = 4; i < 8; i++)
+		{
+			y_temp[i-4] = strPtr[i];	
+		}
 		
-//		//Parse X
-//		for(i = 0; i < 4; i++)
-//		{
-//			x_temp[i] = strPtr[i];					
-//		}			
-//		//Parse Y
-//		for(i = 4; i < 8; i++)
-//		{
-//			y_temp[i-4] = strPtr[i];	
-//		}
-//		
-//		//1083 -> 0.83f
-//		if (x_temp[0] == 0)
-//		{
-//			x[0] = '-';
-//			x[1] = x_temp[1];
-//			x[2] = '.';
-//			x[3] = x_temp[2];
-//			x[4] = x_temp[3];
-//			x[5] = '\0';
-//			axis_x = atof(x);
-//		} else if (x_temp[0] == 1)
-//		{
-//			x[0] = x_temp[1];
-//			x[1] = '.';
-//			x[2] = x_temp[2];
-//			x[3] = x_temp[3];
-//			x[4] = '\0';
-//			axis_x = atof(x);
-//		}
-//		//0023 -> -0.23f
-//		if (y_temp[0] == 0)
-//		{
-//			y[0] = '-';
-//			y[1] = y_temp[1];
-//			y[2] = '.';
-//			y[3] = y_temp[2];
-//			y[4] = y_temp[3];
-//			y[5] = '\0';
-//			axis_y = atof(y);
-//		} else if (y_temp[0] == 1)
-//		{
-//			y[0] = y_temp[1];
-//			y[1] = '.';
-//			y[2] = y_temp[2];
-//			y[3] = y_temp[3];
-//			y[4] = '\0';
-//			axis_y = atof(y);
-//		}
+		//1083 -> 0.83f
+		if (x_temp[0] == '0')
+		{
+			x[0] = '-';
+			x[1] = x_temp[1];
+			x[2] = '.';
+			x[3] = x_temp[2];
+			x[4] = x_temp[3];
+			x[5] = '\0';
+			axis_x = (float)atof(x);
+		} else if (x_temp[0] == '1')
+		{
+			x[0] = x_temp[1];
+			x[1] = '.';
+			x[2] = x_temp[2];
+			x[3] = x_temp[3];
+			x[4] = '\0';
+			axis_x = (float)atof(x);
+		}
+		//0023 -> -0.23f
+		if (y_temp[0] == '0')
+		{
+			y[0] = '-';
+			y[1] = y_temp[1];
+			y[2] = '.';
+			y[3] = y_temp[2];
+			y[4] = y_temp[3];
+			y[5] = '\0';
+			axis_y = (float)atof(y);
+		} else if (y_temp[0] == '1')
+		{
+			y[0] = y_temp[1];
+			y[1] = '.';
+			y[2] = y_temp[2];
+			y[3] = y_temp[3];
+			y[4] = '\0';
+			axis_y = (float)atof(y);
+		}
 		
-		//if(x < 0) xAbs = x * -1;
+		if(axis_x < 0) xAbs = axis_x * -1.0f;
+		else xAbs = axis_x;
+		//xAbs = std::abs(axis_x);
+		
+		if(axis_y < 0) yAbs = axis_y * -1.0f;
+		else yAbs = axis_y;
+		//yAbs = std::abs(axis_y);
+		
+		if(xAbs > yAbs) //Käännytään
+		{	
+			//if(axis_x > 0.0f)
+				TurnRight((int)(FULL_SPEED * xAbs));
+			//else			
+				//TurnLeft((int)(FULL_SPEED * xAbs));
+		
+			apu = 1;
+		}
+		else //Suoraan -> Taakse
+		{
+			if(axis_y > 0.0f)
+			{
+				MoveForward2((int)(FULL_SPEED * yAbs),1,1);
+				//if(axis_x > 0)
+					//MoveForward2((int)(FULL_SPEED * yAbs),1,(int)(FULL_SPEED *  (1 - xAbs)));
+				//else
+					//MoveForward2((int)(FULL_SPEED * yAbs),(int)(FULL_SPEED *  (1 - xAbs)),1);
+			}
+			else
+			{ 
+				MoveBackward((int)(FULL_SPEED * yAbs));
+			}
+		
+			apu = 2;
+		}	
 		
 		
-		
-		//if(y < 0) yAbs = y * -1;
-		
-		//if(xAbs > yAbs)
-			//Käännytään
-			//if(x>0)
-				//TurnRight(x)
-			//else
-				//TurnLeft(x);
-		//else
-			//Suoraan -> Taakse
-		
-		
-		//EZ
-//		uartBuf = UART_1_cGetChar();
-//		
-//		if (uartBuf == 0x31)
-//		{
-//			MoveForward(FULL_SPEED);
-//		}
-//		if (uartBuf == 0x32)
-//		{
-//			TurnRight(FULL_SPEED);
-//		}
-//		if (uartBuf == 0x33)
-//		{
-//			MoveBackward(FULL_SPEED);
-//		}
-//		if (uartBuf == 0x34)
-//		{
-//			TurnLeft(FULL_SPEED);
-//		}
-//		if(uartBuf == 0x30)
-//			Stop();
-
 		LCD_Position(0,0);
 		//LCD_PrHexByte(uartBuf);
 		LCD_PrString(strPtr);
 		
-
+		//itoa(buffer,apu,10);
+		//LCD_Position(1,1);
+		//LCD_PrCString("     ");
+		//LCD_PrString(buffer);
 		
-//		LCD_Position(1,0);
-//		//LCD_PrHexByte(uartBuf);
-//		LCD_PrString(y);
+	
+
+  		
+  		buffer = ftoa(axis_x,10);
+   		LCD_Position(1,1);
+   		LCD_PrString(buffer);
 	}
 }
 
@@ -204,6 +219,33 @@ void TestLoop(void)
 		LCD_Position(0,0);
 		LCD_PrString(buffer);
 		*/		
+		
+				//EZ
+//		uartBuf = UART_1_cGetChar();
+//		
+//		if (uartBuf == 0x31)
+//		{
+//			MoveForward(FULL_SPEED);
+//		}
+//		if (uartBuf == 0x32)
+//		{
+//			TurnRight(FULL_SPEED);
+//		}
+//		if (uartBuf == 0x33)
+//		{
+//			MoveBackward(FULL_SPEED);
+//		}
+//		if (uartBuf == 0x34)
+//		{
+//			TurnLeft(FULL_SPEED);
+//		}
+//		if(uartBuf == 0x30)
+//			Stop();
+		
+				
+//		LCD_Position(1,0);
+//		//LCD_PrHexByte(uartBuf);
+//		LCD_PrString(y);
 	}
 }
 

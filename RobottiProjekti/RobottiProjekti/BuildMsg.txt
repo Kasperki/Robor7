@@ -25,16 +25,12 @@ lib/uart_1int.asm
 
 lib/uart_1plus.asm
 
-./boot.asm
+!E Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(191): operands of = have illegal types `array 10 of char' and `pointer to char'
 
-Linking..
+!E Z:\robotti\Robor7\ROBOTT~1\ROBOTT~1\main.c(191): lvalue required
 
-  ROM 40% full. 6477 out of 16384 bytes used (does not include absolute areas).
-
-  RAM 24% full. 60 bytes used (does not include stack usage).
-
-Built with ICCM8C STD V7.05.00
+make: *** [obj/main.o] Error 1
 
  
-RobottiProjekti - 0 error(s) 0 warning(s) 15:57:55
+RobottiProjekti - 3 error(s) 0 warning(s) 13:56:43
 
