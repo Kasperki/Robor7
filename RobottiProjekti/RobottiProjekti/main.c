@@ -43,11 +43,13 @@ void main(void)
 	char y_temp[5];
 	char x[5];
 	char y[5];
-	float axis_x;
-	float axis_y;
-    float xAbs,yAbs;
+	int axis_x;
+	int axis_y;
 	int apu = 0;
-
+	int aaa = 0;
+	int xEtu = 0;
+	int yEtu = 0;
+	
     int Status;
     char* buf;
 	
@@ -101,75 +103,65 @@ void main(void)
 			y_temp[i-4] = strPtr[i];	
 		}
 		
-		//1083 -> 0.83f
+		//1083 -> xEtu083
 		if (x_temp[0] == '0')
 		{
-			x[0] = '-';
+			xEtu = 0;
 			x[1] = x_temp[1];
-			x[2] = '.';
-			x[3] = x_temp[2];
-			x[4] = x_temp[3];
-			x[5] = '\0';
-			axis_x = (float)atof(x);
-		} else if (x_temp[0] == '1')
-		{
-			x[0] = x_temp[1];
-			x[1] = '.';
 			x[2] = x_temp[2];
 			x[3] = x_temp[3];
 			x[4] = '\0';
-			axis_x = (float)atof(x);
+			axis_x = atoi(x);
+		} else if (x_temp[0] == '1')
+		{
+			xEtu = 1;
+			x[0] = x_temp[1];
+			x[1] = x_temp[2];
+			x[2] = x_temp[3];
+			x[3] = '\0';
+			axis_x = atoi(x);
 		}
-		//0023 -> -0.23f
+		//0023 -> 023
 		if (y_temp[0] == '0')
 		{
-			y[0] = '-';
-			y[1] = y_temp[1];
-			y[2] = '.';
-			y[3] = y_temp[2];
-			y[4] = y_temp[3];
-			y[5] = '\0';
-			axis_y = (float)atof(y);
+			yEtu = 0;
+			y[0] = y_temp[1];
+			y[1] = y_temp[2];
+			y[2] = y_temp[3];
+			y[3] = '\0';
+			axis_y = atoi(y);
 		} else if (y_temp[0] == '1')
 		{
+			yEtu = 1;
 			y[0] = y_temp[1];
-			y[1] = '.';
-			y[2] = y_temp[2];
-			y[3] = y_temp[3];
-			y[4] = '\0';
-			axis_y = (float)atof(y);
+			y[1] = y_temp[2];
+			y[2] = y_temp[3];
+			y[3] = '\0';
+			axis_y = atoi(y);
 		}
-		
-		if(axis_x < 0) xAbs = axis_x * -1.0f;
-		else xAbs = axis_x;
-		//xAbs = std::abs(axis_x);
-		
-		if(axis_y < 0) yAbs = axis_y * -1.0f;
-		else yAbs = axis_y;
-		//yAbs = std::abs(axis_y);
-		
-		if(xAbs > yAbs) //Käännytään
+
+		if(axis_x > axis_y) //Käännytään
 		{	
-			//if(axis_x > 0.0f)
-				TurnRight((int)(FULL_SPEED * xAbs));
-			//else			
-				//TurnLeft((int)(FULL_SPEED * xAbs));
+			if(xEtu == 1)
+				TurnRight(axis_x);
+			else			
+				TurnLeft(axis_x);
 		
 			apu = 1;
 		}
 		else //Suoraan -> Taakse
 		{
-			if(axis_y > 0.0f)
+			if(yEtu == 1)
 			{
-				MoveForward2((int)(FULL_SPEED * yAbs),1,1);
-				//if(axis_x > 0)
-					//MoveForward2((int)(FULL_SPEED * yAbs),1,(int)(FULL_SPEED *  (1 - xAbs)));
+				MoveForward2(axis_y,1,1);
+				//if(xEtu == 1)
+					//MoveForward2(axis_y,1,(1 - (axis_x / 255)));
 				//else
-					//MoveForward2((int)(FULL_SPEED * yAbs),(int)(FULL_SPEED *  (1 - xAbs)),1);
+					//MoveForward2(axis_y,(1 - (axis_x / 255)),1);
 			}
 			else
 			{ 
-				MoveBackward((int)(FULL_SPEED * yAbs));
+				MoveBackward(axis_y);
 			}
 		
 			apu = 2;
@@ -181,15 +173,13 @@ void main(void)
 		LCD_PrString(strPtr);
 		
 		//itoa(buffer,apu,10);
-		//LCD_Position(1,1);
+		//LCD_Position(1,0);
 		//LCD_PrCString("     ");
 		//LCD_PrString(buffer);
-		
 	
-
-  		
-  		buffer = ftoa(axis_x,10);
-   		LCD_Position(1,1);
+	
+  		itoa(buffer,axis_x,10);
+   		LCD_Position(1,0);
    		LCD_PrString(buffer);
 	}
 }

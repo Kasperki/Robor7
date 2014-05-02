@@ -43,7 +43,7 @@ void MoveForward2(int pulse, float kerroinVasen, float kerroinOikea)
 	LEFTC_Data_ADDR |= FORWARD;
 
 	PWM8_VASEN_WritePulseWidth((BYTE)(pulse * kerroinVasen));
-	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * kerroinOikea * OIKEUSKERROIN));
+	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * kerroinOikea));
 }
 
 //Kulkee taaksepäin arvolla
@@ -53,7 +53,7 @@ void MoveBackward(int pulse)
 	LEFTC_Data_ADDR |= BACKWARD;
 	
 	PWM8_VASEN_WritePulseWidth((BYTE)pulse);
-	PWM8_OIKEA_WritePulseWidth((BYTE)(pulse * OIKEUSKERROIN));
+	PWM8_OIKEA_WritePulseWidth((BYTE)pulse);
 }
 
 //Pysäyttää Moottorit

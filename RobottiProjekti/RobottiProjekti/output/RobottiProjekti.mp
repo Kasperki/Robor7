@@ -1,6 +1,6 @@
 Project:      output/RobottiProjekti
 Build Number: 0
-Date:         Tue Apr 29 15:57:54 2014
+Date:         Fri May 02 10:16:53 2014
 Compiler:     ICCM8C
 Version:      7.05.00
 
@@ -192,42 +192,40 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                            text   0948   1155 =   4437. bytes (rel,con,rom,code)
+                            text   0948   0F00 =   3840. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
+       0948  __text_start
        0948  _Delay10msTimes
        0948  Delay10msTimes
-       0948  __text_start
-       0955  Delay50uTimes
        0955  _Delay50uTimes
+       0955  Delay50uTimes
        095B  Delay50u_Table
-       0963  Delay50u
        0963  _Delay50u
+       0963  Delay50u
        0977  _main
-       0B2E  _PinInterrupt
-       0B31  _TestLoop
-       0B34  _Delay
-       0B81  _InitPWM
-       0B8A  _MoveForward
-       0CAB  _MoveForward2
-       0ED6  _MoveBackward
-       0FF7  _Stop
-       1007  _TurnLeft
-       101F  _TurnRight
-       1037  _TestTurnLeft
-       104F  _InitUAServo
-       1050  _getDataUA
-       1057  _ControlTrigger
-       109D  _sendTrigPulse
-       10BD  PSoC_GPIO_ISR
-       15A0  _atof
-       1970  _powi
-       1A0E  _isdigit
-       1A2C  _islower
-       1A4A  _isspace
-       1A68  _toupper
-       1A9D  __text_end
+       0CC3  _PinInterrupt
+       0CC6  _TestLoop
+       0CC9  _Delay
+       0D16  _InitPWM
+       0D1F  _MoveForward
+       0E40  _MoveForward2
+       101E  _MoveBackward
+       1036  _Stop
+       1046  _TurnLeft
+       105E  _TurnRight
+       1076  _TestTurnLeft
+       108E  _InitUAServo
+       108F  _getDataUA
+       1096  _ControlTrigger
+       10DC  _sendTrigPulse
+       10FC  PSoC_GPIO_ISR
+       1583  _atoi
+       168F  _itoa
+       180C  _isdigit
+       182A  _isspace
+       1848  __text_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
@@ -325,11 +323,12 @@ obj/motorcontrol.o	[ motorcontrol.c ]
 obj/ultracontrol.o	[ ultracontrol.c ]
 <library>	[ uart_1int.asm, uart_1.asm, pwm8_vasenint.asm, pwm8_vasen.asm, pwm8_oikeaint.asm, pwm8_oikea.asm ]
 [ psocgpioint.asm, psocconfigtbl.asm, psocconfig.asm, lcd.asm, rZ.asm, rY.asm, rX.asm, r7.asm, r6.asm ]
-[ r5.asm, r4.asm, r3.asm, r2.asm, r1.asm, r0.asm, fp2long_util.asm, fp_analysiseject_util.asm, fp_clrreg_util.asm ]
-[ fp_nan_res_util.asm, fp_saveres_util.asm, fp_sendtoreg_util.asm, fp_sinf_res_util.asm, fp_szero_res_util.asm ]
-[ fp_type_oprnd_util.asm, fp_unnormal_util.asm, fpadd_util.asm, fpcmp_util.asm, fpdiv_util.asm ]
-[ fpmul_util.asm, fpsub_util.asm, i_div32_not_util.asm, i_mulu8_block_util.asm, long2fp_util.asm ]
-[ atof.s, isdigit.s, islower.s, isspace.s, ctype.s, toupper.s ]
+[ r5.asm, r4.asm, r3.asm, r2.asm, r1.asm, r0.asm, divmod_16x16_16_util.asm, divmodu_16x16_16_util.asm ]
+[ fp2long_util.asm, fp_analysiseject_util.asm, fp_clrreg_util.asm, fp_nan_res_util.asm, fp_saveres_util.asm ]
+[ fp_sendtoreg_util.asm, fp_sinf_res_util.asm, fp_szero_res_util.asm, fp_type_oprnd_util.asm ]
+[ fp_unnormal_util.asm, fpadd_util.asm, fpcmp_util.asm, fpmul_util.asm, fpsub_util.asm, i_div16_block_util.asm ]
+[ i_div32_not_util.asm, i_mulu8_block_util.asm, long2fp_util.asm, atoi.s, itoa.s, isdigit.s, isspace.s ]
+[ ctype.s ]
 
 Area Definitions
 
